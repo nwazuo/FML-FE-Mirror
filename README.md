@@ -117,4 +117,6 @@ Are there side effects or other unintuitive consequenses of this change? Here's 
   See also: #456, #789
   And if your commit is just a simple thing, then make the message very short, but not just a title
 
+
+#DONT FORGET TO ADD YOUR LIVE LINK AND SCREENSHOTS OF YOU PAGE
 ### Happy hacking!!!!
