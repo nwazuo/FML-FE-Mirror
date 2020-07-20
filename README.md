@@ -22,7 +22,7 @@ This process here should be able to guide you on how to contribute effectively t
  git clone https://github.com/qobi/FML-FE.git
 ```
 
-- Make the original HNGi/Fund-My-Laptop-FE repo the remote upstream (at upstream)
+- Make the original HNGi/FML-FE repo the remote upstream (at upstream)
 
 ```
 git remote add upstream https://github.com/hngi/FML-FE.git
