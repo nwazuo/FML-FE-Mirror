@@ -4,6 +4,9 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 
+
+import Sample from './components/pages/sample/Sample'
+
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
@@ -11,9 +14,9 @@ function App() {
       {/* header here */}
 
       <Switch>
-
+          
             <Route exact path={pageurl.LANDING_PAGE_URL} 
-            // component={LandingPage} 
+            component={Sample} 
             />
             <Route exact path={pageurl.LOGIN_PAGE_URL} 
             // component={LoginPage} 
