@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+// import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
+import pageurl from './components/router/url/pageurl'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename={process.env.PUBLIC_URL}>
+
+      {/* header here */}
+
+      <Switch>
+
+            <Route exact path={pageurl.LANDING_PAGE_URL} 
+            // component={LandingPage} 
+            />
+            <Route exact path={pageurl.LOGIN_PAGE_URL} 
+            // component={LoginPage} 
+            />
+
+            <Route exact path={pageurl.REGISTER_PAGE_URL} 
+            // component={RegisterPage} 
+            />
+
+            {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
+
+            {/* <Route path="*" component={Page404}/> */}
+                  
+            {/* <Route component={Page404}/> */}
+
+      </Switch>
+
+      {/* footer here */}
+
+   </Router>
+
   );
 }
 
