@@ -1,14 +1,22 @@
 import React from 'react';
 import ContactCss from './Contact.css'
+import emailIcon from "./email-icon.svg"
+import facebookIcon from "./facebook-icon.svg"
+import instagramIcon from "./instagram-icon.svg"
+import locationIcon from "./location-icon.svg"
+import twitterIcon from "./twitter-icon.svg"
+import linkedinIcon from "./linkedin-icon.svg"
+import contactTextIcon from "./contact-text.svg"
+import callIcon from "./call-icon.svg"
 
 const Contact = () => {
     return(
 
-        <div className={ContactCss.contact}>
+    <div className={ContactCss.contact}>
 
       <main className="container-fluid px-0">
         <div className="top-image">
-          <img className="top-image__title" src="../img/contact-text.svg" alt="" />
+          <img className="top-image__title" src={contactTextIcon} alt="" />
           <p className="top-image__text">Feel free to contact us anytime. We will get back to you as soon as possible</p>
         </div>
         <section className="back-wrap">
@@ -16,14 +24,14 @@ const Contact = () => {
             <div className="col contact--wrap container-fluid">
               <div className="contact--wrap-1">
                 <div className="py-2 contact-item d-flex align-items-center mb-4">
-                  <img className="mx-4" src="../contact/call-icon.svg" alt="" />
+                  <img className="mx-4" src={callIcon} alt="" />
                   <div className="contact-item__group">
                     <p className="contact-item__title mb-0">Phone Number</p>
                     <span className="contact-item__num">(+234) 81 770 47279 </span>
                   </div>
                 </div>
                 <div className="py-2 contact-item nth-3 d-flex align-items-center mb-4">
-                  <img className="mx-4" src="../contact/email-icon.svg" alt="" />
+                  <img className="mx-4" src={emailIcon} alt="" />
                   <div className="contact-item__group">
                     <p className="contact-item__title mb-0">Email Address</p>
                     <span className="contact-item__num">example@gmail.com</span>
@@ -32,17 +40,18 @@ const Contact = () => {
               </div>
               <div className="contact--wrap-2">
                 <div className="py-2 contact-item d-flex align-items-center mb-4">
-                  <img className="mx-4" src="../contact/location-icon.svg" alt="" />
+                  <img className="mx-4" src={locationIcon} alt="" />
                   <div className="contact-item__group">
                     <p className="contact-item__title mb-0">Location</p>
                     <span className="contact-item__num">Plot 1, Awolowo Way, Ikeja, Lagos</span>
                   </div>
                 </div>
                 <div className="py-2 contact-item d-flex align-items-center justify-content-between px-4">
-                  <a href="#"><img className="my-1" src="../contact/facebook-icon.svg" alt="" /></a>
-                  <a href="#"><img className="my-1" src="../contact/instagram-icon.svg" alt="" /></a>
-                  <a href="#"><img className="my-1" src="../contact/twitter-icon.svg" alt="" /></a>
-                  <a href="#"><img className="my-1" src="../contact/linkedin-icon.svg" alt="" /></a>
+                <img className="my-1" src={facebookIcon} alt="" />
+                <img className="my-1" src={instagramIcon} alt="" />
+                <img className="my-1" src={twitterIcon} alt="" />
+                <img className="my-1" src={linkedinIcon} alt="" />
+                   
                 </div>
               </div>
             </div>
