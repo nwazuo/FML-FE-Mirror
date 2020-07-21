@@ -8,9 +8,14 @@ import twitterIcon from "./twitter-icon.svg"
 import linkedinIcon from "./linkedin-icon.svg"
 import contactTextIcon from "./contact-text.svg"
 import callIcon from "./call-icon.svg"
+import Navbar from '../../Navbar';
+import Footer from '../../Footer';
+
 
 const Contact = () => {
     return(
+        <>
+        <Navbar />
 
     <div className={ContactCss.contact}>
 
@@ -95,8 +100,9 @@ const Contact = () => {
           </div>
         </section>
       </main> 
-
         </div>
+        <Footer />
+        </>
     )
 }
 
