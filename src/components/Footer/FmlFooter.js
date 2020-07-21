@@ -8,8 +8,8 @@ const FmlFooter = () => {
     return (
      <>
         <footer className="bg-fml-primary">
-        <div className="container-fluid">
-                <div className="row justify-content-between m-0  ">
+        <div className="container">
+                <div className="row justify-content-between mobile-footer ">
                     <div className="mobile-center">
                         <ul className="list-unstyled">
                             <li className="nav-item">
@@ -47,7 +47,7 @@ const FmlFooter = () => {
                 </div>
 
                 <hr className="only-mobile"/>
-                <div className="row justify-content-between m-0 mob-className">
+                <div className="row justify-content-between m-0 mob-class">
                     <p> 2020 &copy; Copyrights All rights reserved </p>
                     <ul className="list-unstyled d-md-inline-flex">
                         <li className="foot-item"><Link to=""> FAQ</Link></li>

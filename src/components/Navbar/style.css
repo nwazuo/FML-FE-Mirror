@@ -22,7 +22,7 @@ li.nav-item{
 }
 
 .navbar .container-fluid{
-    width: 90%;
+    width: 100%;
 }
 
 /*remove bootstrap default svg background */

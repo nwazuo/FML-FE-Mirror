@@ -1,5 +1,5 @@
 .container-fluid{
-    width: 94%;
+    width: 100%;
     padding: 0.5rem 1rem;
 }
 
@@ -32,6 +32,10 @@ footer p{
 }
 
 @media (max-width: 575.98px) {
+
+    .mobile-footer{
+        display: block;
+    }
     .text-sm-center{
         text-align: center;
     }
@@ -57,4 +61,6 @@ footer p{
         margin: auto;
         text-align: center;
     }
+    
 }
+

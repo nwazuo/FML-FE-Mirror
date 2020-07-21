@@ -11,7 +11,7 @@ const FmlNavbar = (props) => {
   return (
     <> 
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
-      <div className="container-fluid">
+      <div className="container">
             <Link className="navbar-brand" to="#">
                <img src={logo} alt="" />
             </Link>
