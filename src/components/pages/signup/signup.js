@@ -58,7 +58,7 @@ const Signup = () => {
                 required
               />
               <label class="form-check-label ml-1 p-auto" for="invalidCheck">
-                I agree to the
+                I agree to the{' '}
                 <a href="" style={{ color: 'blue' }}>
                   Terms Policy Conditions
                 </a>
@@ -87,8 +87,8 @@ const Signup = () => {
             </a>
           </div>
 
-          <p class="account-info-text text-center py-4">
-            Already have an account?
+          <p class="account-info-text text-center py-4 mb-md-3">
+            Already have an account?{' '}
             <a href="login.html" style={{ color: '#fb3f5c' }}>
               Sign In
             </a>

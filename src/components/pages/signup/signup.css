@@ -115,6 +115,9 @@ a:hover {
   width: 100%;
   height: 100%;
 }
+.login-text {
+  width: 90%;
+}
 
 @media only screen and (min-width: 1000px) {
   .form-control,
@@ -132,6 +135,8 @@ a:hover {
   .welcome-text,
   .login-text {
     text-align: center;
+    width: 87%;
+    margin: auto;
   }
   .form-control,
   .check-control,
