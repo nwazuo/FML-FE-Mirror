@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css';
 import '../assets/bootstrap.css';
 
@@ -7,9 +7,6 @@ import logo from "../assets/images/logo.svg"
 
 
 const FmlNavbar = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
 
   return (
     <> 
