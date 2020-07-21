@@ -5,7 +5,8 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import pageurl from './components/router/url/pageurl'
 
 
-import Sample from './components/pages/sample/Sample'
+import Sample from './components/pages/sample/Sample';
+import Terms from './components/pages/terms/terms'
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
 
             <Route exact path={pageurl.REGISTER_PAGE_URL} 
             // component={RegisterPage} 
+            />
+            <Route exact path={pageurl.TERMS_CONDITION_URL} 
+            // component={Terms and Condition} 
+            component={Terms} 
             />
 
             {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
