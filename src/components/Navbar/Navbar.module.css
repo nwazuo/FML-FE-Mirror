@@ -3,6 +3,8 @@
     color: #FB3F5C !important;
     border-radius: 10px !important;
     background: #ffffff !important;
+    margin-right: .5rem;
+    margin-left: .5rem;
 }
 
 
@@ -11,6 +13,8 @@
     border: none !important;
     color: #ffffff;
     border-radius: 10px !important;
+    margin-right: .5rem;
+    margin-left: .5rem;
 }
 
 .navItem{
