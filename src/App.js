@@ -19,6 +19,7 @@ function App() {
             <Route exact path={pageurl.LANDING_PAGE_URL} 
             component={Sample} 
             />
+            
             <Route exact path={pageurl.LOGIN_PAGE_URL} 
             // component={LoginPage} 
             />
