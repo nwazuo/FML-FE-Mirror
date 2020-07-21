@@ -9,21 +9,21 @@ const Contact = () => {
       <main className="container-fluid px-0">
         <div className="top-image">
           <img className="top-image__title" src="../img/contact-text.svg" alt="" />
-          <p className="top-image__text">Feel free to contact us anytime. We will get back to you as soon as possiblle</p>
+          <p className="top-image__text">Feel free to contact us anytime. We will get back to you as soon as possible</p>
         </div>
         <section className="back-wrap">
           <div className="row container-fluid mx-auto main-wrap">
             <div className="col contact--wrap container-fluid">
               <div className="contact--wrap-1">
                 <div className="py-2 contact-item d-flex align-items-center mb-4">
-                  <img className="mx-4" src="../img/call-icon.svg" alt="" />
+                  <img className="mx-4" src="../contact/call-icon.svg" alt="" />
                   <div className="contact-item__group">
                     <p className="contact-item__title mb-0">Phone Number</p>
                     <span className="contact-item__num">(+234) 81 770 47279 </span>
                   </div>
                 </div>
                 <div className="py-2 contact-item nth-3 d-flex align-items-center mb-4">
-                  <img className="mx-4" src="../img/email-icon.svg" alt="" />
+                  <img className="mx-4" src="../contact/email-icon.svg" alt="" />
                   <div className="contact-item__group">
                     <p className="contact-item__title mb-0">Email Address</p>
                     <span className="contact-item__num">example@gmail.com</span>
@@ -32,17 +32,17 @@ const Contact = () => {
               </div>
               <div className="contact--wrap-2">
                 <div className="py-2 contact-item d-flex align-items-center mb-4">
-                  <img className="mx-4" src="../img/location-icon.svg" alt="" />
+                  <img className="mx-4" src="../contact/location-icon.svg" alt="" />
                   <div className="contact-item__group">
                     <p className="contact-item__title mb-0">Location</p>
                     <span className="contact-item__num">Plot 1, Awolowo Way, Ikeja, Lagos</span>
                   </div>
                 </div>
                 <div className="py-2 contact-item d-flex align-items-center justify-content-between px-4">
-                  <a href="#"><img className="my-1" src="../img/facebook-icon.svg" alt="" /></a>
-                  <a href="#"><img className="my-1" src="../img/instagram-icon.svg" alt="" /></a>
-                  <a href="#"><img className="my-1" src="../img/twitter-icon.svg" alt="" /></a>
-                  <a href="#"><img className="my-1" src="../img/linkedin-icon.svg" alt="" /></a>
+                  <a href="#"><img className="my-1" src="../contact/facebook-icon.svg" alt="" /></a>
+                  <a href="#"><img className="my-1" src="../contact/instagram-icon.svg" alt="" /></a>
+                  <a href="#"><img className="my-1" src="../contact/twitter-icon.svg" alt="" /></a>
+                  <a href="#"><img className="my-1" src="../contact/linkedin-icon.svg" alt="" /></a>
                 </div>
               </div>
             </div>
