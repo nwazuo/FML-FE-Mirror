@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbarcss from './Navbar.module.css';
 import {
   Collapse,
   Navbar,
@@ -6,10 +7,14 @@ import {
   Nav,
   NavItem,
   NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
   Button
 } from 'reactstrap';
-// import './styles.css';
 import { Link } from 'react-router-dom';
+import logo from "../assets/images/logo.svg"
 
 const FmlNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,33 +22,48 @@ const FmlNavbar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div >
       <Navbar color="white" className="container-fluid" light expand="lg">
+        <div className="container">
         <Link className="navbar-brand head-link" to="/"> 
-            
+            <img className=""  src={logo} alt="logo" />
         </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink> Features </NavLink>
-            </NavItem>
+          <Nav className="ml-auto" navbar>
+            <UncontrolledDropdown className={Navbarcss.navItem}  nav inNavbar>
+                <DropdownToggle nav caret>
+                  Fundraise for
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    Option 1
+                  </DropdownItem>
+                  <DropdownItem>
+                    Option 2
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Reset
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              <NavItem  className={Navbarcss.navItem}>
+                <NavLink> Invest </NavLink>
+              </NavItem>
 
-            <NavItem>
-              <NavLink> Pricing </NavLink>
-            </NavItem>
+              <NavItem  className={Navbarcss.navItem}>
+                <NavLink> About Us </NavLink>
+              </NavItem>
 
-            <NavItem>
-              <NavLink> Resources </NavLink>
-            </NavItem>
            
           </Nav>
-          <div className="ml-auto">
-            <Button className="bg-white text-dark font-weight-400" style={{border: 1 }}> Login </Button>{' '}
-            <Button  className="rounded-pill btn-info text-white "> Sign Up </Button>{' '}
+          <div className="">
+            <Button className={Navbarcss.btnfmloutline} > Sign in </Button>{' '}
+            <Button  className={Navbarcss.btnfml}> Start a campaign </Button>{' '}
           </div>
         </Collapse>
-
+        </div>
       </Navbar>
     </div>
   );

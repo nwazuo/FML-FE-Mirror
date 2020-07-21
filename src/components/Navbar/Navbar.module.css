@@ -1,0 +1,21 @@
+.btnfmloutline{
+    border: 1px solid  #FB3F5C !important;
+    color: #FB3F5C !important;
+    border-radius: 10px !important;
+    background: #ffffff !important;
+}
+
+
+.btnfml{
+    background:  #FB3F5C !important;
+    border: none !important;
+    color: #ffffff;
+    border-radius: 10px !important;
+}
+
+.navItem{
+    color: #04172A !important ;
+    margin-right: .5rem;
+    margin-left: .5rem;
+}
+
