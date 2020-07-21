@@ -3,9 +3,8 @@ import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
-
-
 import Sample from './components/pages/sample/Sample'
+import PrivacyPolicy from './components/pages/privacy/Privacy';
 
 function App() {
   return (
@@ -26,6 +25,8 @@ function App() {
             <Route exact path={pageurl.REGISTER_PAGE_URL} 
             // component={RegisterPage} 
             />
+
+            <Route exact path={pageurl.PRIVACY_POLICY} component={PrivacyPolicy} />
 
             {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
 
