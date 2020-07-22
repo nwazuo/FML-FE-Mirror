@@ -1,7 +1,7 @@
 // PUBLIC PAGES
 const LANDING_PAGE_URL = "/";
-const LOGIN_PAGE_URL = "/";
-const REGISTER_PAGE_URL = "/";
+const LOGIN_PAGE_URL = "/login";
+const REGISTER_PAGE_URL = "/signup";
 const ABOUT_US_PAGE_URL = "/";
 const CONTACT_US_PAGE_URL = "/"
 const PRIVACY_POLICY_PAGE_URL = "/"
