@@ -1,6 +1,7 @@
 import React from 'react';
 import FQACss from './FQA.module.css'
 import seach from './search.svg'
+import { Navbar,Footer } from '../../navigation/navigation';
 
 
 const FQA = () => {
@@ -36,7 +37,8 @@ const FQA = () => {
       }
    
     return(
-       
+       <>
+        <Navbar/>
         <div className={FQACss.fqa}>
             <div className={FQACss.container}>
                 <h1 className={FQACss.h1}>How can we help you</h1>
@@ -115,7 +117,8 @@ const FQA = () => {
                 <a href="/"  className={FQACss.contactBtn}>Contact us <span className={FQACss.greaterthan}>&gt;</span></a>
             </div>  </div>        
         </div>
-       
+       <Footer/>
+       </>
     )
 }
 

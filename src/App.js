@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
-import {Navbar,Footer} from './components/pages/navigation'
+// import {Navbar,Footer} from './components/pages/navigation'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs} from './components/pages/mainpages'
 import Sample from './components/pages/sample/Sample'
 
@@ -16,7 +16,7 @@ function App() {
 
       <div className="maincon">
         
-        <Navbar/>
+        {/* <Navbar/> */}
 
           <Switch>
 
@@ -46,7 +46,7 @@ function App() {
 
           </Switch>
 
-        <Footer/>
+        {/* <Footer/> */}
         
       </div>
 
