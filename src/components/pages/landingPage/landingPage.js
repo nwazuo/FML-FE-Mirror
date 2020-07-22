@@ -11,10 +11,12 @@ import campaign4 from "./img/campaign4.png";
 import campaign5 from "./img/campaign5.png";
 import campaign6 from "./img/campaign6.png";
 import testimonial from "./img/testimonial-pic.png";
+import { Navbar,Footer } from '../navigation/navigation';
 
 const LandingPage = () => {
   return (
       <div>
+        <Navbar/>
         <div className="jumbotron jumbotron px-0 px-md-4 mb-0 mb-md-4 landing-top">
           <div className="row mt-lg-5 px-2 px-md-5 mx-auto mt-5">
             <div
@@ -551,6 +553,7 @@ const LandingPage = () => {
             </form>
           </div>
         </div>
+        <Footer/>
       </div>
   );
 };
