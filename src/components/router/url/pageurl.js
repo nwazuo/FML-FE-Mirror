@@ -5,7 +5,7 @@ const REGISTER_PAGE_URL = "/signup";
 const ABOUT_US_PAGE_URL = "/";
 const CONTACT_US_PAGE_URL = "/"
 const PRIVACY_POLICY_PAGE_URL = "/privacy"
-const FAQ_PAGE_URL = "/"
+const FAQ_PAGE_URL = "/FAQ"
 const TC_PAGE_URL = "/terms-and-conditions"
 const PAGE_404 = "/404"
 
