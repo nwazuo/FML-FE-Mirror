@@ -1,17 +1,17 @@
 .navbar-light .navbar-nav .nav-link{
-    color: #04172A;
+    color: #04172A !important;
 }
 
 .dropdown-toggle::after{
-    vertical-align: 0.055em;
+    vertical-align: 0.055em !important;
 }
 
 .navbar-light .navbar-nav .nav-link{
-    color: #04172A;
+    color: #04172A !important;
 }
 
 .dropdown-toggle::after{
-    vertical-align: 0.055em;
+    vertical-align: 0.055em !important;
 }
 
 li.nav-item{
@@ -22,7 +22,7 @@ li.nav-item{
 }
 
 .navbar .container-fluid{
-    width: 100%;
+    width: 100% !important;
 }
 
 /*remove bootstrap default svg background */

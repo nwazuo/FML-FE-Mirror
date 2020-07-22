@@ -1,37 +1,60 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
-import pageurl from './components/router/url/pageurl';
-
+import pageurl from './components/router/url/pageurl'
+// import {Navbar,Footer} from './components/pages/navigation'
+import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,
+  // LandingPage
+} from './components/pages/mainpages'
 import Sample from './components/pages/sample/Sample';
-import LoginPage from './components/pages/login/login';
-import SignupPage from './components/pages/signup/signup';
-import Terms from './components/pages/terms/terms';
 
 function App() {
+
   return (
+        
     <Router basename={process.env.PUBLIC_URL}>
-      {/* header here */}
 
-      <Switch>
-        <Route exact path={pageurl.LANDING_PAGE_URL} component={Sample} />
+      <div className="maincon">
+        
+        {/* <Navbar/> */}
 
-        <Route exact path={pageurl.LOGIN_PAGE_URL} component={LoginPage} />
+          <Switch>
 
-        <Route exact path={pageurl.SIGNUP_PAGE_URL} component={SignupPage} />
+              <ScrollIntoView>
+              
+                <Route exact path={pageurl.LANDING_PAGE_URL} component={Sample} />
+                
+                <Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
 
-        <Route exact path={pageurl.TERMS_CONDITION_URL} component={Terms} />
+                <Route exact path={pageurl.REGISTER_PAGE_URL} component={SignUp} />
 
-        {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
+                <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
-        {/* <Route path="*" component={Page404}/> */}
+                <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
 
-        {/* <Route component={Page404}/> */}
-      </Switch>
+                <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
-      {/* footer here */}
-    </Router>
+                <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
+              
+              </ScrollIntoView>
+
+              {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
+
+              {/* <Route path="*" component={Page404}/> */}
+                      
+              {/* <Route component={Page404}/> */}
+
+          </Switch>
+
+        {/* <Footer/> */}
+        
+      </div>
+
+   </Router>
+
+
   );
 }
 
