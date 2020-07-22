@@ -8,7 +8,7 @@ ADD . /app
 WORKDIR /app
 
 RUN npm install 
-RUN npm install serve
+RUN npm install -g serve
 RUN npm run build 
 
 #expose a port to allow external access
