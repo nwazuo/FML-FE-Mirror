@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/bootstrap.css';
 import loginCss from './login.css';
 import googleImg from '../../assets/images/googleicon.svg';
@@ -22,10 +23,28 @@ const Login = () => {
   const onChange = (event) => {
     dispatch({ field: event.target.name, value: event.target.value });
   };
-  const onSubmit = (event) => {
-    event.preventDefault();
-  };
   const { email, password } = state;
+
+  const onSubmit = (event) => {
+    let validMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const errorEmail = document.getElementById('errorEmail');
+    const errorPassword = document.getElementById('errorPassword');
+    event.preventDefault();
+
+    if (email === '' || email === null || !email.match(validMail)) {
+      errorEmail.textContent = '* Please input a valid email.';
+      setTimeout(() => {
+        errorEmail.textContent = '';
+      }, 2000);
+    }
+    if (password < 6) {
+      errorPassword.textContent =
+        '* Incorrect password, must be at least 6 characters.';
+      setTimeout(() => {
+        errorPassword.textContent = '';
+      }, 2000);
+    }
+  };
 
   return (
     <>
@@ -100,10 +119,10 @@ const Login = () => {
           </div>
           <p className="account-info-text text-center py-4">
             Don't have an account?
-            <a href="signup.html" className="sign-up-link">
+            <Link to="/signup" className="sign-up-link">
               {' '}
               Sign up
-            </a>
+            </Link>
           </p>
         </form>
 

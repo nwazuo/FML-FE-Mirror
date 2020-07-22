@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/bootstrap.css';
 import './signup.css';
 import googleImg from '../../assets/images/googleicon.svg';
@@ -18,14 +19,31 @@ function reducer(state, { field, value }) {
 }
 const Signup = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const { email, password } = state;
   const onChange = (event) => {
     dispatch({ field: event.target.name, value: event.target.value });
   };
   const onSubmit = (event) => {
+    let validMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const errorEmail = document.getElementById('errorEmail');
+    const errorPassword = document.getElementById('errorPassword');
     event.preventDefault();
+
+    if (email === '' || email === null || !email.match(validMail)) {
+      errorEmail.textContent = '* Please input a valid email.';
+      setTimeout(() => {
+        errorEmail.textContent = '';
+      }, 2000);
+    }
+    if (password < 6) {
+      errorPassword.textContent =
+        '* Incorrect password, must be at least 6 characters.';
+      setTimeout(() => {
+        errorPassword.textContent = '';
+      }, 2000);
+    }
   };
-  const { email, password } = state;
+
   return (
     <>
       <Navbar />
@@ -122,9 +140,9 @@ const Signup = () => {
 
           <p className="account-info-text text-center py-4 mb-md-3">
             Already have an account?{' '}
-            <a href="login.html" style={{ color: '#fb3f5c' }}>
+            <Link to="/login" style={{ color: '#fb3f5c' }}>
               Sign In
-            </a>
+            </Link>
           </p>
 
           {/* <div id="error" className="error p-1 "></div>
