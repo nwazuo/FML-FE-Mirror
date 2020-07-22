@@ -7,7 +7,9 @@ ADD . /app
 # Sets the current working directory for subsequent instructions
 WORKDIR /app
 
-RUN npm install && npm install -g serve
+RUN npm install 
+RUN npm install serve
+RUN npm run build 
 
 #expose a port to allow external access
 EXPOSE 5000
