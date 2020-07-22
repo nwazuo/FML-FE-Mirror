@@ -5,6 +5,7 @@ import './signup.css';
 import googleImg from '../../../assets/images/googleicon.svg';
 import signupBg from '../../../assets/images/signup-bg.png';
 import pageurl from '../../../router/url/pageurl'
+import { Navbar,Footer } from '../../navigation/navigation';
 
 const initialState = {
   email: '',
@@ -46,6 +47,7 @@ const Signup = () => {
 
   return (
     <>
+    <Navbar/>
       <main className="main-content d-sm-flex">
         <form
           className="login-box p-md-5 p-2"
@@ -160,6 +162,7 @@ const Signup = () => {
           <img src={signupBg} className="login-img" alt="login FundMyLaptop" />
         </div>
       </main>
+      <Footer/>
     </>
   );
 };

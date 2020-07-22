@@ -6,6 +6,7 @@ import trusteeImg1 from '../../../assets/images/image 8.png';
 import trusteeImg2 from '../../../assets/images/image 12.png';
 import trusteeImg3 from '../../../assets/images/image 9.png';
 import RecommendBox from '../user-profile/recommend-box/recommend-box';
+import { Navbar, Footer } from '../../navigation/navigation';
 
 const breadcrumbLinks = [
     {link: '/user-profile', label: 'Profile'},
@@ -29,7 +30,9 @@ const trustees = [
 
 const Recommendations = (props) => {
     return(
-        <div className={['container', styles.Recommendations].join(' ')}>
+        <React.Fragment>
+            <Navbar />
+            <div className={['container', styles.Recommendations].join(' ')}>
             <Breadcrumb>{breadcrumbLinks}</Breadcrumb>
 
             <div>
@@ -55,6 +58,8 @@ const Recommendations = (props) => {
                 </div>
             </div>       
         </div>
+        <Footer />
+        </React.Fragment>
     );
 }
 

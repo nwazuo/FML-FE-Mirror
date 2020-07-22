@@ -1,6 +1,7 @@
 import React from "react";
 import '../../../assets/bootstrap.css';
 import { Link } from 'react-router-dom';
+import { Navbar, Footer } from '../../navigation/navigation'
 import styles from "./user-profile.module.css";
 import Breadcrumb from "./breadcrumb/breadcrumb";
 import ProfileInfo from "./profile-info/profile-info";
@@ -25,7 +26,9 @@ const trustees = [
 
 const UserProfile = () => {
     return (
-        <div className={['container', styles.UserProfile].join(' ')}>
+        <React.Fragment>
+            <Navbar />
+            <div className={['container', styles.UserProfile].join(' ')}>
             <Breadcrumb>{breadcrumbLinks}</Breadcrumb>
             <h1 className="font-weight-bold">User Profile</h1>
             <div className="row">
@@ -105,7 +108,9 @@ const UserProfile = () => {
                     })}
                 </div>
             </div>
-        </div>
+            </div>
+            <Footer />
+        </React.Fragment>
     )
 }
 
