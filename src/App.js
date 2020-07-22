@@ -7,7 +7,7 @@ import {Navbar,Footer} from './components/pages/navigation'
 import {Login,SignUp,Terms, PrivacyPage} from './components/pages/mainpages'
 import FQA from './components/pages/fqa/FQA'
 
-import Sample from './components/pages/sample/Sample'
+import LandingPage from './components/pages/landingPage/landingPage'
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
 
           <Switch>
               
-                <Route exact path={pageurl.LANDING_PAGE_URL} component={Sample} />
+                <Route exact path={pageurl.LANDING_PAGE_URL} component={LandingPage} />
                 
                 <Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
 
