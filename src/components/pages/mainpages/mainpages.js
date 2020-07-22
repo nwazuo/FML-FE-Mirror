@@ -4,7 +4,8 @@ import Terms from './terms/terms';
 import PrivacyPage from './privacy/Privacy'
 import FAQ from './fqa/FQA'
 import ContactUs from './contact/Contact'
+import LandingPage from './landingPage/landingPage'
 
 export {
-    Login, SignUp,Terms, PrivacyPage,FAQ,ContactUs
+    Login, SignUp,Terms, PrivacyPage,FAQ,ContactUs,LandingPage
 }

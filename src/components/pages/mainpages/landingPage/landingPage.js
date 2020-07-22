@@ -11,7 +11,7 @@ import campaign4 from "./img/campaign4.png";
 import campaign5 from "./img/campaign5.png";
 import campaign6 from "./img/campaign6.png";
 import testimonial from "./img/testimonial-pic.png";
-import { Navbar,Footer } from '../navigation/navigation';
+import { Navbar,Footer } from '../../navigation/navigation';
 
 const LandingPage = () => {
   return (

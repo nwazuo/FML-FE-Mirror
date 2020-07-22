@@ -5,8 +5,7 @@ import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 // import {Navbar,Footer} from './components/pages/navigation'
-import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs} from './components/pages/mainpages'
-import LandingPage from './components/pages/landingPage/landingPage'
+import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,LandingPage} from './components/pages/mainpages'
 
 function App() {
 
