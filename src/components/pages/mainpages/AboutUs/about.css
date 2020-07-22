@@ -39,7 +39,8 @@
   p {
     font-family: "DM Sans", sans-serif;
     font-size: 20px;
-    padding-top: 20px;;
+    padding-top: 20px;
+    line-height: normal;
   }
 
   .container1 {
