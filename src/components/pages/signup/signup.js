@@ -129,7 +129,10 @@ const Signup = () => {
             <hr />
           </div>
           <div>
-            <a href="#" className="form-control login-btn reg-btn">
+            <a
+              href="#"
+              className="form-control login-btn btn-outline-primary reg-btn"
+            >
               <img className="pr-3" src={googleImg} alt="" />
               Login with Google
             </a>
