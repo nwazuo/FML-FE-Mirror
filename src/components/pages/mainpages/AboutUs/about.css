@@ -1,0 +1,16 @@
+* {
+    font-family: 'DM Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+.secondary-text {
+    color: #FB3F5C;
+    
+}
+.pcolor {
+    color: #747474 !important; 
+}
+.pcolor1 {
+    color: #000000 !important;
+}
