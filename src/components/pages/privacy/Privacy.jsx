@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Privacy from './Privacy.module.css';
-//import PrivacyBg from '../../assets/images/privacy-bg.png'
+import FmlNavbar from '../../Navbar';
+import FmlFooter from '../../Footer';
 
 class PrivacyPage extends Component {
 
@@ -11,6 +12,7 @@ class PrivacyPage extends Component {
     render() {
         return (
             <>
+                <FmlNavbar />
                 <div className={[Privacy.main_bg, Privacy.custom__px_main, Privacy.custom__py_main].join(' ')}>
                     <h1 className={Privacy.text_light}>PRIVACY POLICY</h1>
                 </div>
@@ -25,11 +27,17 @@ class PrivacyPage extends Component {
                             We use your Personal Information only for providing and improving the Site. By using the Site, you agree to the collection 
                             and use of information in accordance with this policy.
                         </p>
+
+                        {/** Information terms */}
+
                         <h6>Information Collection And Use</h6>
                         <p>
                             While using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or 
                             identify you. Personally identifiable information may include, but is not limited to your name ("Personal Information").
                         </p>
+
+                        {/** Log data terms */}
+
                         <h6>Log Data</h6>
                         <p>
                             Like many site operators, we collect information that your browser sends whenever you visit our Site ("Log Data").
@@ -42,6 +50,9 @@ class PrivacyPage extends Component {
                             The Log Data section is for businesses that use analytics or tracking services in websites or apps, like Google Analytics. 
                             For the full disclosure section, create your own Privacy Policy.
                         </p>
+
+                        {/** Communications terms */}
+
                         <h6>Communications</h6>
                         <p>
                             We may use your Personal Information to contact you with newsletters, marketing or promotional materials and other information 
@@ -51,6 +62,9 @@ class PrivacyPage extends Component {
                             The Communications section is for businesses that may contact users via email (email newsletters) or other methods. For the 
                             full disclosure section, create your own Privacy Policy.
                         </p>
+
+                        {/** Cookies terms */}
+
                         <h6>Cookies</h6>
                         <p>
                             Cookies are files with small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser 
@@ -60,12 +74,18 @@ class PrivacyPage extends Component {
                             Like many sites, we use "cookies" to collect information. You can instruct your browser to refuse all cookies or to indicate when 
                             a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Site.
                         </p>
+
+                        {/** Security terms */}
+
                         <h6>Security</h6>
                         <p>
                             The security of your Personal Information is important to us, but remember that no method of transmission over the Internet, 
                             or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to protect your Personal 
                             Information, we cannot guarantee its absolute security.
                         </p>
+
+                        {/** Changes terms */}
+
                         <h6>Changes To This Privacy Policy</h6>
                         <p>
                             This Privacy Policy is effective as of (add date) and will remain in effect except with respect to any changes in its provisions 
@@ -80,12 +100,16 @@ class PrivacyPage extends Component {
                             If we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided 
                             us, or by placing a prominent notice on our website.
                         </p>
+
+                        {/** Contact terms */}
+
                         <h6>Contact Us</h6>
                         <p>
                             If you have any questions about this Privacy Policy, please contact us.
                         </p>
                     </div>
                 </div>
+                <FmlFooter />
             </>
         )
     }
