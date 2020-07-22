@@ -22,3 +22,4 @@ const pageurl = {
 }
 
 export default pageurl;
+
