@@ -87,7 +87,7 @@ const UserProfile = () => {
                     <h2 className="font-weight-bold">Recommendations</h2>
                     <Link className={styles.RecommendLink} to="/recommendations">
                         See All
-                        <svg width=".7em" height=".7em" viewBox="0 0 16 16" class="bi bi-chevron-right ml-1 mb-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <svg width=".7em" height=".7em" viewBox="0 0 16 16" className="bi bi-chevron-right ml-1 mb-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" strokeWidth="10" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
                             </path>
                         </svg>
