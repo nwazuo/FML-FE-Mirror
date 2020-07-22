@@ -7,42 +7,38 @@ import pageurl from '../../../router/url/pageurl'
 
 const Footer = () => {
     return (
-     <>
+    <>
         <footer className="bg-fml-primary">
-        <div className="container">
+            <div className="container">
                 <div className="row justify-content-between mobile-footer ">
                     <div className="mobile-center">
                         <ul className="list-unstyled">
+                            
                             <li className="nav-item">
                                 <Link className="navbar-brand" to="#">
                                     <img src={footerLogo} alt="" />
                                 </Link>
                             </li>
 
-                            <li className="nav-item"><Link to=""> Address </Link></li>
-                            <li className="nav-item"><Link to=""> Email Address</Link></li>
-                            <li className="nav-item"><Link to=""> Phone </Link></li>
+                            <li className="nav-item"><Link to="">Address </Link></li>
+                            <li className="nav-item"><Link to="">Email Address</Link></li>
+                            <li className="nav-item"><Link to="">Phone </Link></li>
                             <ul className="row list-unstyled m-0">
                                 <li className="nav-item"><Link to="">  <img src="../../assets/images/Vector (2).svg" alt=""/> </Link></li> 
                                 <li className="nav-item"><Link to="">  <img src="../../assets/images/Vector (3).svg" alt=""/> </Link></li> 
                                 <li className="nav-item"><Link to="">  <img src="../../assets/images/Vector (4).svg" alt=""/> </Link></li> 
-                            
                             </ul>
+
                         </ul>
                     </div>
 
                     <div className="mobile-center">
                         <ul className="list-unstyled">
-                            <li className="nav-item">
-                            <Link className="navbar-brand" to="#">
-                                RESOURCES
-                                </Link>
-                            </li>
-
+                            <li className="nav-item"><Link className="navbar-brand" to="#">RESOURCES</Link></li>
                             <li className="nav-item"><Link to=""> Why choose FundMyLaptop </Link></li>
                             <li className="nav-item"><Link to=""> How P2P Lending works</Link></li>
                             <li className="nav-item"><Link to=""> About FundMyLaptop </Link></li>
-                            <li className="nav-item"><Link to=""> Contact Us </Link></li>
+                            <li className="nav-item"><Link to={pageurl.CONTACT_US_PAGE_URL}> Contact Us </Link></li>
                         </ul>
                     </div>
                 </div>
