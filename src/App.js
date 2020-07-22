@@ -5,10 +5,10 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import pageurl from './components/router/url/pageurl'
 import {Navbar,Footer} from './components/pages/navigation'
 import {Login,SignUp,Terms} from './components/pages/mainpages'
-
 import Sample from './components/pages/sample/Sample'
 
 function App() {
+
   return (
 
     <Router basename={process.env.PUBLIC_URL}>
