@@ -15,13 +15,15 @@ nav .login {
   font-size: 24px;
 }
 
-a {
+.atag {
   color: inherit;
 }
-a:hover {
+
+.atag:hover {
   text-decoration: none;
   color: #fb3f5c;
 }
+
 .form-control:focus {
   color: #1c7ed6 important;
   border-color: #1c7ed6 !important;
@@ -126,7 +128,7 @@ a:hover {
     margin-left: 14px;
   }
   .main-content {
-    height: 100vh;
+    /* height: 100vh; */
   }
 }
 

@@ -16,8 +16,7 @@ function reducer(state, { field, value }) {
     [field]: value,
   };
 }
-
-const Signup = (props) => {
+const Signup = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { email, password } = state;
   const onChange = (event) => {
@@ -74,9 +73,7 @@ const Signup = (props) => {
               value={email}
             />
             <p
-              id="errorEmail"
-              className="error text-danger text-center text-sm-left"
-            ></p>
+              id="errorEmail" className="error text-danger text-center text-sm-left"></p>
           </div>
           <div className="form-group">
             <input
@@ -107,10 +104,15 @@ const Signup = (props) => {
                 for="invalidCheck"
               >
                 I agree to the{' '}
-                {/* eslint-disable-next-line */}
-                <a href="javascript:void(0)" onClick={props.history.push(pageurl.TC_PAGE_URL)} style={{ color: 'blue' }}>
+                
+                <Link to={pageurl.TC_PAGE_URL} style={{ color: 'blue' }} className="atag">
                   Terms Policy Conditions
-                </a>
+                </Link>
+                
+                {/* <a href="" style={{ color: 'blue' }}>
+                  Terms Policy Conditions
+                </a> */}
+
               </label>
               <div className="invalid-feedback">
                 You must agree before submitting.
@@ -130,23 +132,33 @@ const Signup = (props) => {
             <hr />
           </div>
           <div>
-           {/* eslint-disable-next-line */}
-            <a href="javascript:void(0)" className="form-control login-btn reg-btn btn-outline-fml-secondary">
+
+          <Link to="" className="form-control login-btn reg-btn btn-outline-fml-secondary" >
               <img className="pr-3" src={googleImg} alt="" />
-                Login with Google
-            </a>
+              Login with Google
+          </Link>
+            
+          {/* <a
+              href="#"
+              className="form-control login-btn reg-btn btn-outline-fml-secondary atag"
+          >
+              <img className="pr-3" src={googleImg} alt="" />
+              Login with Google
+          </a> */}
+          
           </div>
 
           <p className="account-info-text text-center py-4 mb-md-3">
             Already have an account?{' '}
-            <Link to={pageurl.LOGIN_PAGE_URL} style={{ color: '#fb3f5c' }}>Sign In</Link>
+            <Link to={pageurl.LOGIN_PAGE_URL} style={{ color: '#fb3f5c' }}>
+              Sign In
+            </Link>
           </p>
         </form>
 
         <div className="login-img-box d-none d-md-block">
           <img src={signupBg} className="login-img" alt="login FundMyLaptop" />
         </div>
-
       </main>
     </>
   );

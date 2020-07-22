@@ -126,7 +126,7 @@ a:hover {
     margin-left: 14px !important;
   }
   .main-content {
-    height: 100vh !important;
+    /* height: 100vh !important; */
   }
 }
 

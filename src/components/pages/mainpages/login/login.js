@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,withRouter } from 'react-router-dom';
 import '../../../assets/bootstrap.css';
 // import loginCss from './login.css';
 import googleImg from '../../../assets/images/googleicon.svg';
@@ -128,4 +128,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default withRouter(Login);
