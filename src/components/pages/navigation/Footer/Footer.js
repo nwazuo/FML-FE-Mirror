@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css'
-import '../assets/bootstrap.css';
-import footerLogo from '../assets/images/footer-logo.svg'
+import '../../../assets/bootstrap.css';
+import footerLogo from '../../../assets/images/footer-logo.svg'
 import { Link } from 'react-router-dom';
 
-const FmlFooter = () => {
+const Footer = () => {
     return (
      <>
         <footer className="bg-fml-primary">
@@ -61,4 +61,4 @@ const FmlFooter = () => {
     )
 }
 
-export default FmlFooter;
+export default Footer;

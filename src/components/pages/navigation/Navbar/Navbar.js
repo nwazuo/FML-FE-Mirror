@@ -1,13 +1,12 @@
 import React from 'react';
 import './style.css';
-import '../assets/bootstrap.css';
+import '../../../assets/bootstrap.css';
+import { Link, withRouter } from 'react-router-dom';
+import logo from "../../../assets/images/logo.svg"
+import pageurl from '../../../router/url/pageurl'
 
-import { Link } from 'react-router-dom';
-import logo from "../assets/images/logo.svg"
 
-
-const FmlNavbar = (props) => {
-
+const Navbar = (props) => {
   return (
     <> 
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
@@ -38,15 +37,17 @@ const FmlNavbar = (props) => {
                 </li>
               
                 <li className="nav-item ">
-                    <Link className="nav-link" to="#">Invest <span className="sr-only">(current)</span></Link>
+                    <Link className="nav-link" 
+                        to="#"
+                        property>Invest <span className="sr-only">(current)</span></Link>
                 </li>
 
                 <li className="nav-item ">
-                    <Link className="nav-link" to="#">About Us <span className="sr-only">(current)</span></Link>
+                    <Link className="nav-link" to={pageurl.ABOUT_US_PAGE_URL}>About Us <span className="sr-only">(current)</span></Link>
                 </li>
 
                 <li className="nav-item ">
-                    <Link className="btn btn-outline-fml-secondary" to="#">Sign in <span className="sr-only">(current)</span></Link>
+                    <Link className="btn btn-outline-fml-secondary" to={pageurl.LOGIN_PAGE_URL}>Sign in <span className="sr-only">(current)</span></Link>
                 </li>
 
                 <li className="nav-item ">
@@ -58,9 +59,8 @@ const FmlNavbar = (props) => {
             </div>
         </div>
       </nav>
-    
     </>
   );
 }
 
-export default FmlNavbar;
+export default withRouter(Navbar);

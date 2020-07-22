@@ -3,39 +3,45 @@ import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
+import {Navbar,Footer} from './components/pages/navigation'
 
 
 import Sample from './components/pages/sample/Sample'
 
 function App() {
   return (
+
     <Router basename={process.env.PUBLIC_URL}>
 
-      {/* header here */}
+      <div className="maincon">
 
-      <Switch>
-          
-            <Route exact path={pageurl.LANDING_PAGE_URL} 
-            component={Sample} 
-            />
-            
-            <Route exact path={pageurl.LOGIN_PAGE_URL} 
-            // component={LoginPage} 
-            />
+        <Navbar/>
 
-            <Route exact path={pageurl.REGISTER_PAGE_URL} 
-            // component={RegisterPage} 
-            />
+          <Switch>
+              
+                <Route exact path={pageurl.LANDING_PAGE_URL} 
+                component={Sample} 
+                />
+                
+                <Route exact path={pageurl.LOGIN_PAGE_URL} 
+                // component={LoginPage} 
+                />
 
-            {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
+                <Route exact path={pageurl.REGISTER_PAGE_URL} 
+                // component={RegisterPage} 
+                />
 
-            {/* <Route path="*" component={Page404}/> */}
-                  
-            {/* <Route component={Page404}/> */}
+                {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
 
-      </Switch>
+                {/* <Route path="*" component={Page404}/> */}
+                      
+                {/* <Route component={Page404}/> */}
 
-      {/* footer here */}
+          </Switch>
+
+        <Footer/>
+
+      </div>
 
    </Router>
 
