@@ -6,9 +6,13 @@ import pageurl from '../../../router/url/pageurl';
 import Image1 from './img/Rectangle 593.png';
 import Image2 from './img/Rectangle 594.png';
 import Image3 from './img/Rectangle 597.png';
+import Header from '../../navigation/Navbar/Navbar'
+import Footer from '../../navigation/Footer/Footer'
 
 const AboutUs = () => {
   return (
+      <>
+      <Header />
     <div className="container">
         <ol className="f-12 mt-3 ml-sm-3 ml-1 breadcrumb" style={{ background: 'none' }}>
             <li className="breadcrumb-item">
@@ -89,6 +93,8 @@ const AboutUs = () => {
             </div>
         </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
