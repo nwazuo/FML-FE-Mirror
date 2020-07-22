@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Navbar,Footer} from './components/pages/navigation'
-import {Login,SignUp,Terms} from './components/pages/mainpages'
+import {Login,SignUp,Terms, PrivacyPage} from './components/pages/mainpages'
 
 import Sample from './components/pages/sample/Sample'
 
@@ -26,6 +26,8 @@ function App() {
                 <Route exact path={pageurl.REGISTER_PAGE_URL} component={SignUp} />
 
                 <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
+
+                <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
 
                 {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
 
