@@ -1,11 +1,12 @@
 import React from 'react';
 import './terms.css';
-import Footer from '../../Footer/FmlFooter'
-import Navbar from '../../Navbar/FmlNavbar'
+// import Footer from '../../Footer/FmlFooter'
+// import Navbar from '../../Navbar/FmlNavbar'
+
 const Terms = () => {
     return(
     <div>
-    <Navbar />
+    {/* <Navbar /> */}
     <div className="container-fluid black_bg">
     </div>
     <div className="container shift">
@@ -50,7 +51,7 @@ const Terms = () => {
         </div>
         </div>
       </div>
-    <Footer />
+    {/* <Footer /> */}
     </div>
     )
 }
