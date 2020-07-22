@@ -1,23 +1,27 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Navbar,Footer} from './components/pages/navigation'
-import {Login,SignUp,Terms,AboutUs} from './components/pages/mainpages'
-
-import Sample from './components/pages/sample/Sample'
+// import {Navbar,Footer} from './components/pages/navigation'
+import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs, AboutUs} from './components/pages/mainpages'
+import Sample from './components/pages/sample/Sample';
 
 function App() {
-  return (
 
+  return (
+        
     <Router basename={process.env.PUBLIC_URL}>
 
       <div className="maincon">
-
-        <Navbar/>
+        
+        {/* <Navbar/> */}
 
           <Switch>
+
+              <ScrollIntoView>
               
                 <Route exact path={pageurl.LANDING_PAGE_URL} component={Sample} />
                 
@@ -30,18 +34,28 @@ function App() {
                 <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
 
                 {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
+                <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
 
-                {/* <Route path="*" component={Page404}/> */}
+                <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
+
+                <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
+              
+              </ScrollIntoView>
+
+              {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
+
+              {/* <Route path="*" component={Page404}/> */}
                       
-                {/* <Route component={Page404}/> */}
+              {/* <Route component={Page404}/> */}
 
           </Switch>
 
-        <Footer/>
-
+        {/* <Footer/> */}
+        
       </div>
 
    </Router>
+
 
   );
 }
