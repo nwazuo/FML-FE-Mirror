@@ -129,10 +129,7 @@ const Signup = () => {
             <hr />
           </div>
           <div>
-            <a
-              href="#"
-              className="form-control login-btn reg-btn btn-fml-outline"
-            >
+            <a href="#" className="form-control login-btn reg-btn">
               <img className="pr-3" src={googleImg} alt="" />
               Login with Google
             </a>
@@ -144,9 +141,6 @@ const Signup = () => {
               Sign In
             </Link>
           </p>
-
-          {/* <div id="error" className="error p-1 "></div>
-            </div> */}
         </form>
 
         <div className="login-img-box d-none d-md-block">
