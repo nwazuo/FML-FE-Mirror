@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.css'
-import '../assets/bootstrap.css';
-import footerLogo from '../assets/images/footer-logo.svg'
+import '../../../assets/bootstrap.css';
+import footerLogo from '../../../assets/images/footer-logo.svg'
 import { Link } from 'react-router-dom';
+import pageurl from '../../../router/url/pageurl'
 
-const FmlFooter = () => {
+const Footer = () => {
     return (
      <>
         <footer className="bg-fml-primary">
@@ -50,9 +51,9 @@ const FmlFooter = () => {
                 <div className="row justify-content-between m-0 mob-class">
                     <p> 2020 &copy; Copyrights All rights reserved </p>
                     <ul className="list-unstyled d-md-inline-flex">
-                        <li className="foot-item"><Link to=""> FAQ</Link></li>
-                        <li className="foot-item"><Link to=""> Privacy Policy</Link></li>
-                        <li className="foot-item"><Link to=""> Terms and Conditions</Link></li>
+                        <li className="foot-item"><Link to={pageurl.FAQ_PAGE_URL}> FAQ</Link></li>
+                        <li className="foot-item"><Link to={pageurl.PRIVACY_POLICY_PAGE_URL}> Privacy Policy</Link></li>
+                        <li className="foot-item"><Link to={pageurl.TC_PAGE_URL}> Terms and Conditions</Link></li>
                     </ul>
                 </div>
             </div>
@@ -61,4 +62,4 @@ const FmlFooter = () => {
     )
 }
 
-export default FmlFooter;
+export default Footer;
