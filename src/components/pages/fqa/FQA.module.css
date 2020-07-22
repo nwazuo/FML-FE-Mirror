@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'DMSans-Regular';
+    src: url('/assets/fonts/DM-Sans/DMSans-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: 'DMSans-Bold';
+    src: url('/assets/fonts/DM-Sans/DMSans-Bold.ttf');
+  }
+  
+  @font-face {
+    font-family: 'DMSans-Medium';
+    src: url('/assets/fonts/DM-Sans/DMSans-Medium.ttf');
+  }
+  
+  body {
+    font-family: 'DMSans-Medium'!important;
+  }  
 .container {
     background: #FCFDFD;
     padding: 3rem 0;
@@ -12,6 +30,9 @@
 }
 button {
     outline: none!important;
+}
+.container1 {
+    padding-left: 2rem;
 }
 .h2 {
     font-size: 1.3rem;
