@@ -6,7 +6,7 @@ services:
     build: .
     ports:
       - "5000:5000"
-    env_file: .env
+    # env_file: .env
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
