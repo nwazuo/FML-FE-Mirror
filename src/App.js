@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Navbar,Footer} from './components/pages/navigation'
-import {Login,SignUp,Terms, PrivacyPage} from './components/pages/mainpages'
+import {Login,SignUp,Terms, PrivacyPage, LoanRequest} from './components/pages/mainpages'
 import FQA from './components/pages/fqa/FQA'
 
 import Sample from './components/pages/sample/Sample'
@@ -29,6 +29,8 @@ function App() {
                 <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
                 <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
+
+                <Route exact path={pageurl.LOAN_REQUEST_PAGE_URL} component={LoanRequest} />
 
                 <Route exact path={pageurl.FQA_PAGE_URL} component={FQA} />
 

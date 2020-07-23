@@ -7,6 +7,7 @@ const CONTACT_US_PAGE_URL = "/"
 const PRIVACY_POLICY_PAGE_URL = "/privacy"
 const FAQ_PAGE_URL = "/FAQ"
 const TC_PAGE_URL = "/terms-and-conditions"
+const LOAN_REQUEST_PAGE_URL = "/loan-request"
 const PAGE_404 = "/404"
 
 const pageurl = {
@@ -18,6 +19,7 @@ const pageurl = {
     PRIVACY_POLICY_PAGE_URL,
     FAQ_PAGE_URL,
     TC_PAGE_URL,
+    LOAN_REQUEST_PAGE_URL,
     PAGE_404
 }
 
