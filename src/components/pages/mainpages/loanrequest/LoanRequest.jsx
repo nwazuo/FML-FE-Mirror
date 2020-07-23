@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import '../../../assets/bootstrap.css';
 import './LoanRequest.scss';
 import PlusIcon from '../../../assets/images/plus.svg';
-import { DashboardNavbar, Footer } from '../../navigation/navigation';
+import { Footer } from '../../navigation/navigation';
 
 class LoanRequest extends Component {
     render() {
         return (
             <section>
-                <DashboardNavbar />
+                {/* <DashboardNavbar /> */}
                 <div className='loan-wrapper'>
                     <span>Dashboard</span>
                     <form id="loanRequest">
@@ -17,6 +17,7 @@ class LoanRequest extends Component {
                                 <div className='d-flex flex-column align-items-center upload'>
                                     <h4>Upload a Picture</h4>
                                     <p>Click button to upload a picture of yourself</p>
+                                    {/* eslint-disable-next-line */}
                                     <a href="">Browse</a>
                                     <p>File type: Jpg, Png</p>
                                     <p>File size: not more than 2MB</p>
