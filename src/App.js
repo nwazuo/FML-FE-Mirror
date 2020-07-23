@@ -17,7 +17,7 @@ function App() {
 
                 <Route exact path={pageurl.LANDING_PAGE_URL} component={LandingPage} />
 
-                <Route exact path={pageurl.COMING_SOON_URL} component={LandingPage} />
+                <Route exact path={pageurl.COMING_SOON_URL} component={ComingSoon} />
                 
                 <Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
 
