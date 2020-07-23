@@ -6,28 +6,25 @@ const renderPage = (Component,props) =>{
     return <Route render = {() => <Component {...props} />}/>
 }
 
-// const reDirect=(props,page)=> {
-//     return <Redirect to={
-//         {
-//             pathname: page,
-//             state: {
-//                 from: props.location
-//             }
-//         }
-//     }/> 
-// }
+const userAuthTest = {
+    isAuthenticated : false,
+    authenticate(cb){
+        this.isAuthenticated = true;
+        setTimeout(cb,100);
+    },
+    signout(cb){
+        this.isAuthenticated = false;
+        setTimeout(cb,100);
+    }
+}
 
 const ProtectedRoute = ({component: Component,history,...rest}) => {
-
-
     return(
-    
         <Route {...rest} render={       
             (props) => {
-                return renderPage(Component,props);                    
+                return userAuthTest.isAuthenticated ? renderPage(Component,props) : <Redirect to={{pathname: pageurl.LOGIN_PAGE_URL,state: {from: props.location}}} />
             }
-        } />
-    
+        }/>
     )
 }
 
