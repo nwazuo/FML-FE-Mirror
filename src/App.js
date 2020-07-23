@@ -35,7 +35,7 @@ function App() {
 
                 <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
-                <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/>
+                {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
                 {/* <Route exact path={pageurl.PAGE_404} component={Page404}/> */}
                         
