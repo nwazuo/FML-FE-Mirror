@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,700&display=swap");
+
+:root {
+  --blue: #1f3b84;
+  --lightblue: #6c63ff;
+  --red: #fb3f5c;
+}
+
+.adminDashboard h5 {
+  font-size: calc(13px + (24 - 13) * ((100vw - 320px) / (1600 - 320)));
+  line-height: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.adminDashboard .custom__bg-dark {
+  background: #04172a;
+}
+
+.adminDashboard .custom__bg-white-50 {
+  background: #e5e5e5;
+}
+
+.adminDashboard .custom__outline {
+  border: 1px solid #b3b3b3;
+}
+
+.adminDashboard .no-border:focus,
+.adminDashboard .no-border:active,
+.adminDashboard .custom__outline:focus,
+.adminDashboard .custom__outline:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.adminDashboard .status__card {
+  background: #ffffff;
+  box-shadow: 1px 2px 4px rgba(214, 217, 223, 0.25);
+  border-radius: 10px;
+  border-bottom: 25px solid var(--lightblue);
+}
+
+.adminDashboard .status__card--blue {
+  border-color: var(--blue);
+}
+
+.adminDashboard .status__card--red {
+  border-color: var(--red);
+}
+
+.adminDashboard .bg-blue {
+  background-color: var(--blue);
+}
+
+.adminDashboard .bg-blue50 {
+  background-color: var(--lightblue);
+}
+
+.adminDashboard .bg-red,
+.adminDashboard .bg-red:hover {
+  background-color: var(--red);
+  color: #ffffff;
+}
+
+.adminDashboard .text-dark50 {
+  color: #b5b5b5;
+}
+
+.adminDashboard .thead-blue {
+  background: #06305b;
+}
+
+.adminDashboard .overflow {
+  overflow-y: scroll;
+}
+
+.adminDashboard .status-success {
+  border-left: 5px solid #4cbb88;
+}
+
+.adminDashboard .status-warning {
+  border-left: 5px solid #ecf01f;
+}
+
+/** Progress stylings */
+
+.adminDashboard .account__progress {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminDashboard .progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.adminDashboard .progress__value {
+  position: relative;
+  margin: 0;
+  background-color: transparent;
+  top: -150px;
+  margin-bottom: -70px;
+}
+
+.adminDashboard .progress__value h1,
+.adminDashboard .progress__value h6 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 2.2em;
+}
+
+.adminDashboard .progress__value h6 {
+  font-size: 1em;
+  font-weight: lighter;
+}
+
+/** Sidebar stylings */
+
+@media screen and (max-width: 767.98px) {
+  .adminDashboard #sidebar {
+    display: none;
+  }
+}
