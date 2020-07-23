@@ -55,7 +55,12 @@ const UserProfile = (props) => {
   console.log(props.user.credentials);
 
   const credentials = props.user.credentials;
-  const { _id, firstName, lastName, photoURL, role, email } = credentials;
+  const { 
+    // _id, 
+    firstName, lastName, 
+    // photoURL, 
+    // role, 
+    email } = credentials;
   console.log(firstName);
   return (
     <ScrollIntoView>
