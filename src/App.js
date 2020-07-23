@@ -1,60 +1,73 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
-import pageurl from './components/router/url/pageurl'
+import pageurl from './components/router/url/pageurl';
 // import {Navbar,Footer} from './components/pages/navigation'
-import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs
-} from './components/pages/mainpages'
-import LandingPage from './components/pages/mainpages/landingPage/landingPage'
+import {
+	Login,
+	SignUp,
+	Terms,
+	PrivacyPage,
+	FAQ,
+	ContactUs,
+} from './components/pages/mainpages';
+import LandingPage from './components/pages/mainpages/landingPage/landingPage';
+import ComingSoon from './components/pages/mainpages/comingSoon/comingSoon';
 
 function App() {
+	return (
+		<Router basename={process.env.PUBLIC_URL}>
+			<div className="maincon">
+				{/* <Navbar/> */}
 
-  return (
-        
-    <Router basename={process.env.PUBLIC_URL}>
+				<Switch>
+					<ScrollIntoView>
+						<Route
+							exact
+							path={pageurl.COMING_SOON_URL}
+							component={ComingSoon}
+						/>
 
-      <div className="maincon">
-        
-        {/* <Navbar/> */}
+						<Route
+							exact
+							path={pageurl.LANDING_PAGE_URL}
+							component={LandingPage}
+						/>
 
-          <Switch>
+						<Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
 
-              <ScrollIntoView>
-              
-                <Route exact path={pageurl.LANDING_PAGE_URL} component={LandingPage} />
-                
-                <Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
+						<Route exact path={pageurl.REGISTER_PAGE_URL} component={SignUp} />
 
-                <Route exact path={pageurl.REGISTER_PAGE_URL} component={SignUp} />
+						<Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
-                <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
+						<Route
+							exact
+							path={pageurl.PRIVACY_POLICY_PAGE_URL}
+							component={PrivacyPage}
+						/>
 
-                <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
+						<Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
-                <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
+						<Route
+							exact
+							path={pageurl.CONTACT_US_PAGE_URL}
+							component={ContactUs}
+						/>
+					</ScrollIntoView>
 
-                <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
-              
-              </ScrollIntoView>
+					{/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
 
-              {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
+					{/* <Route path="*" component={Page404}/> */}
 
-              {/* <Route path="*" component={Page404}/> */}
-                      
-              {/* <Route component={Page404}/> */}
+					{/* <Route component={Page404}/> */}
+				</Switch>
 
-          </Switch>
-
-        {/* <Footer/> */}
-        
-      </div>
-
-   </Router>
-
-
-  );
+				{/* <Footer/> */}
+			</div>
+		</Router>
+	);
 }
 
 export default App;
