@@ -1,5 +1,6 @@
-.sample {
-  margin: 0 auto;
-  text-align: center;
-  background: #f6f6f6;
+.sample{
+    width: 100%;
+    margin : 0 auto;
+    text-align: center;
+    background: #f6f6f6;
 }

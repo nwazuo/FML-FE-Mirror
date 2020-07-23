@@ -1,13 +1,29 @@
-const LANDING_PAGE_URL = '/';
-const LOGIN_PAGE_URL = '/login';
-const SIGNUP_PAGE_URL = '/signup';
-const TERMS_CONDITION_URL = '/terms';
+// PUBLIC PAGES
+const LANDING_PAGE_URL = "/";
+const LOGIN_PAGE_URL = "/login";
+const USER_PROFILE_PAGE_URL = "/user-profile";
+const USER_RECOMMENDATIONS = "/recommendations"
+const REGISTER_PAGE_URL = "/signup";
+const ABOUT_US_PAGE_URL = "/about";
+const CONTACT_US_PAGE_URL = "/contact-us"
+const PRIVACY_POLICY_PAGE_URL = "/privacy"
+const FAQ_PAGE_URL = "/FAQ"
+const TC_PAGE_URL = "/terms-and-conditions"
+const PAGE_404 = "/404"
 
 const pageurl = {
-  LANDING_PAGE_URL,
-  LOGIN_PAGE_URL,
-  SIGNUP_PAGE_URL,
-  TERMS_CONDITION_URL
-};
+    LANDING_PAGE_URL,
+    LOGIN_PAGE_URL,
+    USER_PROFILE_PAGE_URL,
+    USER_RECOMMENDATIONS,
+    REGISTER_PAGE_URL,
+    ABOUT_US_PAGE_URL,
+    CONTACT_US_PAGE_URL,
+    PRIVACY_POLICY_PAGE_URL,
+    FAQ_PAGE_URL,
+    TC_PAGE_URL,
+    PAGE_404
+}
 
 export default pageurl;
+
