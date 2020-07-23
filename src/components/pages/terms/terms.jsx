@@ -17,6 +17,7 @@ const Terms = () => {
         <h1>USER AGREEMENT</h1>
        </div>
        <div className="agreement-text">
+       <div class="conditions">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna nec tempus imperdiet tortor quam accumsan,
         elementum enim. Nibh nulla neque consectetur arcu enim in nunc amet id. Arcu morbi sed egestas elementum. Amet
         habitant tristique quam cras varius integer scelerisque. Maecenas praesent tellus risus pharetra. Mattis lorem
@@ -43,6 +44,7 @@ const Terms = () => {
         porttitor vulputate maecenas sit. Interdum posuere purus nunc, sagittis. Nulla consectetur velit turpis arcu
         facilisis ac ac. Pharetra arcu a, neque adipiscing aliquam id arcu dictumst in. Ut ut urna malesuada egestas
         adipiscing vivamu. </p>
+       </div>
        </div>
         <div className="agreement-buttons">
             <button className="btn cancel">Cancel</button>
