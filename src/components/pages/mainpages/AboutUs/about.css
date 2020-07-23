@@ -1,88 +1,78 @@
-.pcolor {
+.about-us .pcolor {
     color: #747474 !important; 
     
 }
-.pcolor1 {
+.about-us .pcolor1 {
     color: #000000 !important;
 }
-.breadcrumb-item + .breadcrumb-item::before {
+.about-us .breadcrumb-item + .breadcrumb-item::before {
     content: ">";
 }
 
-.start-btn {
+.about-us .start-btn {
     text-decoration: none;
     background-color: #FB3F5C !important;
     color: #ffffff;
     border: 1px solid #FB3F5C;
 }
-.text-below {
+.about-us .text-below {
     font-size: 36px;
 }
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  body {
-    font-family: "DM Sans", sans-serif;
-    /* padding: 20px; */
-    background-color: #fff;
-    color: #04172a;
-  }
-  h1 {
+
+  
+.about-us h1 {
     font-size: 48px;
     font-weight: bold;
     padding-bottom: 50px;
+    font-family: "DM Sans", sans-serif;
   }
 
-  p {
+  .about-us p {
     font-family: "DM Sans", sans-serif;
     font-size: 20px;
-    padding-top: 20px;
+    padding-top: 20px , auto;
     line-height: normal;
+    text-align: justify;
   }
 
-  .container1 {
+  .about-us .container1 {
     display: flex;
     justify-content: space-around;
     max-width: 100%;
     margin: 50px, auto;
   }
 
-  .container-text {
+  .about-us .container-text {
     max-width: 45%;
   }
-  p {
-    padding: 20px, auto;
-    text-align: justify;
-  }
-  .container-image {
+  
+  .about-us .container-image {
     max-width: 45%;
   }
-  .mobile {
+  .about-us .mobile {
     display: none;
   }
-  .container-header {
+  .about-us .container-header {
     font-weight: 500;
     font-size: 40px;
     color: #04172a;
     margin: 0;
     padding: 0;
   }
-  .container-img {
+  .about-us .container-img {
     width: 100%;
     height: auto;
     display: block;
   }
   
-  .text--secondary {
+  .about-us .text--secondary {
     color: #fb3f5c;
   }
   
 
   
-  #middle-row {
+  .about-us #middle-row {
     display: flex;
     align-items: flex-start;
     max-width: 100%;
@@ -92,30 +82,30 @@
  
   }
   @media (min-width: 813px) and (max-width: 948px) {
-    .container-text {
+    .about-us .container-text {
       max-width: 50%;
     }
-    .container-image {
+    .about-us .container-image {
       max-width: 45%;
     }
   }
   @media (max-width: 812px) {
-    .container1 {
+    .about-us .container1 {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .container-text {
+    .about-us .container-text {
       max-width: 90%;
       height: auto;
     }
-    .container-text p {
+    .about-us .container-text p {
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
     }
-    .mobile {
+    .about-us .mobile {
       display: block;
       max-width: 100%;
       margin-left: auto;
@@ -123,28 +113,28 @@
       padding-top: 10px;
       padding-bottom: 10px;
     }
-    .container-image {
+    .about-us .container-image {
       display: none;
     }
-    .container-header {
+    .about-us .container-header {
       font-style: normal;
       font-weight: 500;
       font-size: 18px;
       line-height: 23px;
     }
-    .container-img {
+    .about-us .container-img {
       width: 100%;
       height: auto;
     }
-    #middle-row {
+    .about-us #middle-row {
       flex-direction: column;
       align-items: center;
     }
-    #contain-img {
+    .about-us #contain-img {
       max-width: 100%;
       height: auto;
     }
-    .text-below {
+    .about-us .text-below {
         font-size: 18px;
     }
     

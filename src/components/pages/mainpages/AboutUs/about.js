@@ -13,6 +13,7 @@ const AboutUs = () => {
   return (
       <>
       <Header />
+      <div className="about-us">
     <div className="container">
         <ol className="f-12 mt-3 ml-sm-3 ml-1 breadcrumb" style={{ background: 'none' }}>
             <li className="breadcrumb-item">
@@ -92,6 +93,7 @@ const AboutUs = () => {
             </Link>
             </div>
         </div>
+    </div>
     </div>
     <Footer />
     </>
