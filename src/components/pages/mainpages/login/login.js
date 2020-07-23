@@ -6,6 +6,7 @@ import googleImg from '../../../assets/images/googleicon.svg';
 import loginBg from '../../../assets/images/login-bg.png';
 import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 // Redux Stuff
 import { connect } from 'react-redux';
 import { loginUser } from '../../../../actions/actions';
@@ -65,7 +66,7 @@ const Login = (props) => {
   };
 
   return (
-    <>
+    <ScrollIntoView>
       <Navbar />
       <div className="main-content d-sm-flex">
         <form
@@ -150,7 +151,7 @@ const Login = (props) => {
         </div>
       </div>
       <Footer />
-    </>
+    </ScrollIntoView>
   );
 };
 

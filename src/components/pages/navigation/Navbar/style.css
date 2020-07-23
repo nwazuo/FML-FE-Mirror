@@ -14,6 +14,20 @@
     vertical-align: 0.055em !important;
 }
 
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: '';
+    border-top: 0.5em solid;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0;
+    border-left: 0.5em solid transparent;
+}
+a#dropdownMenuLink {
+    margin-left: .25em;
+    margin-right: .25em;
+}
 li.nav-item{
     margin-left: 1rem;
     margin-right: 1rem;
