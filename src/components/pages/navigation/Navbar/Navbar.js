@@ -30,13 +30,13 @@ const Navbar = (props) => {
                 <li className="nav-item ">
                     <Link className="nav-link" 
                         to="#"
-                        property>FUND <span className="sr-only">(current)</span></Link>
+                        >FUND <span className="sr-only">(current)</span></Link>
                 </li>
 
                 <li className="nav-item ">
                     <Link className="nav-link" 
                         to="#"
-                        property>REQUEST <span className="sr-only">(current)</span></Link>
+                        >REQUEST <span className="sr-only">(current)</span></Link>
                 </li>
 
 
