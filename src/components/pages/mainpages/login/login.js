@@ -14,7 +14,7 @@ import { loginUser } from '../../../../actions/actions';
 const initialState = {
   email: '',
   password: '',
-  errors: {},
+  errors: null,
 };
 function reducer(state, { field, value }) {
   return {
@@ -34,7 +34,7 @@ const Login = (props) => {
   const onChange = (event) => {
     dispatch({ field: event.target.name, value: event.target.value });
   };
-  const { email, password } = state;
+  const { email, password, errors } = state;
 
   const onSubmit = (event) => {
     const { history } = props;
@@ -137,6 +137,11 @@ const Login = (props) => {
               value="Log in"
             />
           </div>
+          {errors && (
+            <p className="text-center py-1" style={{ color: 'red' }}>
+              {errors.message}
+            </p>
+          )}
           <p className="account-info-text text-center py-4">
             Don't have an account?
             <Link to={pageurl.REGISTER_PAGE_URL} className="sign-up-link">
