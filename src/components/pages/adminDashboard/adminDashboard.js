@@ -11,6 +11,8 @@ import up from "./img/up.png";
 import user1 from "./img/user1.png";
 import user2 from "./img/user2.png";
 import user3 from "./img/user3.png";
+import Ham1 from "./img/Ham-1.png";
+import Ham2 from "./img/Ham-2.png";
 import { Navbar, Footer } from "../navigation/navigation";
 
 class AdminDashboard extends Component {
@@ -26,6 +28,21 @@ class AdminDashboard extends Component {
     }
     const progress_value = document.querySelector('#displayed_value').innerHTML;
     setProgress(progress_value);
+
+    let sidebar_opener = document.querySelector('#sidebar-opener')
+    let sidebar_closer = document.querySelector('#sidebar-closer')
+    let sidebar = document.querySelector('#sidebar')
+
+  sidebar_opener.addEventListener('click', function(){
+    sidebar.style.display = 'block';
+    sidebar.classList.remove("sidebar_close");
+    sidebar.classList.add("sidebar_open");
+})
+
+  sidebar_closer.addEventListener("click", function () {
+    sidebar.classList.remove("sidebar_open");
+    sidebar.classList.add("sidebar_close");
+});
   }
 
   render() {
@@ -40,15 +57,28 @@ class AdminDashboard extends Component {
                 className="col-7 col-md-3 col-lg-2 custom__bg-dark vh-100 sidebar"
                 id="sidebar"
               >
-                <span className="text-white d-md-none" id="sidebar-closer">
-                  close
-                </span>
-                <img src={left} alt="left"/>
+                <img src={Ham2} alt="Ham2" className="text-white d-md-none xander" id="sidebar-closer" />
+                <img src={left} alt="left" className="ml-2"/> 
+                <ul className="navbar-nav  mt-2 mt-lg-0 anchor">
+                    <li className="nav-item ">
+                      <a className="nav-link " href="#">Campaign</a>
+                    </li> &nbsp;
+                    <li className="nav-item">
+                      <a className="nav-link" href="#">Fundings</a>
+                    </li> &nbsp;
+                    <li className="nav-item">
+                      <a className="nav-link" href="#">Payments</a>
+                    </li> &nbsp;
+                    <li className="nav-item">
+                      <a className="nav-link" href="#">Settings</a>
+                    </li> &nbsp;
+             </ul>
               </aside>
               {/* Main Section  */}
               <main className="col-12 col-md-9 col-lg-10 bg-light px-0 vh-100 overflow">
                 {/* TopNav Section */}
                 <nav className="bg-white d-flex sticky-top justify-content-en align-items-center py-2 py-md-3 px-2 px-md-5">
+                <img src={Ham1} className="d-md-none" id="sidebar-opener" />
                   <h5 className="font-weight-bold d-md-none ml-3 mb-0">
                     Dashboard
                   </h5>
