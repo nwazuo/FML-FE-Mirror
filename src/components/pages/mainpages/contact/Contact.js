@@ -8,15 +8,13 @@ import twitterIcon from "./twitter-icon.svg"
 import linkedinIcon from "./linkedin-icon.svg"
 import contactTextIcon from "./contact-text.svg"
 import callIcon from "./call-icon.svg"
-import Navbar from '../../Navbar';
-import Footer from '../../Footer';
-
+import {Navbar,Footer} from '../../navigation/navigation'
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 
 const Contact = () => {
     return(
-        <>
-        <Navbar />
-
+    <ScrollIntoView>
+    <Navbar />
     <div className={ContactCss.contact}>
 
       <main className="container-fluid px-0">
@@ -101,8 +99,8 @@ const Contact = () => {
         </section>
       </main> 
         </div>
-        <Footer />
-        </>
+        <Footer/>
+      </ScrollIntoView>
     )
 }
 
