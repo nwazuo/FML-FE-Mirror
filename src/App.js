@@ -4,11 +4,9 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
-import {Navbar,Footer} from './components/pages/navigation'
-import Sample from './components/pages/sample/Sample';
-import LandingPage from './components/pages/mainpages/landingPage/landingPage'
+// import Sample from './components/pages/sample/Sample';
 import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,LandingPage,AboutUs} from './components/pages/mainpages'
-// import Page404 from './components/pages/page404/Page404'
+import Page404 from './components/pages/page404/Page404'
 
 function App() {
 
@@ -31,6 +29,7 @@ function App() {
                 <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
 
                 {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
+
                 <Route exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} />
 
                 <Route exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} />
@@ -45,7 +44,7 @@ function App() {
 
                 {/* <Route exact path={pageurl.PAGE_404} component={Page404}/> */}
                         
-                {/* <Route path="*" component={Page404}/> */}
+                <Route path="*" component={Page404}/>
                               
               </ScrollIntoView>
 

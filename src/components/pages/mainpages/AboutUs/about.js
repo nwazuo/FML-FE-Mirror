@@ -34,12 +34,14 @@ const AboutUs = () => {
                 <h1 className="container-header">We connect <span className="text--secondary">investors</span> and interns</h1>
                 
                 <div className="mobile">
+                {/* eslint-disable-next-line */}
                     <img className="container-img" src={Image2} />
                 </div>
                 <p> FundMylaptop is a platform where people who are willing to invest in tech talent get connected to individuals who are in need of funds for a laptop purchase or repair. This platform is not just connecting individuals, it is also breaking barriers and constraints of the tech industry.
                 </p>
             </div>
             <div className="container-image">
+                {/* eslint-disable-next-line */}
                 <img className="container-img" src={Image2} />
             </div>
         </section>
@@ -47,9 +49,9 @@ const AboutUs = () => {
         <section className="container1" id="middle-row">
             <div className="container-text">
                 <h1 className="container-header">
-                Helping <span className="text--secondary">You</span> achieve that goal
-                </h1>
+                Helping <span className="text--secondary">You</span> achieve that goal</h1>
                 <div className="mobile">
+                    {/* eslint-disable-next-line */}
                     <img className="container-img" src={Image1} />
                 </div>
                 <p>
@@ -61,6 +63,7 @@ const AboutUs = () => {
                 </p>
             </div>
             <div className="container-image">
+                {/* eslint-disable-next-line */}
                 <img className="container-img" id="contain-img" src={Image1} />
             </div>
         </section>
@@ -71,6 +74,7 @@ const AboutUs = () => {
                 Setting <span className="text--secondary">Standard</span> Pace
                 </h1>
                 <div className="mobile">
+                {/* eslint-disable-next-line */}
                 <img className="container-img" src={Image3} />
                 </div>
                 <p>
@@ -81,6 +85,7 @@ const AboutUs = () => {
                 </p>
             </div>
             <div className="container-image">
+                {/* eslint-disable-next-line */}
                 <img className="container-img" src={Image3} />
             </div>
         </section>
