@@ -2,6 +2,7 @@ import React from 'react';
 import FQACss from './FQA.module.css'
 import seach from './search.svg'
 import { Navbar,Footer } from '../../navigation/navigation';
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 
 
 const FQA = () => {
@@ -37,7 +38,7 @@ const FQA = () => {
       }
    
     return(
-       <>
+       <ScrollIntoView>
         <Navbar/>
         <div className={FQACss.fqa}>
             <div className={FQACss.container}>
@@ -118,7 +119,7 @@ const FQA = () => {
             </div>  </div>        
         </div>
        <Footer/>
-       </>
+       </ScrollIntoView>
     )
 }
 
