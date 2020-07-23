@@ -12,6 +12,10 @@ import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 const initialState = {
   email: '',
   password: '',
+  firstName: '',
+  lastName: '',
+  phone: '',
+  address: ''
 };
 function reducer(state, { field, value }) {
   return {
@@ -21,15 +25,23 @@ function reducer(state, { field, value }) {
 }
 const Signup = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { email, password } = state;
+  const { email, password, firstName, lastName, phone, address } = state;
   const onChange = (event) => {
     dispatch({ field: event.target.name, value: event.target.value });
   };
   const onSubmit = (event) => {
     // eslint-disable-next-line
     let validMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    let validPhoneNumber = /^[0]\d{10}$/;
+
     const errorEmail = document.getElementById('errorEmail');
     const errorPassword = document.getElementById('errorPassword');
+    const errorFirstName = document.getElementById('errorFirstName');
+    const errorLastName = document.getElementById('errorLastName');
+    const errorPhone = document.getElementById('errorPhone');
+    const errorAddress = document.getElementById('errorAddress');
+
     event.preventDefault();
 
     if (email === '' || email === null || !email.match(validMail)) {
@@ -43,6 +55,34 @@ const Signup = () => {
         '* Incorrect password, must be at least 6 characters.';
       setTimeout(() => {
         errorPassword.textContent = '';
+      }, 2000);
+    }
+
+    if (firstName === '') {
+      errorFirstName.textContent = '* Your first name is required';
+      setTimeout(() => {
+        errorFirstName.textContent = '';
+      }, 2000);
+    }
+
+    if (lastName === '') {
+      errorLastName.textContent = '* Your last name is required';
+      setTimeout(() => {
+        errorLastName.textContent = '';
+      }, 2000);
+    }
+
+    if(phone === '' || !phone.match(validPhoneNumber)) {
+      errorPhone.textContent = '* Please input a valid phone number.';
+      setTimeout(() => {
+        errorPhone.textContent = '';
+      }, 2000);
+    }
+
+    if(address === '') {
+      errorAddress.textContent = '* Your address is required.';
+      setTimeout(() => {
+        errorAddress.textContent = '';
       }, 2000);
     }
   };
@@ -68,6 +108,36 @@ const Signup = () => {
 
           <div className="form-group">
             <input
+              type="text"
+              placeholder="First name"
+              name="firstName"
+              className="form-control"
+              id="firstName"
+              onChange={onChange}
+              value={firstName}
+            />
+            <p
+              id="errorFirstName"
+              className="error text-danger text-center text-sm-left"
+            ></p>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Last name"
+              name="lastName"
+              className="form-control"
+              id="lastName"
+              onChange={onChange}
+              value={lastName}
+            />
+            <p
+              id="errorLastName"
+              className="error text-danger text-center text-sm-left"
+            ></p>
+          </div>
+          <div className="form-group">
+            <input
               type="email"
               placeholder="Email"
               name="email"
@@ -91,6 +161,36 @@ const Signup = () => {
             />
             <p
               id="errorPassword"
+              className="error text-danger text-center text-sm-left"
+            ></p>
+          </div>
+          <div className="form-group">
+            <input
+              type="number"
+              placeholder="Phone"
+              name="phone"
+              className="form-control"
+              id="phone"
+              onChange={onChange}
+              value={phone}
+            />
+            <p
+              id="errorPhone"
+              className="error text-danger text-center text-sm-left"
+            ></p>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Address"
+              name="address"
+              className="form-control"
+              id="address"
+              onChange={onChange}
+              value={address}
+            />
+            <p
+              id="errorAddress"
               className="error text-danger text-center text-sm-left"
             ></p>
           </div>
