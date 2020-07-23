@@ -9,6 +9,8 @@ import {
 
 import pageurl from '../components/router/url/pageurl';
 
+import Server from '../services/server/Server';
+
 import axios from 'axios';
 
 let baseURL = "https://api.fundmylaptop.com";
@@ -47,3 +49,19 @@ export const loginUser = (formInput, history) => (dispatch) => {
       });
     });
 };
+
+export const registerUser = (userData, history) => dispatch => {
+  Server.post(`${baseURL}/api/users/register`, userData).then(
+    res => {
+      dispatch({ type: CLEAR_ERRORS });
+      console.log(res.data);
+      dispatch({ type: LOADING_USER })
+      history.push(pageurl.LOGIN_PAGE_URL);
+    }).catch(err => {
+      console.log(err.response.data);
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data
+      });
+    });
+}
