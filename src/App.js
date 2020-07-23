@@ -5,12 +5,12 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,
         UserProfile,Recommendations,LandingPage,AboutUs,
-        Page404,ComingSoon} from './components/pages/mainpages'
+        Page404,ComingSoon,FundeeDashboard} from './components/pages/mainpages'
 
 function App() {
 
   return (
-        
+
     <Router basename={process.env.PUBLIC_URL}>
 
           <Switch>
@@ -18,7 +18,7 @@ function App() {
                 <Route exact path={pageurl.LANDING_PAGE_URL} component={LandingPage} />
 
                 <Route exact path={pageurl.COMING_SOON_URL} component={ComingSoon} />
-                
+
                 <Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
 
                 <Route exact path={pageurl.REGISTER_PAGE_URL} component={SignUp} />
@@ -39,11 +39,13 @@ function App() {
 
                 <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
+                <Route exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
+
                 {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
                 {/* <Route exact path={pageurl.PAGE_404} component={Page404}/> */}
 
-                <Route component={Page404}/>  
+                <Route component={Page404}/>
 
           </Switch>
 
