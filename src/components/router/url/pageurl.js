@@ -8,6 +8,7 @@ const PRIVACY_POLICY_PAGE_URL = "/privacy"
 const FAQ_PAGE_URL = "/FAQ"
 const TC_PAGE_URL = "/terms-and-conditions"
 const PAGE_404 = "/404"
+const INVESTOR_DASHBOARD ="/investordashboard"
 
 const pageurl = {
     LANDING_PAGE_URL,
@@ -18,7 +19,8 @@ const pageurl = {
     PRIVACY_POLICY_PAGE_URL,
     FAQ_PAGE_URL,
     TC_PAGE_URL,
-    PAGE_404
+    PAGE_404,
+    INVESTOR_DASHBOARD
 }
 
 export default pageurl;
