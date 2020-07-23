@@ -10,7 +10,8 @@ import {
 import pageurl from '../components/router/url/pageurl';
 
 import axios from 'axios';
-let baseURL = process.env.REACT_APP_BASE_URL;
+// let baseURL = process.env.REACT_APP_BASE_URL;
+let baseURL = 'https://api.fundmylaptop.com';
 
 const setAuthorizationHeader = (token) => {
   const FMLToken = `Bearer ${token}`;
