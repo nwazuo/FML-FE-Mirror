@@ -10,7 +10,7 @@ import UserProfile from './user-profile/user-profile';
 import Recommendations from './recommendations/recommendations';
 import Page404 from './page404/Page404'
 import ComingSoon from './comingSoon/comingSoon';
-import FundeeDashboard from './fundee-dashboard/fundee-dashboard';
+
 
 export {
     Login,
@@ -24,6 +24,5 @@ export {
     Recommendations,
     AboutUs,
     Page404,
-    FundeeDashboard,
     ComingSoon
 }

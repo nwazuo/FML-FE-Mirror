@@ -8,6 +8,7 @@ import whatsappIcon from "../../../assets/images/ri_whatsapp-fill.svg"
 import copyIcon from "../../../assets/images/bx_bxs-copy.svg"
 import leftArrow from "../../../assets/images/arrow-left.svg"
 import rightArrow from "../../../assets/images/arrow-right.svg"
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 
 // import seach from './search.svg'
 import { Navbar, Footer } from '../../navigation/navigation';
@@ -43,7 +44,7 @@ const FundeeDashboard = () => {
   });
   let url = "";
   return (
-    <>
+    <ScrollIntoView>
       <Navbar />
       <div>
         <section className="investee-dashboard-info container-md px-md-0 mt-2 mt-md-5">
@@ -440,7 +441,7 @@ const FundeeDashboard = () => {
       </div>
 
       <Footer />
-    </>
+    </ScrollIntoView>
   );
 };
 export default FundeeDashboard;

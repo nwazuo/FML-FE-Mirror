@@ -3,9 +3,9 @@ import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
-import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,
-        UserProfile,Recommendations,LandingPage,AboutUs,
-        Page404,ComingSoon,FundeeDashboard} from './components/pages/mainpages'
+import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,
+        LandingPage,AboutUs,Page404,ComingSoon} from './components/pages/mainpages'
+import {FundeeDashboard} from './components/pages/dashboards'
 
 function App() {
 
@@ -26,8 +26,6 @@ function App() {
                 <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
                 <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
-
-                {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
 
                 <Route exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} />
 
