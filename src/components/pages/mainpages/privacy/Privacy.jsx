@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Privacy from './Privacy.module.css';
 // import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import { Navbar,Footer } from '../../navigation/navigation';
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 
 class PrivacyPage extends Component {
 
@@ -11,7 +12,7 @@ class PrivacyPage extends Component {
 
     render() {
         return (
-            <>
+            <ScrollIntoView>
             <Navbar/>
                 <div className={[Privacy.main_bg, Privacy.custom__px_main, Privacy.custom__py_main].join(' ')}>
                     <h1 className={Privacy.text_light}>PRIVACY POLICY</h1>
@@ -110,7 +111,7 @@ class PrivacyPage extends Component {
                     </div>
                 </div>
             <Footer/>
-            </>
+            </ScrollIntoView>
         )
     }
 }
