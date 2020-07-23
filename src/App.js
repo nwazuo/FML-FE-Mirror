@@ -6,6 +6,8 @@ import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,
         LandingPage,AboutUs,Page404,ComingSoon} from './components/pages/mainpages'
 import {FundeeDashboard} from './components/pages/dashboards'
+import AdminDashboard from './components/pages/adminDashboard/adminDashboard'
+
 
 function App() {
 
@@ -38,6 +40,8 @@ function App() {
                 <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
                 <Route exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
+
+                <Route exact path={pageurl.ADMIN_DASHBOARD_PAGE_URL} component={AdminDashboard} />
 
                 {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
