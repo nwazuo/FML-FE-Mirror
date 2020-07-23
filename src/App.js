@@ -45,7 +45,7 @@ function App() {
 
                 {/* <Route exact path={pageurl.PAGE_404} component={Page404}/> */}
 
-                <Route component={Page404}/>
+                {/* <Route component={Page404}/> */}
 
           </Switch>
 
