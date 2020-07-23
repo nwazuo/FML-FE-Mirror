@@ -12,10 +12,12 @@ import campaign5 from "./img/campaign5.png";
 import campaign6 from "./img/campaign6.png";
 import testimonial from "./img/testimonial-pic.png";
 import { Navbar, Footer } from "../../navigation/navigation";
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
+
 
 const LandingPage = () => {
   return (
-    <>
+    <ScrollIntoView>
       <Navbar />
       <div className="landingPage">
         <div className="jumbotron jumbotron px-0 px-md-4 mb-0 mb-md-4 landing-top">
@@ -556,7 +558,7 @@ const LandingPage = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </ScrollIntoView>
   );
 };
 

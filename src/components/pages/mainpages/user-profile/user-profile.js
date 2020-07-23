@@ -9,6 +9,7 @@ import profileImg from "../../../assets/images/man-in-red-jacket-1681010.jpg";
 import ProfileStat from "./profile-stat/profile-stat";
 import RecommendBox from "./recommend-box/recommend-box";
 import trusteeImg from "../../../assets/images/image 8.png";
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 
 const breadcrumbLinks = [
     {link: '/dashboard', label: 'Dashboard'},
@@ -26,6 +27,7 @@ const trustees = [
 
 const UserProfile = () => {
     return (
+        <ScrollIntoView>
         <React.Fragment>
             <Navbar />
             <div className={['container', styles.UserProfile].join(' ')}>
@@ -111,6 +113,7 @@ const UserProfile = () => {
             </div>
             <Footer />
         </React.Fragment>
+        </ScrollIntoView>
     )
 }
 
