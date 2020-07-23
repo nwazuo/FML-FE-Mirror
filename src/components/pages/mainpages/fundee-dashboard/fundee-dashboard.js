@@ -15,16 +15,41 @@ import { Navbar, Footer } from '../../navigation/navigation';
 
 const FundeeDashboard = () => {
   useEffect(() => {
-    // Update the document title using the browser API
-  // document.title = `You clicked ${count} times`;
+        //slider scroll feature
+        const slideArea = document.querySelector(".help-card-contain");
+        const slide = document.querySelector(".help-card");
+        const controls = document.querySelectorAll(".slide-control");
+    
+        function handleScroll(e) {
+          const slideItemWidth = slide.getBoundingClientRect().width;
+          if (e.target.classList.contains("arrow-left")) {
+            console.log(-slideItemWidth);
+            slideArea.scroll({
+              left: -slideItemWidth + slideArea.scrollLeft,
+              behavior: "smooth"
+            });
+          } else {
+            slideArea.scroll({
+              left: slideItemWidth + slideArea.scrollLeft,
+              behavior: "smooth"
+            });
+            console.log(slideItemWidth);
+          }
+        }
+    
+        controls.forEach(control => {
+          control.addEventListener("click", handleScroll);
+        });
+     
   });
+  let url = "";
   return (
     <>
       <Navbar />
       <div>
-        <section className="investee-dashboard-info container-md px-md-0 mt-5">
+        <section className="investee-dashboard-info container-md px-md-0 mt-2 mt-md-5">
           <div className="col-md-6 px-0">
-            <h1 className="text-fml-primary mb-4 welcome-text">
+            <h1 className=" mb-4 ">
               Welcome back, <span className="text-fml-secondary">Chandan</span>
             </h1>
           </div>
@@ -58,6 +83,7 @@ const FundeeDashboard = () => {
                 </svg>
               </span>
             </div>
+            {/* Total loan balance */}
             <div className="d-md-none w-100" />
             <div className="loan-balance offset-md-1 col-7 col-md-3 align-self-center mt-3 mt-md-0">
               <span className="loan-text d-block mb-md-2">
@@ -65,11 +91,12 @@ const FundeeDashboard = () => {
               </span>
               <p>
                 INR
-                <span className="loan-value display-4 font-weight-medium">
+                <span className="h1 loan-value font-weight-medium">
                   30,000
                 </span>
               </p>
             </div>
+            {/*Progress bar */}
             <div className="loan-progress ml-auto col-5 col-md-3 my-4 my-md-0 d-flex justify-content-end align-items-center px-0">
               <img src={paymentIcon} alt="progress" className="d-block" />
             </div>
@@ -78,7 +105,7 @@ const FundeeDashboard = () => {
         <section className="investee-dashboard-tips container-md px-md-0 mt-0 mt-md-5">
           <div className="dashboard-tips-container mx-0 px-0">
             <div className="dashboard-tips-card py-4 px-4 text-fml-primary rounded">
-              <h4>Promote your campaign to reach a wider audience</h4>
+              <h3 className="mb-3">Promote your campaign to reach a wider audience</h3>
               <p>
                 Promoting your campaign gives your it more visibility and
                 enables you to be more acessible to potential investors or
@@ -89,16 +116,16 @@ const FundeeDashboard = () => {
                   Promote your campain through:
                 </p>
                 <div className="promote-social-links px-0 col-xl d-flex">
-                  <a href="#">
+                  <a href={url}>
                     <img src={twitterIcon} alt= "twitter" />
                   </a>
-                  <a href="#">
+                  <a href={url}>
                     <img src={whatsappIcon} alt= "whatsapp"/>
                   </a>
-                  <a >
+                  <a href={url}>
                     <img src={facebookIcon} alt = "facebook" />
                   </a>
-                  <a href="#">
+                  <a href={url}>
                     <img src={copyIcon} alt = "copylink" />
                     <span className="text-fml-secondary pl-2">Copy Link</span>
                   </a>
@@ -106,7 +133,7 @@ const FundeeDashboard = () => {
               </div>
             </div>
             <div className="dashboard-tips-card py-4 px-4 text-fml-primary rounded">
-              <h4>Add materials to improve your legitimacy</h4>
+              <h3 className="mb-3">Add materials to improve your legitimacy</h3>
               <p>
                 Cosider including documents or materials that can reassure
                 potential funders that you’re capable of repaying the loan.
@@ -255,7 +282,7 @@ const FundeeDashboard = () => {
           <div className="row mx-0 px-0 justify-content-md-between flex-column flex-md-row">
             <h4 className="help-others-intro font-weight-normal ">
               Invest in helping others get their laptop.
-              <a href="#" className="text-fml-secondary">
+              <a href={url} className="text-fml-secondary">
                 View more <span className="align-middle d-inline">&gt;</span>
               </a>
             </h4>
