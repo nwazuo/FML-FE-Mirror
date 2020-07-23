@@ -7,6 +7,7 @@ import {Navbar,Footer} from './components/pages/navigation'
 import {Login,SignUp,Terms} from './components/pages/mainpages'
 
 import Sample from './components/pages/sample/Sample'
+import AdminDashboard from './components/pages/adminDashboard/adminDashbaord';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
                 <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
+                <Route exact path={pageurl.ADMIN_DASHBOARD_PAGE_URL} component={AdminDashboard} />
                 {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
 
                 {/* <Route path="*" component={Page404}/> */}
