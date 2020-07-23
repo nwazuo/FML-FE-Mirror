@@ -13,10 +13,11 @@ import ComingSoon from './comingSoon/comingSoon';
 import investordashboard from './investordashboard/investordashboard';
 
 
+
 export {
-    Login, 
+    Login,
     SignUp,
-    Terms, 
+    Terms,
     PrivacyPage,
     FAQ,
     ContactUs,
