@@ -6,6 +6,8 @@ import {
   LOADING_USER,
   CLEAR_ERRORS,
 } from '../reducers/types';
+import pageurl from '../components/router/url/pageurl';
+
 import axios from 'axios';
 let baseURL = 'https://api.fundmylaptop.com';
 
@@ -31,7 +33,7 @@ export const loginUser = (formInput, history) => (dispatch) => {
         payload: userDetails,
       });
 
-      history.push('/profile');
+      history.push(pageurl.USER_PROFILE_PAGE_URL);
     })
     .catch((err) => {
       console.log(err);
