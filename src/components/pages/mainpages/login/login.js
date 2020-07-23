@@ -1,16 +1,20 @@
-import React, { useReducer } from 'react';
-import { Link,withRouter } from 'react-router-dom';
+import React, { useReducer, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import '../../../assets/bootstrap.css';
 // import loginCss from './login.css';
 import googleImg from '../../../assets/images/googleicon.svg';
 import loginBg from '../../../assets/images/login-bg.png';
 import pageurl from '../../../router/url/pageurl';
-import { Navbar,Footer } from '../../navigation/navigation';
-import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
+import { Navbar, Footer } from '../../navigation/navigation';
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
+// Redux Stuff
+import { connect } from 'react-redux';
+import { loginUser } from '../../../../actions/actions';
 
 const initialState = {
   email: '',
   password: '',
+  errors: {},
 };
 function reducer(state, { field, value }) {
   return {
@@ -18,8 +22,14 @@ function reducer(state, { field, value }) {
     [field]: value,
   };
 }
-const Login = () => {
+const Login = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    if (props.user.errors) {
+      dispatch({ field: 'errors', value: props.user.errors });
+    }
+  }, [props.user.errors]);
 
   const onChange = (event) => {
     dispatch({ field: event.target.name, value: event.target.value });
@@ -27,6 +37,7 @@ const Login = () => {
   const { email, password } = state;
 
   const onSubmit = (event) => {
+    const { history } = props;
     // eslint-disable-next-line
     let validMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const errorEmail = document.getElementById('errorEmail');
@@ -46,11 +57,17 @@ const Login = () => {
         errorPassword.textContent = '';
       }, 2000);
     }
+
+    const formData = {
+      email,
+      password,
+    };
+    props.loginUser(formData, history);
   };
 
   return (
     <ScrollIntoView>
-      <Navbar/>
+      <Navbar />
       <div className="main-content d-sm-flex">
         <form
           className="login-box p-md-5 p-2"
@@ -68,7 +85,10 @@ const Login = () => {
           </p>
           <div>
             {/* eslint-disable-next-line */}
-            <a href="javascript:void(0)" className="text-center py-3 btnGoogle d-flex justify-content-center align-items-center">
+            <a
+              href="javascript:void(0)"
+              className="text-center py-3 btnGoogle d-flex justify-content-center align-items-center"
+            >
               <img className="pr-3" src={googleImg} alt="" />
               Login with Google
             </a>
@@ -119,7 +139,10 @@ const Login = () => {
           </div>
           <p className="account-info-text text-center py-4">
             Don't have an account?
-            <Link to={pageurl.REGISTER_PAGE_URL} className="sign-up-link"> {' '}Sign up</Link>
+            <Link to={pageurl.REGISTER_PAGE_URL} className="sign-up-link">
+              {' '}
+              Sign up
+            </Link>
           </p>
         </form>
 
@@ -127,9 +150,16 @@ const Login = () => {
           <img src={loginBg} className="login-img" alt="login FundMyLaptop" />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </ScrollIntoView>
   );
 };
 
-export default withRouter(Login);
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+const mapActionsToProps = {
+  loginUser,
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(withRouter(Login));
