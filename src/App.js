@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
-import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
+// import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,LandingPage} from './components/pages/mainpages'
 // import Page404 from './components/pages/page404/Page404'
