@@ -8,6 +8,7 @@ import ContactUs from './contact/Contact';
 import LandingPage from './landingPage/landingPage';
 import UserProfile from './user-profile/user-profile';
 import Recommendations from './recommendations/recommendations';
+import Compaign from './compaign/compaign';
 
 export {
     Login, 
@@ -19,5 +20,6 @@ export {
     LandingPage,
     UserProfile,
     Recommendations,
-    AboutUs
+    AboutUs,
+    Compaign
 }

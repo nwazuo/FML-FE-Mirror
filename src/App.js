@@ -5,7 +5,7 @@ import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 // import Sample from './components/pages/sample/Sample';
-import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,LandingPage,AboutUs} from './components/pages/mainpages'
+import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,LandingPage,AboutUs,Compaign} from './components/pages/mainpages'
 import Page404 from './components/pages/page404/Page404'
 
 function App() {
@@ -40,11 +40,13 @@ function App() {
 
                 <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
+                <Route exact path={pageurl.COMPAIGN_PAGE_URL} component={Compaign} />
+
                 {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
                 {/* <Route exact path={pageurl.PAGE_404} component={Page404}/> */}
                         
-                <Route path="*" component={Page404}/>
+                {/* <Route path="*" component={Page404}/> */}
                               
               </ScrollIntoView>
 
