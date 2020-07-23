@@ -2,7 +2,8 @@ import React from 'react';
 import './style.css';
 import '../../../assets/bootstrap.css';
 import { Link, withRouter } from 'react-router-dom';
-import logo from "../../../assets/images/logo.svg"
+import logo from "../../../assets/images/logo.svg";
+import placehoder from "./image/placeholder.svg"
 import pageurl from '../../../router/url/pageurl'
 
 
@@ -44,8 +45,26 @@ const Navbar = (props) => {
                 </li>
 
                 <li className="nav-item ">
+                    <Link className="nav-link" to="#">DASHBOARD <span className="sr-only">(current)</span></Link>
+                </li>
+
+                <li className="nav-item ">
                     <Link className="btn btn-fml-secondary" to={pageurl.LOGIN_PAGE_URL}>LOGIN <span className="sr-only">(current)</span></Link>
                 </li>
+
+                {/* THe person working on Login component should set this on isLoggedIn */}
+                <div className="dropdown d-none">
+                    <img src={placehoder} alt="placeholder" />
+                    <Link  className=" dropdown-toggle text-fml-primary" to="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Oluwakemi Adeleke
+                    </Link > 
+
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <Link  className="dropdown-item text-fml-primary" to="#">Action</Link > 
+                        <Link  className="dropdown-item text-fml-primary" to="#">Another action</Link > 
+                        <Link  className="dropdown-item text-fml-primary" to="#">Something else here</Link > 
+                    </div>
+                </div>
 
                 {/* <li className="nav-item ">
                     <button className="btn btn-fml-secondary" to="#">Start a campaign <span className="sr-only">(current)</span></button>
