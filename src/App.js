@@ -25,26 +25,22 @@ function App() {
 
                 <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
 
-                <Route exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} />
-
                 <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
-
-                <Route exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} />
-
-                <Route exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} />
-
-                <Route exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
 
                 <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
-                {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
+                <ProtectedRoute exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} history={history} />
+
+                <ProtectedRoute exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} history={history} />
+
+                <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} history={history} />
 
                 <Route component={Page404}/>
 
         </Switch>
 
     </Router>
-    
+
   );
 }
 
