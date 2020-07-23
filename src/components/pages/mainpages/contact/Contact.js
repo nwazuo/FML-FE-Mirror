@@ -9,10 +9,11 @@ import linkedinIcon from "./linkedin-icon.svg"
 import contactTextIcon from "./contact-text.svg"
 import callIcon from "./call-icon.svg"
 import {Navbar,Footer} from '../../navigation/navigation'
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 
 const Contact = () => {
     return(
-    <>
+    <ScrollIntoView>
     <Navbar />
     <div className={ContactCss.contact}>
 
@@ -99,7 +100,7 @@ const Contact = () => {
       </main> 
         </div>
         <Footer/>
-      </>
+      </ScrollIntoView>
     )
 }
 

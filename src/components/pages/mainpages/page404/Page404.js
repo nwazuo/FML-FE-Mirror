@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect,withRouter } from 'react-router-dom';
-import pageurl from '../../router/url/pageurl'
+import pageurl from '../../../router/url/pageurl'
 
 const Page404 = () => {
 

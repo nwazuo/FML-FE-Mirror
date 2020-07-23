@@ -8,12 +8,18 @@ import ContactUs from './contact/Contact';
 import LandingPage from './landingPage/landingPage';
 import UserProfile from './user-profile/user-profile';
 import Recommendations from './recommendations/recommendations';
+<<<<<<< HEAD
 import Compaign from './compaign/compaign';
+=======
+import Page404 from './page404/Page404'
+import ComingSoon from './comingSoon/comingSoon';
+
+>>>>>>> 42f4fdbe78ca00a11d3173005e21d2c9ffe6b6ba
 
 export {
-    Login, 
+    Login,
     SignUp,
-    Terms, 
+    Terms,
     PrivacyPage,
     FAQ,
     ContactUs,
@@ -21,5 +27,11 @@ export {
     UserProfile,
     Recommendations,
     AboutUs,
+<<<<<<< HEAD
     Compaign
 }
+=======
+    Page404,
+    ComingSoon
+}
+>>>>>>> 42f4fdbe78ca00a11d3173005e21d2c9ffe6b6ba
