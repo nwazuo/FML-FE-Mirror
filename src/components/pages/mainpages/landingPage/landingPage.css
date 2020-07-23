@@ -56,7 +56,7 @@ color: white;}
 }
 
 /* Header content start  Here */
-.landingPage.jumbotron{
+.landingPage .jumbotron{
     background: url(./img/landing.png) center  no-repeat;
     background-size: cover;
     min-height: 400px;
