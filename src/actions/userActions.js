@@ -6,10 +6,11 @@ import {
   LOADING_USER,
   CLEAR_ERRORS,
 } from '../reducers/types';
+
 import pageurl from '../components/router/url/pageurl';
 
 import axios from 'axios';
-let baseURL = 'https://api.fundmylaptop.com';
+let baseURL = process.env.REACT_APP_BASE_URL;
 
 const setAuthorizationHeader = (token) => {
   const Token = `Bearer ${token}`;
