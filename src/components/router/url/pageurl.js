@@ -10,6 +10,7 @@ const PRIVACY_POLICY_PAGE_URL = "/privacy"
 const FAQ_PAGE_URL = "/FAQ"
 const TC_PAGE_URL = "/terms-and-conditions"
 const PAGE_404 = "/404"
+const COMING_SOON_URL = '/coming-soon';
 const FUNDEE_DASHBOARD_PAGE_URL = "/fundee-dashboard"
 
 const pageurl = {
@@ -24,8 +25,8 @@ const pageurl = {
     FAQ_PAGE_URL,
     TC_PAGE_URL,
     PAGE_404,
+    COMING_SOON_URL,
     FUNDEE_DASHBOARD_PAGE_URL
 }
 
 export default pageurl;
-

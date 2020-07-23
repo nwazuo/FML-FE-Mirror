@@ -3,7 +3,9 @@ import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
-import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,LandingPage,AboutUs,Page404,FundeeDashboard} from './components/pages/mainpages'
+import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,
+        UserProfile,Recommendations,LandingPage,AboutUs,
+        Page404,ComingSoon,FundeeDashboard} from './components/pages/mainpages'
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
           <Switch>
 
                 <Route exact path={pageurl.LANDING_PAGE_URL} component={LandingPage} />
+
+                <Route exact path={pageurl.COMING_SOON_URL} component={ComingSoon} />
 
                 <Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
 
