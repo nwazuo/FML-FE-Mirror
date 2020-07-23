@@ -1,0 +1,8 @@
+.navbar {
+    margin-bottom: 42px;
+    padding: 20px 0;
+
+    @media screen and (min-width: 665px) {
+        margin-bottom: 62px;
+    }
+}

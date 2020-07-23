@@ -3,8 +3,8 @@ import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
-import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,
-        LandingPage,AboutUs,Page404,ComingSoon,Compaign} from './components/pages/mainpages'
+import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Recommendations,
+        LandingPage,AboutUs,Page404,ComingSoon} from './components/pages/mainpages'
 import {FundeeDashboard} from './components/pages/dashboards'
 
 function App() {
@@ -34,6 +34,8 @@ function App() {
                 <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
 
                 <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
+
+                <Route exact path={pageurl.LOAN_REQUEST_PAGE_URL} component={LoanRequest} />
 
                 <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
