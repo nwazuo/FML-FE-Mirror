@@ -1,18 +1,22 @@
 // PUBLIC PAGES
 const LANDING_PAGE_URL = "/";
 const LOGIN_PAGE_URL = "/login";
+const USER_PROFILE_PAGE_URL = "/user-profile";
+const USER_RECOMMENDATIONS = "/recommendations"
 const REGISTER_PAGE_URL = "/signup";
-const ABOUT_US_PAGE_URL = "/";
+const ABOUT_US_PAGE_URL = "/about";
 const CONTACT_US_PAGE_URL = "/contact-us"
 const PRIVACY_POLICY_PAGE_URL = "/privacy"
 const FAQ_PAGE_URL = "/FAQ"
 const TC_PAGE_URL = "/terms-and-conditions"
 const PAGE_404 = "/404"
-const INVESTOR_DASHBOARD ="/investordashboard"
+const COMING_SOON_URL = '/coming-soon';
 
 const pageurl = {
     LANDING_PAGE_URL,
     LOGIN_PAGE_URL,
+    USER_PROFILE_PAGE_URL,
+    USER_RECOMMENDATIONS,
     REGISTER_PAGE_URL,
     ABOUT_US_PAGE_URL,
     CONTACT_US_PAGE_URL,
@@ -20,8 +24,7 @@ const pageurl = {
     FAQ_PAGE_URL,
     TC_PAGE_URL,
     PAGE_404,
-    INVESTOR_DASHBOARD
+    COMING_SOON_URL
 }
 
 export default pageurl;
-
