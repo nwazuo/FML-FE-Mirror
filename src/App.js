@@ -5,9 +5,11 @@ import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 // import {Navbar,Footer} from './components/pages/navigation'
-import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,
+import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,FundeeDashboard
   // LandingPage
 } from './components/pages/mainpages'
+
+// import FundeeDashboard from './components/pages/mainpages'
 import Sample from './components/pages/sample/Sample';
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
 
                 <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
               
+                {/* <Route exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} /> */}
+                <Route exact path = {pageurl.FUNDEE_DASHBOARD_PAGE_URL} component = {FundeeDashboard} />
               </ScrollIntoView>
 
               {/* <ProtectedRoute exact path={pageurl.LOGINURL} component={Login} history={history} /> */}
