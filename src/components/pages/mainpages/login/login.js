@@ -5,6 +5,8 @@ import '../../../assets/bootstrap.css';
 import googleImg from '../../../assets/images/googleicon.svg';
 import loginBg from '../../../assets/images/login-bg.png';
 import pageurl from '../../../router/url/pageurl';
+import { Navbar,Footer } from '../../navigation/navigation';
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 
 const initialState = {
   email: '',
@@ -47,7 +49,8 @@ const Login = () => {
   };
 
   return (
-    <>
+    <ScrollIntoView>
+      <Navbar/>
       <div className="main-content d-sm-flex">
         <form
           className="login-box p-md-5 p-2"
@@ -124,7 +127,8 @@ const Login = () => {
           <img src={loginBg} className="login-img" alt="login FundMyLaptop" />
         </div>
       </div>
-    </>
+      <Footer/>
+    </ScrollIntoView>
   );
 };
 

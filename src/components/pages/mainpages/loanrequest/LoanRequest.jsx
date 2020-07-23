@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import '../../../assets/bootstrap.css';
 import './LoanRequest.scss';
 import PlusIcon from '../../../assets/images/plus.svg';
+import { DashboardNavbar, Footer } from '../../navigation/navigation';
 
 class LoanRequest extends Component {
     render() {
         return (
             <section>
+                <DashboardNavbar />
                 <div className='loan-wrapper'>
                     <span>Dashboard</span>
                     <form id="loanRequest">
@@ -105,6 +107,7 @@ class LoanRequest extends Component {
                         <button type="submit">Create Request > </button>
                     </form>
                 </div>
+                <Footer />
             </section>
         )
     }
