@@ -19,37 +19,28 @@ const Footer = () => {
                   </Link>
                 </li>
 
-                <li className="nav-item">
-                  <Link to="">Address </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="">Email Address</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="">Phone </Link>
-                </li>
-                <ul className="row list-unstyled m-0">
-                  <li className="nav-item">
-                    <Link to="">
-                      {' '}
-                      <img src="" alt="" />{' '}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="">
-                      {' '}
-                      <img src="" alt="" />{' '}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="">
-                      {' '}
-                      <img src="" alt="" />{' '}
-                    </Link>
-                  </li>
-                </ul>
-              </ul>
-            </div>
+                            <li className="nav-item"><Link to="">Address </Link></li>
+                            <li className="nav-item"><Link to="">Email Address</Link></li>
+                            <li className="nav-item"><Link to="">Phone </Link></li>
+                            <ul className="row list-unstyled m-0">
+                                <li className="nav-item"><Link to="">  <img src="../../assets/images/Vector (2).svg" alt=""/> </Link></li> 
+                                <li className="nav-item"><Link to="">  <img src="../../assets/images/Vector (3).svg" alt=""/> </Link></li> 
+                                <li className="nav-item"><Link to="">  <img src="../../assets/images/Vector (4).svg" alt=""/> </Link></li> 
+                            </ul>
+
+                        </ul>
+                    </div>
+
+                    <div className="mobile-center">
+                        <ul className="list-unstyled">
+                            <li className="nav-item"><Link className="navbar-brand" to="#">RESOURCES</Link></li>
+                            <li className="nav-item"><Link to=""> Why choose FundMyLaptop </Link></li>
+                            <li className="nav-item"><Link to=""> How P2P Lending works</Link></li>
+                            <li className="nav-item"><Link to={pageurl.ABOUT_US_PAGE_URL}> About FundMyLaptop </Link></li>
+                            <li className="nav-item"><Link to={pageurl.CONTACT_US_PAGE_URL}> Contact Us </Link></li>
+                        </ul>
+                    </div>
+                </div>
 
             <div className="mobile-center">
               <ul className="list-unstyled">
@@ -92,7 +83,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-        </div>
       </footer>
     </>
   );

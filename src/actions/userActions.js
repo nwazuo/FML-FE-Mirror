@@ -10,7 +10,10 @@ import {
 import pageurl from '../components/router/url/pageurl';
 
 import axios from 'axios';
+
 let baseURL = process.env.REACT_APP_BASE_URL;
+
+console.log(baseURL);
 
 const setAuthorizationHeader = (token) => {
   const Token = `Bearer ${token}`;

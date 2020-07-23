@@ -12,7 +12,7 @@ const Navbar = (props) => {
     <> 
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
       <div className="container">
-            <Link className="navbar-brand" to="#">
+            <Link className="navbar-brand" to={pageurl.LANDING_PAGE_URL}>
                <img src={logo} alt="" />
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
