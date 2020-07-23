@@ -62,7 +62,7 @@ const UserProfile = (props) => {
         <Navbar />
         <div className={['container', styles.UserProfile].join(' ')}>
           <Breadcrumb>{breadcrumbLinks}</Breadcrumb>
-          <h1 className="font-weight-bold">User Profile {photoURL}</h1>
+          <h1 className="font-weight-bold">User Profile</h1>
           <div className="row">
             <div className="col-md-3 text-md-center text-sm-left ">
               <div className="d-flex flex-md-column flex-sm-row align-items-center">
