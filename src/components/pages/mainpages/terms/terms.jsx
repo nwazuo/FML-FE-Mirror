@@ -1,8 +1,12 @@
 import React from 'react';
 import './terms.css';
 import { Navbar, Footer } from "../../navigation/navigation";
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
+
+
 const Terms = () => {
     return(
+      <ScrollIntoView>
     <div>
     <Navbar />
     <div className="container-fluid black_bg">
@@ -53,6 +57,7 @@ const Terms = () => {
       </div>
     <Footer />
     </div>
+    </ScrollIntoView>
     )
 }
 
