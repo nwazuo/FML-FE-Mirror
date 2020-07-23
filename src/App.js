@@ -1,12 +1,9 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import ScrollIntoView from './components/router/scrollintoview/ScrollIntoView'
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
-// import Sample from './components/pages/sample/Sample';
-import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,LandingPage,AboutUs} from './components/pages/mainpages'
-import Page404 from './components/pages/page404/Page404'
+import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,LandingPage,AboutUs,Page404} from './components/pages/mainpages'
 
 function App() {
 
@@ -16,8 +13,6 @@ function App() {
 
           <Switch>
 
-              <ScrollIntoView>
-              
                 <Route exact path={pageurl.LANDING_PAGE_URL} component={LandingPage} />
                 
                 <Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
@@ -43,10 +38,8 @@ function App() {
                 {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
                 {/* <Route exact path={pageurl.PAGE_404} component={Page404}/> */}
-                        
-                <Route path="*" component={Page404}/>
-                              
-              </ScrollIntoView>
+
+                <Route component={Page404}/>  
 
           </Switch>
 

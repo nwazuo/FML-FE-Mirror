@@ -8,10 +8,11 @@ import Image2 from './img/Rectangle 594.png';
 import Image3 from './img/Rectangle 597.png';
 import Header from '../../navigation/Navbar/Navbar'
 import Footer from '../../navigation/Footer/Footer'
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 
 const AboutUs = () => {
   return (
-      <>
+      <ScrollIntoView>
       <Header />
       <div className="about-us">
     <div className="container">
@@ -101,7 +102,7 @@ const AboutUs = () => {
     </div>
     </div>
     <Footer />
-    </>
+    </ScrollIntoView>
   );
 };
 

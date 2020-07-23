@@ -6,6 +6,8 @@ import googleImg from '../../../assets/images/googleicon.svg';
 import signupBg from '../../../assets/images/signup-bg.png';
 import pageurl from '../../../router/url/pageurl'
 import { Navbar,Footer } from '../../navigation/navigation';
+import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
+
 
 const initialState = {
   email: '',
@@ -46,7 +48,7 @@ const Signup = () => {
   };
 
   return (
-    <>
+    <ScrollIntoView>
     <Navbar/>
       <main className="main-content d-sm-flex">
         <form
@@ -163,7 +165,7 @@ const Signup = () => {
         </div>
       </main>
       <Footer/>
-    </>
+    </ScrollIntoView>
   );
 };
 
