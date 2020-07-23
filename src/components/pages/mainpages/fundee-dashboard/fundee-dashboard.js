@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 
 import "./fundee-dashboard.css";
-import pageurl from '../../../router/url/pageurl';
 import paymentIcon from "../../../assets/images/paid-progress.svg"
 import twitterIcon from "../../../assets/images/bx_bxl-twitter.svg"
 import facebookIcon from "../../../assets/images/bx_bxl-facebook.svg"
