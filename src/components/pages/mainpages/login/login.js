@@ -85,13 +85,10 @@ const Login = (props) => {
           </p>
           <div>
             {/* eslint-disable-next-line */}
-            <a
-              href="javascript:void(0)"
-              className="text-center py-3 btnGoogle d-flex justify-content-center align-items-center"
-            >
+            <Link className="text-center py-3 btnGoogle d-flex justify-content-center align-items-center">
               <img className="pr-3" src={googleImg} alt="" />
               Login with Google
-            </a>
+            </Link>
           </div>
 
           <div className="my-4 text-center or d-flex align-items-center or-box">

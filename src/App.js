@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
+import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,
         LandingPage,AboutUs,Page404,ComingSoon} from './components/pages/mainpages'
@@ -29,11 +29,15 @@ function App() {
 
                 <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
-                <ProtectedRoute exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} history={history} />
+                <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
 
-                <ProtectedRoute exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} history={history} />
+                <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
-                <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} history={history} />
+                <ProtectedRoute exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} />
+
+                <ProtectedRoute exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} />
+
+                <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
 
                 <Route component={Page404}/>
 
