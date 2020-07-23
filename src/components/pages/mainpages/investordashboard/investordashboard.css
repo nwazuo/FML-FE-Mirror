@@ -4,6 +4,167 @@
     box-sizing: border-box;
   }
 
+
+  .contain-arrow-helper {
+    position: relative;
+  }
+
+  .slide-control {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+  
+  .slide-control.arrow-left {
+    margin-left: -40px;
+    left: 0;
+    cursor: pointer;
+  }
+  
+  .slide-control.arrow-right {
+    margin-right: -40px;
+    right: 0;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 1199.98px) {
+    .slide-control.arrow-left, .slide-control.arrow-right {
+      width: 10px;
+      height: 30px;
+    }
+    .slide-control.arrow-left {
+      margin-left: -7px;
+    }
+    .slide-control.arrow-right {
+      margin-right: -7px;
+    }
+  }
+  
+  @media (pointer: coarse) {
+    .slide-control {
+      display: none;
+    }
+  }
+
+  .help-card-contain {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .help-card-contain::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+  .help-card-contain > * + * {
+    margin-left: 16px;
+  }
+  
+  .help-card {
+    background: rgba(4, 23, 42, 0.03);
+    min-width: 230px;
+  }
+  
+  .profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  
+  .profile .placeholder {
+    width: 60px;
+    height: 60px;
+    background: #c4c4c4;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .profile h5 {
+    font-size: 25px;
+    line-height: 1.3;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+  
+  .profile small {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 767.98px) {
+    .profile h5 {
+      font-size: 14px;
+    }
+    .profile small {
+      font-size: 12px;
+    }
+    .profile .placeholder {
+      width: 42px;
+      height: 42px;
+    }
+  }
+  
+  p.loan-amount {
+    font-size: 15px;
+    margin-top: 1.3em;
+  }
+  
+  @media (max-width: 767.98px) {
+    p.loan-amount {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .help-card button {
+      font-size: 12px;
+    }
+  }
+
+  .funded-progress {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    border-radius: 3px;
+    background: rgba(4, 23, 42, 0.05);
+    margin-top: 1.33em;
+  }
+  
+  @media (max-width: 767.98px) {
+    .funded-progress {
+      height: 12px;
+    }
+  }
+  
+  .funded-progress .funded {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    background: var(--fml-primary);
+    border-radius: 3px;
+  }
+  
+  .funded-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 12px;
+    line-height: 2;
+  }
+  
+ 
+
 #right-button{
     margin-right:0px;
 }

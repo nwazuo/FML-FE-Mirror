@@ -5,7 +5,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,
         UserProfile,Recommendations,LandingPage,AboutUs,
-        Page404,ComingSoon} from './components/pages/mainpages'
+        Page404,ComingSoon,investordashboard} from './components/pages/mainpages'
 
 function App() {
 
@@ -38,6 +38,8 @@ function App() {
                 <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
                 <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
+
+                <Route exact path={pageurl.INVESTOR_DASHBOARD} component={investordashboard} />
 
                 {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
