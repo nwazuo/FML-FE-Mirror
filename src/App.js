@@ -45,9 +45,7 @@ function App() {
 
                 {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
-                {/* <Route exact path={pageurl.PAGE_404} component={Page404}/> */}
-
-                {/* <Route component={Page404}/> */}
+                <Route exact component={Page404}/>
 
           </Switch>
 

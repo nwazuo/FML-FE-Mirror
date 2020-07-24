@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './compaign.module.css';
 import { Navbar, Footer } from '../../navigation/navigation';
+import {Link} from 'react-router-dom';
 import '../../../assets/bootstrap.css';
 import Image1 from './img/a.png';
 import Image2 from './img/b.png';
@@ -20,12 +21,15 @@ const compaign = () => {
         
             <div class={styles.bigCont}>
                 <div class="container">
+                    {/* eslint-disable-next-line */}
                     <p className="mt-4" className={styles.navHead}>Home / Campaigns page / <span className={styles.specColor}>Compaign</span></p>
-
+                    {/* eslint-disable-next-line */}
                     <p className="mt-4" className={styles.pageHead}>Fund John Doe’s Laptop Purchase</p>
 
                     <div className={styles.centerDiv}>
+                        {/* eslint-disable-next-line */}
                         <img className="img-fluid" className={styles.mainImg}  src={Image1} alt=""></img>
+                        {/* eslint-disable-next-line */}
                         <img className="img-fluid" className={styles.playImg}  src={Image2} alt=""></img>
 
 
@@ -33,8 +37,10 @@ const compaign = () => {
                         <div className="row">
                             <div className="col-sm-6  col-12">
                                 <p className={styles.rowParaHead}>Posted by:</p>
+                                {/* eslint-disable-next-line */}
                                 <div className="list-inline" className={styles.smGrp1}>
                                     <img className="img-fluid list-inline-item" src={Image3} alt=""></img>
+                                    {/* eslint-disable-next-line */}
                                     <p className="list-inline-item mt-4" className={styles.row1Para}>John Doe</p>
                                 </div>
                             </div>
@@ -77,28 +83,37 @@ const compaign = () => {
                         <p className={styles.rowParaHead}>Recommended by:</p>
 
                         <div  className="list-inline  ml-4" >
+                            {/* eslint-disable-next-line */}
                             <div className="list-inline list-inline-item" className={styles.row4Res, styles.row4, styles.smGrp2}>
                                 <img className="list-inline-item img-fluid" src={Image6} alt=""></img>
+                                {/* eslint-disable-next-line */}
                                 <p className="list-inline-item ml-4" className={styles.row2Para}> Jane Doe</p>
+                                {/* eslint-disable-next-line */}
                                 <p className="list-inline-item ml-4" className={styles.rowParaHead}>11 successsful recommendations</p>
                             </div>
-
+                            {/* eslint-disable-next-line */}
                             <div className="list-inline list-inline-item  ml-4" className={styles.row4Res, styles.row4, styles.smGrp}>
                                 <img className="list-inline-item img-fluid" src={Image4} alt=""></img>
+                                {/* eslint-disable-next-line */}
                                 <p className="list-inline-item" className={styles.row2Para}> Jane Doe</p>
+                                {/* eslint-disable-next-line */}
                                 <p className="list-inline-item" className={styles.rowParaHead}>7 successsful recommendations</p>
                             </div>
                         </div>
 
                         <div className="list-inline  ml-4">
+                            {/* eslint-disable-next-line */}
                             <div className="list-inline list-inline-item" className={styles.row4Res, styles.row4, styles.smGrp2}>
                                 <img className="list-inline-item img-fluid" src={Image5} alt=""></img>
+                                {/* eslint-disable-next-line */}
                                 <p className="list-inline-item" className={styles.row2Para}> Jane Doe</p>
+                                {/* eslint-disable-next-line */}
                                 <p className="list-inline-item" className={styles.rowParaHead}>6 successsful recommendations</p>
                             </div>
-
+                            {/* eslint-disable-next-line */}
                             <div className="list-inline list-inline-item" className={styles.row4Re, styles.row4, styles.smGrp3}>
-                                <a href=""><p className="list-inline-item" className={styles.rowParaHead, styles.specColor}>View recommender details</p></a>
+                                {/* eslint-disable-next-line */}
+                                <Link to=""><p className="list-inline-item" className={styles.rowParaHead, styles.specColor}>View recommender details</p></Link>
                             </div>
 
                             <hr></hr>
@@ -108,6 +123,7 @@ const compaign = () => {
                         <div className="row">
                             <div className="col-sm-6  col-12">
                                 <p className={styles.rowParaHead}> Loan amount:</p>
+                                {/* eslint-disable-next-line */}
                                 <p  className="font-weight-bold" className={styles.row1Para}>N 250,000</p>
                             </div>
 
@@ -123,10 +139,12 @@ const compaign = () => {
                         {/* ROW  SIX */}
                         <div className="row">
                             <div className="col-sm-9  col-12">
+                                {/* eslint-disable-next-line */}
                                 <p className={styles.row2Para}>Get a <span className="font-weight-bold">N 275,000</span>repayment in 3 months if you fund this loan</p>
                             </div>
-
+                            {/* eslint-disable-next-line */}
                             <div className="col-sm-3  col-12" className={styles.resCenter}>
+                                {/* eslint-disable-next-line */}
                                 <button className="text-light"  className={styles.btn} type="submit">Fund this loan</button>
                             </div>
 
@@ -142,10 +160,14 @@ const compaign = () => {
                             </div>
 
                             <div className="col-sm-4  col-12">
+                                {/* eslint-disable-next-line */}
                                 <div className="list-inline"  className={styles.resCenter}>
                                     <img   className={styles.socialImg} src={Image7} alt=""></img>
+                                    {/* eslint-disable-next-line */}
                                     <img className="ml-4" className={styles.socialImg} src={Image9} alt=""></img>
+                                    {/* eslint-disable-next-line */}
                                     <img className="ml-4"  className={styles.socialImg} src={Image10} alt=""></img>
+                                    {/* eslint-disable-next-line */}
                                     <img className="ml-4" className={styles.socialImg} src={Image8} alt=""></img>
                                 </div>
                             </div>
