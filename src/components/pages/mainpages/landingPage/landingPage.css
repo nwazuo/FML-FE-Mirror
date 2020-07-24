@@ -1,4 +1,3 @@
-
 .landingPage button{
     font-weight: 500;
     font-size: 16px;
@@ -15,7 +14,7 @@ color: white;}
 .landingPage h1{
     font-style: normal;
     font-weight: bold;
-    font-size: 72px;
+    font-size: 72px!important;
     line-height: 94px;
     color: rgba(255, 255, 255, 0.9);
 }
@@ -46,7 +45,6 @@ color: white;}
     line-height: 21px;
     color: #BDBDBD;
 }
-
 .landingPage h5{
     font-style: normal;
     font-weight: 500;
@@ -54,15 +52,12 @@ color: white;}
     line-height: 31px;
     color: rgba(4, 23, 42, 0.9);
 }
-
 /* Header content start  Here */
 .landingPage .jumbotron{
     background: url(./img/landing.png) center  no-repeat;
     background-size: cover;
     min-height: 400px;
-
 }
-
 .landingPage .jumbotron h1{
     font-style: normal;
     font-weight: bold;
@@ -73,7 +68,6 @@ color: white;}
 .landingPage .header-text>p{
     font-size: 24px;
     line-height: 31px;
-    
     color:  rgba(255, 255, 255, 0.9);
 }
 .landingPage .header-form{
@@ -91,9 +85,7 @@ color: white;}
     color: white;
 }
 /* header content finish here */
-
 /* ******************* MAIN************ */
-
 /* **Tranding section  start*/
 .landingPage .btn-view-all{
     font-weight: 500;
@@ -105,15 +97,15 @@ color: white;}
 .landingPage .trending-section{
     margin-top: 150px!important;
     margin-bottom: 150px!important;
-    background-color: #E5E5E5;
+    /* background-color: #E5E5E5; */
 }
-
 @media screen and (max-width:650px) {
     .landingPage .trending-section{
         margin-top: 50px!important;
         margin-bottom: 100px!important;
+        padding-left: 20px;
+        padding-right: 20px;
     }
-
 }
 .landingPage .card-img-top,.card-footer:last-child {
     border-radius: unset;
@@ -163,7 +155,6 @@ color: white;}
     color: #FFFFFF;
  }
 /*  Trending section Finish */
-
 /* About Us start Here */
 .landingPage .about-us-section>div{
     padding-top: 4rem;
@@ -182,14 +173,13 @@ color: white;}
 }
 /****** About Us Finish Here ******/
 /* Featured compaign start Here */
-.compaign-section{
-    padding: 8rem 0;
+.compaign-section .container{
+    padding-left: 20px;
+    padding-right: 20px;
 }
 /****** Featured compaign Finish Here ******/
 /* Testimonials-section  start Here */
-
 .landingPage .testimonials-section{
-
     background: url(./img/test-back.png) center no-repeat;
     background-size: cover;
     min-height:  742px;
@@ -204,7 +194,6 @@ color: white;}
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
 }
-
 .landingPage .testimonials-text::before{
     content: url(./img/“\ \(2\).png);
     position: absolute;
@@ -218,7 +207,6 @@ color: white;}
     bottom: 0;
 }   
 /****** Testimonials-section Finish Here ******/
-
 /* Foooter start here */
 .landingPage .news-letter{
     background: url(./img/subscribe.png) center  no-repeat;
@@ -249,7 +237,6 @@ color: white;}
     font-size: 32px;
     line-height: 42px;
     color: rgba(255, 255, 255, 0.5);
- 
 }
 .landingPage .subscribe-btn{
     width: 100%;
@@ -260,7 +247,6 @@ color: white;}
     font-size: 32px;
     line-height: 42px;
     color: white;
-
 }
 .landingPage .page-footer{
     background: #04172A;
@@ -274,10 +260,9 @@ color: white;}
 @media only screen and (max-width:650px){
     .landingPage .jumbotron {
         background: url(./img/landing.png) top  no-repeat;
-        background-size: 600px;
+        background-size: cover;
     }
     .landingPage .testimonials-section{
-        
         background: url(./img/test-back2.png) center no-repeat;
         background-size: cover;
         min-height:  494px;
@@ -301,21 +286,19 @@ color: white;}
         content: url(./img/“.png);
         right: 7%;
     }
-        
     .landingPage  h3{
         font-size: 24px;
         line-height: 31px !important;
         color: #04172A;
     }
     .landingPage h1{
-        font-size: 32px;
-        line-height: 42px;
+        font-size: 32px!important;
+        line-height: 32px!important;
         text-align: center;
     }
     .landingPage h2{
         font-size: 24px;
         line-height: 31px;
-
     }
     .landingPage  h5{
         font-weight: bold;
@@ -326,7 +309,6 @@ color: white;}
         font-size: 12px;
         line-height: 16px;
         text-align: center;
-
     }
     .landingPage .btn-view-all{
         font-size: 19px;
@@ -345,32 +327,27 @@ color: white;}
         text-align: center;
         width: 90%;
     }
-  
 }
 @media only screen and (max-width:770px){
     .landingPage .subscribe-btn , #subscribe-input {
-        height: 48px;
+        height: 48px!important;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 16px!important;
         line-height: 21px;
- 
     }
     .landingPage   #subscribe-input::placeholder{
         font-size: 12px;
         line-height: 16px;
     }
-  
  }
  @media only screen and (max-width:1000px){
     .landingPage  hr{
         border: 1px solid #FFFFFF;
-        
     }
 } 
 @media only screen and (max-width:500px){
     .landingPage  .header-form{
         margin-top: 6rem !important;
-        
     }
     .landingPage .aboutus-text{
         font-size: 21px;
@@ -401,4 +378,4 @@ color: white;}
     .landingPage .btn-form{
         font-size: 18px;
     }
-} 
+}
