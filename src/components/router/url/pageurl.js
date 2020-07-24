@@ -17,6 +17,7 @@ const COMPAIGN_PAGE_URL = '/campaign';
 const ADMIN_DASHBOARD_PAGE_URL = '/admin-dashboard';
 const EMAIL_CONFIRMATION_SUCCESS_URL = '/email-confirmation-success';
 const EMAIL_CONFIRMATION_FAILURE_URL = '/email-confirmation-failure';
+const EMAIL_CONFIRMATION_URL = '/email-confirmation';
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -36,7 +37,8 @@ const pageurl = {
   COMPAIGN_PAGE_URL,
   ADMIN_DASHBOARD_PAGE_URL,
   EMAIL_CONFIRMATION_SUCCESS_URL,
-  EMAIL_CONFIRMATION_FAILURE_URL
+  EMAIL_CONFIRMATION_FAILURE_URL,
+  EMAIL_CONFIRMATION_URL
 };
 
 export default pageurl;

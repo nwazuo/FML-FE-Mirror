@@ -12,6 +12,7 @@ import Page404 from './page404/Page404';
 import ComingSoon from './comingSoon/comingSoon';
 import EmailConfirmationSuccess from './EmailConfirmation/EmailConfirmationSuccess/EmailConfirmationSuccess';
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
+import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 import LoanRequest from './loanrequest/LoanRequest';
 import Compaign from './compaign/compaign';
 
@@ -30,6 +31,7 @@ export {
   LoanRequest,
   Compaign,
   ComingSoon,
+  EmailConfirmation,
   EmailConfirmationSuccess,
   EmailConfirmationFailure
 };

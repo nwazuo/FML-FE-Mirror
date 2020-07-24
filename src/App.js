@@ -19,7 +19,8 @@ import {
   ComingSoon,
   Compaign,
   EmailConfirmationSuccess,
-  EmailConfirmationFailure
+  EmailConfirmationFailure,
+  EmailConfirmation
 } from './components/pages/mainpages';
 import { FundeeDashboard } from './components/pages/dashboards';
 import AdminDashboard from './components/pages/adminDashboard/adminDashboard';
@@ -91,6 +92,12 @@ function App() {
           exact
           path={pageurl.EMAIL_CONFIRMATION_FAILURE_URL}
           component={EmailConfirmationFailure}
+        />
+
+        <Route
+          exact
+          path={pageurl.EMAIL_CONFIRMATION}
+          component={EmailConfirmation}
         />
 
         {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
