@@ -48,7 +48,7 @@ export const loginUser = (formInput, history) => (dispatch) => {
 };
 
 export const registerUser = (userData, history) => dispatch => {
-  Server.post(`${baseURL}/api/users/register`, userData).then(
+  Server.post(`/api/users/register`, userData).then(
     res => {
       dispatch({ type: CLEAR_ERRORS });
       console.log(res.data);
