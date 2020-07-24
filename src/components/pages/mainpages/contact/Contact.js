@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ContactCss from './Contact.css'
 import emailIcon from "./email-icon.svg"
 import facebookIcon from "./facebook-icon.svg"
@@ -10,8 +10,94 @@ import contactTextIcon from "./contact-text.svg"
 import callIcon from "./call-icon.svg"
 import {Navbar,Footer} from '../../navigation/navigation'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
+import {SubmitContactForm} from '../../../../actions/contactActions'
+import {connect} from 'react-redux'
 
-const Contact = () => {
+class Contact extends Component {
+   state = {
+     name:"",
+     email:"",
+     title:"",
+     comment:"",
+     contactValidation : {
+
+     },
+
+   }
+   
+  //  componentDidUpdate(prevProps,prevState){
+  //   if (prevProps.contact.contactValidation !== this.props.contact.contactValidation ) {
+  //     this.setState(
+  //       {
+  //         contactValidation : this.props.contact.contactValidation
+  //       },
+  //       () => {
+  //         console.log(this.state.contactValidation);
+  //       }
+  //     );
+  //   }
+  //  }
+
+   inputOnchange = (e) => {
+      this.setState ({
+        [e.target.id]: e.target.value,
+      })
+   }
+
+   FormSubmit = (e) => {
+      e.preventDefault();
+      const newContact = {
+          name: this.state.name,
+          email: this.state.email,
+          title: this.state.title,
+          comment: this.state.comment
+
+      }
+      this.props.SubmitContactForm(newContact);
+
+      
+
+
+
+      if(document.getElementById("name").value !=="" && document.getElementById("email").value !=="" && document.getElementById("title").value !=="" && document.getElementById("tel").value !=="" && document.getElementById("comment").value !=="") {
+
+
+        document.getElementById("name").value="";
+        document.getElementById("email").value="";
+        document.getElementById("title").value="";
+       document.getElementById("tel").value="";
+       document.getElementById("comment").value="";
+
+
+        var x = document.getElementById("snackbar");
+      
+        x.className += "shows";
+        x.style.transform="translateX(-50%)";
+      
+    
+        setTimeout(()=>{ x.className = x.className.replace("shows", "");
+                         x.style.transform="translateX(0%)";
+      }, 3000);
+
+    
+      } else {
+        
+        var y = document.getElementById("snackbar2");
+      
+        y.className += "shows2";
+        y.style.transform="translateX(-50%)";
+      
+    
+        setTimeout(()=>{ y.className = y.className.replace("shows2", "");
+                         y.style.transform="translateX(0%)";
+      }, 3000);
+
+
+      }
+
+    
+   };
+     render() {
     return(
     <ScrollIntoView>
     <Navbar />
@@ -23,6 +109,9 @@ const Contact = () => {
           <p className="top-image__text">Feel free to contact us anytime. We will get back to you as soon as possible</p>
         </div>
         <section className="back-wrap">
+         <div id="snackbar" className="back-wrap2" > Submitted  </div>
+         <div id="snackbar2" className="back-wrap3" > Please fill the form</div>
+
           <div className="row container-fluid mx-auto main-wrap">
             <div className="col contact--wrap container-fluid">
               <div className="contact--wrap-1">
@@ -68,30 +157,34 @@ const Contact = () => {
                   <form className="form-field">
                     <div className="row m-0 d-flex justify-content-between">
                       <div className="form-group form-item--input">
-                        <label htmlFor="exampleFormControlInput1">Full Name</label>
-                        <input type="text" className="contact-item__num py-4 form-control" id="exampleFormControlInput1" placeholder="Input full name" />
+                        <label htmlFor="name" >Full Name</label>
+                        <input onChange={this.inputOnchange} type="text" className="contact-item__num py-4 form-control" id="name" placeholder="Input full name" required />
                       </div>
-                      <div className="form-group form-item--input">
-                        <label htmlFor="exampleFormControlInput1">Email Address</label>
-                        <input type="email" className="contact-item__num py-4 form-control" id="exampleFormControlInput1" placeholder="Input email" />
+                      <div className="form-group  form-item--input">
+                        <label htmlFor="email">Email Address</label>
+                        <input onChange={this.inputOnchange} type="email" className="contact-item__num py-4 form-control" id="email" placeholder="Input email" required/>
                       </div>
                     </div>
                     <div className="row m-0 d-flex justify-content-between">
                       <div className="form-group form-item--input">
-                        <label htmlFor="exampleFormControlInput1">Phone Number</label>
-                        <input type="phone" className="contact-item__num py-4 form-control" id="exampleFormControlInput1" placeholder="Input phone number" />
+                        <label htmlFor="tel">Phone Number</label>
+                        <input onChange={this.inputOnchange} type="phone" className="contact-item__num py-4 form-control" id="tel" placeholder="Input phone number" required/>
                       </div>
                       <div className="form-group form-item--input">
-                        <label htmlFor="exampleFormControlInput1">Subject</label>
-                        <input type="text" className="contact-item__num py-4 form-control" id="exampleFormControlInput1" placeholder="Input subject" />
+                        <label htmlFor="title">Subject</label>
+                        <input onChange={this.inputOnchange} type="text" className="contact-item__num py-4 form-control" id="title" placeholder="Input subject" required/>
                       </div>
                     </div>
                     <div className="form-group w-100">
-                      <label htmlFor="exampleFormControlTextarea1">Message</label>
-                      <textarea className="pt-3 form-item--text-area contact-item__num form-control" id="exampleFormControlTextarea1" rows placeholder="Input message" defaultValue={""} />
+                      <label htmlFor="comment">Message</label>
+
+                      <textarea onChange={this.inputOnchange} className="pt-3 form-item--text-area contact-item__num form-control col-12" id="comment" rows placeholder="Input message" defaultValue={""} required/>
                     </div>
-                    <button className="form-submit" type="submit">Send Message</button>
+                    <button onClick={this.FormSubmit} className="form-submit" type="submit">Send Message</button>
+
+                    
                   </form>
+
                 </div>
               </div>
             </div>
@@ -101,7 +194,13 @@ const Contact = () => {
         </div>
         <Footer/>
       </ScrollIntoView>
-    )
+     )
+     }
 }
 
-export default Contact;
+const mapStateToProps = (state) => ({
+  contact: state.contact,
+});
+
+
+export default connect(mapStateToProps, { SubmitContactForm })(Contact);
