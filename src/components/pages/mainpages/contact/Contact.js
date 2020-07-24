@@ -45,21 +45,13 @@ class Contact extends Component {
    }
 
    FormSubmit = (e) => {
-      e.preventDefault();
-      const newContact = {
-          name: this.state.name,
-          email: this.state.email,
-          title: this.state.title,
-          comment: this.state.comment
-
-      }
-      this.props.SubmitContactForm(newContact);
+     
 
       
 
+      let validMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-
-      if(document.getElementById("name").value !=="" && document.getElementById("email").value !=="" && document.getElementById("title").value !=="" && document.getElementById("tel").value !=="" && document.getElementById("comment").value !=="") {
+      if(document.getElementById("name").value !=="" && document.getElementById("email").value !=="" && document.getElementById("title").value !=="" && document.getElementById("tel").value !=="" && document.getElementById("comment").value !=="" && document.getElementById("email").value.match(validMail)) {
 
 
         document.getElementById("name").value="";
@@ -80,6 +72,19 @@ class Contact extends Component {
       }, 3000);
 
     
+
+
+      e.preventDefault();
+      const newContact = {
+          name: this.state.name,
+          email: this.state.email,
+          title: this.state.title,
+          comment: this.state.comment
+
+      }
+      this.props.SubmitContactForm(newContact);
+
+      
       } else {
         
         var y = document.getElementById("snackbar2");
@@ -110,7 +115,7 @@ class Contact extends Component {
         </div>
         <section className="back-wrap">
          <div id="snackbar" className="back-wrap2" > Submitted  </div>
-         <div id="snackbar2" className="back-wrap3" > Please fill the form</div>
+         <div id="snackbar2" className="back-wrap3" > Please fill the form correctly</div>
 
           <div className="row container-fluid mx-auto main-wrap">
             <div className="col contact--wrap container-fluid">
