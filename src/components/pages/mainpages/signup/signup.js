@@ -331,8 +331,10 @@ class Signup extends Component {
                 Login with Google
             </a> */}
             </div>
-
-            <p className="account-info-text text-center py-4 mb-md-3">
+            <p className="account-info-text text-center textWidth my-1">
+              <Link to="/forgot-password">Forgot Password?</Link>
+            </p>
+            <p className="account-info-text text-center textWidth py-2 mb-md-3">
               Already have an account?{' '}
               <Link to={pageurl.LOGIN_PAGE_URL} style={{ color: '#fb3f5c' }}>
                 Sign In
