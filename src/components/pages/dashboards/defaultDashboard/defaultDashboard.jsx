@@ -16,7 +16,7 @@ import CompaignCard from './cards/compaignCards/CompaignCard';
 const DefaultDashboard =()=>{
     return(
 
-        <main>
+        <div>
             <Navbar/>
             <Container fluid className='mt-4'>
 
@@ -107,7 +107,7 @@ const DefaultDashboard =()=>{
             
         </Container>
         <Footer/>
-        </main>
+    </div>
     )
 }
 export default DefaultDashboard
