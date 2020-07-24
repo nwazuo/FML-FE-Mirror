@@ -15,20 +15,31 @@ class FQA extends React.Component {
         }
 
         this.onHandleChange = this.onHandleChange.bind(this)
+        this.onHandleSubmit = this.onHandleSubmit.bind(this)
     }
 
     componentDidMount () {
         fetch('https://api.fundmylaptop.com/api/faqs')
             .then(res => res.json())
             .then(data => this.setState({faqs: data.data}))
-            .catch(err => console.err(err))
+            .catch(err => console.error(err))
     }
 
     onHandleChange(e) {
         this.setState({value: e.target.value})
     }
 
+    onHandleSubmit(e) {
+        const { value } = this.state
+        fetch(`https://api.fundmylaptop.com/api/search/faqs?q=${value}`)
+            .then(res => res.json())
+            .then(data => this.setState({faqs: data.data}))
+            .catch(err => console.error(err))
+        e.preventDefault()
+    }
+
     render () {
+        const { value, faqs } = this.state
         return (
             <ScrollIntoView>
                 <Navbar/>
@@ -36,15 +47,17 @@ class FQA extends React.Component {
                         <div className="row justify-content-center">
                             <div className="col-12 col-md-9 col-xl-6">
                                 <h2 className="text-center">How can we help you?</h2>
-                                <div className="position-relative my-4 px-2 px-lg-5">
+                                <form className="position-relative my-4 px-2 px-lg-5" onSubmit={this.onHandleSubmit}>
                                     <input 
                                         type="text" 
                                         className="form-control w-100" 
-                                        value={this.state.value}
+                                        value={value}
                                         onChange={this.onHandleChange}
                                     />
-                                    <img src={search} className={[FQACss.search_icon, "img-fluid"].join(' ')} alt="search" />
-                                </div>
+                                    <button type="submit"className={[FQACss.search_icon, "img-fluid"].join(' ')}>
+                                        <img src={search} className="img-fluid" alt="search" />
+                                    </button>
+                                </form>
                                 <h3 className={[FQACss.text_light, "text-center mb-0 mt-0"].join(' ')}>You can also browse the topics below to find what you’re looking for</h3>
                             </div>
                         </div>
@@ -64,7 +77,7 @@ class FQA extends React.Component {
                                 <div className="col-12 col-md-9">
                                     <h2 className="mb-4 mt-4 mt-lg-3">Getting Started</h2>
                                     <div id="accordion">
-                                        {this.state.faqs.map((data, idx) => (
+                                        {faqs.map((data, idx) => (
                                             <div className="card mb-4" key={data._id}>
                                                 <div className={[FQACss.accordion_header, "card-header"].join(' ')} id={`heading${idx}`}>
                                                     <h5 className="mb-0">
