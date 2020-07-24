@@ -501,8 +501,8 @@ const LandingPage = () => {
             </div>
           </section>
           {/* Testimonials section */}
-          {/* <Testimonial/> */}
-          <section
+          <Testimonial/>
+          {/* <section
             className=" container-fluid testimonials-section mt-md-5
        row
        justify-content-center
@@ -530,7 +530,7 @@ const LandingPage = () => {
                 Raise 500k for his macbook pro
               </span>
             </div>
-          </section>
+          </section> */}
         </main>
         {/* ******* Main section Finish Here ******** */}
         <div className="spacer py-md-5" />
