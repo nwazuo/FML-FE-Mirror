@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Recommendations,
-        LandingPage,AboutUs,Page404,ComingSoon} from './components/pages/mainpages'
+        LandingPage,AboutUs,Page404,ComingSoon,Compaign} from './components/pages/mainpages'
 import {FundeeDashboard} from './components/pages/dashboards'
 
 function App() {
@@ -41,11 +41,13 @@ function App() {
 
                 <Route exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
 
+                <Route exact path={pageurl.COMPAIGN_PAGE_URL} component={Compaign} />
+
                 {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
                 {/* <Route exact path={pageurl.PAGE_404} component={Page404}/> */}
 
-                <Route component={Page404}/>
+                {/* <Route component={Page404}/> */}
 
           </Switch>
 
