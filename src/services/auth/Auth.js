@@ -97,9 +97,9 @@ function requestToken(email, password) {
   const data = {
     username: email,
     password,
-    grant_type: Constants.GRANT_TYPE,
-    client_id: Constants.CLIENT_ID,
-    client_secret: Constants.CLIENT_SECRET
+    grant_type: process.env.REACT_APP_GRANT_TYPE,
+    client_id: process.env.REACT_APP_CLIENT_ID,
+    client_secret: process.env.REACT_APP_CLIENT_SECRET
   };
 
   return Server.post("api", data).then(resp => resp.data);
