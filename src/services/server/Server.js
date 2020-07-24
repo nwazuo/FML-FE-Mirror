@@ -33,7 +33,7 @@ const authPost = (url, data, token, header = {}) => {
 const authGet = (url, token, extraHeaders = {}) => {
   const authToken = { Authorization: "Bearer " + token, ...extraHeaders };
   const options = { ...headers, ...authToken };
-  console.log(Constants.BASE_URL + url);
+  console.log(process.env.REACT_APP_BASE_URL + url);
   return axios.get(process.env.REACT_APP_BASE_URL + url, { headers: options });
 };
 
