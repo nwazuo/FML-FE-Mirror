@@ -151,7 +151,7 @@ class Signup extends Component {
       password,
       address,
       phone,
-      message,
+      // message,
     } = this.state;
 
     return (

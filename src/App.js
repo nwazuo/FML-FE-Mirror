@@ -26,10 +26,14 @@ function App() {
         <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
         <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
+
+        <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
             
         <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
         <Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
+
+        <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
 
         <ProtectedRoute exact path={pageurl.LOAN_REQUEST_PAGE_URL} component={LoanRequest} />
 

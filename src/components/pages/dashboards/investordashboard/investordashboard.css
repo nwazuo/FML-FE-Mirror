@@ -110,7 +110,7 @@
     }
   }
   
-  p.loan-amount {
+  /* p.loan-amount {
     font-size: 15px;
     margin-top: 1.3em;
   }
@@ -125,7 +125,7 @@
     .help-card button {
       font-size: 12px;
     }
-  }
+  } */
 
   .funded-progress {
     position: relative;
