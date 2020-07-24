@@ -10,15 +10,15 @@ const PRIVACY_POLICY_PAGE_URL = "/privacy"
 const FAQ_PAGE_URL = "/FAQ"
 const TC_PAGE_URL = "/terms-and-conditions"
 const LOAN_REQUEST_PAGE_URL = "/loan-request"
-const PAGE_404 = "/404"
+const PAGE_404 = "/404";
 const COMING_SOON_URL = '/coming-soon';
 const INVESTOR_DASHBOARD = '/investordashboard';
-const FUNDEE_DASHBOARD_PAGE_URL = "/fundee-dashboard"
-const COMPAIGN_PAGE_URL = "/campaign"
-const ADMIN_DASHBOARD_PAGE_URL = "/admin-dashboard"
-const DEFAULT_DASHBOARD_PAGE_URL = "/default-dashboard"
+const FUNDEE_DASHBOARD_PAGE_URL = "/fundee-dashboard";
+const COMPAIGN_PAGE_URL = "/campaign";
+const ADMIN_DASHBOARD_PAGE_URL = "/admin-dashboard";
+const BLOG_PAGE_URL = "/blog";
+const DEFAULT_DASHBOARD_PAGE_URL = "/default-dashboard";
 const PAYMENT_PAGE_URL = "/payment"
-
 
 
 const pageurl = {
@@ -39,6 +39,7 @@ const pageurl = {
     FUNDEE_DASHBOARD_PAGE_URL,
     COMPAIGN_PAGE_URL,
     ADMIN_DASHBOARD_PAGE_URL,
+    BLOG_PAGE_URL,
     DEFAULT_DASHBOARD_PAGE_URL,
     PAYMENT_PAGE_URL
 }
