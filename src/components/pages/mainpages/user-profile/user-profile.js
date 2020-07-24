@@ -55,12 +55,19 @@ const UserProfile = (props) => {
   console.log(props.user.credentials);
 
   const credentials = props.user.credentials;
-  const { 
-    // _id, 
-    firstName, lastName, 
-    // photoURL, 
-    // role, 
-    email } = credentials;
+  const {
+    // _id,
+    firstName,
+    lastName,
+    photoURL,
+    email,
+    phone,
+    // isVerified,
+    // isAdmin,
+    // isAuth,
+    // role,
+    // isActive
+  } = credentials.data;
   console.log(firstName);
   return (
     <ScrollIntoView>
@@ -114,9 +121,7 @@ const UserProfile = (props) => {
               <div className="row">
                 <div className="col-md-5">
                   <ProfileInfo title="Full Name">{`${firstName} ${lastName}`}</ProfileInfo>
-                  <ProfileInfo title="Contact Information">
-                    4456-6785-6789-7895
-                  </ProfileInfo>
+                  <ProfileInfo title="Contact Information">{phone}</ProfileInfo>
                   <ProfileInfo title="Gender">Male</ProfileInfo>
                 </div>
                 <div className="col-md-7">
