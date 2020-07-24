@@ -320,7 +320,14 @@ class Signup extends Component {
                 className="form-control login-btn reg-btn btn-outline-fml-secondary"
               >
                 <img className="pr-3" src={googleImg} alt="" />
-                Login with Google
+                Sign up with Google
+              </Link>
+              <Link
+                to=""
+                className="mt-2 form-control login-btn login-btn-facebook reg-btn "
+              >
+                <i class="fab fa-facebook-square pr-3 facbook-logo" ></i>
+                Sign up with Facebook
               </Link>
 
               {/* <a
