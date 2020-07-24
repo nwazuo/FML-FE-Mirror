@@ -9,6 +9,7 @@ import {
   Terms,
   PrivacyPage,
   FAQ,
+  LoanRequest,
   ContactUs,
   UserProfile,
   Recommendations,
@@ -35,7 +36,13 @@ function App() {
 
         <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
 
-        <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
+        <Route
+          exact
+          path={pageurl.LOAN_REQUEST_PAGE_URL}
+          component={LoanRequest}
+        />
+
+        <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
         <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
