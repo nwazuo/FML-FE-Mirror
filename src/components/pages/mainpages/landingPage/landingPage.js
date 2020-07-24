@@ -13,6 +13,7 @@ import campaign6 from "./img/campaign6.png";
 import testimonial from "./img/testimonial-pic.png";
 import { Navbar, Footer } from "../../navigation/navigation";
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
+import Testimonial from './testimonial';
 
 
 const LandingPage = () => {
