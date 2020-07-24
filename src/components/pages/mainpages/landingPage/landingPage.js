@@ -13,7 +13,7 @@ import campaign6 from "./img/campaign6.png";
 import testimonial from "./img/testimonial-pic.png";
 import { Navbar, Footer } from "../../navigation/navigation";
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
-import Testimonial from './testimonial';
+import Testimonial from '../../../dataservices/testimonial_controller';
 
 
 const LandingPage = () => {
@@ -501,6 +501,7 @@ const LandingPage = () => {
             </div>
           </section>
           {/* Testimonials section */}
+          {/* <Testimonial/> */}
           <section
             className=" container-fluid testimonials-section mt-md-5
        row
