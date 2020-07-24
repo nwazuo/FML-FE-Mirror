@@ -84,6 +84,7 @@ function App() {
 
         {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
+<<<<<<< HEAD
         <Route
           exact
           path={pageurl.EMAIL_CONFIRMATION_SUCCESS_URL}
@@ -96,6 +97,9 @@ function App() {
         />
 
         {/* <Route component={Page404}/> */}
+=======
+                <Route exact component={Page404}/>
+>>>>>>> a9eef677e350a5e360a0f25edfbf052d67efcb42
 
         {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
