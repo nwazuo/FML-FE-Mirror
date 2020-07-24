@@ -49,40 +49,42 @@ class FQA extends React.Component {
                             </div>
                         </div>
                     </section>
-                    <section className="container my-md-4 px-3 px-md-0">
-                        <div className="row">
-                            <div className="col-12 col-md-3">
-                                <h6>Getting Started</h6>
-                                <div className="d-flex flex-column">
-                                    <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/">Funding </a></h6>
-                                    <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/">Menu III </a></h6>
-                                    <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/">Menu IV </a></h6>
-                                    <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/">Menu V </a></h6>
+                    <div className="bg-white">
+                        <section className="container py-md-4 px-3 px-md-0">
+                            <div className="row">
+                                <div className="col-12 col-md-3">
+                                    <h6>Getting Started</h6>
+                                    <div className="d-flex flex-column">
+                                        <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/">Funding </a></h6>
+                                        <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/">Menu III </a></h6>
+                                        <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/">Menu IV </a></h6>
+                                        <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/">Menu V </a></h6>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="col-12 col-md-9">
-                                <h2 className="mb-4 mt-4 mt-lg-3">Getting Started</h2>
-                                <div id="accordion">
-                                    {this.state.faqs.map((data, idx) => (
-                                        <div className="card mb-4" key={data._id}>
-                                            <div className={[FQACss.accordion_header, "card-header"].join(' ')} id={`heading${idx}`}>
-                                                <h5 className="mb-0">
-                                                    <button className={["pt-md-2", FQACss.no_border].join(' ')} data-toggle="collapse" data-target={`#collapse${idx}`} aria-expanded="true" aria-controls={`collapse${idx}`}>
-                                                        <h5 className="text-white">{data.question}</h5>
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id={`collapse${idx}`} className="collapse show" aria-labelledby={`heading${idx}`} data-parent="#accordion">
-                                                <div className="card-body">
-                                                    {data.answer}
+                                <div className="col-12 col-md-9">
+                                    <h2 className="mb-4 mt-4 mt-lg-3">Getting Started</h2>
+                                    <div id="accordion">
+                                        {this.state.faqs.map((data, idx) => (
+                                            <div className="card mb-4" key={data._id}>
+                                                <div className={[FQACss.accordion_header, "card-header"].join(' ')} id={`heading${idx}`}>
+                                                    <h5 className="mb-0">
+                                                        <button className={["pt-md-2", FQACss.no_border].join(' ')} data-toggle="collapse" data-target={`#collapse${idx}`} aria-expanded="true" aria-controls={`collapse${idx}`}>
+                                                            <h5 className="text-white">{data.question}</h5>
+                                                        </button>
+                                                    </h5>
+                                                </div>
+                                                <div id={`collapse${idx}`} className="collapse show" aria-labelledby={`heading${idx}`} data-parent="#accordion">
+                                                    <div className="card-body">
+                                                        {data.answer}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 <Footer/>
             </ScrollIntoView>
         )
