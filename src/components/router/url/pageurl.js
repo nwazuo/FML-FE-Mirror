@@ -15,7 +15,7 @@ const COMING_SOON_URL = '/coming-soon';
 const FUNDEE_DASHBOARD_PAGE_URL = "/fundee-dashboard"
 const COMPAIGN_PAGE_URL = "/campaign"
 const ADMIN_DASHBOARD_PAGE_URL = "/admin-dashboard"
-
+const BLOG_PAGE_URL = "/blog"
 
 const pageurl = {
     LANDING_PAGE_URL,
@@ -33,7 +33,8 @@ const pageurl = {
     COMING_SOON_URL,
     FUNDEE_DASHBOARD_PAGE_URL,
     COMPAIGN_PAGE_URL,
-    ADMIN_DASHBOARD_PAGE_URL
+    ADMIN_DASHBOARD_PAGE_URL,
+    BLOG_PAGE_URL
 }
 
 export default pageurl;
