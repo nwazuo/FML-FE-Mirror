@@ -11,7 +11,9 @@ import Recommendations from './recommendations/recommendations';
 import LoanRequest from './loanrequest/LoanRequest'
 import Page404 from './page404/Page404'
 import ComingSoon from './comingSoon/comingSoon';
+import investordashboard from './investordashboard/investordashboard';
 import Compaign from './compaign/compaign';
+
 
 
 export {
@@ -28,5 +30,6 @@ export {
     LoanRequest,
     Page404,
     ComingSoon,
+    investordashboard,
     Compaign
 }
