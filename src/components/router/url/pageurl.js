@@ -13,7 +13,7 @@ const LOAN_REQUEST_PAGE_URL = "/loan-request"
 const PAGE_404 = "/404"
 const COMING_SOON_URL = '/coming-soon';
 const FUNDEE_DASHBOARD_PAGE_URL = "/fundee-dashboard"
-const COMPAIGN_PAGE_URL = "/compaign"
+const COMPAIGN_PAGE_URL = "/Campaign"
 
 const pageurl = {
     LANDING_PAGE_URL,

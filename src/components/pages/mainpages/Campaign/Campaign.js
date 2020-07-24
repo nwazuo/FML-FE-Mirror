@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './compaign.module.css';
+import React, { useState } from 'react';
+import styles from './Campaign.module.css';
 import { Navbar, Footer } from '../../navigation/navigation';
 import '../../../assets/bootstrap.css';
 import Image1 from './img/a.png';
@@ -13,7 +13,11 @@ import Image8 from './img/instagram.png';
 import Image9 from './img/twitter.png';
 import Image10 from './img/mail.png';
 
-const compaign = () => {
+const Campaign = () => {
+    const [campaign, setCampaign] = useState([]);
+    const getCampaignDetails =() => {
+        
+    }
     return (
         <>
         <Navbar/>
@@ -164,4 +168,4 @@ const compaign = () => {
     )
 }
 
-export default compaign
+export default Campaign
