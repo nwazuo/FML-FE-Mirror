@@ -5,6 +5,7 @@ import {
   // SET_UNAUTHENTICATED,
   LOADING_USER,
   CLEAR_ERRORS,
+  REGISTERED_USER,
 } from '../reducers/types';
 
 import pageurl from '../components/router/url/pageurl';
@@ -48,18 +49,19 @@ export const loginUser = (formInput, history) => (dispatch) => {
     });
 };
 
-export const registerUser = (userData, history) => dispatch => {
-  Server.post(`${baseURL}/api/users/register`, userData).then(
-    res => {
+export const registerUser = (userData, history) => (dispatch) => {
+  Server.post(`${baseURL}/api/users/register`, userData)
+    .then((res) => {
       dispatch({ type: CLEAR_ERRORS });
       console.log(res.data);
-      dispatch({ type: LOADING_USER })
-      history.push(pageurl.LOGIN_PAGE_URL);
-    }).catch(err => {
+      dispatch({ type: LOADING_USER });
+      dispatch({ type: REGISTERED_USER, payload: res.data.message });
+    })
+    .catch((err) => {
       console.log(err.response.data);
       dispatch({
         type: SET_ERRORS,
-        payload: err.response.data
+        payload: err.response.data,
       });
     });
-}
+};
