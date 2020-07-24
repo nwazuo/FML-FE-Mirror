@@ -8,12 +8,18 @@ import ContactUs from './contact/Contact';
 import LandingPage from './landingPage/landingPage';
 import UserProfile from './user-profile/user-profile';
 import Recommendations from './recommendations/recommendations';
+import LoanRequest from './loanrequest/LoanRequest'
 import Page404 from './page404/Page404'
+import ComingSoon from './comingSoon/comingSoon';
+import Compaign from './compaign/compaign';
+import Blog from '../mainpages/blog/blog'
+import SinglePost from '../mainpages/single-post-blog/singlepost'
+
 
 export {
-    Login, 
+    Login,
     SignUp,
-    Terms, 
+    Terms,
     PrivacyPage,
     FAQ,
     ContactUs,
@@ -21,5 +27,10 @@ export {
     UserProfile,
     Recommendations,
     AboutUs,
-    Page404
+    LoanRequest,
+    Page404,
+    ComingSoon,
+    Compaign,
+    Blog,
+    SinglePost
 }
