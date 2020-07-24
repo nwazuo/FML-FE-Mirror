@@ -7,7 +7,7 @@ import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Rec
         LandingPage,AboutUs,Page404,ComingSoon,Compaign,Blog} from './components/pages/mainpages'
 
 import {FundeeDashboard,AdminDashboard,DefaultDashboard,
-        // InvestorDashboard
+        InvestorDashboard
 } from './components/pages/dashboards'
 
 
@@ -39,7 +39,7 @@ function App() {
 
         <ProtectedRoute exact path={pageurl.LOAN_REQUEST_PAGE_URL} component={LoanRequest} />
 
-        {/* <ProtectedRoute exact path={pageurl.INVESTOR_DASHBOARD} component={InvestorDashboard} /> */}
+        <ProtectedRoute exact path={pageurl.INVESTOR_DASHBOARD} component={InvestorDashboard} />
                 
         <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
 

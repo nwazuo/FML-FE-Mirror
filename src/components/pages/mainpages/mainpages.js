@@ -13,7 +13,7 @@ import Page404 from './page404/Page404'
 import ComingSoon from './comingSoon/comingSoon';
 import Compaign from './compaign/compaign';
 import Blog from '../mainpages/blog/blog'
-import SinglePost from '../mainpages/single-post-blog/singlepost'
+import SinglePost from '../mainpages/single-post-blog/singlepost';
 
 
 export {
