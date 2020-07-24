@@ -1,4 +1,4 @@
 import userReducer from './userReducer';
-import contactReducer from './contactReducer';
+import dataReducer from './dataReducer';
 
-export { userReducer, contactReducer };
+export { userReducer, dataReducer };

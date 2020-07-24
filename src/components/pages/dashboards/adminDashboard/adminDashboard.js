@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./adminDashboard.css";
+import {Link} from 'react-router-dom';
 import alerm from "./img/alerm.png";
 import avatar from "./img/avatar.png";
 import down from "./img/down.png";
@@ -13,7 +14,7 @@ import user2 from "./img/user2.png";
 import user3 from "./img/user3.png";
 import Ham1 from "./img/Ham-1.png";
 import Ham2 from "./img/Ham-2.png";
-import { Navbar, Footer } from "../navigation/navigation";
+import { Navbar, Footer } from "../../navigation";
 
 class AdminDashboard extends Component {
   componentDidMount() {
@@ -61,16 +62,16 @@ class AdminDashboard extends Component {
                 <img src={left} alt="left" className="ml-2"/> 
                 <ul className="navbar-nav  mt-2 mt-lg-0 anchor">
                     <li className="nav-item ">
-                      <a className="nav-link " href="#">Campaign</a>
+                      <Link className="nav-link " to="">Campaign</Link>
                     </li> &nbsp;
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Fundings</a>
+                      <Link className="nav-link" to="">Fundings</Link>
                     </li> &nbsp;
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Payments</a>
+                      <Link className="nav-link" to="">Payments</Link>
                     </li> &nbsp;
                     <li className="nav-item">
-                      <a className="nav-link" href="#">Settings</a>
+                      <Link className="nav-link" to="">Settings</Link>
                     </li> &nbsp;
              </ul>
               </aside>
@@ -78,6 +79,7 @@ class AdminDashboard extends Component {
               <main className="col-12 col-md-9 col-lg-10 bg-light px-0 vh-100 overflow">
                 {/* TopNav Section */}
                 <nav className="bg-white d-flex sticky-top justify-content-en align-items-center py-2 py-md-3 px-2 px-md-5">
+                {/* eslint-disable-next-line */}
                 <img src={Ham1} className="d-md-none" id="sidebar-opener" />
                   <h5 className="font-weight-bold d-md-none ml-3 mb-0">
                     Dashboard
