@@ -10,12 +10,14 @@ import UserProfile from './user-profile/user-profile';
 import Recommendations from './recommendations/recommendations';
 import Page404 from './page404/Page404';
 import ComingSoon from './comingSoon/comingSoon';
+import Compaign from './compaign/compaign';
+import Blog from '../mainpages/blog/blog';
+import SinglePost from '../mainpages/single-post-blog/singlepost';
+import LoanRequest from './loanrequest/LoanRequest';
+import Payment from './payment/payment';
 import EmailConfirmationSuccess from './EmailConfirmation/EmailConfirmationSuccess/EmailConfirmationSuccess';
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
-import LoanRequest from './loanrequest/LoanRequest';
-import Compaign from './compaign/compaign';
-import investordashboard from './investordashboard/investordashboard';
 
 export {
   Login,
@@ -31,8 +33,10 @@ export {
   LoanRequest,
   Page404,
   ComingSoon,
-  investordashboard,
   Compaign,
+  Payment,
+  Blog,
+  SinglePost,
   EmailConfirmation,
   EmailConfirmationSuccess,
   EmailConfirmationFailure
