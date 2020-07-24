@@ -16,7 +16,7 @@ import CompaignCard from './cards/compaignCards/CompaignCard';
 const DefaultDashboard =()=>{
     return(
 
-        <div>
+        <div className='default-dashboard'>
             <Navbar/>
             <Container fluid className='mt-4'>
 
