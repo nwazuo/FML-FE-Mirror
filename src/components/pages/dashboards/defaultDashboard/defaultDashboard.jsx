@@ -81,7 +81,7 @@ const DefaultDashboard =()=>{
             {/* ************** */}
 
             {/* ***Table*** */}
-            <Container className='table mb-5 '>
+            <Container className='dashboard-table mb-5 '>
                 <h4 className='compaign__title'>Loan History</h4>
                 <Table responsive >
                     <thead>
