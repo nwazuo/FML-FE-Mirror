@@ -20,5 +20,4 @@ export default function configureStore(preloadedState) {
 
   return store;
 
-  // console.log(store.getState());
 }

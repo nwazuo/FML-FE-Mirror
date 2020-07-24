@@ -12,15 +12,13 @@ import pageurl from '../components/router/url/pageurl';
 import Server from '../services/server/Server';
 
 import axios from 'axios';
-
-let baseURL = "https://api.fundmylaptop.com";
-
-console.log(baseURL);
+// let baseURL = process.env.REACT_APP_BASE_URL;
+let baseURL = 'https://api.fundmylaptop.com';
 
 const setAuthorizationHeader = (token) => {
-  const Token = `Bearer ${token}`;
-  localStorage.setItem('Token', Token);
-  axios.defaults.headers.common['Authorization'] = Token;
+  const FMLToken = `Bearer ${token}`;
+  localStorage.setItem('FMLToken', FMLToken);
+  axios.defaults.headers.common['Authorization'] = FMLToken;
 };
 
 export const loginUser = (formInput, history) => (dispatch) => {
@@ -42,7 +40,7 @@ export const loginUser = (formInput, history) => (dispatch) => {
       history.push(pageurl.USER_PROFILE_PAGE_URL);
     })
     .catch((err) => {
-      console.log(err.response.data.message);
+      //   console.log(err.response.data.message);
       dispatch({
         type: SET_ERRORS,
         payload: err.response.data,
