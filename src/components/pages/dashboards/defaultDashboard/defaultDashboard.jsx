@@ -83,7 +83,7 @@ const DefaultDashboard =()=>{
             {/* ***Table*** */}
             <Container className='dashboard-table mb-5 '>
                 <h4 className='compaign__title'>Loan History</h4>
-                <Table responsive >
+                <Table responsive style={{borderRadius:'5px 5px 0px 0px ;'}} >
                     <thead>
                         <tr>
                             <th>ID</th>
