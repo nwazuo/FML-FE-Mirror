@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import '../../../assets/bootstrap.css';
-// import loginCss from './login.css';
+import './login.css';
 import googleImg from '../../../assets/images/googleicon.svg';
 import loginBg from '../../../assets/images/login-bg.png';
 import pageurl from '../../../router/url/pageurl';
@@ -135,11 +135,16 @@ const Login = (props) => {
             />
           </div>
           {errors && (
-            <p className="text-center py-1" style={{ color: 'red' }}>
+            <p className="text-center textWidth py-1" style={{ color: 'red' }}>
               {errors.message}
             </p>
           )}
-          <p className="account-info-text text-center py-4">
+          <p className="account-info-text text-center textWidth my-2">
+            <Link to="/forgot-password" className="sign-up-link">
+              Forgot Password?
+            </Link>
+          </p>
+          <p className="account-info-text text-center textWidth pt-1 mt-1 pb-4">
             Don't have an account?
             <Link to={pageurl.REGISTER_PAGE_URL} className="sign-up-link">
               {' '}
