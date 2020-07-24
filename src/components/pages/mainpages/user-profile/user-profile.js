@@ -81,7 +81,7 @@ const UserProfile = (props) => {
               <div className="d-flex flex-md-column flex-sm-row align-items-center">
                 <img
                   className={styles.ProfileImg}
-                  src={profileImg}
+                  src={photoURL}
                   alt="user profile"
                 />
                 <div className="ml-3 ml-md-0">
