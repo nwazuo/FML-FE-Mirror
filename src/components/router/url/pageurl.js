@@ -14,6 +14,8 @@ const PAGE_404 = "/404"
 const COMING_SOON_URL = '/coming-soon';
 const FUNDEE_DASHBOARD_PAGE_URL = "/fundee-dashboard"
 const COMPAIGN_PAGE_URL = "/campaign"
+const ADMIN_DASHBOARD_PAGE_URL = "/admin-dashboard"
+
 
 const pageurl = {
     LANDING_PAGE_URL,
@@ -30,7 +32,8 @@ const pageurl = {
     PAGE_404,
     COMING_SOON_URL,
     FUNDEE_DASHBOARD_PAGE_URL,
-    COMPAIGN_PAGE_URL
+    COMPAIGN_PAGE_URL,
+    ADMIN_DASHBOARD_PAGE_URL
 }
 
 export default pageurl;
