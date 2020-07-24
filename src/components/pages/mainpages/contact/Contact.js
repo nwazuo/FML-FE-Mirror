@@ -25,18 +25,18 @@ class Contact extends Component {
 
    }
    
-   componentDidUpdate(prevProps,prevState){
-    if (prevProps.contact.contactValidation !== this.props.contact.contactValidation ) {
-      this.setState(
-        {
-          contactValidation : this.props.contact.contactValidation
-        },
-        () => {
-          console.log(this.state.contactValidation);
-        }
-      );
-    }
-   }
+  //  componentDidUpdate(prevProps,prevState){
+  //   if (prevProps.contact.contactValidation !== this.props.contact.contactValidation ) {
+  //     this.setState(
+  //       {
+  //         contactValidation : this.props.contact.contactValidation
+  //       },
+  //       () => {
+  //         console.log(this.state.contactValidation);
+  //       }
+  //     );
+  //   }
+  //  }
 
    inputOnchange = (e) => {
       this.setState ({

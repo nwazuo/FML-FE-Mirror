@@ -55,14 +55,6 @@ const UserProfile = (props) => {
   console.log(props.user.credentials);
 
   const credentials = props.user.credentials;
-<<<<<<< HEAD
-  const { 
-    // _id, 
-    firstName, lastName, 
-    // photoURL, 
-    // role, 
-    email } = credentials;
-=======
   const {
     // _id,
     firstName,
@@ -76,7 +68,6 @@ const UserProfile = (props) => {
     // role,
     // isActive
   } = credentials.data;
->>>>>>> 41309358790ac473894ba1373de42ab2ec41693a
   console.log(firstName);
   return (
     <ScrollIntoView>
@@ -90,11 +81,7 @@ const UserProfile = (props) => {
               <div className="d-flex flex-md-column flex-sm-row align-items-center">
                 <img
                   className={styles.ProfileImg}
-<<<<<<< HEAD
-                  src={profileImg}
-=======
                   src={photoURL}
->>>>>>> 41309358790ac473894ba1373de42ab2ec41693a
                   alt="user profile"
                 />
                 <div className="ml-3 ml-md-0">
@@ -134,13 +121,7 @@ const UserProfile = (props) => {
               <div className="row">
                 <div className="col-md-5">
                   <ProfileInfo title="Full Name">{`${firstName} ${lastName}`}</ProfileInfo>
-<<<<<<< HEAD
-                  <ProfileInfo title="Contact Information">
-                    4456-6785-6789-7895
-                  </ProfileInfo>
-=======
                   <ProfileInfo title="Contact Information">{phone}</ProfileInfo>
->>>>>>> 41309358790ac473894ba1373de42ab2ec41693a
                   <ProfileInfo title="Gender">Male</ProfileInfo>
                 </div>
                 <div className="col-md-7">

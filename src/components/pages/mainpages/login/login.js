@@ -135,13 +135,6 @@ const Login = (props) => {
             />
           </div>
           {errors && (
-<<<<<<< HEAD
-            <p className="text-center py-1" style={{ color: 'red' }}>
-              {errors.message}
-            </p>
-          )}
-          <p className="account-info-text text-center py-4">
-=======
             <p className="text-center textWidth py-1" style={{ color: 'red' }}>
               {errors.message}
             </p>
@@ -152,7 +145,6 @@ const Login = (props) => {
             </Link>
           </p>
           <p className="account-info-text text-center textWidth pt-1 mt-1 pb-4">
->>>>>>> 41309358790ac473894ba1373de42ab2ec41693a
             Don't have an account?
             <Link to={pageurl.REGISTER_PAGE_URL} className="sign-up-link">
               {' '}
