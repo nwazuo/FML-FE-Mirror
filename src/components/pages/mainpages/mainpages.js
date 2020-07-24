@@ -11,7 +11,6 @@ import Recommendations from './recommendations/recommendations';
 import LoanRequest from './loanrequest/LoanRequest'
 import Page404 from './page404/Page404'
 import ComingSoon from './comingSoon/comingSoon';
-import investordashboard from './investordashboard/investordashboard';
 import Compaign from './compaign/compaign';
 import Blog from '../mainpages/blog/blog'
 import SinglePost from '../mainpages/single-post-blog/singlepost'
@@ -31,12 +30,7 @@ export {
     LoanRequest,
     Page404,
     ComingSoon,
-<<<<<<< HEAD
     Compaign,
     Blog,
     SinglePost
-=======
-    investordashboard,
-    Compaign
->>>>>>> a350449bdfa932364c7bf2185877717fe1e21709
 }

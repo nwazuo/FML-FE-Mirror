@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link,withRouter } from 'react-router-dom';
+// import { Link,withRouter } from 'react-router-dom';
 import '../../../assets/bootstrap.css';
 import './investordashboard.css';
 import { Navbar,Footer } from '../../navigation/navigation';
@@ -49,13 +49,18 @@ const InvestorDashboard = () => {
                         <div>
                             <section className="user">
                                 <h1 className="user__intro">Welcome Back, <span className="text--secondary">Chandan</span></h1>
+                                
                                 <p>
-                                    Campaingn available for investing. <span><a className="pink-text" href="#">View More</a></span>
+                                    Campaingn available for investing. <span>
+                                    {/* eslint-disable-next-line */}            
+                                    <a className="pink-text" href="#">View More</a></span>
                                 </p>
                             </section>
                             <div class="contain-arrow-helper">
-                                <img class="slide-control arrow-left d-block" src={arrowLeft} />
-                                <img class="slide-control arrow-right d-block" src={arrowRight} />
+                                {/* eslint-disable-next-lin */}
+                                <img class="slide-control arrow-left d-block" alt="" src={arrowLeft} />
+                                {/* eslint-disable-next-lin */}
+                                <img class="slide-control arrow-right d-block" alt="" src={arrowRight} />
 
                                 <div class="help-card-contain row mx-0 px-0 overflow-auto mt-4">
                                     <div class="help-card rounded p-3 p-md-3">

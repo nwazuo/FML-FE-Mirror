@@ -5,8 +5,8 @@ import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Recommendations,
         LandingPage,AboutUs,Page404,ComingSoon,Compaign,Blog} from './components/pages/mainpages'
-import {FundeeDashboard,AdminDashboard} from './components/pages/dashboards'
-import DefaultDashboard from './components/pages/dashboards/defaultDashboard/defaultDashboard';
+
+import {FundeeDashboard,AdminDashboard,DefaultDashboard,InvestorDashboard} from './components/pages/dashboards'
 
 
 function App() {
@@ -29,8 +29,6 @@ function App() {
 
                 <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
 
-                <Route exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} />
-
                 <Route exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} />
 
                 <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
@@ -43,17 +41,17 @@ function App() {
 
                 <ProtectedRoute exact path={pageurl.LOAN_REQUEST_PAGE_URL} component={LoanRequest} />
 
-                <Route exact path={pageurl.INVESTOR_DASHBOARD} component={investordashboard} />
+                <ProtectedRoute exact path={pageurl.INVESTOR_DASHBOARD} component={InvestorDashboard} />
                 
-                <Route exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
+                <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
 
                 <ProtectedRoute exact path={pageurl.COMPAIGN_PAGE_URL} component={Compaign} />
 
                 <ProtectedRoute exact path={pageurl.ADMIN_DASHBOARD_PAGE_URL} component={AdminDashboard} />
 
-                <Route exact path={pageurl.DEFAULT_DASHBOARD_PAGE_URL} component={DefaultDashboard} />
+                <ProtectedRoute exact path={pageurl.DEFAULT_DASHBOARD_PAGE_URL} component={DefaultDashboard} />
 
-                {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
+                <ProtectedRoute exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} />
 
                 <Route exact component={Page404}/>
 
