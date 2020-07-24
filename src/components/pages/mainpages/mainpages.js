@@ -8,9 +8,11 @@ import ContactUs from './contact/Contact';
 import LandingPage from './landingPage/landingPage';
 import UserProfile from './user-profile/user-profile';
 import Recommendations from './recommendations/recommendations';
+import LoanRequest from './loanrequest/LoanRequest'
 import Page404 from './page404/Page404'
 import ComingSoon from './comingSoon/comingSoon';
 import investordashboard from './investordashboard/investordashboard';
+import Compaign from './compaign/compaign';
 
 
 
@@ -25,7 +27,9 @@ export {
     UserProfile,
     Recommendations,
     AboutUs,
+    LoanRequest,
     Page404,
     ComingSoon,
-    investordashboard
+    investordashboard,
+    Compaign
 }
