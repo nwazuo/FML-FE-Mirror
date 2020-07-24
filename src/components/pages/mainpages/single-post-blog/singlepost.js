@@ -40,7 +40,7 @@ const SinglePost = ({dataIndex}) => {
             <section>
                 <div className={singlepost.main_container_qobi}>
                     <div className={singlepost.share_container_qobi}>
-
+                        
                     </div>
                 </div>
             </section>
