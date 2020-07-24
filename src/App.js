@@ -7,6 +7,7 @@ import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations
         LandingPage,AboutUs,Page404,ComingSoon,investordashboard,Compaign,LoanRequest} from './components/pages/mainpages'
 import {FundeeDashboard} from './components/pages/dashboards'
 import AdminDashboard from './components/pages/adminDashboard/adminDashboard'
+import DefaultDashboard from './components/pages/dashboards/defaultDashboard/defaultDashboard';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
 
                 <Route exact path={pageurl.ADMIN_DASHBOARD_PAGE_URL} component={AdminDashboard} />
 
+                <Route exact path={pageurl.DEFAULT_DASHBOARD_PAGE_URL} component={DefaultDashboard} />
 
                 {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 

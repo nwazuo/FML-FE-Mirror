@@ -16,6 +16,8 @@ const INVESTOR_DASHBOARD = '/investordashboard';
 const FUNDEE_DASHBOARD_PAGE_URL = "/fundee-dashboard"
 const COMPAIGN_PAGE_URL = "/campaign"
 const ADMIN_DASHBOARD_PAGE_URL = "/admin-dashboard"
+const DEFAULT_DASHBOARD_PAGE_URL = "/default-dashboard"
+
 
 
 const pageurl = {
@@ -35,7 +37,8 @@ const pageurl = {
     INVESTOR_DASHBOARD,
     FUNDEE_DASHBOARD_PAGE_URL,
     COMPAIGN_PAGE_URL,
-    ADMIN_DASHBOARD_PAGE_URL
+    ADMIN_DASHBOARD_PAGE_URL,
+    DEFAULT_DASHBOARD_PAGE_URL
 }
 
 export default pageurl;
