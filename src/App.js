@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,ContactUs,UserProfile,Recommendations,
-        LandingPage,AboutUs,Page404,ComingSoon,investordashboard,Compaign} from './components/pages/mainpages'
+        LandingPage,AboutUs,Page404,ComingSoon,investordashboard,Compaign,LoanRequest} from './components/pages/mainpages'
 import {FundeeDashboard} from './components/pages/dashboards'
 import AdminDashboard from './components/pages/adminDashboard/adminDashboard'
 

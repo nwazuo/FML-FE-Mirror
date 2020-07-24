@@ -517,10 +517,6 @@ div.order2{
     .hide{
         display:block;
       }
-    nav {
-      padding: 25px 50px;
-      font-size: 1.5em;
-    }
 
     main {
       padding: 0 50px;
@@ -588,10 +584,6 @@ div.order2{
     }
     .hide{
         display:block;
-    }
-    nav {
-      padding: 25px 50px;
-      font-size: 1.5em;
     }
 
     main {
@@ -670,10 +662,6 @@ div.order2{
     .hide{
         display:block;
       }
-    nav {
-      padding: 25px 9%;
-      font-size: 1.5em;
-    }
 
     main {
       padding: 0 9%;
