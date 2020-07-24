@@ -31,8 +31,13 @@ body{
 /* CIRCLE PROGRESS BAR */
 .overview__progress{
     background-color: #FFFFFF;
-
     border-radius: 10.9946px;
+   
+    
+}
+.overview__progress-bar{
+    max-width: 191.3px;
+    max-height: 191.3px;
     position: relative;
 }
 .overview__progress-info{
