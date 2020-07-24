@@ -15,6 +15,7 @@ import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailu
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 import LoanRequest from './loanrequest/LoanRequest';
 import Compaign from './compaign/compaign';
+import investordashboard from './investordashboard/investordashboard';
 
 export {
   Login,
@@ -27,10 +28,11 @@ export {
   UserProfile,
   Recommendations,
   AboutUs,
-  Page404,
   LoanRequest,
-  Compaign,
+  Page404,
   ComingSoon,
+  investordashboard,
+  Compaign,
   EmailConfirmation,
   EmailConfirmationSuccess,
   EmailConfirmationFailure

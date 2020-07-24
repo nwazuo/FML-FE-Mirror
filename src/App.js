@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
+
 import pageurl from './components/router/url/pageurl';
 import {
   Login,
@@ -18,12 +19,14 @@ import {
   Page404,
   ComingSoon,
   Compaign,
+  investordashboard,
   EmailConfirmationSuccess,
   EmailConfirmationFailure,
   EmailConfirmation
 } from './components/pages/mainpages';
 import { FundeeDashboard } from './components/pages/dashboards';
 import AdminDashboard from './components/pages/adminDashboard/adminDashboard';
+import DefaultDashboard from './components/pages/dashboards/defaultDashboard/defaultDashboard';
 
 function App() {
   return (
@@ -79,6 +82,18 @@ function App() {
 
         <Route
           exact
+          path={pageurl.INVESTOR_DASHBOARD}
+          component={investordashboard}
+        />
+
+        <Route
+          exact
+          path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
+          component={FundeeDashboard}
+        />
+
+        <Route
+          exact
           path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
           component={FundeeDashboard}
         />
@@ -98,6 +113,12 @@ function App() {
           exact
           path={pageurl.EMAIL_CONFIRMATION}
           component={EmailConfirmation}
+        />
+
+        <Route
+          exact
+          path={pageurl.DEFAULT_DASHBOARD_PAGE_URL}
+          component={DefaultDashboard}
         />
 
         {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
