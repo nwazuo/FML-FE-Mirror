@@ -5,6 +5,7 @@ import {
   LOADING_USER,
   SET_ERRORS,
   CLEAR_ERRORS,
+  REGISTERED_USER,
 } from './types';
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
   loading: false,
   credentials: {},
   errors: null,
+  message: null,
 };
 
 export default function (state = initialState, action) {
@@ -43,6 +45,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         errors: null,
+      };
+    case REGISTERED_USER:
+      return {
+        ...state,
+        message: action.payload,
       };
     default:
       return state;

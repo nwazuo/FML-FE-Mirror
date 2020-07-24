@@ -4,12 +4,11 @@ import '../../../assets/bootstrap.css';
 import './signup.css';
 import googleImg from '../../../assets/images/googleicon.svg';
 import signupBg from '../../../assets/images/signup-bg.png';
-import pageurl from '../../../router/url/pageurl'
-import { Navbar,Footer } from '../../navigation/navigation';
+import pageurl from '../../../router/url/pageurl';
+import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import { connect } from 'react-redux';
 import { registerUser } from '../../../../actions/userActions';
-
 
 // const initialState = {
 //   email: '',
@@ -25,7 +24,7 @@ import { registerUser } from '../../../../actions/userActions';
 //     [field]: value,
 //   };
 // }
-class Signup extends Component  {
+class Signup extends Component {
   state = {
     email: '',
     password: '',
@@ -34,15 +33,30 @@ class Signup extends Component  {
     phone: '',
     address: '',
     errors: null,
-  }
+    message: null,
+  };
+  blankstate = {
+    email: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    phone: '',
+    address: '',
+    errors: null,
+    message: null,
+  };
 
   componentDidUpdate(prevProps, prevState) {
-    if(prevProps.user.errors !== this.props.user.errors) {
-      this.setState({
-        errors: this.props.user.errors
-      }, () => {
-        console.log(this.state.errors);
-      })
+    if (prevProps.user.errors !== this.props.user.errors) {
+      this.setState(
+        {
+          errors: this.props.user.errors,
+          message: this.props.user.message,
+        },
+        () => {
+          console.log(this.state.errors);
+        }
+      );
     }
   }
 
@@ -52,8 +66,8 @@ class Signup extends Component  {
   onChange = (event) => {
     // dispatch({ field: event.target.name, value: event.target.value });
     this.setState({
-      [event.target.id]: event.target.value
-    })
+      [event.target.id]: event.target.value,
+    });
   };
 
   onSubmit = (event) => {
@@ -79,7 +93,7 @@ class Signup extends Component  {
         errorEmail.textContent = '';
       }, 2000);
     }
-    
+
     if (password < 6) {
       errorPassword.textContent =
         '* Incorrect password, must be at least 6 characters.';
@@ -102,14 +116,14 @@ class Signup extends Component  {
       }, 2000);
     }
 
-    if(phone === '' || !phone.match(validPhoneNumber)) {
+    if (phone === '' || !phone.match(validPhoneNumber)) {
       errorPhone.textContent = '* Please input a valid phone number.';
       setTimeout(() => {
         errorPhone.textContent = '';
       }, 2000);
     }
 
-    if(address === '') {
+    if (address === '') {
       errorAddress.textContent = '* Your address is required.';
       setTimeout(() => {
         errorAddress.textContent = '';
@@ -122,19 +136,27 @@ class Signup extends Component  {
       email,
       password,
       phone,
-      address
-    }
+      address,
+    };
 
     this.props.registerUser(newUser, this.props.history);
-
+    this.setState({ ...this.blankstate });
   };
 
   render() {
-    const { firstName, lastName, email, password, address, phone } = this.state;
+    const {
+      firstName,
+      lastName,
+      email,
+      password,
+      address,
+      phone,
+      message,
+    } = this.state;
 
     return (
       <ScrollIntoView>
-      <Navbar/>
+        <Navbar />
         <main className="main-content d-sm-flex">
           <form
             className="login-box p-md-5 p-2"
@@ -145,13 +167,21 @@ class Signup extends Component  {
               Welcome to <br />
               <strong>Fund my Laptop</strong>
             </h2>
-  
+
             <p className="p-1 p-md-3 login-text mt-md-n4">
-              Help Achieve Your dreams with funding for your laptops at little to
-              no cost.
+              Help Achieve Your dreams with funding for your laptops at little
+              to no cost.
             </p>
-            { this.state.errors ? <p className="mt-4 error text-danger text-center text-sm-left">
-            {this.state.errors.message}</p> : null}
+            {this.state.errors ? (
+              <p className="mt-4 error text-danger text-center text-sm-left">
+                {this.state.errors.message}
+              </p>
+            ) : this.state.message ? (
+              <p className="mt-4 error text-success text-center text-sm-left">
+                {this.state.message}
+              </p>
+            ) : null}
+
             <div className="form-group">
               <input
                 type="text"
@@ -193,7 +223,9 @@ class Signup extends Component  {
                 value={email}
               />
               <p
-                id="errorEmail" className="error text-danger text-center text-sm-left"></p>
+                id="errorEmail"
+                className="error text-danger text-center text-sm-left"
+              ></p>
             </div>
             <div className="form-group">
               <input
@@ -254,15 +286,16 @@ class Signup extends Component  {
                   for="invalidCheck"
                 >
                   I agree to the{' '}
-                  
-                  <Link to={pageurl.TC_PAGE_URL} style={{ color: 'blue' }} className="atag">
+                  <Link
+                    to={pageurl.TC_PAGE_URL}
+                    style={{ color: 'blue' }}
+                    className="atag"
+                  >
                     Terms Policy Conditions
                   </Link>
-                  
                   {/* <a href="" style={{ color: 'blue' }}>
                     Terms Policy Conditions
                   </a> */}
-  
                 </label>
                 <div className="invalid-feedback">
                   You must agree before submitting.
@@ -282,22 +315,23 @@ class Signup extends Component  {
               <hr />
             </div>
             <div>
-  
-            <Link to="" className="form-control login-btn reg-btn btn-outline-fml-secondary" >
+              <Link
+                to=""
+                className="form-control login-btn reg-btn btn-outline-fml-secondary"
+              >
                 <img className="pr-3" src={googleImg} alt="" />
                 Login with Google
-            </Link>
-              
-            {/* <a
+              </Link>
+
+              {/* <a
                 href="#"
                 className="form-control login-btn reg-btn btn-outline-fml-secondary atag"
             >
                 <img className="pr-3" src={googleImg} alt="" />
                 Login with Google
             </a> */}
-            
             </div>
-  
+
             <p className="account-info-text text-center py-4 mb-md-3">
               Already have an account?{' '}
               <Link to={pageurl.LOGIN_PAGE_URL} style={{ color: '#fb3f5c' }}>
@@ -305,21 +339,23 @@ class Signup extends Component  {
               </Link>
             </p>
           </form>
-  
+
           <div className="login-img-box d-none d-md-block">
-            <img src={signupBg} className="login-img" alt="login FundMyLaptop" />
+            <img
+              src={signupBg}
+              className="login-img"
+              alt="login FundMyLaptop"
+            />
           </div>
         </main>
-        <Footer/>
+        <Footer />
       </ScrollIntoView>
     );
   }
-};
-
+}
 
 const mapStateToProps = (state) => ({
   user: state.user,
-})
-
+});
 
 export default connect(mapStateToProps, { registerUser })(Signup);
