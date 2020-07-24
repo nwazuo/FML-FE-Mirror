@@ -45,6 +45,9 @@ function App() {
 
                 <Route exact path={pageurl.COMPAIGN_PAGE_URL} component={Compaign} />
 
+                <Route exact path={pageurl.ADMIN_DASHBOARD_PAGE_URL} component={AdminDashboard} />
+
+
                 {/* <ProtectedRoute exact path={pageurl.LANDING_PAGE_URL} component={Login}/> */}
 
                 {/* <Route exact path={pageurl.PAGE_404} component={Page404}/> */}
