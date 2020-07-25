@@ -5,36 +5,38 @@ import axios from "axios";
 const Testimonial = () => {
 	const [testimonials, setTestimonial] = useState("");
 	useEffect(() => {
-		const apiUrl = "https://api.github.com/users/hacktivist123/repos";
-		axios(apiUrl).then((response) => setTestimonial(response.data));
-		//
-		//lets see how this goes
+		const apiUrl = "https://api.fundmylaptop.com/api/testimonial/fetch";
+		axios.get(apiUrl).then((response) => setTestimonial(response.data));
 	});
 
 	const data = [
 		{
 			_id: 1,
 			testimonial: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'John Doe',
-			amount: 500
+			name: 'Gbolade Popoola',
+			photoUrl: 'https://placeimg.com/100/100/people',
+			company: 'FundMyLaptop'
 		},
 		{
 			_id: 2,
 			testimonial: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
 			name: 'Kabiru Ayinla',
-			amount: 1000
+			photoUrl: 'https://placeimg.com/100/100/people',
+			company: 'TalentPool'
 		},
 		{
 			_id: 3,
 			testimonial: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'Gbolade Gbolade',
-			amount: 700
+			name: 'Scott Eyawo',
+			photoUrl: 'https://placeimg.com/100/100/people',
+			company: 'TalentPool'
 		},
 		{
 			_id: 4,
 			testimonial: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'codeLeaf Adio',
-			amount: 300
+			name: 'CodeLeaf Adio',
+			photoUrl: 'https://placeimg.com/100/100/people',
+			company: 'TalentPool'
 		}
 	]
 
@@ -62,16 +64,17 @@ const Testimonial = () => {
 								was able to pay back the loan and grow my business”</p>
 						</div>
 						<div className=" col-md-10 text-center ">
-							<img className="mb-3 " src="" alt="testimonial" />
+							<img className="mb-3 " src="https://placeimg.com/100/100/people" alt="testimonial" />
 							<h5 className="mb-0" style={{ color: "white" }}>
 								Abiodun Popoola</h5>
 							<span style={{ color: "white" }} className="card-subtitle">
-								Raise 500k for his macbook pro</span>
+								Envato Group</span>
 						</div>
 					</section>
 				</div>
-				{data.map(i => (
-					<div class="carousel-item" key={i.id}>
+				{data.map((i) => {
+					return(
+						<div class="carousel-item" key={i.id}>
 						<section
 							className=" container-fluid testimonials-section mt-md-5 row justify-content-center">
 							<h3 className="col-md-8 text-center text-white mb-4">
@@ -80,15 +83,16 @@ const Testimonial = () => {
 								<p className=" text-white px-5">{`"${i.testimonial}"`}</p>
 							</div>
 							<div className=" col-md-10 text-center ">
-								<img className="mb-3 " src="" alt="testimonial" />
+								<img className="mb-3 " src={i.photoUrl} alt="testimonial" />
 								<h5 className="mb-0" style={{ color: "white" }}>
-								{i.name}</h5>
+									{i.name}</h5>
 								<span style={{ color: "white" }} className="card-subtitle">
-								Raise {i.amount}k for his macbook pro</span>
+									{i.company}</span>
 							</div>
 						</section>
 					</div>
-				))}
+					)
+				})}
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
