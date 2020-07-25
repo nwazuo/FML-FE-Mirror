@@ -7,15 +7,19 @@ import loginBg from '../../../assets/images/login-bg.png';
 import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
-import fcbIcon from './facebook-square-brands.svg'
+import fcbIcon from './facebook-square-brands.svg';
+import { GoogleLogin } from 'react-google-login';
+import PinWheel from '../../../ui/loaders/pin-wheel';
 // Redux Stuff
 import { connect } from 'react-redux';
-import { loginUser } from '../../../../actions/actions';
+import { loginUser, googleLogin } from '../../../../actions/userActions';
 
 const initialState = {
   email: '',
   password: '',
   errors: null,
+  loading: false,
+  message: null,
 };
 function reducer(state, { field, value }) {
   return {
@@ -27,15 +31,21 @@ const Login = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    if (props.user.errors) {
-      dispatch({ field: 'errors', value: props.user.errors });
+    if (props.ui.errors) {
+      dispatch({ field: 'errors', value: props.ui.errors });
     }
-  }, [props.user.errors]);
+    if (props.ui.loading !== state.loading) {
+      dispatch({ field: 'loading', value: props.ui.loading });
+    }
+    if (props.ui.message) {
+      dispatch({ field: 'message', value: props.ui.message });
+    }
+  }, [props.ui.errors, props.ui.loading, state.loading, props.ui.message]);
 
   const onChange = (event) => {
     dispatch({ field: event.target.name, value: event.target.value });
   };
-  const { email, password, errors } = state;
+  const { email, password, errors, loading, message } = state;
 
   const onSubmit = (event) => {
     const { history } = props;
@@ -66,6 +76,22 @@ const Login = (props) => {
     props.loginUser(formData, history);
   };
 
+  //Google auth
+  const sendGoogleToken = (tokenid) => {
+    informRedux(tokenid);
+  };
+  const informRedux = (data) => {
+    props.googleLogin(data, props.history);
+    console.log('data from informRedux');
+    console.log(data);
+  };
+
+  //Get response from google
+  const responseGoogle = (response) => {
+    console.log(response.tokenId);
+    sendGoogleToken(response.tokenId);
+  };
+
   return (
     <ScrollIntoView>
       <Navbar />
@@ -86,17 +112,34 @@ const Login = (props) => {
           </p>
           <div>
             {/* eslint-disable-next-line */}
-            <Link className="text-center py-3  
+            <GoogleLogin
+              clientId="546458752785-s6vo1c96k1m4t3foh5uhq7c0lttj9cib.apps.googleusercontent.com"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={'single_host_origin'}
+              render={(renderProps) => (
+                <Link
+                  className="text-center py-3  
             btnGoogle d-flex justify-content-center 
             align-items-center"
-            style={{ boxShadow:'0px 4px 15px rgba(0, 0, 0, 0.07)'}}>
-              <img className="pr-3" src={googleImg} alt="" />
-              Login with Google
-            </Link>
-            <Link className="text-center mt-3 py-3  
+                  onClick={renderProps.onClick}
+                  disabled={renderProps.disabled}
+                  style={{ boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)' }}
+                >
+                  <img className="pr-3" src={googleImg} alt="" />
+                  Login with Google
+                </Link>
+              )}
+            ></GoogleLogin>{' '}
+            <Link
+              className="text-center mt-3 py-3  
             btnGoogle d-flex justify-content-center 
             align-items-center"
-            style={{ boxShadow:'0px 4px 15px rgba(0, 0, 0, 0.07)', color:'#1c7ed6'}}>
+              style={{
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)',
+                color: '#1c7ed6',
+              }}
+            >
               <img className="" src={fcbIcon} alt="facebook" />
               Login with Facebook
             </Link>
@@ -107,7 +150,14 @@ const Login = (props) => {
             <span className="or-text">or</span>
             <hr />
           </div>
-
+          <div>
+            {message ? (
+              <p className="text-center">
+                We have emailed the link to login to your email.{' '}
+                {message.data.message}
+              </p>
+            ) : null}
+          </div>
           <div className="form-group">
             <input
               type="email"
@@ -139,15 +189,16 @@ const Login = (props) => {
             ></p>
           </div>
           <div>
-            <input
+            <button
               type="submit"
               className="form-control login-btn btn-fml-secondary"
-              value="Log in"
-            />
+            >
+              Log in{loading ? <PinWheel /> : null}
+            </button>
           </div>
           {errors && (
             <p className="text-center textWidth py-1" style={{ color: 'red' }}>
-              {errors.message}
+              {errors}
             </p>
           )}
           <p className="account-info-text text-center textWidth my-2">
@@ -179,6 +230,7 @@ const mapStateToProps = (state) => ({
 });
 const mapActionsToProps = {
   loginUser,
+  googleLogin,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(withRouter(Login));
