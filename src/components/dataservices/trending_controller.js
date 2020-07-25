@@ -17,9 +17,9 @@ const Trending = () => {
             name: 'Gbolade Popoola',
             title: "Buy a Lenovo IdeaPad",
             description: "Bad screen, Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            photoUrl: 'https://placeimg.com/100/100/people',
+            photoUrl: 'https://placeimg.com/400/300/people',
             company: 'FundMyLaptop',
-            percent: '90%',
+            percent: '80%',
             price: 'N1,000,000'
         },
         {
@@ -28,10 +28,10 @@ const Trending = () => {
             name: 'Scott Eyawo',
             title: "Get anothr MacBook",
             description: "Bad screen, Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            photoUrl: 'https://placeimg.com/100/100/people',
+            photoUrl: 'https://placeimg.com/400/300/people',
             company: 'TalentPool',
-            percent: '92%',
-            price: 'N500,000'
+            percent: '62%',
+            price: 'N1,000,000'
         },
         {
             _id: 3,
@@ -41,8 +41,8 @@ const Trending = () => {
             description: "Bad screen, Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             photoUrl: 'https://placeimg.com/400/300/people',
             company: 'TalentPool',
-            percent: '94%',
-            price: 'N600,000'
+            percent: '54%',
+            price: 'N1,000,000'
         },
     ];
 
