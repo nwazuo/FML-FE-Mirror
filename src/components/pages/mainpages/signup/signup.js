@@ -8,10 +8,10 @@ import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import { connect } from 'react-redux';
-import { registerUser } from '../../../../actions/userActions';
+import { registerUser, googleLogin } from '../../../../actions/userActions';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
-
+import { GoogleLogin } from 'react-google-login';
 
 class Signup extends Component {
   state = {
@@ -23,7 +23,7 @@ class Signup extends Component {
     address: '',
     errors: null,
     message: null,
-    loading: false
+    loading: false,
   };
   blankstate = {
     email: '',
@@ -34,33 +34,30 @@ class Signup extends Component {
     address: '',
     errors: null,
     message: null,
-    loading: false
+    loading: false,
   };
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.ui.errors !== this.props.ui.errors) {
-      this.setState(
-        {
-          errors: this.props.ui.errors,
-        });
+      this.setState({
+        errors: this.props.ui.errors,
+      });
     }
 
-    if(prevProps.ui.message !== this.props.ui.message) {
+    if (prevProps.ui.message !== this.props.ui.message) {
       this.setState({
         message: this.props.ui.message,
       });
     }
 
-    if(prevProps.ui.loading !== this.props.ui.loading) {
+    if (prevProps.ui.loading !== this.props.ui.loading) {
       this.setState({
-        loading: this.props.ui.loading
+        loading: this.props.ui.loading,
       });
     }
   }
 
-
   onChange = (event) => {
-
     this.setState({
       [event.target.id]: event.target.value,
     });
@@ -150,6 +147,22 @@ class Signup extends Component {
       // message,
     } = this.state;
 
+    //Google auth
+    const sendGoogleToken = (tokenid) => {
+      informRedux(tokenid);
+    };
+    const informRedux = (data) => {
+      this.props.googleLogin(data, this.props.history);
+      console.log('data from informRedux');
+      console.log(data);
+    };
+
+    //Get response from google
+    const responseGoogle = (response) => {
+      console.log(response.tokenId);
+      sendGoogleToken(response.tokenId);
+    };
+
     return (
       <ScrollIntoView>
         <Navbar />
@@ -178,7 +191,7 @@ class Signup extends Component {
               </p>
             ) : null}
 
-            { this.state.loading ? <PinWheelColor /> : null }
+            {this.state.loading ? <PinWheelColor /> : null}
 
             <div className="form-group">
               <input
@@ -305,7 +318,8 @@ class Signup extends Component {
                 type="submit"
                 className="form-control login-btn btn-fml-secondary"
                 value="Sign Up"
-              >Sign Up { this.state.loading ? <PinWheel /> : null}
+              >
+                Sign Up {this.state.loading ? <PinWheel /> : null}
               </button>
             </div>
             <div className="my-4 text-center or d-flex align-items-center or-box">
@@ -314,21 +328,29 @@ class Signup extends Component {
               <hr />
             </div>
             <div>
-              <Link
-                to=""
-                className="form-control login-btn reg-btn btn-outline-fml-secondary"
-              >
-                <img className="pr-3" src={googleImg} alt="" />
-                Sign up with Google
-              </Link>
+              <GoogleLogin
+                clientId="546458752785-s6vo1c96k1m4t3foh5uhq7c0lttj9cib.apps.googleusercontent.com"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+                render={(renderProps) => (
+                  <Link
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                    className="form-control login-btn reg-btn btn-outline-fml-secondary"
+                  >
+                    <img className="pr-3" src={googleImg} alt="" />
+                    Sign up with Google
+                  </Link>
+                )}
+              ></GoogleLogin>{' '}
               <Link
                 to=""
                 className="mt-2 form-control login-btn login-btn-facebook reg-btn "
               >
-                <i class="fab fa-facebook-square pr-3 facbook-logo" ></i>
+                <i class="fab fa-facebook-square pr-3 facbook-logo"></i>
                 Sign up with Facebook
               </Link>
-
               {/* <a
                 href="#"
                 className="form-control login-btn reg-btn btn-outline-fml-secondary atag"
@@ -364,7 +386,7 @@ class Signup extends Component {
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  ui: state.ui
+  ui: state.ui,
 });
 
-export default connect(mapStateToProps, { registerUser })(Signup);
+export default connect(mapStateToProps, { registerUser, googleLogin })(Signup);

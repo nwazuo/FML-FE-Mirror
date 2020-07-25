@@ -6,7 +6,7 @@ import {
   LOADING_UI,
   LOADED_UI,
   CLEAR_ERRORS,
-  VERIFY_EMAIL
+  VERIFY_EMAIL,
   // REGISTERED_USER,
 } from '../reducers/types';
 
@@ -24,11 +24,32 @@ const setAuthorizationHeader = (token) => {
   axios.defaults.headers.common['Authorization'] = FMLToken;
 };
 
-
-
+export const googleLogin = (idtoken, history) => (dispatch) => {
+  dispatch({ type: CLEAR_ERRORS });
+  dispatch({ type: LOADING_UI });
+  axios
+    .post(`${baseURL}/api/auth/googleAuth`, { idToken: idtoken })
+    .then((res) => {
+      console.log(res.data);
+      const { token, ...userData } = res.data.data;
+      let userDetails = { ...userData };
+      console.log(userDetails);
+      setAuthorizationHeader(token);
+      dispatch(getUserData());
+      history.push(pageurl.USER_PROFILE_PAGE_URL);
+    })
+    .catch((err) => {
+      // console.log(err.response.data);
+      dispatch({ type: LOADED_UI });
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data.message,
+      });
+    });
+};
 export const loginUser = (formInput, history) => (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
-  dispatch({ type: LOADING_UI })
+  dispatch({ type: LOADING_UI });
   axios
     .post(`${baseURL}/api/users/login`, formInput)
     .then((res) => {
@@ -42,8 +63,8 @@ export const loginUser = (formInput, history) => (dispatch) => {
       dispatch({ type: LOADED_UI });
       dispatch({
         type: VERIFY_EMAIL,
-        payload: res.data
-      })
+        payload: res.data,
+      });
       history.push(pageurl.USER_PROFILE_PAGE_URL);
     })
     .catch((err) => {
@@ -56,33 +77,32 @@ export const loginUser = (formInput, history) => (dispatch) => {
     });
 };
 
-
-
 export const recommendUser = (recommendData, history) => (dispatch) => {
-  axios.post(`${baseURL}/api/recommendation/create`, recommendData)
-  .then((res) => {
-    
-    dispatch({ type: LOADING_UI });
-    dispatch({ type: CLEAR_ERRORS });
-    
-    console.log(res.data);
-    const { token, ...userData } = res.data.data;
+  axios
+    .post(`${baseURL}/api/recommendation/create`, recommendData)
+    .then((res) => {
+      dispatch({ type: LOADING_UI });
+      dispatch({ type: CLEAR_ERRORS });
+
+      console.log(res.data);
+      const { token, ...userData } = res.data.data;
       let recommendUserDetails = { ...userData };
-    setAuthorizationHeader(token)
-    dispatch(getUserData());
-    history.push(pageurl.USER_PROFILE_PAGE_URL);
-  })
-  .catch((err) => {
-    console.error(err.response.data);
-    dispatch({
-      type: SET_ERRORS,
-      payload: err.response.message
+      setAuthorizationHeader(token);
+      dispatch(getUserData());
+      history.push(pageurl.USER_PROFILE_PAGE_URL);
     })
-  })
-}
+    .catch((err) => {
+      console.error(err.response.data);
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.message,
+      });
+    });
+};
 export const registerUser = (userData, history) => (dispatch) => {
-  dispatch({ type: LOADING_UI })
-  axios.post(`${baseURL}/api/users/register`, userData)
+  dispatch({ type: LOADING_UI });
+  axios
+    .post(`${baseURL}/api/users/register`, userData)
     .then((res) => {
       dispatch({ type: CLEAR_ERRORS });
       console.log(res.data);
@@ -90,8 +110,8 @@ export const registerUser = (userData, history) => (dispatch) => {
       // history.push(pageurl.LOGIN_PAGE_URL);
       dispatch({
         type: VERIFY_EMAIL,
-        payload: res.data
-      })
+        payload: res.data,
+      });
     })
     .catch((err) => {
       console.log(err.response.data);
@@ -102,8 +122,6 @@ export const registerUser = (userData, history) => (dispatch) => {
       });
     });
 };
-
-
 
 export const getUserData = () => (dispatch) => {
   dispatch({ type: LOADING_UI });
