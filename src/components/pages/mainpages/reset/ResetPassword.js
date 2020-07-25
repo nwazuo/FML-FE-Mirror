@@ -17,7 +17,7 @@ const ResetPassword = () => {
           <label className="formGroupExampleInput1" >Enter New Password</label>
           <input
               type="password"
-              placeholder="Enter your new password"
+              placeholder="Enter new password"
               name="password"
               className="form-control"
               id="password"
@@ -25,7 +25,7 @@ const ResetPassword = () => {
             <label className="formGroupExampleInput">Enter New Password</label>
             <input
               type="password"
-              placeholder="Re-enter your new password"
+              placeholder="Re-enter new password"
               name="password"
               className="form-control"
               id="passsword" style={{marginBottom: '10%' }}
