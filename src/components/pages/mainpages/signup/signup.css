@@ -119,7 +119,18 @@ nav .login {
 .login-text {
   width: 90%;
 }
-
+.facbook-logo{
+  font-size: 26px;
+  padding-left: 1.5rem;
+}
+.login-btn-facebook{
+  border: 1px solid #1c7ed6;
+  color: #1c7ed6;
+}
+.login-btn-facebook:hover{
+  color: white;
+  background-color: #1c7ed6;
+}
 @media only screen and (min-width: 1000px) {
   .form-control,
   .btn-google,
@@ -128,9 +139,9 @@ nav .login {
     width: 87%;
     margin-left: 14px;
   }
-  .main-content {
-    /* height: 100vh; */
-  }
+  /* .main-content {
+    height: 100vh;
+  } */
 }
 
 @media only screen and (max-width: 766px) {
