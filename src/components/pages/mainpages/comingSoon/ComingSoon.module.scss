@@ -25,6 +25,16 @@ $grid-breakpoints: (xs: 0,
   }
 }
 
+.formControlOverride {
+  width: 100% !important;
+  margin-left: 0 !important;
+
+  &::placeholder {
+    font-size: initial !important;
+    font-weight: initial !important;
+  }
+}
+
 .heroSection {
   h1 {
     font-size: 30px;
