@@ -13,8 +13,8 @@ import ComingSoon from './comingSoon/comingSoon';
 import Compaign from './compaign/compaign';
 import Blog from '../mainpages/blog/blog';
 import SinglePost from '../mainpages/single-post-blog/singlepost';
+import Payment from '../mainpages/payment/payment';
 import LoanRequest from './loanrequest/LoanRequest';
-import Payment from './payment/payment';
 import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerification';
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
@@ -34,9 +34,9 @@ export {
   Page404,
   ComingSoon,
   Compaign,
-  Payment,
   Blog,
   SinglePost,
+  Payment,
   EmailConfirmation,
   EmailVerification,
   EmailConfirmationFailure

@@ -28,8 +28,8 @@ import {
 import {
   FundeeDashboard,
   AdminDashboard,
-  DefaultDashboard
-  // InvestorDashboard
+  DefaultDashboard,
+  InvestorDashboard
 } from './components/pages/dashboards';
 
 function App() {
@@ -85,7 +85,29 @@ function App() {
           component={EmailConfirmation}
         />
 
-        {/* <ProtectedRoute exact path={pageurl.INVESTOR_DASHBOARD} component={InvestorDashboard} /> */}
+        <ProtectedRoute
+          exact
+          path={pageurl.INVESTOR_DASHBOARD}
+          component={InvestorDashboard}
+        />
+
+        <ProtectedRoute
+          exact
+          path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
+          component={FundeeDashboard}
+        />
+
+        <ProtectedRoute
+          exact
+          path={pageurl.COMPAIGN_PAGE_URL}
+          component={Compaign}
+        />
+
+        <ProtectedRoute
+          exact
+          path={pageurl.ADMIN_DASHBOARD_PAGE_URL}
+          component={AdminDashboard}
+        />
 
         <ProtectedRoute
           exact

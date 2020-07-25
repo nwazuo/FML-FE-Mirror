@@ -46,6 +46,7 @@ nav .login {
   background-color: #fb3f5c;
   border-color: #fb3f5c;
 }
+
 .login-btn.form-control {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -61,7 +62,18 @@ nav .login {
   background-color: #fa1a3c;
   border-color: #fa0d32;
 }
-
+.facbook-logo{
+  font-size: 26px;
+  padding-left: 1.5rem;
+}
+.login-btn-facebook{
+  border: 1px solid #1c7ed6;
+  color: #1c7ed6;
+}
+.login-btn-facebook:hover{
+  color: white;
+  background-color: #1c7ed6;
+}
 .btn-fml-secondary:focus,
 .btn-fml-secondary.focus {
   color: #fff;
@@ -85,7 +97,14 @@ nav .login {
   background-color: #fa0d32;
   border-color: #f5052a;
 }
+input::placeholder{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.4);
 
+}
 .btn-fml-secondary:not(:disabled):not(.disabled):active:focus,
 .btn-fml-secondary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-fml-secondary.dropdown-toggle:focus {
@@ -127,9 +146,9 @@ nav .login {
     width: 87%;
     margin-left: 14px;
   }
-  .main-content {
-    /* height: 100vh; */
-  }
+  /* .main-content {
+    height: 100vh;
+  } */
 }
 
 @media only screen and (max-width: 766px) {
