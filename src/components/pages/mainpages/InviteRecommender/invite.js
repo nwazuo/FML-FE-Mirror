@@ -6,6 +6,7 @@ import Breadcrumb from '../user-profile/breadcrumb/breadcrumb';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import { connect } from 'react-redux';
+import { recommendUser } from '../../../../actions/actions';
 
 const breadcrumbLinks = [
     {link: '/user-profile', label: 'Dashboard'},
@@ -124,6 +125,10 @@ const Invite = (props) => {
                                             onChange={onChange}
                                             value={email}
                                             />
+                                            <p
+                                            id="errorEmail"
+                                            className="text-danger text-center text-sm-left"
+                                            ></p>
                                         </div>
                                     </div>
                                     <div className="mt-4 mb-4"> 
@@ -159,6 +164,7 @@ const Invite = (props) => {
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  ui: state.ui
 });
 const mapActionsToProps = {
   Invite,
