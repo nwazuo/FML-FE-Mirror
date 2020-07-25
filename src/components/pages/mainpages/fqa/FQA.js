@@ -40,7 +40,7 @@ class FQA extends React.Component {
 
     onHandleAddQuestion(e) {
         const { question } = this.state
-        this.props.addFaqs(question)
+        this.props.addFaqs(`${question}?`)
         this.setState({ question: ""})
         e.preventDefault()
     }
@@ -110,7 +110,10 @@ class FQA extends React.Component {
                                                     </div>
                                                     <div id={`collapse${idx}`} className="collapse show" aria-labelledby={`heading${idx}`} data-parent="#accordion">
                                                         <div className="card-body">
-                                                            {data.answer}
+                                                            {!data.answer ? 
+                                                                <span className="d-block text-center text-muted">Answer Unavailable, check back some other time</span> : 
+                                                                data.answer
+                                                            }
                                                         </div>
                                                     </div>
                                                 </div>

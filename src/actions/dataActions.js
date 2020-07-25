@@ -58,7 +58,6 @@ export function addFaqs (query) {
             .post(`${baseURL}/api/faqs/create`, {
                 question: query
             })
-            .then(res => console.log(res))
             .then(res => dispatch({
                 type: ADD_FAQS,
                 payload: res
