@@ -6,6 +6,7 @@ import { Navbar,Footer } from '../../navigation/navigation';
 import arrowLeft from '../../../assets/images/arrow-left.svg';
 import arrowRight from '../../../assets/images/arrow-right.svg';
 import progress from '../../../assets/images/paid-progress.svg';
+import axios from "axios";
 
 
 const InvestorDashboard = () => {
@@ -36,47 +37,55 @@ const InvestorDashboard = () => {
           control.addEventListener("click", handleScroll);
         });
        
+       
+  })  
 
-        let investedAmount = document.getElementById("investedAmount");
-        let repaidAmount = document.getElementById("repaidAmount");
-        let remainingAmount = document.getElementById("remainingAmount");
-        let averageInvestment = document.getElementById("AverageInvestment");
-        let AverageInterest = document.getElementById("AverageInterest");
-        let numOf
-        constructor(props) {
-            super(props);
-            this.state = {
-                investedAmount: 0,
-                repaidAmount: 0,
-                remainingAmount: 0,
-                averageInvestment: 0,
-                averageInterest: 0,
-                numOfInvestments: 0
-            }
-          }
-        
-          componentDidMount() {
-            axios.get('https://api.fundmylaptop.com/api/campaigns/userOverview')
-            .then(response => {
-                if(response.success){
-                    this.setState({
-                        investedAmount: response.data.investedAmount,
-                        repaidAmount: response.data.repaidAmount,
-                        remainingAmount: response.data.remainingAmount,
-                        averageInvestment: response.data.averageInvestment,
-                        averageInterest: response.data.averageInterest,
-                        numOfInvestments: response.data.numOfInvestments
-                     });
-                }
-            })
-            .catch(error => {
-              console.log(error);
-            });
-          }
-        
-  });
+  constructor(props) {
+    super(props);
+    this.state = {
+        investedAmount: 0,
+        repaidAmount: 0,
+        remainingAmount: 0,
+        averageInvestment: 0,
+        averageInterest: 0,
+        numOfInvestments: 0
+    }
+  }
 
-  
+const token = 0; 
+const config = {
+    headers: { Authorization: `Bearer ${token}` }
+};
+
+  componentDidMount() {
+    axios.get('https://api.fundmylaptop.com/api/campaigns/userOverview',config)
+    .then(response => {
+        if(response.success){
+            this.setState({
+                investedAmount: response.data.investedAmount,
+                repaidAmount: response.data.repaidAmount,
+                remainingAmount: response.data.remainingAmount,
+                averageInvestment: response.data.averageInvestment,
+                averageInterest: response.data.averageInterest,
+                numOfInvestments: response.data.numOfInvestments
+             });
+        }
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
+
+
+render() {
+    const { investedAmount,
+            repaidAmount,
+            remainingAmount,
+            averageInvestment,
+            averageInterest,
+            numOfInvestments 
+    } = this.state;
+
 
     return(
     <div>
@@ -336,6 +345,7 @@ const InvestorDashboard = () => {
         <Footer />
     </div>
     )
-}
+  }
+};
 
 export default InvestorDashboard;
