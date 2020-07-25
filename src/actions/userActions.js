@@ -6,7 +6,7 @@ import {
   LOADING_UI,
   LOADED_UI,
   CLEAR_ERRORS,
-  REGISTERED_USER
+  // REGISTERED_USER,
 } from '../reducers/types';
 
 import pageurl from '../components/router/url/pageurl';
@@ -22,6 +22,8 @@ const setAuthorizationHeader = (token) => {
   localStorage.setItem('FMLToken', FMLToken);
   axios.defaults.headers.common['Authorization'] = FMLToken;
 };
+
+
 
 export const loginUser = (formInput, history) => (dispatch) => {
   axios
@@ -41,11 +43,35 @@ export const loginUser = (formInput, history) => (dispatch) => {
       dispatch({ type: LOADED_UI });
       dispatch({
         type: SET_ERRORS,
-        payload: err.response.message
+        payload: err.response.message,
       });
     });
 };
 
+
+
+export const recommendUser = (recommendData, history) => (dispatch) => {
+  axios.post(`${baseURL}/api/recommendation/create`, recommendData)
+  .then((res) => {
+    
+    dispatch({ type: LOADING_UI });
+    dispatch({ type: CLEAR_ERRORS });
+    
+    console.log(res.data);
+    const { token, ...userData } = res.data.data;
+      let recommendUserDetails = { ...userData };
+    setAuthorizationHeader(token)
+    dispatch(getUserData());
+    history.push(pageurl.USER_PROFILE_PAGE_URL);
+  })
+  .catch((err) => {
+    console.error(err.response.data);
+    dispatch({
+      type: SET_ERRORS,
+      payload: err.response.message
+    })
+  })
+}
 export const registerUser = (userData, history) => (dispatch) => {
   Server.post(`${baseURL}/api/users/register`, userData)
     .then((res) => {
@@ -58,10 +84,12 @@ export const registerUser = (userData, history) => (dispatch) => {
       console.log(err.response.data);
       dispatch({
         type: SET_ERRORS,
-        payload: err.response.data
+        payload: err.response.data,
       });
     });
 };
+
+
 
 export const getUserData = () => (dispatch) => {
   dispatch({ type: LOADING_UI });
@@ -70,7 +98,7 @@ export const getUserData = () => (dispatch) => {
     .then((res) => {
       dispatch({
         type: SET_USER,
-        payload: res.data
+        payload: res.data,
       });
       console.log(res.data);
       dispatch({ type: LOADED_UI });
