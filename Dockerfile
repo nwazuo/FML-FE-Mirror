@@ -8,6 +8,7 @@ ADD . /app
 WORKDIR /app
 
 RUN npm install && npm install -g serve
+RUN npm run build
 
 #expose a port to allow external access
 EXPOSE 5000
