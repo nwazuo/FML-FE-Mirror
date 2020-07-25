@@ -126,9 +126,9 @@ a:hover {
     width: 87% !important;
     margin-left: 14px !important;
   }
-  .main-content {
-    /* height: 100vh !important; */
-  }
+  /* .main-content {
+    height: 100vh !important;
+  } */
 }
 
 @media (max-width: 766px) {
