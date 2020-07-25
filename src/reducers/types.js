@@ -7,4 +7,6 @@ export const SET_ERRORS = 'SET_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const REGISTERED_USER = 'REGISTERED_USER';
 export const FORM_SUBMITED = 'FORM_SUBMITED';
-//Data Reducer Types
+//Data Reducer 
+export const CREATE_REQUEST = 'CREATE_REQUEST';
+
