@@ -9,7 +9,7 @@ import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 // Redux Stuff
 import { connect } from 'react-redux';
-import { loginUser } from '../../../../actions/actions';
+import {loginUser} from '../../../../actions/actions';
 
 const initialState = {
   email: '',
