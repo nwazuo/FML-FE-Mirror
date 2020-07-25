@@ -35,94 +35,6 @@ function App() {
 
         <Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
 
-<<<<<<< HEAD
-        <Route
-          exact
-          path={pageurl.PRIVACY_POLICY_PAGE_URL}
-          component={PrivacyPage}
-        />
-
-        <Route
-          exact
-          path={pageurl.USER_RECOMMENDATIONS}
-          component={Recommendations}
-        />
-
-        <Route
-          exact
-          path={pageurl.INVITE_RECOMMENDER_PAGE_URL}
-          component={InviteRecommender}
-        />
-
-        <Route
-          exact
-          path={pageurl.EMAIL_VERIFICATION_URL}
-          component={EmailVerification}
-        />
-        <Route
-          exact
-          path={pageurl.EMAIL_CONFIRMATION_FAILURE_URL}
-          component={EmailConfirmationFailure}
-        />
-
-        <Route
-          exact
-          path={pageurl.EMAIL_CONFIRMATION}
-          component={EmailConfirmation}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.LOAN_REQUEST_PAGE_URL}
-          component={LoanRequest}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.INVESTOR_DASHBOARD}
-          component={InvestorDashboard}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
-          component={FundeeDashboard}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.COMPAIGN_PAGE_URL}
-          component={Compaign}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.ADMIN_DASHBOARD_PAGE_URL}
-          component={AdminDashboard}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.DEFAULT_DASHBOARD_PAGE_URL}
-          component={DefaultDashboard}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.USER_PROFILE_PAGE_URL}
-          component={UserProfile}
-        />
-
-        <Route exact component={Page404} />
-
-        {/* <ProtectedRoute exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} /> */}
-
-        <ProtectedRoute
-          exact
-          path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
-          component={FundeeDashboard}
-        />
-=======
         <Route exact path={pageurl.RECOVER_PASSWORD_PAGE_URL} component={Password} />
 
         <Route exact path={pageurl.RESET_PASSWORD_PAGE_URL} component={ResetPassword} />
@@ -148,7 +60,6 @@ function App() {
         <ProtectedRoute exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} />
 
         <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
->>>>>>> a99d4f3abf14ee0b58dae9e42124a85d14e3d1aa
 
         <Route component={Page404} />
       </Switch>
