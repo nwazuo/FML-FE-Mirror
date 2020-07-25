@@ -109,6 +109,7 @@ a:hover {
 .login-text {
   width: 90%;
 }
+
 @media (min-width: 1000px) {
   .form-control {
     width: 87% !important;

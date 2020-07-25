@@ -4,10 +4,10 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Recommendations,
-        LandingPage,AboutUs,Page404,ComingSoon,Compaign,Blog} from './components/pages/mainpages'
+        LandingPage,AboutUs,Page404,ComingSoon,Payment,Compaign,Blog,Password,ResetPassword} from './components/pages/mainpages'
 
 import {FundeeDashboard,AdminDashboard,DefaultDashboard,
-        // InvestorDashboard
+        InvestorDashboard
 } from './components/pages/dashboards'
 
 
@@ -27,6 +27,8 @@ function App() {
 
         <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
+        <Route exact path={pageurl.PAYMENT_PAGE_URL} component={Payment} />
+
         <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
         <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
@@ -35,11 +37,15 @@ function App() {
 
         <Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
 
+        <Route exact path={pageurl.RECOVER_PASSWORD_PAGE_URL} component={Password} />
+
+        <Route exact path={pageurl.RESET_PASSWORD_PAGE_URL} component={ResetPassword} />
+
         <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
 
         <ProtectedRoute exact path={pageurl.LOAN_REQUEST_PAGE_URL} component={LoanRequest} />
 
-        {/* <ProtectedRoute exact path={pageurl.INVESTOR_DASHBOARD} component={InvestorDashboard} /> */}
+        <ProtectedRoute exact path={pageurl.INVESTOR_DASHBOARD} component={InvestorDashboard} />
                 
         <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
 

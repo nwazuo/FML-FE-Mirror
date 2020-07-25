@@ -14,6 +14,10 @@ import ComingSoon from './comingSoon/comingSoon';
 import Compaign from './compaign/compaign';
 import Blog from '../mainpages/blog/blog'
 import SinglePost from '../mainpages/single-post-blog/singlepost'
+import Payment from '../mainpages/payment/payment'
+import Password from '../mainpages/recover/Password'
+import ResetPassword from '../mainpages/reset/ResetPassword'
+
 
 
 export {
@@ -32,5 +36,8 @@ export {
     ComingSoon,
     Compaign,
     Blog,
-    SinglePost
+    SinglePost,
+    Payment,
+    Password,
+    ResetPassword
 }

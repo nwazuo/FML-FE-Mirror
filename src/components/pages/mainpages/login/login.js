@@ -8,7 +8,6 @@ import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import fcbIcon from './facebook-square-brands.svg'
-
 // Redux Stuff
 import { connect } from 'react-redux';
 import { loginUser } from '../../../../actions/actions';
@@ -87,7 +86,10 @@ const Login = (props) => {
           </p>
           <div>
             {/* eslint-disable-next-line */}
-            <Link className="text-center py-3 btnGoogle d-flex justify-content-center align-items-center">
+            <Link className="text-center py-3  
+            btnGoogle d-flex justify-content-center 
+            align-items-center"
+            style={{ boxShadow:'0px 4px 15px rgba(0, 0, 0, 0.07)'}}>
               <img className="pr-3" src={googleImg} alt="" />
               Login with Google
             </Link>
