@@ -9,6 +9,8 @@ import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import { connect } from 'react-redux';
 import { registerUser } from '../../../../actions/userActions';
+import PinWheel from '../../../ui/loaders/pin-wheel';
+import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
 
 
 class Signup extends Component {
@@ -36,17 +38,23 @@ class Signup extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.user.errors !== this.props.user.errors) {
+    if (prevProps.ui.errors !== this.props.ui.errors) {
       this.setState(
         {
-          errors: this.props.user.errors,
-          message: this.props.user.message,
-          loading: this.props.user.loading
-        },
-        () => {
-          console.log(this.state.errors);
-        }
-      );
+          errors: this.props.ui.errors,
+        });
+    }
+
+    if(prevProps.ui.message !== this.props.ui.message) {
+      this.setState({
+        message: this.props.ui.message,
+      });
+    }
+
+    if(prevProps.ui.loading !== this.props.ui.loading) {
+      this.setState({
+        loading: this.props.ui.loading
+      });
     }
   }
 
@@ -166,9 +174,11 @@ class Signup extends Component {
               </p>
             ) : this.state.message ? (
               <p className="mt-4 error text-success text-center text-sm-left">
-                {this.state.message}
+                {this.state.message.message}
               </p>
             ) : null}
+
+            { this.state.loading ? <PinWheelColor /> : null }
 
             <div className="form-group">
               <input
@@ -295,7 +305,7 @@ class Signup extends Component {
                 type="submit"
                 className="form-control login-btn btn-fml-secondary"
                 value="Sign Up"
-              >Sign Up { this.state.loading ? <span>Loading</span> : null}
+              >Sign Up { this.state.loading ? <PinWheel /> : null}
               </button>
             </div>
             <div className="my-4 text-center or d-flex align-items-center or-box">
@@ -347,6 +357,7 @@ class Signup extends Component {
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  ui: state.ui
 });
 
 export default connect(mapStateToProps, { registerUser })(Signup);
