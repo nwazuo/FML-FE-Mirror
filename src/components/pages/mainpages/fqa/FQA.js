@@ -5,14 +5,14 @@ import FQACss from './FQA.module.css'
 import search from './search.svg'
 import { Navbar,Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
-
+import { connect } from 'react-redux';
+import { fetchFaqs, fetchSearchFaqs } from '../../../../actions/actions';
 
 class FQA extends React.Component {
 
     constructor (props) {
         super (props);
         this.state = {
-            faqs: null,
             value: ""
         }
 
@@ -22,10 +22,7 @@ class FQA extends React.Component {
 
     componentDidMount () {
         document.title = "FAQ"
-        fetch('https://api.fundmylaptop.com/api/faqs')
-            .then(res => res.json())
-            .then(data => this.setState({faqs: data.data}))
-            .catch(err => console.error(err))
+        this.props.fetchFaqs()
     }
 
     onHandleChange(e) {
@@ -35,16 +32,14 @@ class FQA extends React.Component {
     onHandleSubmit(e) {
         const { value } = this.state
         this.setState({ faqs: null })
-        fetch(`https://api.fundmylaptop.com/api/search/faqs?q=${value}`)
-            .then(res => res.json())
-            .then(data => this.setState({faqs: data.data}))
-            .catch(err => console.error(err))
+        this.props.fetchSearchFaqs(value)
         this.setState({ value: ""})
         e.preventDefault()
     }
 
     render () {
-        const { value, faqs } = this.state
+        const { value } = this.state
+        const { faqs } = this.props
 
         const override = css`
 			display: block;
@@ -54,6 +49,8 @@ class FQA extends React.Component {
 			color: #04172A;
 			max-width: 100%;
         `;
+
+        console.log(this.props)
         
         return (
             <ScrollIntoView>
@@ -123,4 +120,15 @@ class FQA extends React.Component {
     }
 }
 
-export default FQA;
+const mapStateToProps = (state) => ({
+    faqs: state.data.faqs,
+});
+  
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchFaqs: () => dispatch(fetchFaqs()),
+        fetchSearchFaqs: (val) => dispatch(fetchSearchFaqs(val))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FQA);
