@@ -25,11 +25,12 @@ const setAuthorizationHeader = (token) => {
 };
 
 export const loginUser = (formInput, history) => (dispatch) => {
+  dispatch({ type: CLEAR_ERRORS });
   dispatch({ type: LOADING_UI })
   axios
     .post(`${baseURL}/api/users/login`, formInput)
     .then((res) => {
-      dispatch({ type: CLEAR_ERRORS });
+      // dispatch({ type: CLEAR_ERRORS });
       console.log(res.data);
       const { token, ...userData } = res.data.data;
       let userDetails = { ...userData };
