@@ -14,6 +14,8 @@ import ComingSoon from './comingSoon/comingSoon';
 import Compaign from './compaign/compaign';
 import Blog from '../mainpages/blog/blog'
 import SinglePost from '../mainpages/single-post-blog/singlepost'
+import Payment from '../mainpages/payment/payment'
+import InviteRecommender from '../mainpages/InviteRecommender/invite'
 
 
 export {
@@ -32,5 +34,7 @@ export {
     ComingSoon,
     Compaign,
     Blog,
-    SinglePost
+    SinglePost,
+    Payment,
+    InviteRecommender
 }
