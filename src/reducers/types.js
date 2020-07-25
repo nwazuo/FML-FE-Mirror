@@ -1,3 +1,7 @@
+// UI Reducer Types
+export const LOADING_UI = 'LOADING_UI';
+export const LOADED_UI = 'LOADED_UI';
+
 //User Reducer Types
 export const SET_AUTHENTICATED = 'SET_AUTHENTICATED';
 export const SET_UNAUTHENTICATED = 'SET_UNAUTHENTICATED';
