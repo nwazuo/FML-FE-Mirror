@@ -13,6 +13,7 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const REGISTERED_USER = 'REGISTERED_USER';
 export const FORM_SUBMITED = 'FORM_SUBMITED';
 
-//Data Reducer Types
+//Data Reducer 
+export const CREATE_REQUEST = 'CREATE_REQUEST';
 export const FETCH_FAQS = 'FETCH_FAQS';
-export const FETCH_SEARCH_FAQS = 'FETCH_SEARCH_FAQS'
+export const FETCH_SEARCH_FAQS = 'FETCH_SEARCH_FAQS';
