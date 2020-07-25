@@ -6,6 +6,7 @@ import PlusIcon from '../../../assets/images/plus.svg';
 import SuccessIcon from '../../../assets/images/Successfully.svg';
 import ErrorIcon from '../../../assets/images/Error.svg';
 import { Footer } from '../../navigation/navigation';
+
 // Redux
 import { connect } from 'react-redux';
 import { loanRequest } from '../../../../actions/dataActions';
@@ -48,7 +49,7 @@ const LoanRequest = (props) => {
             repaymentTimes, 
             photoUrl
         };
-        console.log(formData)
+        // console.log(formData)
         props.loanRequest(formData);
         
     }
@@ -67,8 +68,6 @@ const LoanRequest = (props) => {
         
     }
 
-    console.log(props.data.data.message)
-    // props.data.createdRequest
 
     return (
         <section>

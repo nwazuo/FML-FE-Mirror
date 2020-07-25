@@ -7,6 +7,7 @@ import loginBg from '../../../assets/images/login-bg.png';
 import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
+import fcbIcon from './facebook-square-brands.svg'
 // Redux Stuff
 import { connect } from 'react-redux';
 import { loginUser } from '../../../../actions/actions';
@@ -85,9 +86,19 @@ const Login = (props) => {
           </p>
           <div>
             {/* eslint-disable-next-line */}
-            <Link className="text-center py-3 btnGoogle d-flex justify-content-center align-items-center">
+            <Link className="text-center py-3  
+            btnGoogle d-flex justify-content-center 
+            align-items-center"
+            style={{ boxShadow:'0px 4px 15px rgba(0, 0, 0, 0.07)'}}>
               <img className="pr-3" src={googleImg} alt="" />
               Login with Google
+            </Link>
+            <Link className="text-center mt-3 py-3  
+            btnGoogle d-flex justify-content-center 
+            align-items-center"
+            style={{ boxShadow:'0px 4px 15px rgba(0, 0, 0, 0.07)', color:'#1c7ed6'}}>
+              <img className="" src={fcbIcon} alt="facebook" />
+              Login with Facebook
             </Link>
           </div>
 
@@ -164,6 +175,7 @@ const Login = (props) => {
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  ui: state.ui,
 });
 const mapActionsToProps = {
   loginUser,
