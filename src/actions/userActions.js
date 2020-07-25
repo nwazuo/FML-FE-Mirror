@@ -3,9 +3,10 @@ import {
   // SET_AUTHENTICATED,
   SET_ERRORS,
   // SET_UNAUTHENTICATED,
-  LOADING_USER,
+  LOADING_UI,
+  LOADED_UI,
   CLEAR_ERRORS,
-  REGISTERED_USER,
+  // REGISTERED_USER,
 } from '../reducers/types';
 
 import pageurl from '../components/router/url/pageurl';
@@ -26,13 +27,13 @@ export const loginUser = (formInput, history) => (dispatch) => {
   axios
     .post(`${baseURL}/api/users/login`, formInput)
     .then((res) => {
+      dispatch({ type: LOADING_UI });
       dispatch({ type: CLEAR_ERRORS });
       console.log(res.data);
       const { token, ...userData } = res.data.data;
       let userDetails = { ...userData };
       console.log(userDetails);
       setAuthorizationHeader(token);
-      dispatch({ type: LOADING_USER });
       dispatch(getUserData());
       history.push(pageurl.USER_PROFILE_PAGE_URL);
     })
@@ -49,7 +50,7 @@ export const registerUser = (userData, history) => (dispatch) => {
     .then((res) => {
       dispatch({ type: CLEAR_ERRORS });
       console.log(res.data);
-      dispatch({ type: LOADING_USER });
+      dispatch({ type: LOADING_UI });
       history.push(pageurl.LOGIN_PAGE_URL);
     })
     .catch((err) => {
@@ -62,7 +63,7 @@ export const registerUser = (userData, history) => (dispatch) => {
 };
 
 export const getUserData = () => (dispatch) => {
-  dispatch({ type: LOADING_USER });
+  dispatch({ type: LOADING_UI });
   axios
     .get(`${baseURL}/api/users/active`)
     .then((res) => {
@@ -71,6 +72,7 @@ export const getUserData = () => (dispatch) => {
         payload: res.data,
       });
       console.log(res.data);
+      dispatch({ type: LOADED_UI });
     })
     .catch((err) => console.log(err));
 };
