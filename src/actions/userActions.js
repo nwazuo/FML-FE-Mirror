@@ -69,10 +69,14 @@ export const registerUser = (userData, history) => (dispatch) => {
     .catch((err) => {
       console.log(err.response.data);
       dispatch({ type: LOADED_UI });
-      dispatch({
-        type: SET_ERRORS,
-        payload: err.response.data,
-      });
+      // if(!err.response.data) {
+        dispatch({
+          type: SET_ERRORS,
+          payload: err.response.data,
+        });
+      // } else {
+      //   console.log("It doesn't work");
+      // }
     });
 };
 
