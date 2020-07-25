@@ -19,7 +19,7 @@ const ADMIN_DASHBOARD_PAGE_URL = '/admin-dashboard';
 const BLOG_PAGE_URL = '/blog';
 const DEFAULT_DASHBOARD_PAGE_URL = '/default-dashboard';
 const PAYMENT_PAGE_URL = '/payment';
-const EMAIL_CONFIRMATION_SUCCESS_URL = '/email-confirmation-success';
+const EMAIL_VERIFICATION_URL = '/email-verification';
 const EMAIL_CONFIRMATION_FAILURE_URL = '/email-confirmation-failure';
 const EMAIL_CONFIRMATION_URL = '/email-confirmation';
 
@@ -44,7 +44,7 @@ const pageurl = {
   BLOG_PAGE_URL,
   DEFAULT_DASHBOARD_PAGE_URL,
   PAYMENT_PAGE_URL,
-  EMAIL_CONFIRMATION_SUCCESS_URL,
+  EMAIL_VERIFICATION_URL,
   EMAIL_CONFIRMATION_FAILURE_URL,
   EMAIL_CONFIRMATION_URL
 };

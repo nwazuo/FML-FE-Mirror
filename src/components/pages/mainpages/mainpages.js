@@ -15,7 +15,7 @@ import Blog from '../mainpages/blog/blog';
 import SinglePost from '../mainpages/single-post-blog/singlepost';
 import LoanRequest from './loanrequest/LoanRequest';
 import Payment from './payment/payment';
-import EmailConfirmationSuccess from './EmailConfirmation/EmailConfirmationSuccess/EmailConfirmationSuccess';
+import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerification';
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 
@@ -38,6 +38,6 @@ export {
   Blog,
   SinglePost,
   EmailConfirmation,
-  EmailConfirmationSuccess,
+  EmailVerification,
   EmailConfirmationFailure
 };

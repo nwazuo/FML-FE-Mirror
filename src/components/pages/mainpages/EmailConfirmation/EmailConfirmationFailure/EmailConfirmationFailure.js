@@ -8,7 +8,7 @@ const EmailConfirmationFailure = () => {
   return (
     <ScrollIntoView>
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="email-success mb-5 text-center">
           <div className="email-succes-card">
             <div className="email-success-container">
@@ -25,7 +25,7 @@ const EmailConfirmationFailure = () => {
             </div>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </ScrollIntoView>
   );

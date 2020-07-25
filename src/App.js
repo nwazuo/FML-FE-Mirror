@@ -20,7 +20,7 @@ import {
   Payment,
   Compaign,
   Blog,
-  EmailConfirmationSuccess,
+  EmailVerification,
   EmailConfirmationFailure,
   EmailConfirmation
 } from './components/pages/mainpages';
@@ -70,8 +70,8 @@ function App() {
 
         <Route
           exact
-          path={pageurl.EMAIL_CONFIRMATION_SUCCESS_URL}
-          component={EmailConfirmationSuccess}
+          path={pageurl.EMAIL_VERIFICATION_URL}
+          component={EmailVerification}
         />
         <Route
           exact
