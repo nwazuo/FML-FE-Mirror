@@ -18,7 +18,9 @@ const COMPAIGN_PAGE_URL = "/campaign";
 const ADMIN_DASHBOARD_PAGE_URL = "/admin-dashboard";
 const BLOG_PAGE_URL = "/blog";
 const DEFAULT_DASHBOARD_PAGE_URL = "/default-dashboard";
-const PAYMENT_PAGE_URL = "/payment"
+const PAYMENT_PAGE_URL = "/payment";
+const RECOVER_PASSWORD_PAGE_URL = "/recover-password";
+const RESET_PASSWORD_PAGE_URL = "/reset-password"
 
 
 const pageurl = {
@@ -41,7 +43,9 @@ const pageurl = {
     ADMIN_DASHBOARD_PAGE_URL,
     BLOG_PAGE_URL,
     DEFAULT_DASHBOARD_PAGE_URL,
-    PAYMENT_PAGE_URL
+    PAYMENT_PAGE_URL,
+    RECOVER_PASSWORD_PAGE_URL,
+    RESET_PASSWORD_PAGE_URL
 }
 
 export default pageurl;

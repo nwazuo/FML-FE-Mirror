@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Recommendations,
-        LandingPage,AboutUs,Page404,ComingSoon,Payment,Compaign,Blog} from './components/pages/mainpages'
+        LandingPage,AboutUs,Page404,ComingSoon,Payment,Compaign,Blog,Password,ResetPassword} from './components/pages/mainpages'
 
 import {FundeeDashboard,AdminDashboard,DefaultDashboard,
         InvestorDashboard
@@ -36,6 +36,10 @@ function App() {
         <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
         <Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
+
+        <Route exact path={pageurl.RECOVER_PASSWORD_PAGE_URL} component={Password} />
+
+        <Route exact path={pageurl.RESET_PASSWORD_PAGE_URL} component={ResetPassword} />
 
         <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
 
