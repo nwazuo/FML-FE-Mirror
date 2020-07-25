@@ -12,11 +12,7 @@ import { GoogleLogin } from 'react-google-login';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 // Redux Stuff
 import { connect } from 'react-redux';
-<<<<<<< HEAD
-import {loginUser} from '../../../../actions/actions';
-=======
 import { loginUser, googleLogin } from '../../../../actions/userActions';
->>>>>>> 26c61f5980f74f59438882e445bf6f851b2ec5ec
 
 const initialState = {
   email: '',

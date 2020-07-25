@@ -13,21 +13,21 @@ const Testimonial = () => {
 		{
 			_id: 1,
 			testimonial: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'Gbolade Popoola',
+			name: 'Scott Eyawo',
 			photoUrl: 'https://placeimg.com/100/100/people',
 			company: 'FundMyLaptop'
 		},
 		{
 			_id: 2,
 			testimonial: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'Kabiru Ayinla',
+			name: 'Ekene Adim',
 			photoUrl: 'https://placeimg.com/100/100/people',
 			company: 'TalentPool'
 		},
 		{
 			_id: 3,
 			testimonial: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'Scott Eyawo',
+			name: 'Chizo Nwazuo',
 			photoUrl: 'https://placeimg.com/100/100/people',
 			company: 'TalentPool'
 		},
@@ -56,17 +56,15 @@ const Testimonial = () => {
 							Testimonials</h3>
 						<div className="testimonials-text col-md-9 mb-4">
 							<p className=" text-white px-5">
-								“Graduating university without a job, I needed a laptop computer
-								to kickstart my freelance business. A friend referred my to Fund
-								my Laptop, I had my doubts but they were easily erased, Within
+								“I needed a laptop computerto kickstart my freelance business. A friend referred my to Fund
+								my Laptop and within
 								an hour of posting a campaign i got full funding for my laptop
-								and my account was immediately credited, Within three months i
-								was able to pay back the loan and grow my business”</p>
+								and my account was immediately credited”</p>
 						</div>
 						<div className=" col-md-10 text-center ">
 							<img className="mb-3 " src="https://placeimg.com/100/100/people" alt="testimonial" />
 							<h5 className="mb-0" style={{ color: "white" }}>
-								Abiodun Popoola</h5>
+								Gbolade Popoola</h5>
 							<span style={{ color: "white" }} className="card-subtitle">
 								Envato Group</span>
 						</div>
