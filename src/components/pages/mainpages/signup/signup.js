@@ -9,21 +9,10 @@ import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import { connect } from 'react-redux';
 import { registerUser } from '../../../../actions/userActions';
+import PinWheel from '../../../ui/loaders/pin-wheel';
+import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
 
-// const initialState = {
-//   email: '',
-//   password: '',
-//   firstName: '',
-//   lastName: '',
-//   phone: '',
-//   address: ''
-// };
-// function reducer(state, { field, value }) {
-//   return {
-//     ...state,
-//     [field]: value,
-//   };
-// }
+
 class Signup extends Component {
   state = {
     email: '',
@@ -34,6 +23,7 @@ class Signup extends Component {
     address: '',
     errors: null,
     message: null,
+    loading: false
   };
   blankstate = {
     email: '',
@@ -44,27 +34,33 @@ class Signup extends Component {
     address: '',
     errors: null,
     message: null,
+    loading: false
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.user.errors !== this.props.user.errors) {
+    if (prevProps.ui.errors !== this.props.ui.errors) {
       this.setState(
         {
-          errors: this.props.user.errors,
-          message: this.props.user.message,
-        },
-        () => {
-          console.log(this.state.errors);
-        }
-      );
+          errors: this.props.ui.errors,
+        });
+    }
+
+    if(prevProps.ui.message !== this.props.ui.message) {
+      this.setState({
+        message: this.props.ui.message,
+      });
+    }
+
+    if(prevProps.ui.loading !== this.props.ui.loading) {
+      this.setState({
+        loading: this.props.ui.loading
+      });
     }
   }
 
-  // const [state, dispatch] = useReducer(reducer, initialState);
-  // const { email, password, firstName, lastName, phone, address } = state;
 
   onChange = (event) => {
-    // dispatch({ field: event.target.name, value: event.target.value });
+
     this.setState({
       [event.target.id]: event.target.value,
     });
@@ -178,9 +174,11 @@ class Signup extends Component {
               </p>
             ) : this.state.message ? (
               <p className="mt-4 error text-success text-center text-sm-left">
-                {this.state.message}
+                {this.state.message.message}
               </p>
             ) : null}
+
+            { this.state.loading ? <PinWheelColor /> : null }
 
             <div className="form-group">
               <input
@@ -303,11 +301,12 @@ class Signup extends Component {
               </div>
             </div>
             <div>
-              <input
+              <button
                 type="submit"
                 className="form-control login-btn btn-fml-secondary"
                 value="Sign Up"
-              />
+              >Sign Up { this.state.loading ? <PinWheel /> : null}
+              </button>
             </div>
             <div className="my-4 text-center or d-flex align-items-center or-box">
               <hr />
@@ -320,7 +319,14 @@ class Signup extends Component {
                 className="form-control login-btn reg-btn btn-outline-fml-secondary"
               >
                 <img className="pr-3" src={googleImg} alt="" />
-                Login with Google
+                Sign up with Google
+              </Link>
+              <Link
+                to=""
+                className="mt-2 form-control login-btn login-btn-facebook reg-btn "
+              >
+                <i class="fab fa-facebook-square pr-3 facbook-logo" ></i>
+                Sign up with Facebook
               </Link>
 
               {/* <a
@@ -358,6 +364,7 @@ class Signup extends Component {
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  ui: state.ui
 });
 
 export default connect(mapStateToProps, { registerUser })(Signup);
