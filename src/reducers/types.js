@@ -15,3 +15,4 @@ export const FORM_SUBMITED = 'FORM_SUBMITED';
 //Data Reducer Types
 export const FETCH_FAQS = 'FETCH_FAQS';
 export const FETCH_SEARCH_FAQS = 'FETCH_SEARCH_FAQS'
+export const ADD_FAQS = 'ADD_FAQS'

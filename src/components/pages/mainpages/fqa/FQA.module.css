@@ -35,8 +35,8 @@ h5 {
 
 .search_icon, .search_icon:focus, .search_icon:active {
     position: absolute;
-    top: 10px;
-    right: calc(30px + (70 - 30) * ((100vw - 320px) / (1600 - 320)));
+    top: 20px;
+    right: calc(30px + (100 - 30) * ((100vw - 320px) / (991 - 320)));
     border: none;
     background-color: transparent;
     outline: none;
@@ -47,12 +47,25 @@ h5 {
     color: #E1E1E1;
 }
 
-.accordion_header {
+.accordion_header, .accordion_header:hover {
     background: #04172A;
+    color: #FFFFFF;
 }
 
 .no_border {
     background-color: transparent;
     outline: none !important;
     border: none !important;
+}
+
+@media screen and (min-width: 768px) {
+    .search_icon {
+        top: 12px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .search_icon {
+        right: calc(120px + (70 - 120) * ((100vw - 992px) / (1600 - 992)));
+    }
 }

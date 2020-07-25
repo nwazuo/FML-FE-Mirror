@@ -1,4 +1,4 @@
-import { FETCH_FAQS, FETCH_SEARCH_FAQS } from './types'
+import { FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS } from './types'
 
 const initialState = {
     faqs: null
@@ -10,6 +10,8 @@ export default function (state = initialState, action) {
             return {...state, faqs: action.payload}
         case FETCH_SEARCH_FAQS:
             return {...state, faqs: action.payload}
+        case ADD_FAQS:
+                return {...state}
         default:
             return state
     }
