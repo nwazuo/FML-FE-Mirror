@@ -320,7 +320,14 @@ class Signup extends Component {
                 className="form-control login-btn reg-btn btn-outline-fml-secondary"
               >
                 <img className="pr-3" src={googleImg} alt="" />
-                Login with Google
+                Sign up with Google
+              </Link>
+              <Link
+                to=""
+                className="mt-2 form-control login-btn login-btn-facebook reg-btn "
+              >
+                <i class="fab fa-facebook-square pr-3 facbook-logo" ></i>
+                Sign up with Facebook
               </Link>
 
               {/* <a
@@ -331,8 +338,10 @@ class Signup extends Component {
                 Login with Google
             </a> */}
             </div>
-
-            <p className="account-info-text text-center py-4 mb-md-3">
+            <p className="account-info-text text-center textWidth my-1">
+              <Link to="/forgot-password">Forgot Password?</Link>
+            </p>
+            <p className="account-info-text text-center textWidth py-2 mb-md-3">
               Already have an account?{' '}
               <Link to={pageurl.LOGIN_PAGE_URL} style={{ color: '#fb3f5c' }}>
                 Sign In
