@@ -14,6 +14,7 @@ import Compaign from './compaign/compaign';
 import Blog from '../mainpages/blog/blog';
 import SinglePost from '../mainpages/single-post-blog/singlepost';
 import Payment from '../mainpages/payment/payment';
+import InviteRecommender from '../mainpages/InviteRecommender/invite';
 import LoanRequest from './loanrequest/LoanRequest';
 import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerification';
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
@@ -37,6 +38,7 @@ export {
   Blog,
   SinglePost,
   Payment,
+  InviteRecommender,
   EmailConfirmation,
   EmailVerification,
   EmailConfirmationFailure

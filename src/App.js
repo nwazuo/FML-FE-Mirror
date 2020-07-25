@@ -20,6 +20,7 @@ import {
   Payment,
   Compaign,
   Blog,
+  InviteRecommender,
   EmailVerification,
   EmailConfirmationFailure,
   EmailConfirmation
@@ -62,10 +63,16 @@ function App() {
           component={PrivacyPage}
         />
 
-        <ProtectedRoute
+        <Route
           exact
-          path={pageurl.LOAN_REQUEST_PAGE_URL}
-          component={LoanRequest}
+          path={pageurl.USER_RECOMMENDATIONS}
+          component={Recommendations}
+        />
+
+        <Route
+          exact
+          path={pageurl.INVITE_RECOMMENDER_PAGE_URL}
+          component={InviteRecommender}
         />
 
         <Route
@@ -87,26 +94,14 @@ function App() {
 
         <ProtectedRoute
           exact
+          path={pageurl.LOAN_REQUEST_PAGE_URL}
+          component={LoanRequest}
+        />
+
+        <ProtectedRoute
+          exact
           path={pageurl.INVESTOR_DASHBOARD}
           component={InvestorDashboard}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
-          component={FundeeDashboard}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.COMPAIGN_PAGE_URL}
-          component={Compaign}
-        />
-
-        <ProtectedRoute
-          exact
-          path={pageurl.ADMIN_DASHBOARD_PAGE_URL}
-          component={AdminDashboard}
         />
 
         <ProtectedRoute
@@ -141,11 +136,7 @@ function App() {
 
         <Route exact component={Page404} />
 
-        <ProtectedRoute
-          exact
-          path={pageurl.USER_RECOMMENDATIONS}
-          component={Recommendations}
-        />
+        {/* <ProtectedRoute exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} /> */}
 
         <ProtectedRoute
           exact

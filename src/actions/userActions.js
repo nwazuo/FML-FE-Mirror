@@ -33,18 +33,13 @@ export const loginUser = (formInput, history) => (dispatch) => {
       console.log(userDetails);
       setAuthorizationHeader(token);
       dispatch({ type: LOADING_USER });
-      dispatch({
-        type: SET_USER,
-        payload: userDetails
-      });
-
+      dispatch(getUserData());
       history.push(pageurl.USER_PROFILE_PAGE_URL);
     })
     .catch((err) => {
-      //   console.log(err.response.data.message);
       dispatch({
         type: SET_ERRORS,
-        payload: err.response.data
+        payload: err.response.message
       });
     });
 };
@@ -55,7 +50,7 @@ export const registerUser = (userData, history) => (dispatch) => {
       dispatch({ type: CLEAR_ERRORS });
       console.log(res.data);
       dispatch({ type: LOADING_USER });
-      dispatch({ type: REGISTERED_USER, payload: res.data.message });
+      history.push(pageurl.LOGIN_PAGE_URL);
     })
     .catch((err) => {
       console.log(err.response.data);
@@ -64,4 +59,18 @@ export const registerUser = (userData, history) => (dispatch) => {
         payload: err.response.data
       });
     });
+};
+
+export const getUserData = () => (dispatch) => {
+  dispatch({ type: LOADING_USER });
+  axios
+    .get(`${baseURL}/api/users/active`)
+    .then((res) => {
+      dispatch({
+        type: SET_USER,
+        payload: res.data
+      });
+      console.log(res.data);
+    })
+    .catch((err) => console.log(err));
 };
