@@ -3,8 +3,8 @@ import {
   SET_AUTHENTICATED,
   SET_UNAUTHENTICATED,
   LOADING_USER,
-  SET_ERRORS,
-  CLEAR_ERRORS,
+  // SET_ERRORS,
+  // CLEAR_ERRORS,
   REGISTERED_USER,
 } from './types';
 
@@ -34,17 +34,7 @@ export default function (state = initialState, action) {
     case LOADING_USER:
       return {
         ...state,
-        loading: true,
-      };
-    case SET_ERRORS:
-      return {
-        ...state,
-        errors: action.payload,
-      };
-    case CLEAR_ERRORS:
-      return {
-        ...state,
-        errors: null,
+        loading: false,
       };
     case REGISTERED_USER:
       return {

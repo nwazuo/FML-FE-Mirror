@@ -8,6 +8,7 @@ import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import fcbIcon from './facebook-square-brands.svg'
+import PinWheel from '../../../ui/loaders/pin-wheel'
 // Redux Stuff
 import { connect } from 'react-redux';
 import {loginUser} from '../../../../actions/actions';
@@ -16,6 +17,8 @@ const initialState = {
   email: '',
   password: '',
   errors: null,
+  loading: false,
+  message: null
 };
 function reducer(state, { field, value }) {
   return {
@@ -27,15 +30,21 @@ const Login = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    if (props.user.errors) {
-      dispatch({ field: 'errors', value: props.user.errors });
+    if (props.ui.errors) {
+      dispatch({ field: 'errors', value: props.ui.errors });
     }
-  }, [props.user.errors]);
+    if (props.ui.loading !== state.loading) {
+      dispatch({ field: 'loading', value: props.ui.loading });
+    }
+    if(props.ui.message) {
+      dispatch({ field: 'message', value: props.ui.message});
+    }
+  }, [props.ui.errors, props.ui.loading, state.loading, props.ui.message]);
 
   const onChange = (event) => {
     dispatch({ field: event.target.name, value: event.target.value });
   };
-  const { email, password, errors } = state;
+  const { email, password, errors, loading, message } = state;
 
   const onSubmit = (event) => {
     const { history } = props;
@@ -107,7 +116,9 @@ const Login = (props) => {
             <span className="or-text">or</span>
             <hr />
           </div>
-
+          <div>
+            { message ? <p className="text-center">We have emailed the link to login to your email. {message.data.message}</p> : null }
+          </div>
           <div className="form-group">
             <input
               type="email"
@@ -139,15 +150,15 @@ const Login = (props) => {
             ></p>
           </div>
           <div>
-            <input
+            <button
               type="submit"
               className="form-control login-btn btn-fml-secondary"
-              value="Log in"
-            />
+            >Log in{ loading ? <PinWheel /> : null }
+            </button>
           </div>
           {errors && (
             <p className="text-center textWidth py-1" style={{ color: 'red' }}>
-              {errors.message}
+              {errors}
             </p>
           )}
           <p className="account-info-text text-center textWidth my-2">
