@@ -12,4 +12,7 @@ export const LOADING_USER = 'LOADING_USER';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const REGISTERED_USER = 'REGISTERED_USER';
 export const FORM_SUBMITED = 'FORM_SUBMITED';
+
 //Data Reducer Types
+export const FETCH_FAQS = 'FETCH_FAQS';
+export const FETCH_SEARCH_FAQS = 'FETCH_SEARCH_FAQS'
