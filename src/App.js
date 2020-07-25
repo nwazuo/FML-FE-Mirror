@@ -1,37 +1,15 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ProtectedRoute from './components/router/protectedroute/ProtectedRoute';
-import pageurl from './components/router/url/pageurl';
-import {
-  Login,
-  SignUp,
-  Terms,
-  PrivacyPage,
-  FAQ,
-  LoanRequest,
-  ContactUs,
-  UserProfile,
-  Recommendations,
-  LandingPage,
-  AboutUs,
-  Page404,
-  ComingSoon,
-  Payment,
-  Compaign,
-  Blog,
-  InviteRecommender,
-  EmailVerification,
-  EmailConfirmationFailure,
-  EmailConfirmation
-} from './components/pages/mainpages';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
+import pageurl from './components/router/url/pageurl'
+import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Recommendations,
+        LandingPage,AboutUs,Page404,ComingSoon,Payment,Compaign,Blog,Password,ResetPassword} from './components/pages/mainpages'
 
-import {
-  FundeeDashboard,
-  AdminDashboard,
-  DefaultDashboard,
-  InvestorDashboard
-} from './components/pages/dashboards';
+import {FundeeDashboard,AdminDashboard,DefaultDashboard,
+        InvestorDashboard
+} from './components/pages/dashboards'
+
 
 function App() {
   return (
@@ -57,6 +35,7 @@ function App() {
 
         <Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
 
+<<<<<<< HEAD
         <Route
           exact
           path={pageurl.PRIVACY_POLICY_PAGE_URL}
@@ -143,6 +122,33 @@ function App() {
           path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
           component={FundeeDashboard}
         />
+=======
+        <Route exact path={pageurl.RECOVER_PASSWORD_PAGE_URL} component={Password} />
+
+        <Route exact path={pageurl.RESET_PASSWORD_PAGE_URL} component={ResetPassword} />
+
+        <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
+
+        <ProtectedRoute exact path={pageurl.LOAN_REQUEST_PAGE_URL} component={LoanRequest} />
+
+        <ProtectedRoute exact path={pageurl.INVESTOR_DASHBOARD} component={InvestorDashboard} />
+                
+        <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
+
+        <ProtectedRoute exact path={pageurl.COMPAIGN_PAGE_URL} component={Compaign} />
+
+        <ProtectedRoute exact path={pageurl.ADMIN_DASHBOARD_PAGE_URL} component={AdminDashboard} />
+
+        <ProtectedRoute exact path={pageurl.DEFAULT_DASHBOARD_PAGE_URL} component={DefaultDashboard} />
+
+        <ProtectedRoute exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} />
+
+        <Route exact component={Page404}/>
+
+        <ProtectedRoute exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} />
+
+        <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
+>>>>>>> a99d4f3abf14ee0b58dae9e42124a85d14e3d1aa
 
         <Route component={Page404} />
       </Switch>
