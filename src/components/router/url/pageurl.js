@@ -43,7 +43,8 @@ const pageurl = {
     BLOG_PAGE_URL,
     DEFAULT_DASHBOARD_PAGE_URL,
     PAYMENT_PAGE_URL,
-    INVITE_RECOMMENDER_PAGE_URL
+    INVITE_RECOMMENDER_PAGE_URL,
+    
 }
 
 export default pageurl;

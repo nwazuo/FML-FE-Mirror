@@ -4,7 +4,11 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Recommendations,
+<<<<<<< HEAD
         LandingPage,AboutUs,Page404,ComingSoon,Payment,Compaign,Blog,InviteRecommender} from './components/pages/mainpages'
+=======
+        LandingPage,AboutUs,Page404,ComingSoon,Payment,Compaign,Blog} from './components/pages/mainpages'
+>>>>>>> 7c69007ecbcfda7251f583c2b1242e71e75a7881
 
 import {FundeeDashboard,AdminDashboard,DefaultDashboard,
         InvestorDashboard
