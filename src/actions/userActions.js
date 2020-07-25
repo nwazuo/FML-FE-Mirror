@@ -24,6 +24,8 @@ const setAuthorizationHeader = (token) => {
   axios.defaults.headers.common['Authorization'] = FMLToken;
 };
 
+
+
 export const loginUser = (formInput, history) => (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
   dispatch({ type: LOADING_UI })
@@ -54,6 +56,30 @@ export const loginUser = (formInput, history) => (dispatch) => {
     });
 };
 
+
+
+export const recommendUser = (recommendData, history) => (dispatch) => {
+  axios.post(`${baseURL}/api/recommendation/create`, recommendData)
+  .then((res) => {
+    
+    dispatch({ type: LOADING_UI });
+    dispatch({ type: CLEAR_ERRORS });
+    
+    console.log(res.data);
+    const { token, ...userData } = res.data.data;
+      let recommendUserDetails = { ...userData };
+    setAuthorizationHeader(token)
+    dispatch(getUserData());
+    history.push(pageurl.USER_PROFILE_PAGE_URL);
+  })
+  .catch((err) => {
+    console.error(err.response.data);
+    dispatch({
+      type: SET_ERRORS,
+      payload: err.response.message
+    })
+  })
+}
 export const registerUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI })
   axios.post(`${baseURL}/api/users/register`, userData)
@@ -76,6 +102,8 @@ export const registerUser = (userData, history) => (dispatch) => {
       });
     });
 };
+
+
 
 export const getUserData = () => (dispatch) => {
   dispatch({ type: LOADING_UI });
