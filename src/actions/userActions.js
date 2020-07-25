@@ -12,7 +12,7 @@ import {
 
 import pageurl from '../components/router/url/pageurl';
 
-import Server from '../services/server/Server';
+// import Server from '../services/server/Server';
 
 import axios from 'axios';
 // let baseURL = process.env.REACT_APP_BASE_URL;
@@ -55,7 +55,7 @@ export const loginUser = (formInput, history) => (dispatch) => {
 
 export const registerUser = (userData, history) => (dispatch) => {
   dispatch({ type: LOADING_UI })
-  Server.post(`${baseURL}/api/users/register`, userData)
+  axios.post(`${baseURL}/api/users/register`, userData)
     .then((res) => {
       dispatch({ type: CLEAR_ERRORS });
       console.log(res.data);
@@ -69,14 +69,14 @@ export const registerUser = (userData, history) => (dispatch) => {
     .catch((err) => {
       console.log(err.response.data);
       dispatch({ type: LOADED_UI });
-      // if(!err.response.data) {
+      if(!err.response.data) {
         dispatch({
           type: SET_ERRORS,
           payload: err.response.data,
         });
-      // } else {
-      //   console.log("It doesn't work");
-      // }
+      } else {
+        console.log(err);
+      }
     });
 };
 
