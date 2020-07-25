@@ -1,3 +1,4 @@
 import userReducer from './userReducer';
+import dataReducer from './dataReducer';
 
-export { userReducer };
+export { userReducer, dataReducer };

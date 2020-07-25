@@ -142,6 +142,7 @@ input::placeholder{
 @media only screen and (min-width: 1000px) {
   .form-control,
   .btn-google,
+  .textWidth,
   .check-control .or-box {
     width: 87%;
     margin-left: 14px;
@@ -161,6 +162,7 @@ input::placeholder{
   .form-control,
   .check-control,
   .btn-google,
+  .textWidth,
   .or-box {
     width: 87%;
     margin: 0.5rem auto;
