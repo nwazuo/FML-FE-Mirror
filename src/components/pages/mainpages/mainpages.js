@@ -16,6 +16,7 @@ import SinglePost from '../mainpages/single-post-blog/singlepost'
 import Payment from '../mainpages/payment/payment'
 import Password from '../mainpages/recover/Password'
 import ResetPassword from '../mainpages/reset/ResetPassword'
+import LoanRequest from '../mainpages/loanRequest/LoanRequest'
 
 
 
