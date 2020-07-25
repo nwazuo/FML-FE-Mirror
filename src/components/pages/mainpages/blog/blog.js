@@ -17,14 +17,14 @@ const Blog = () => {
     return(
         <ScrollIntoView>
             <Navbar/>
-                { !switchPage ? 
+                { switchPage ? 
                 <div className={blog.blog_qobi}>                    
                     <section className={blog.header_title_qobi}><div className={blog.main_container_qobi}><h1>The Blog</h1></div></section>
                     <section>
                         <div className={blog.main_container_qobi}>
                             <div className={blog.stories_qobi}>
                                 {blogStory.map((data,index)=>{return(
-                                    <BlogComponent key={index} img_src={data.img_src} img_alt={data.img_alt} title={data.title} description={data.description} postlink={()=>{handleSinglePost(index)}}/>
+                                    <BlogComponent key={index} img_src={data.article_img_src} img_alt={data.article_img_alt} title={data.article_title} description={data.article_post} postlink={()=>{handleSinglePost(index)}}/>
                                 )})}
                             </div>
                             <div className={blog.load_more_qobi}>

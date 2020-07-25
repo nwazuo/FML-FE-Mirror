@@ -27,64 +27,178 @@ function all (){
     )
 }
 
-
 const data = [
-
-        {img_src: image1,img_alt:"blog story",
-         title:"How to Find Lenders For Your Campaign",
-         description:all(),
-         time:new Date().toString(),
-         comment:"",
-         share: ""
+    {
+        article_id : "",article_img_src : image1,article_img_alt : "blog story",
+        article_title : "How to Find Lenders For Your Campaign",article_post: all(),article_category : "",
+        article_post_time : new Date().getDate().toString(),
+        author:{
+            id: "",name : "Baba Musa",email : "babamusa@gmail.com",
         },
-        
-        {img_src: image2,img_alt:"blog story",title:"Top Fund My Laptop Campaigns By City",
-         description:all(),
-         time:new Date().toString(),
-         comment:"",
-         share: ""},
-        
-        {img_src: image3,img_alt:"blog story",title:"How to Structure Your Campaign for Success",
-         description:all(),
-         time:new Date().toString(),
-         comment:"",
-         share: ""},
-        
-        {img_src: image4,img_alt:"blog story",title:"Top 10 Jobs You Can Get Working From Anywhere",
-         description:all(),
-         time:new Date().toString(),
-         comment:"",
-         share: ""},
-
-        {img_src: image5,img_alt:"blog story",title:"How to Find Lenders For Your Campaign",
-         description:all(),
-         time:new Date().toString(),
-         comment:"",
-         share: ""},
-        
-        {img_src: image6,img_alt:"blog story",title:"Recommeded Laptops For Designers",
-         description:all(),
-         time:new Date().toString(),
-         comment:"",
-         share: ""},
-
-        {img_src: image7,img_alt:"blog story",title:"How to Find Lenders For Your Campaign",
-         description:all(),
-         time:new Date().toString(),
-         comment:"",
-         share: ""},
-
-        {img_src: image8,img_alt:"blog story",title:"Getting The Best Value For Your Laptop Purchase",
-         description:all(),
-         time:new Date().toString(),
-         comment:"",
-         share: ""},
-
-        {img_src: image9,img_alt:"blog story",title:"What You Need To Do Before Buying a Laptop",
-         description:all(),
-         time:new Date().toString(),
-         comment:"",
-         share: ""},
+        comments:[
+            {
+                comment_id: "",user_id: "",user_name: "",
+                email: "",avatar: "",comment_date: ""
+            }
+        ],
+        share:[
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""}
+        ]    
+    },
+    {
+        article_id : "",article_img_src : image2,article_img_alt : "blog story",
+        article_title : "Top Fund My Laptop Campaigns By City",article_post: all(),article_category : "",
+        article_post_time : new Date().getDate().toString(),
+        author:{
+            id: "",name : "Baba Musa",email : "babamusa@gmail.com",
+        },
+        comments:[
+            {
+                comment_id: "",user_id: "",user_name: "",
+                email: "",avatar: "",comment_date: ""
+            }
+        ],
+        share:[
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""}
+        ]    
+    },
+    {
+        article_id : "",article_img_src : image3,article_img_alt : "blog story",
+        article_title : "How to Structure Your Campaign for Success",article_post: all(),article_category : "",
+        article_post_time : new Date().getDate().toString(),
+        author:{
+            id: "",name : "Baba Musa",email : "babamusa@gmail.com",
+        },
+        comments:[
+            {
+                comment_id: "",user_id: "",user_name: "",
+                email: "",avatar: "",comment_date: ""
+            }
+        ],
+        share:[
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""}
+        ]    
+    },
+    {
+        article_id : "",article_img_src : image4,article_img_alt : "blog story",
+        article_title : "Top 10 Jobs You Can Get Working From Anywhere",article_post: all(),article_category : "",
+        article_post_time : new Date().getDate().toString(),
+        author:{
+            id: "",name : "Baba Musa",email : "babamusa@gmail.com",
+        },
+        comments:[
+            {
+                comment_id: "",user_id: "",user_name: "",
+                email: "",avatar: "",comment_date: ""
+            }
+        ],
+        share:[
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""}
+        ]    
+    },
+    {
+        article_id : "",article_img_src : image5,article_img_alt : "blog story",
+        article_title : "How to Find Lenders For Your Campaign",article_post: all(),article_category : "",
+        article_post_time : new Date().getDate().toString(),
+        author:{
+            id: "",name : "Baba Musa",email : "babamusa@gmail.com",
+        },
+        comments:[
+            {
+                comment_id: "",user_id: "",user_name: "",
+                email: "",avatar: "",comment_date: ""
+            }
+        ],
+        share:[
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""}
+        ]    
+    },
+    {
+        article_id : "",article_img_src : image6,article_img_alt : "blog story",
+        article_title : "Recommeded Laptops For Designers",article_post: all(),article_category : "",
+        article_post_time : new Date().getDate().toString(),
+        author:{
+            id: "",name : "Baba Musa",email : "babamusa@gmail.com",
+        },
+        comments:[
+            {
+                comment_id: "",user_id: "",user_name: "",
+                email: "",avatar: "",comment_date: ""
+            }
+        ],
+        share:[
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""}
+        ]    
+    },
+    {
+        article_id : "",article_img_src : image7,article_img_alt : "blog story",
+        article_title : "How to Find Lenders For Your Campaign",article_post: all(),article_category : "",
+        article_post_time : new Date().getDate().toString(),
+        author:{
+            id: "",name : "Baba Musa",email : "babamusa@gmail.com",
+        },
+        comments:[
+            {
+                comment_id: "",user_id: "",user_name: "",
+                email: "",avatar: "",comment_date: ""
+            }
+        ],
+        share:[
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""}
+        ]    
+    },  
+    {
+        article_id : "",article_img_src : image8,article_img_alt : "blog story",
+        article_title : "Getting The Best Value For Your Laptop Purchase",article_post: all(),article_category : "",
+        article_post_time : new Date().getDate().toString(),
+        author:{
+            id: "",name : "Baba Musa",email : "babamusa@gmail.com",
+        },
+        comments:[
+            {
+                comment_id: "",user_id: "",user_name: "",
+                email: "",avatar: "",comment_date: ""
+            }
+        ],
+        share:[
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""}
+        ]    
+    },
+    {
+        article_id : "",article_img_src : image9,article_img_alt : "blog story",
+        article_title : "What You Need To Do Before Buying a Laptop",article_post: all(),article_category : "",
+        article_post_time : new Date().getDate().toString(),
+        author:{
+            id: "",name : "Baba Musa",email : "babamusa@gmail.com",
+        },
+        comments:[
+            {
+                comment_id: "",user_id: "",user_name: "",
+                email: "",avatar: "",comment_date: "",comment: ""
+            }
+        ],
+        share:[
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""},
+            {id:"",platform:"",share_time:""}
+        ]    
+    },
 ]
 
 function dummy(setObject){
