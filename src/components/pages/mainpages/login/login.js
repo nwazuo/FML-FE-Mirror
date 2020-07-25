@@ -96,7 +96,7 @@ const Login = (props) => {
             <Link className="text-center mt-3 py-3  
             btnGoogle d-flex justify-content-center 
             align-items-center"
-            style={{ boxShadow:'0px 4px 15px rgba(0, 0, 0, 0.07)'}}>
+            style={{ boxShadow:'0px 4px 15px rgba(0, 0, 0, 0.07)', color:'#1c7ed6'}}>
               <img className="" src={fcbIcon} alt="facebook" />
               Login with Facebook
             </Link>
