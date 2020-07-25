@@ -1,5 +1,5 @@
 // PUBLIC PAGES
-const COMING_SOON_URL = '/coming-soon';
+const COMING_SOON_URL = '/';
 
 const pageurl = {
     COMING_SOON_URL,
