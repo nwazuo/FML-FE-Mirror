@@ -23,6 +23,7 @@ const setAuthorizationHeader = (token) => {
 };
 
 export const loginUser = (formInput, history) => (dispatch) => {
+  dispatch({ type: LOADING_USER });
   axios
     .post(`${baseURL}/api/users/login`, formInput)
     .then((res) => {
@@ -45,14 +46,20 @@ export const loginUser = (formInput, history) => (dispatch) => {
 };
 
 export const registerUser = (userData, history) => (dispatch) => {
+  // dispatch({ type: LOADING_USER })
   Server.post(`${baseURL}/api/users/register`, userData)
     .then((res) => {
       dispatch({ type: CLEAR_ERRORS });
       console.log(res.data);
       dispatch({ type: LOADING_USER });
+      dispatch({
+        type: REGISTERED_USER,
+        payload: res.data
+      })
       history.push(pageurl.LOGIN_PAGE_URL);
     })
     .catch((err) => {
+      // dispatch({ type: LOADING_USER })
       console.log(err.response.data);
       dispatch({
         type: SET_ERRORS,

@@ -10,20 +10,7 @@ import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import { connect } from 'react-redux';
 import { registerUser } from '../../../../actions/userActions';
 
-// const initialState = {
-//   email: '',
-//   password: '',
-//   firstName: '',
-//   lastName: '',
-//   phone: '',
-//   address: ''
-// };
-// function reducer(state, { field, value }) {
-//   return {
-//     ...state,
-//     [field]: value,
-//   };
-// }
+
 class Signup extends Component {
   state = {
     email: '',
@@ -34,6 +21,7 @@ class Signup extends Component {
     address: '',
     errors: null,
     message: null,
+    loading: false
   };
   blankstate = {
     email: '',
@@ -44,6 +32,7 @@ class Signup extends Component {
     address: '',
     errors: null,
     message: null,
+    loading: false
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -52,6 +41,7 @@ class Signup extends Component {
         {
           errors: this.props.user.errors,
           message: this.props.user.message,
+          loading: this.props.user.loading
         },
         () => {
           console.log(this.state.errors);
@@ -60,11 +50,9 @@ class Signup extends Component {
     }
   }
 
-  // const [state, dispatch] = useReducer(reducer, initialState);
-  // const { email, password, firstName, lastName, phone, address } = state;
 
   onChange = (event) => {
-    // dispatch({ field: event.target.name, value: event.target.value });
+
     this.setState({
       [event.target.id]: event.target.value,
     });
@@ -303,11 +291,12 @@ class Signup extends Component {
               </div>
             </div>
             <div>
-              <input
+              <button
                 type="submit"
                 className="form-control login-btn btn-fml-secondary"
                 value="Sign Up"
-              />
+              >Sign Up { this.state.loading ? <span>Loading</span> : null}
+              </button>
             </div>
             <div className="my-4 text-center or d-flex align-items-center or-box">
               <hr />
