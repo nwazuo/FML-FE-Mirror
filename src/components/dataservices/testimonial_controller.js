@@ -40,7 +40,7 @@ const Testimonial = () => {
 		}
 	]
 
-	return testimonials ? (
+	return data ? (
 
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">

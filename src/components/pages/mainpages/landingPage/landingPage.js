@@ -8,6 +8,7 @@ import { Navbar, Footer } from "../../navigation/navigation";
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import Testimonial from '../../../dataservices/testimonial_controller';
 import Campaign from '../../../dataservices/campaign_controller';
+import Trending from '../../../dataservices/trending_controller';
 
 
 const LandingPage = () => {
@@ -92,137 +93,7 @@ const LandingPage = () => {
         {/* ******* Main section Start Here ******** */}
         <main>
           {/* trending section */}
-          <section className="container trending-section my-md-5">
-            <h3 className="mb-4">Trending Now !</h3>
-            <div className="row trending-cards ">
-              {/* card start here */}
-              <div className="col-lg-4 mb-4">
-                <div className="card ">
-                  <img
-                    className="card-img-top"
-                    src={trendingGirl}
-                    alt="Card1"
-                  />
-                  {/* card body */}
-                  <div className="card-body">
-                    <h5 className="card-title mb-0">Adelanke Doe</h5>
-                    <span className="card-subtitle ">Laptop purchase</span>
-                    <p className="card-text mt-4">
-                      I need a laptop to complete my final year school
-                      project...
-                    </p>
-                    <div className="progress">
-                      <div
-                        className="progress-bar"
-                        id="card-progress-bar"
-                        role="progressbar"
-                        style={{ width: "90%" }}
-                        aria-valuenow={90}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                      />
-                    </div>
-                    <div className="d-flex justify-content-between mt-3 mb-2">
-                      <span className="card-price"> N90,000</span>
-                      <span className="card-progress-num">90%</span>
-                    </div>
-                    <span className="card-fonds">Raised of N100,000</span>
-                  </div>
-                  {/* card footer */}
-                  <div className="card-footer d-flex align-center justify-content-between p-0">
-                    <a href className="m-auto ">
-                      {" "}
-                      view details <img src={arrow} alt="a1" />{" "}
-                    </a>
-                  </div>
-                </div>
-              </div>
-              {/* card start here */}
-              <div className="col-lg-4 mb-4">
-                <div className="card ">
-                  <img
-                    className="card-img-top"
-                    src={trendingGirl}
-                    alt="Card2"
-                  />
-                  {/* card body */}
-                  <div className="card-body">
-                    <h5 className="card-title mb-0">Adelanke Doe</h5>
-                    <span className="card-subtitle ">Laptop purchase</span>
-                    <p className="card-text mt-4">
-                      I need a laptop to complete my final year school
-                      project...
-                    </p>
-                    <div className="progress">
-                      <div
-                        className="progress-bar"
-                        id="card-progress-bar"
-                        role="progressbar"
-                        style={{ width: "90%" }}
-                        aria-valuenow={90}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                      />
-                    </div>
-                    <div className="d-flex justify-content-between mt-3 mb-2">
-                      <span className="card-price"> N90,000</span>
-                      <span className="card-progress-num">90%</span>
-                    </div>
-                    <span className="card-fonds">Raised of N100,000</span>
-                  </div>
-                  {/* card footer */}
-                  <div className="card-footer d-flex align-center justify-content-between p-0">
-                    <a href className="m-auto ">
-                      {" "}
-                      view details <img src={arrow} alt="a2" />{" "}
-                    </a>
-                  </div>
-                </div>
-              </div>
-              {/* card start here */}
-              <div className="col-lg-4 mb-4">
-                <div className="card ">
-                  <img
-                    className="card-img-top"
-                    src={trendingGirl}
-                    alt="Card3"
-                  />
-                  {/* card body */}
-                  <div className="card-body">
-                    <h5 className="card-title mb-0">Adelanke Doe</h5>
-                    <span className="card-subtitle ">Laptop purchase</span>
-                    <p className="card-text mt-4">
-                      I need a laptop to complete my final year school
-                      project...
-                    </p>
-                    <div className="progress">
-                      <div
-                        className="progress-bar"
-                        id="card-progress-bar"
-                        role="progressbar"
-                        style={{ width: "90%" }}
-                        aria-valuenow={90}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                      />
-                    </div>
-                    <div className="d-flex justify-content-between mt-3 mb-2">
-                      <span className="card-price"> N90,000</span>
-                      <span className="card-progress-num">90%</span>
-                    </div>
-                    <span className="card-fonds">Raised of N100,000</span>
-                  </div>
-                  {/* card footer */}
-                  <div className="card-footer d-flex align-center justify-content-between p-0">
-                    <a href className="m-auto ">
-                      {" "}
-                      view details <img src={arrow} alt="a3" />{" "}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+         <Trending/>
           {/* about us section */}
           <section className="container-fluid bg-white about-us-section my-5">
             <div className="container">
