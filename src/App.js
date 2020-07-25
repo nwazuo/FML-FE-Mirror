@@ -4,7 +4,8 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import ProtectedRoute from './components/router/protectedroute/ProtectedRoute'
 import pageurl from './components/router/url/pageurl'
 import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Recommendations,
-        LandingPage,AboutUs,Page404,ComingSoon,Payment,Compaign,Blog} from './components/pages/mainpages'
+        LandingPage,AboutUs,Page404,ComingSoon,Payment,Compaign,Blog,InviteRecommender} from './components/pages/mainpages'
+    
 
 import {FundeeDashboard,AdminDashboard,DefaultDashboard,
         InvestorDashboard
@@ -39,6 +40,10 @@ function App() {
 
         <Route exact path={pageurl.PRIVACY_POLICY_PAGE_URL} component={PrivacyPage} />
 
+        <Route exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} />
+
+        <Route exact path={pageurl.INVITE_RECOMMENDER_PAGE_URL} component={InviteRecommender} />
+
         <ProtectedRoute exact path={pageurl.LOAN_REQUEST_PAGE_URL} component={LoanRequest} />
 
         <ProtectedRoute exact path={pageurl.INVESTOR_DASHBOARD} component={InvestorDashboard} />
@@ -53,9 +58,10 @@ function App() {
 
         <ProtectedRoute exact path={pageurl.USER_PROFILE_PAGE_URL} component={UserProfile} />
 
+
         <Route exact component={Page404}/>
 
-        <ProtectedRoute exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} />
+        {/* <ProtectedRoute exact path={pageurl.USER_RECOMMENDATIONS} component={Recommendations} /> */}
 
         <ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
 
