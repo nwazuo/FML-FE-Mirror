@@ -38,6 +38,7 @@ export const loginUser = (formInput, history) => (dispatch) => {
       history.push(pageurl.USER_PROFILE_PAGE_URL);
     })
     .catch((err) => {
+      dispatch({ type: LOADED_UI });
       dispatch({
         type: SET_ERRORS,
         payload: err.response.message,
