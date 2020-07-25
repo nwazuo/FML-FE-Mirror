@@ -36,8 +36,47 @@ const InvestorDashboard = () => {
           control.addEventListener("click", handleScroll);
         });
        
+
+        let investedAmount = document.getElementById("investedAmount");
+        let repaidAmount = document.getElementById("repaidAmount");
+        let remainingAmount = document.getElementById("remainingAmount");
+        let averageInvestment = document.getElementById("AverageInvestment");
+        let AverageInterest = document.getElementById("AverageInterest");
+        let numOf
+        constructor(props) {
+            super(props);
+            this.state = {
+                investedAmount: 0,
+                repaidAmount: 0,
+                remainingAmount: 0,
+                averageInvestment: 0,
+                averageInterest: 0,
+                numOfInvestments: 0
+            }
+          }
+        
+          componentDidMount() {
+            axios.get('https://api.fundmylaptop.com/api/campaigns/userOverview')
+            .then(response => {
+                if(response.success){
+                    this.setState({
+                        investedAmount: response.data.investedAmount,
+                        repaidAmount: response.data.repaidAmount,
+                        remainingAmount: response.data.remainingAmount,
+                        averageInvestment: response.data.averageInvestment,
+                        averageInterest: response.data.averageInterest,
+                        numOfInvestments: response.data.numOfInvestments
+                     });
+                }
+            })
+            .catch(error => {
+              console.log(error);
+            });
+          }
+        
   });
 
+  
 
     return(
     <div>
@@ -184,38 +223,38 @@ const InvestorDashboard = () => {
                                     <div className="investoraccount__block--details">
                                         <small>Invested Amount</small>
                                         <br />
-                                        <h2><span>INR</span>50,000</h2>
+                                        <h2><span>INR</span>{investedAmount}</h2>
                                     </div>
                                     <div className="investoraccount__block--details">
                                         <small>Repaid Amount</small>
                                         <br />
-                                        <h2><span>INR</span>20,000</h2>
+                                        <h2><span>INR</span>{repaidAmount}</h2>
                                     </div>
                                     <div className="investoraccount__block--details investorhide">
                                         <small>Remaining Amount</small>
                                         <br />
-                                        <h2><span>INR</span>30,000</h2>
+                                        <h2><span>INR</span>{remainingAmount}</h2>
                                     </div>
                                     <div className="investoraccount__block--details investorhide">
                                         <small>Investments</small>
                                         <br />
-                                        <h2>6</h2>
+                                        <h2 id="numberOfInvestments">6</h2>
                                     </div>
                                     <div className="investoraccount__block--details investorhide">
                                         <small>Average Investment</small>
                                         <br />
-                                        <h2><span>INR</span>25,000</h2>
+                                        <h2><span>INR</span>{averageInterest}</h2>
                                     </div>
                                     <div className="investoraccount__block--details investorhide">
                                         <small>Average Interest</small>
                                         <br />
-                                        <h2>2.5<span>%</span></h2>
+                                        <h2>{averageInvestment}<span>%</span></h2>
                                     </div>
                                 </div>
                                 <div className="d-flex investororder1">
                                     <div className="col-7 investordontshow">
                                         <h5 className="text-left mb-0 pb-0">Total Invested Amount</h5><br />
-                                        <h6 className="text-left mt-0 pt-0"><small>INR</small>50,000</h6>
+                                        <h6 className="text-left mt-0 pt-0" ><small>INR</small>50,000</h6>
                                     </div>
                                     <div className="investorspace investordontshow"></div>
                                     <div className="investoraccount__progress mt-2 mb-3 mr-3">
