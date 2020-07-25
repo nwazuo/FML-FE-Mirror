@@ -175,6 +175,7 @@ const Login = (props) => {
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  ui: state.ui,
 });
 const mapActionsToProps = {
   loginUser,

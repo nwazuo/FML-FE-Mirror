@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import configureStore from './configureStore';
 import { render } from 'react-dom';
 import { loadState, saveState } from './reducers/localStorage';
+import throttle from 'lodash/throttle';
 
 const persistedState = loadState();
 const store = configureStore(persistedState);
@@ -13,9 +14,15 @@ const store = configureStore(persistedState);
 console.log('index token');
 console.log(localStorage.FMLToken);
 
-store.subscribe(() => {
-  saveState(store.getState());
-});
+store.subscribe(
+  throttle(() => {
+    saveState({
+      user: store.getState().user,
+      data: store.getState().data,
+    });
+  }),
+  1000
+);
 
 const renderApp = () =>
   render(
