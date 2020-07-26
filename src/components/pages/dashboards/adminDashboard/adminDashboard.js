@@ -15,6 +15,7 @@ import user3 from "./img/user3.png";
 import Ham1 from "./img/Ham-1.png";
 import Ham2 from "./img/Ham-2.png";
 import { Navbar, Footer } from "../../navigation";
+import AdminTable from '../../../dataservices/adminDashboard_controller.js'
 
 class AdminDashboard extends Component {
   componentDidMount() {
@@ -217,111 +218,7 @@ class AdminDashboard extends Component {
                           </div>
                         </div>
                       </div>
-                      <table className="table table-ligh bg-white mt-3 shadow-sm">
-                        <thead className="thead-blue text-white">
-                          <tr>
-                            <td className="py-3 d-none d-md-block">
-                              ID
-                            </td>
-                            <td className="py-3">
-                              Name
-                            </td>
-                            <td className="py-3 d-none d-md-block">
-                              Amount
-                            </td>
-                            <td className="py-3">
-                              Status
-                            </td>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td className="py-4 d-none d-md-block">10356</td>
-                            <td className="py-4 py-md-2">
-                              <img
-                                src={user1}
-                                className="img-fluid d-none d-md-inline mr-3"
-                                alt=""
-                              />{" "}
-                              Adenike Ogunmola
-                            </td>
-                            <td className="py-4 d-none d-md-block">N60,000</td>
-                            <td className="py-4">
-                              <span className="status-success pl-4 py-2">
-                                Approved
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td className="py-4 d-none d-md-block">10359</td>
-                            <td className="py-4 py-md-2">
-                              <img
-                                src={user2}
-                                className="img-fluid d-none d-md-inline mr-3"
-                                alt=""
-                              />{" "}
-                              Adenike Ogunmola
-                            </td>
-                            <td className="py-4 d-none d-md-block">N60,000</td>
-                            <td className="py-4">
-                              <span className="status-warning pl-4 py-2">
-                                Pending
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td className="py-4 d-none d-md-block">10242</td>
-                            <td className="py-4 py-md-2">
-                              <img
-                                src={user3}
-                                className="img-fluid d-none d-md-inline mr-3"
-                                alt=""
-                              />
-                              Uduak Gabriel
-                            </td>
-                            <td className="py-4 d-none d-md-block">N60,000</td>
-                            <td className="py-4">
-                              <span className="status-success pl-4 py-2">
-                                Approved
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td className="py-4 d-none d-md-block">10359</td>
-                            <td className="py-4 py-md-2">
-                              <img
-                                src={user2}
-                                className="img-fluid d-none d-md-inline mr-3"
-                                alt=""
-                              />{" "}
-                              Adenike Ogunmola
-                            </td>
-                            <td className="py-4 d-none d-md-block">N60,000</td>
-                            <td className="py-4">
-                              <span className="status-warning pl-4 py-2">
-                                Pending
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td className="py-4 d-none d-md-block">10242</td>
-                            <td className="py-4 py-md-2">
-                              <img
-                                src={user3}
-                                className="img-fluid d-none d-md-inline mr-3"
-                                alt=""
-                              />{" "}
-                              Uduak Gabriel
-                            </td>
-                            <td className="py-4 d-none d-md-block">N60,000</td>
-                            <td className="py-4">
-                              <span className="status-success pl-4 py-2">
-                                Approved
-                              </span>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                     <AdminTable/>
                     </div>
                     {/* Audits  */}
                     <div className="col-lg-3 pl-lg-0 pl-xl-2 mt-4 mt-lg-0">
