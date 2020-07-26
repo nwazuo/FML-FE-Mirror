@@ -181,11 +181,13 @@ color: white;}
 /* Testimonials-section  start Here */
 .landingPage .testimonials-section{
     background: url(./img/test-back.png) center no-repeat;
-    background-size: cover;
+    background-size: cover!important;
     min-height:  742px;
     margin:0;
     padding: 6rem 0;
 }
+
+
 .landingPage .testimonials-text>p{
     font-style: italic;
     font-weight: 500;

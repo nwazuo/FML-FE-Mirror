@@ -1,0 +1,7 @@
+
+@media screen and (min-width: 768px){
+    .test-carousel .carousel, .slide {
+        margin-left: -150px;
+        margin-right: -150px;
+    }
+}
