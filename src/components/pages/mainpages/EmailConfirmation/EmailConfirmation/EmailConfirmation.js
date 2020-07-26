@@ -4,24 +4,23 @@ import { Navbar, Footer } from '../../../navigation/navigation';
 import ScrollIntoView from '../../../../router/scrollintoview/ScrollIntoView';
 import emailConfirmation from './images/email-confirmation.png';
 import axios from 'axios';
-
-let baseURLID = 'https://api.fundmylaptop.com/users/verification';
-// check id of user
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const baseUrl =
   'https://api.fundmylaptop.com/api/users/resend-verification-mail';
 
 const EmailConfirmation = (props) => {
+  const { message } = props.ui;
   console.log(props);
+  console.log(message);
+  console.log(message.data.resend_url_live);
 
-  // get the id from the url>>>>>
-  // const query = new URLSearchParams(props.location.search);
-  // const uid = query.get('uid');
-  // console.log('uid', uid); //123
+  const resendResetLink = message.data.resend_url_live;
 
   const handleResend = () => {
     axios
-      .get(`${baseUrl}/5f1ca9daef32f50011259501`)
+      .get(`${resendResetLink}`)
       .then((response) => {
         if (response.data.message === 'Verification mail sent') {
           console.log(response.data);
@@ -74,4 +73,14 @@ const EmailConfirmation = (props) => {
   );
 };
 
-export default EmailConfirmation;
+const mapStateToProps = (state) => ({
+  user: state.user,
+  ui: state.ui
+});
+
+const mapActionsToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(withRouter(EmailConfirmation));
