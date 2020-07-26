@@ -7,6 +7,7 @@ import axios from 'axios';
 import './EmailVerification.css';
 import ScrollIntoView from '../../../../router/scrollintoview/ScrollIntoView';
 import emailConfirmation from './images/images/email-confirmation.png';
+import pageurl from '../../../../router/url/pageurl';
 
 const EmailVerification = (props) => {
   let baseURL = 'https://api.fundmylaptop.com/users/verification';
@@ -53,7 +54,7 @@ const EmailVerification = (props) => {
                   Your email address has been successfully verified
                 </p>
 
-                <Link to="/">
+                <Link to={pageurl.USER_PROFILE_PAGE_URL}>
                   <button className="email-success-btn">
                     Continue to Profile
                   </button>
