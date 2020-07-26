@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../pages/mainpages/landingPage/landingPage.css";
 import arrow from "../pages/mainpages/landingPage/img/arrow.png";
+import { Reveal, Tween, Timeline } from 'react-gsap';
 import axios from "axios";
 
 const Trending = () => {
@@ -46,50 +47,65 @@ const Trending = () => {
         },
     ];
 
+    const FadeInUp = ({ children }) => (
+        <Tween from={{ y: 20, opacity: 0 }}>{children}</Tween>
+    );
+    const FadeInLeft = ({ children }) => (
+        <Tween from={{ x: -40, opacity: 0 }}>{children}</Tween>
+      );
 
     return data ? (
         <section className="container trending-section my-md-5">
-            <h3 className="mb-4">Trending Now !</h3>
+            <FadeInLeft><h3 className="mb-4">Trending Now !</h3></FadeInLeft>
+
             <div className="row trending-cards ">
                 {data.map((i) => {
                     return (
-                        <div className="col-lg-4 mb-4">
-                            <div className="card ">
-                                <img
-                                    className="card-img-top"
-                                    src={i.photoUrl}
-                                    alt="Card1"
-                                />
-                                {/* card body */}
-                                <div className="card-body">
-                                 <h5 className="card-title mb-0">{i.name}</h5>
-                                    <span className="card-subtitle ">{i.title}</span>
-                                    <p className="card-text mt-4">{i.description}</p>
-                                    <div className="progress">
-                                        <div
-                                            className="progress-bar"
-                                            id="card-progress-bar"
-                                            role="progressbar"
-                                            style={{ width: i.percent }}
-                                            aria-valuenow={90}
-                                            aria-valuemin={0}
-                                            aria-valuemax={100}
-                                        />
+                        <Reveal>
+                            <div className="col-lg-4 mb-4">
+                                <div className="card ">
+                                <FadeInUp>
+                                    <img
+                                        className="card-img-top"
+                                        src={i.photoUrl}
+                                        alt="Card1"
+                                    />
+                                    </FadeInUp>
+                                    {/* card body */}
+                                    <FadeInUp>
+                                    <div className="card-body">
+                                        <h5 className="card-title mb-0">{i.name}</h5>
+                                        <span className="card-subtitle ">{i.title}</span>
+                                        <p className="card-text mt-4">{i.description}</p>
+                                        <div className="progress">
+                                            <div
+                                                className="progress-bar"
+                                                id="card-progress-bar"
+                                                role="progressbar"
+                                                style={{ width: i.percent }}
+                                                aria-valuenow={90}
+                                                aria-valuemin={0}
+                                                aria-valuemax={100}
+                                            />
+                                        </div>
+                                        <div className="d-flex justify-content-between mt-3 mb-2">
+                                            <span className="card-price">{i.price}</span>
+                                            <span className="card-progress-num">{i.percent}</span>
+                                        </div>
+                                        <span className="card-fonds">Raised of {i.price}</span>
                                     </div>
-                                    <div className="d-flex justify-content-between mt-3 mb-2">
-                                        <span className="card-price">{i.price}</span>
-                                        <span className="card-progress-num">{i.percent}</span>
+                                    </FadeInUp>
+                                    {/* card footer */}
+                                    <FadeInUp>
+                                    <div className="card-footer d-flex align-center justify-content-between p-0">
+                                        <a href className="m-auto ">
+                                            {" "}view details <img src={arrow} alt="a1" />{" "}
+                                        </a>
                                     </div>
-                                    <span className="card-fonds">Raised of {i.price}</span>
-                                </div>
-                                {/* card footer */}
-                                <div className="card-footer d-flex align-center justify-content-between p-0">
-                                    <a href className="m-auto ">
-                                        {" "}view details <img src={arrow} alt="a1" />{" "}
-                                    </a>
+                                    </FadeInUp>
                                 </div>
                             </div>
-                        </div>
+                        </Reveal>
                     )
                 })}
             </div>
