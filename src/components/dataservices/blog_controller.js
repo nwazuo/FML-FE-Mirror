@@ -1,8 +1,8 @@
 import Server from '../../services/server/Server';
-const token = process.env.REACT_APP_USER_TOKEN;
+
+const token = localStorage.getItem('FMLToken');
 const createBlogPostEndPoint  = process.env.REACT_APP_CREATE_BLOG_POST_END_POINT;
 const headers = {"Content-Type": "application/json","Access-Control-Allow-Origin": "*",};
-
 function validate(data,setDataError){
     let article_title = ""; let article_description = ""; let article_post = "";
     article_title = data.article_title.length < 3 ? "8 words is the minimum" : ""; 
@@ -16,7 +16,7 @@ function validate(data,setDataError){
 
 function createBlogPost(data,setStatus,setRequested,setLoading){
     setLoading(true);
-    Server.authPost(`${createBlogPostEndPoint}`,data,token,headers)
+    Server.authBlogPost(`${createBlogPostEndPoint}`,data,token,headers)
     .then(response=>{response && setRequested(true); response && setLoading(false);setStatus(response.data.success);})
     .catch(error=>{error && setRequested(true); error && setLoading(false);});    
 }

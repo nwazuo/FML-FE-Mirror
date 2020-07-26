@@ -68,10 +68,7 @@ $buttonColor: #FB3F5C;
     font-size: 1.375rem;
     line-height: 29px;
     padding: $pH 0;
-<<<<<<< HEAD
-=======
     cursor: pointer;
->>>>>>> d0a38130cf095017cab25253bf9e1648a46a1261
 }
 
 @mixin border-bottom($pB) {
@@ -109,8 +106,6 @@ $buttonColor: #FB3F5C;
 }
 
 section {
-<<<<<<< HEAD
-=======
     padding-top: 30px;
 
     .create {
@@ -163,7 +158,6 @@ section {
         }
     }
 
->>>>>>> d0a38130cf095017cab25253bf9e1648a46a1261
     // Loan Request Styles
     .loan-wrapper {
         max-width: 1440px;
@@ -306,11 +300,7 @@ section {
         }
     }
 
-<<<<<<< HEAD
-    @include minWidth(665px) {
-=======
     @include minWidth(827px) {
->>>>>>> d0a38130cf095017cab25253bf9e1648a46a1261
         .loan-wrapper {
             padding: 0 60px;
         }

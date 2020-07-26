@@ -29,6 +29,12 @@ const authPost = (url, data, token, header = {}) => {
   return axios.post(process.env.REACT_APP_BASE_URL + url, data, { headers: options });
 };
 
+const authBlogPost = (url, data, token, header = {}) => {
+  const authToken = { Authorization: token };
+  const options = { ...headers, ...authToken, ...header };
+  return axios.post(process.env.REACT_APP_BASE_URL + url, data, { headers: options });
+};
+
 const authGet = (url, token, extraHeaders = {}) => {
   const authToken = { Authorization: "Bearer " + token, ...extraHeaders };
   const options = { ...headers, ...authToken };
@@ -59,6 +65,7 @@ const Server = {
   get,
   post,
   authPost,
+  authBlogPost,
   authGet,
   loginDemo
 };
