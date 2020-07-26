@@ -43,7 +43,7 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
       dispatch({ type: LOADED_UI });
       dispatch({
         type: SET_ERRORS,
-        payload: err.response.message,
+        payload: err.response.data.message,
       });
     });
 };
