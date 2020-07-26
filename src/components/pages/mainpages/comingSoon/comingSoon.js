@@ -76,7 +76,7 @@ const ComingSoon = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		 // eslint-disable-next-line
+		// eslint-disable-next-line
 		const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 		if (email === '' || !emailRegex.test(email)) {
 			setIsValid(false);
@@ -98,7 +98,7 @@ const ComingSoon = () => {
 				setLoading(false);
 				setShowModal(true);
 				setSuccess(false);
-				setStatusText('Something went wrong, try again!');
+				setStatusText(err.response.data.message);
 			});
 	};
 
