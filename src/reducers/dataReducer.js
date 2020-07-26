@@ -1,11 +1,11 @@
-import { CREATE_REQUEST, SET_ERRORS, LOADING_USER, CLEAR_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS } from './types';
+import { CREATE_REQUEST, SET_ERRORS, LOADING_USER, CLEAR_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS } from './types';
   
 const initialState = {
-createdRequest: false,
-loading: false,
-errors: null,
-faqs: null,
-data: {}
+    createdRequest: false,
+    loading: false,
+    errors: null,
+    faqs: null,
+    data: {}
 };
 
 export default function (state = initialState, action) {
@@ -22,25 +22,27 @@ export default function (state = initialState, action) {
             loading: true,
         };
         case SET_ERRORS:
-        return {
-            ...state,
-            errors: action.payload,
-        };
+            return {
+                ...state,
+                errors: action.payload,
+            };
         case CLEAR_ERRORS:
-        return {
-            ...state,
-            errors: null,
-        };
+            return {
+                ...state,
+                errors: null,
+            };
         case FETCH_FAQS:
-        return {
-            ...state, faqs:
-                action.payload
-        }
+            return {
+                ...state, 
+                faqs: action.payload
+            }
         case FETCH_SEARCH_FAQS:
-        return {
-            ...state, 
-            faqs: action.payload
-        }
+            return {
+                ...state, 
+                faqs: action.payload
+            }
+        case ADD_FAQS:
+            return {...state}
         default:
         return state;
     }
