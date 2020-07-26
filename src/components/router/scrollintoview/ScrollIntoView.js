@@ -1,9 +1,9 @@
 import React from 'react'
 import {createBrowserHistory} from 'history';
 
+let oldpath = "";
 const ScrollIntoView =(props)=> {  
   let history = createBrowserHistory();
-  let oldpath = "";
   React.useEffect(()=>{  
     function doit(){
       if(history.location.pathname !== oldpath){
