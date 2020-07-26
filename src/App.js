@@ -34,7 +34,7 @@ function App() {
 
 				<Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
 
-				<Route exact path={pageurl.SINGLE_POST_URL} component={SinglePost} />
+				<Route exact path={pageurl.SINGLE_POST_URL+`/:details`} component={SinglePost} />
 
 				<Route exact path={pageurl.CREATE_NEW_POST_URL} component={CreateBlogPost} />
 

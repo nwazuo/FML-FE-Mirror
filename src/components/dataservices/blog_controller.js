@@ -21,11 +21,16 @@ function createBlogPost(data,setStatus,setRequested,setLoading){
     .catch(error=>{error && setRequested(true); error && setLoading(false);});    
 }
 
-function getAllBlogPosts(){
-    Server.authGet(`${createBlogPostEndPoint}`,token,headers)
-    .then(response=>{})
-    .catch(error=>{});    
+function getAllBlogPosts(setBlogStories){
+    Server.get(`${createBlogPostEndPoint}`)
+    .then(response=>{
+        response && setBlogStories(response.data.data);
+        console.log(response.data.data)
+    })
+    .catch(error=>{console.log(error)});    
+    console.log('sdvsvadcvadfasdfvasfvc');
 }
+
 
 function getBlogPost(data,setStatus,setRequested,setLoading){
     Server.authGet(`${createBlogPostEndPoint}`,data,token,headers)
