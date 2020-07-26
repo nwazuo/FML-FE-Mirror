@@ -11,7 +11,7 @@ import Recommendations from './recommendations/recommendations';
 import LoanRequest from './loanrequest/LoanRequest'
 import Page404 from './page404/Page404'
 import ComingSoon from './comingSoon/comingSoon';
-import CAMPAIGN from './Campaign/CAMPAIGN';
+import Campaign from './Campaign/Campaign';
 import Blog from '../mainpages/blog/blog'
 import SinglePost from '../mainpages/single-post-blog/singlepost'
 
@@ -31,7 +31,7 @@ export {
     LoanRequest,
     Page404,
     ComingSoon,
-    CAMPAIGN,
+    Campaign,
     Blog,
     SinglePost,
 }

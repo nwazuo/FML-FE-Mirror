@@ -87,9 +87,13 @@ class CAMPAIGN extends Component
          document.getElementById("occ_cam").innerHTML = `${campaign.data.campData.occupation}`;
 
          //RECOMMENDERS TEXT 
+         if(campaign.data.recommenders.length > 0) {
          document.getElementById("rec_txt_com").innerHTML = `${campaign.data.recommenders[0].text}`;
          document.getElementById("rec_txtt_com").innerHTML = `${campaign.data.recommenders[1].text}`;
          document.getElementById("rec_txttt_com").innerHTML = `${campaign.data.recommenders[2].text}`;
+         } else {
+             document.querySelector("#recommendations").style.display='none'
+         }
 
 
       })
@@ -235,8 +239,12 @@ class CAMPAIGN extends Component
     
                                 <div className="col-sm-4  col-12">
                                     <div className="list-inline"  className={styles.resCenter}>
-                                        <img   className={styles.socialImg} src={Image7} alt=""></img>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffundmylaptop.com%2Fcampaign">
+                                        <img className={styles.socialImg} src={Image7} alt=""></img>
+                                        </a>
+                                        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ffundmylaptop.com%2Fcampaign&text=Help%20fund%20a%20laptop">
                                         <img className="ml-4" className={styles.socialImg} src={Image9} alt=""></img>
+                                        </a>
                                         <img className="ml-4"  className={styles.socialImg} src={Image10} alt=""></img>
                                         <img className="ml-4" className={styles.socialImg} src={Image8} alt=""></img>
                                     </div>
