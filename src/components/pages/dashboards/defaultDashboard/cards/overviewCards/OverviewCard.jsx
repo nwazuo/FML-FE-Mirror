@@ -5,7 +5,7 @@ import './OverviewCard.css'
 const OverviewCard =({data:{img ,title , desc , style}})=>{
     return (
         
-        <Col sm={6} lg={4}>
+        <Col sm={6} lg={4} >
         <div className="my-2 overview-card d-flex align-items-center ">
             <div className='ml-3 mr-2 overview-card__img ' style={style}>
                 <img src={img}alt=''/>
