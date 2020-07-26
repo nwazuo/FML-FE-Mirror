@@ -3,6 +3,7 @@ import Server from '../../services/server/Server';
 const token = localStorage.getItem('FMLToken');
 const createBlogPostEndPoint  = process.env.REACT_APP_CREATE_BLOG_POST_END_POINT;
 const headers = {"Content-Type": "application/json","Access-Control-Allow-Origin": "*",};
+
 function validate(data,setDataError){
     let article_title = ""; let article_description = ""; let article_post = "";
     article_title = data.article_title.length < 3 ? "8 words is the minimum" : ""; 
@@ -25,17 +26,18 @@ function getAllBlogPosts(setBlogStories){
     Server.get(`${createBlogPostEndPoint}`)
     .then(response=>{
         response && setBlogStories(response.data.data);
-        console.log(response.data.data)
+        // console.log(response.data.data)
     })
     .catch(error=>{console.log(error)});    
-    console.log('sdvsvadcvadfasdfvasfvc');
 }
 
-
-function getBlogPost(data,setStatus,setRequested,setLoading){
-    Server.authGet(`${createBlogPostEndPoint}`,data,token,headers)
-    .then(response=>{})
-    .catch(error=>{});    
+function getBlogPost(id,setBlogStory){
+    Server.get(`${createBlogPostEndPoint}/${id}`)
+    .then(response=>{
+        response && setBlogStory([response.data.data]);
+        console.log([response.data.data]);
+    })
+    .catch(error=>{console.log(error)});    
 }
 
 const BlogController ={

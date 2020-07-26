@@ -8,6 +8,7 @@ import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Rec
 		SinglePost,CreateBlogPost} from './components/pages/mainpages';
 import {FundeeDashboard,AdminDashboard,DefaultDashboard,InvestorDashboard} from './components/pages/dashboards';
 
+
 function App() {
 	return (
 		<Router basename={process.env.PUBLIC_URL}>

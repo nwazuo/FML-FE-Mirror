@@ -39,8 +39,8 @@ const Blog = ({...props}) => {
                         <div className={blog.main_container_qobi}>
                             <div className={blog.stories_qobi}>
                                 {blogStory.map((data,index)=>{return(
-                                    <BlogComponent key={index} img_src={data.imgSrc} img_alt={data.imgAlt ? data.imgAlt : `Default Image ${index+1}`} title={data.title ? data.title : `Title ${index+1}`} 
-                                    description={data.post ? data.post : `No post ${index+1}`} postlink={()=>{handleSinglePost(data._id)}}/>
+                                    <BlogComponent key={index} img_src={data.imgSrc} img_alt={data.imgAlt ? data.imgAlt : `No Image`} title={data.title ? data.title : `No Title`} 
+                                    description={data.post ? data.post : `No post`} postlink={()=>{handleSinglePost(data._id)}}/>
                                 )})}
                             </div>
                             <div className={blog.load_more_qobi}>
