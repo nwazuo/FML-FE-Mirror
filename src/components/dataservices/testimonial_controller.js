@@ -7,46 +7,11 @@ const Testimonial = () => {
 	const [testimonials, setTestimonial] = useState('');
 	useEffect(() => {
 		const apiUrl = 'https://api.fundmylaptop.com/api/testimonial/fetch';
-		axios.get(apiUrl).then((response) => setTestimonial(response.data));
+		axios.get(apiUrl).then((response) => setTestimonial(response.data.data));
 	}, []);
 
-	const data = [
-		{
-			_id: 1,
-			testimonial:
-				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'Scott Eyawo',
-			photoUrl: 'https://placeimg.com/100/100/people',
-			company: 'FundMyLaptop',
-		},
-		{
-			_id: 2,
-			testimonial:
-				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'Ekene Adim',
-			photoUrl: 'https://placeimg.com/100/100/people',
-			company: 'TalentPool',
-		},
-		{
-			_id: 3,
-			testimonial:
-				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'Chizo Nwazuo',
-			photoUrl: 'https://placeimg.com/100/100/people',
-			company: 'TalentPool',
-		},
-		{
-			_id: 4,
-			testimonial:
-				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
-			name: 'CodeLeaf Adio',
-			photoUrl: 'https://placeimg.com/100/100/people',
-			company: 'TalentPool',
-		},
-	];
 
-
-	return data ? (
+	return testimonials? (
 		<div className="test-carousel">
 			<div
 				id="carouselExampleIndicators"
@@ -86,14 +51,14 @@ const Testimonial = () => {
 							</div>
 						</section>
 					</div>
-					{data.map((i) => {
+					{testimonials.map((i) => {
 						return (
-							<div class="carousel-item" key={i.id}>
+							<div class="carousel-item" key={i._id}>
 								<section className=" container-fluid testimonials-section mt-md-5 row justify-content-center">
 									<h3 className="col-md-8 text-center text-white mb-4">
 										Testimonials</h3>
 									<div className="testimonials-text col-md-9 mb-4">
-										<p className=" text-white px-5">{`"${i.testimonial}"`}</p>
+										<p className=" text-white px-5">{`"${i.text}"`}</p>
 									</div>
 									<div className=" col-md-10 text-center ">
 										<img className="mb-3 " src={i.photoUrl} alt="testimonial" />
@@ -101,7 +66,7 @@ const Testimonial = () => {
 											{i.name}
 										</h5>
 										<span style={{ color: 'white' }} className="card-subtitle">
-											{i.company}
+											{i.companyName}
 										</span>
 									</div>
 								</section>

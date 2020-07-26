@@ -77,7 +77,7 @@ const Campaign = () => {
                   <div className="card-footer d-flex align-center justify-content-between p-0">
                     <a href className="m-auto ">
                       {' '}
-                      view details <img src={arrow} alt="a4" />{' '}
+                      View details <img src={arrow} alt="a4" />{' '}
                     </a>
                   </div>
                 </div>
