@@ -1,4 +1,4 @@
 import { loginUser, recommendUser } from './userActions';
-import { fetchFaqs, fetchSearchFaqs, addFaqs } from './dataActions'
+import { fetchFaqs, fetchSearchFaqs, addFaqs, makePayment } from './dataActions'
 
-export { loginUser, fetchFaqs, fetchSearchFaqs, recommendUser, addFaqs };
+export { loginUser, fetchFaqs, fetchSearchFaqs, recommendUser, addFaqs, makePayment };

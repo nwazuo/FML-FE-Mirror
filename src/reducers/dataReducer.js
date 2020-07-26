@@ -1,4 +1,4 @@
-import { CREATE_REQUEST, SET_ERRORS, LOADING_USER, CLEAR_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS } from './types';
+import { CREATE_REQUEST, SET_ERRORS, LOADING_USER, CLEAR_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS, MAKE_PAYMENT } from './types';
   
 const initialState = {
     createdRequest: false,
@@ -42,6 +42,8 @@ export default function (state = initialState, action) {
                 faqs: action.payload
             }
         case ADD_FAQS:
+            return {...state}
+        case MAKE_PAYMENT:
             return {...state}
         default:
         return state;

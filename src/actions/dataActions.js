@@ -1,11 +1,10 @@
 // import {FORM_SUBMITED} from '../reducers/types';
 import axios from 'axios';
-import {CREATE_REQUEST, SET_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS} from '../reducers/types';
+import {CREATE_REQUEST, SET_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS, MAKE_PAYMENT} from '../reducers/types';
 // let baseURL = process.env.REACT_APP_BASE_URL;
 let baseURL = 'https://api.fundmylaptop.com';
 
 // const getAuthorization = localStorage.getItem('FMLToken');
-
 
 export const loanRequest = (formInput) => (dispatch) => {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
@@ -63,5 +62,19 @@ export function addFaqs (query) {
                 payload: res
             }))
             .catch(err => console.error(err))
+    }
+}
+
+export function makePayment (data) {
+    return dispatch => {
+        //axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
+        axios
+            .post(`${baseURL}/api/payment/pay`, 
+                data,
+                {headers: {
+                    'Authorization': localStorage.getItem('FMLToken')
+                }
+            })
+            .then(res => console.log(res))
     }
 }
