@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './components/router/protectedroute/ProtectedRoute';
 import pageurl from './components/router/url/pageurl';
-
 import {
   Login,
   SignUp,
@@ -19,19 +18,19 @@ import {
   Page404,
   ComingSoon,
   Payment,
-  Campaign,
+  Compaign,
   Blog,
   InviteRecommender,
   EmailVerification,
   EmailConfirmationFailure,
-  EmailConfirmation
+  EmailConfirmation,
 } from './components/pages/mainpages';
 
 import {
   FundeeDashboard,
   AdminDashboard,
   DefaultDashboard,
-  InvestorDashboard
+  InvestorDashboard,
 } from './components/pages/dashboards';
 
 function App() {
@@ -89,7 +88,8 @@ function App() {
 
         <Route
           exact
-          path={pageurl.EMAIL_CONFIRMATION}
+
+          path={pageurl.EMAIL_CONFIRMATION_URL}
           component={EmailConfirmation}
         />
 
@@ -114,7 +114,9 @@ function App() {
         <ProtectedRoute
           exact
           path={pageurl.COMPAIGN_PAGE_URL}
-          component={Campaign}
+
+          component={Compaign}
+
         />
 
         <ProtectedRoute
@@ -144,8 +146,6 @@ function App() {
           path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
           component={FundeeDashboard}
         />
-
-    
 
         <Route component={Page404} />
       </Switch>
