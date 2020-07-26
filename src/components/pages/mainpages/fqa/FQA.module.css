@@ -1,0 +1,58 @@
+h2 {
+    font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (1600 - 320)));
+}
+
+h3 {
+    font-size: calc(14px + (22 - 14) * ((100vw - 320px) / (1600 - 320)));
+}
+
+h6 {
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1600 - 320)));
+}
+
+h5 {
+    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.custom__px_main {
+    padding-left: calc(15px + (200 - 15) * ((100vw - 320px) / (1600 - 320)));
+    padding-right: calc(15px + (200 - 15) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.custom__py_main {
+    padding-top: calc(50px + (120 - 50) * ((100vw - 320px) / (1600 - 320)));
+    padding-bottom: calc(50px + (120 - 50) * ((100vw - 320px) / (1600 - 320)));
+    color: #04172A;
+}
+
+.bg_light {
+    background: #FCFDFD;
+}
+
+.text_light {
+    color: #92A0AF;
+}
+
+.search_icon, .search_icon:focus, .search_icon:active {
+    position: absolute;
+    top: 10px;
+    right: calc(30px + (70 - 30) * ((100vw - 320px) / (1600 - 320)));
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.links {
+    line-height: 1px;
+    color: #E1E1E1;
+}
+
+.accordion_header {
+    background: #04172A;
+}
+
+.no_border {
+    background-color: transparent;
+    outline: none !important;
+    border: none !important;
+}

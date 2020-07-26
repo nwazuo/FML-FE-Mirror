@@ -1,0 +1,43 @@
+import Server from '../../services/server/Server';
+const token = process.env.REACT_APP_USER_TOKEN;
+const createBlogPostEndPoint  = process.env.REACT_APP_CREATE_BLOG_POST_END_POINT;
+const headers = {"Content-Type": "application/json","Access-Control-Allow-Origin": "*",};
+
+function validate(data,setDataError){
+    let article_title = ""; let article_description = ""; let article_post = "";
+    article_title = data.article_title.length < 3 ? "8 words is the minimum" : ""; 
+    article_description = data.article_description.length < 3 ? "8 words is the minimum" : "";
+    article_post = data.article_post.length < 3 ? "8 words is the minimum" : "";
+    setDataError({article_title,article_description,article_post})
+    if(article_title!=="" || article_description !== "" || article_post!=="" ){
+        return false;
+    }return true;
+}
+
+function createBlogPost(data,setStatus,setRequested,setLoading){
+    setLoading(true);
+    Server.authPost(`${createBlogPostEndPoint}`,data,token,headers)
+    .then(response=>{response && setRequested(true); response && setLoading(false);setStatus(response.data.success);})
+    .catch(error=>{error && setRequested(true); error && setLoading(false);});    
+}
+
+function getAllBlogPosts(){
+    Server.authGet(`${createBlogPostEndPoint}`,token,headers)
+    .then(response=>{})
+    .catch(error=>{});    
+}
+
+function getBlogPost(data,setStatus,setRequested,setLoading){
+    Server.authGet(`${createBlogPostEndPoint}`,data,token,headers)
+    .then(response=>{})
+    .catch(error=>{});    
+}
+
+const BlogController ={
+    createBlogPost,
+    validate,
+    getAllBlogPosts,
+    getBlogPost
+}
+
+export default BlogController;
