@@ -62,6 +62,11 @@
   border-radius: 3px;
 }
 
+.email-confirmation-btn:focus {
+  border: none;
+  outline: none;
+}
+
 /* media query */
 /* small screen and above 375  */
 @media (min-width: 345px) {

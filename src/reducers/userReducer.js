@@ -5,7 +5,7 @@ import {
   LOADING_USER,
   SET_ERRORS,
   CLEAR_ERRORS,
-  REGISTERED_USER,
+  REGISTERED_USER
 } from './types';
 
 const initialState = {
@@ -13,7 +13,7 @@ const initialState = {
   loading: false,
   credentials: {},
   errors: null,
-  message: null,
+  message: null
 };
 
 export default function (state = initialState, action) {
@@ -21,7 +21,7 @@ export default function (state = initialState, action) {
     case SET_AUTHENTICATED:
       return {
         ...state,
-        authenticated: true,
+        authenticated: true
       };
     case SET_UNAUTHENTICATED:
       return initialState;
@@ -29,27 +29,27 @@ export default function (state = initialState, action) {
       return {
         authenticated: true,
         loading: false,
-        credentials: action.payload,
+        credentials: action.payload
       };
     case LOADING_USER:
       return {
         ...state,
-        loading: true,
+        loading: true
       };
     case SET_ERRORS:
       return {
         ...state,
-        errors: action.payload,
+        errors: action.payload
       };
     case CLEAR_ERRORS:
       return {
         ...state,
-        errors: null,
+        errors: null
       };
     case REGISTERED_USER:
       return {
         ...state,
-        message: action.payload,
+        message: action.payload
       };
     default:
       return state;

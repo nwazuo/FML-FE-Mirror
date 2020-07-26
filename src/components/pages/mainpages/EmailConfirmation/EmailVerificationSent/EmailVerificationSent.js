@@ -1,11 +1,11 @@
 import React from 'react';
-import './EmailConfirmationFailure.css';
+import './EmailVerificationSent.css';
 import { Navbar, Footer } from '../../../navigation/navigation';
-import { Link } from 'react-router-dom';
 import ScrollIntoView from '../../../../router/scrollintoview/ScrollIntoView';
-import failure from './images/failure.png';
+import success from './images/success.png';
+import { Link } from 'react-router-dom';
 
-const EmailConfirmationFailure = () => {
+const EmailVerificationSent = () => {
   return (
     <ScrollIntoView>
       <div>
@@ -13,16 +13,16 @@ const EmailConfirmationFailure = () => {
         <div className="email-success mb-5 text-center">
           <div className="email-succes-card">
             <div className="email-success-container">
-              <img src={failure} alt="" />
-              <h5>Error Verifying Email</h5>
+              <img src={success} alt="" />
+              <h5>Verification Link sent </h5>
               <p>
                 {' '}
-                <b>Please try again!</b>{' '}
+                <b>Please Check Your Email!</b>{' '}
               </p>
 
-              <Link to="/email-confirmation">
+              <Link to="/">
                 <button className="email-success-btn">
-                  Please verify here
+                  Continue to Homepage
                 </button>
               </Link>
             </div>
@@ -34,4 +34,4 @@ const EmailConfirmationFailure = () => {
   );
 };
 
-export default EmailConfirmationFailure;
+export default EmailVerificationSent;

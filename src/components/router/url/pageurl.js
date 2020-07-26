@@ -20,9 +20,10 @@ const BLOG_PAGE_URL = '/blog';
 const DEFAULT_DASHBOARD_PAGE_URL = '/default-dashboard';
 const PAYMENT_PAGE_URL = '/payment';
 const INVITE_RECOMMENDER_PAGE_URL = '/invite-recommender';
-const EMAIL_VERIFICATION_URL = '/email-verification';
+const EMAIL_CONFIRMATION_SUCCESS_URL = '/email-confirmation-success';
 const EMAIL_CONFIRMATION_FAILURE_URL = '/email-confirmation-failure';
 const EMAIL_CONFIRMATION_URL = '/email-confirmation';
+const EMAIL_VERIFICATION_SENT_URL = '/email-verification-sent';
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -46,9 +47,10 @@ const pageurl = {
   DEFAULT_DASHBOARD_PAGE_URL,
   PAYMENT_PAGE_URL,
   INVITE_RECOMMENDER_PAGE_URL,
-  EMAIL_VERIFICATION_URL,
+  EMAIL_CONFIRMATION_SUCCESS_URL,
   EMAIL_CONFIRMATION_FAILURE_URL,
-  EMAIL_CONFIRMATION_URL
+  EMAIL_CONFIRMATION_URL,
+  EMAIL_VERIFICATION_SENT_URL
 };
 
 export default pageurl;
