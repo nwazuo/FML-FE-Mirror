@@ -59,12 +59,12 @@ export const loginUser = (formInput, history) => (dispatch) => {
       let userDetails = { ...userData };
       console.log(userDetails);
       setAuthorizationHeader(token);
-      // dispatch(getUserData());
+      dispatch(getUserData());
       dispatch({ type: LOADED_UI });
-      dispatch({
-        type: VERIFY_EMAIL,
-        payload: res.data,
-      });
+      // dispatch({
+      //   type: VERIFY_EMAIL,
+      //   payload: res.data,
+      // });
       history.push(pageurl.USER_PROFILE_PAGE_URL);
     })
     .catch((err) => {
