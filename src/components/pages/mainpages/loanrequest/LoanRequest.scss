@@ -68,6 +68,7 @@ $buttonColor: #FB3F5C;
     font-size: 1.375rem;
     line-height: 29px;
     padding: $pH 0;
+    cursor: pointer;
 }
 
 @mixin border-bottom($pB) {
@@ -105,6 +106,58 @@ $buttonColor: #FB3F5C;
 }
 
 section {
+    padding-top: 30px;
+
+    .create {
+        font-weight: bold;
+    }
+    // Overlay Styles
+    #overlay {
+        position: fixed;
+        background-color: rgba(4, 23, 42, 0.7);
+        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+
+        &.inactive {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    #message {
+        position: fixed;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 541px;
+        max-width: 80%;
+        background-color: #FFFFFF;
+        padding: 30px;
+
+        img {
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 30px;
+            color: $textColor;
+            margin-bottom: 40px;
+        }
+
+        a {
+            @include button(277px, 15px);
+        }
+
+        &.inactive {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
     // Loan Request Styles
     .loan-wrapper {
         max-width: 1440px;
@@ -247,7 +300,7 @@ section {
         }
     }
 
-    @include minWidth(665px) {
+    @include minWidth(827px) {
         .loan-wrapper {
             padding: 0 60px;
         }

@@ -18,7 +18,7 @@ import {
   Page404,
   ComingSoon,
   Payment,
-  Compaign,
+  Campaign,
   Blog,
   InviteRecommender,
   EmailVerification,
@@ -113,7 +113,7 @@ function App() {
         <ProtectedRoute
           exact
           path={pageurl.COMPAIGN_PAGE_URL}
-          component={Compaign}
+          component={Campaign}
         />
 
         <ProtectedRoute
@@ -143,6 +143,8 @@ function App() {
           path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
           component={FundeeDashboard}
         />
+
+    
 
         <Route component={Page404} />
       </Switch>
