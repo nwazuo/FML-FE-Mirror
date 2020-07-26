@@ -16,10 +16,10 @@ import SinglePost from '../mainpages/single-post-blog/singlepost';
 import Payment from '../mainpages/payment/payment';
 import InviteRecommender from '../mainpages/InviteRecommender/invite';
 import LoanRequest from './loanrequest/LoanRequest';
-import EmailConfirmationSuccess from './EmailConfirmation/EmailConfirmationSuccess/EmailConfirmationSuccess';
+import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerification';
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
-import EmailVerificationSent from './EmailConfirmation/EmailVerificationSent/EmailVerificationSent';
+import CreateBlogPost from './blog/create_blog_post';
 
 export {
   Login,
@@ -41,7 +41,7 @@ export {
   Payment,
   InviteRecommender,
   EmailConfirmation,
-  EmailConfirmationSuccess,
+  EmailVerification,
   EmailConfirmationFailure,
-  EmailVerificationSent
+  CreateBlogPost
 };

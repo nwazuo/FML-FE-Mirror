@@ -21,10 +21,9 @@ import {
   Compaign,
   Blog,
   InviteRecommender,
-  EmailConfirmationSuccess,
+  EmailVerification,
   EmailConfirmationFailure,
-  EmailConfirmation,
-  EmailVerificationSent
+  EmailConfirmation
 } from './components/pages/mainpages';
 
 import {
@@ -78,16 +77,9 @@ function App() {
 
         <Route
           exact
-          path={pageurl.EMAIL_CONFIRMATION_SUCCESS_URL}
-          component={EmailConfirmationSuccess}
+          path={pageurl.EMAIL_VERIFICATION_URL}
+          component={EmailVerification}
         />
-
-        <Route
-          exact
-          path={pageurl.EMAIL_VERIFICATION_SENT_URL}
-          component={EmailVerificationSent}
-        />
-
         <Route
           exact
           path={pageurl.EMAIL_CONFIRMATION_FAILURE_URL}
@@ -96,7 +88,7 @@ function App() {
 
         <Route
           exact
-          path={pageurl.EMAIL_CONFIRMATION}
+          path={pageurl.EMAIL_CONFIRMATION_URL}
           component={EmailConfirmation}
         />
 

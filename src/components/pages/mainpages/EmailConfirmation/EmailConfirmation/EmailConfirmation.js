@@ -3,44 +3,8 @@ import './EmailConfirmation.css';
 import { Navbar, Footer } from '../../../navigation/navigation';
 import ScrollIntoView from '../../../../router/scrollintoview/ScrollIntoView';
 import emailConfirmation from './images/email-confirmation.png';
-import axios from 'axios';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
 
-const baseUrl =
-  'https://api.fundmylaptop.com/api/users/resend-verification-mail';
-
-const EmailConfirmation = (props) => {
-  const { message } = props.ui;
-  console.log(props);
-  console.log(message);
-  console.log(message.data.resend_url_live);
-
-  const resendResetLink = message.data.resend_url_live;
-
-  const handleResend = () => {
-    axios
-      .get(`${resendResetLink}`)
-      .then((response) => {
-        if (response.data.message === 'Verification mail sent') {
-          console.log(response.data);
-          alert('verification email sent, please check your email.');
-          props.history.push('/email-verification-sent');
-        }
-      })
-      .catch((error) => {
-        if (
-          error.response.data.message === 'Email already verified. Please login'
-        ) {
-          alert('Email already verified. Please login');
-        } else if (
-          error.response.data.message === 'User not found. Please sign up'
-        )
-          alert('User not found. Please sign up');
-        console.log(error.response);
-      });
-  };
-
+const EmailConfirmation = () => {
   return (
     <ScrollIntoView>
       <div>
@@ -53,11 +17,12 @@ const EmailConfirmation = (props) => {
               </div>
               <h5>Verify your mail address</h5>
               <p className="email-confirmation-p1">
-                Please check your email to activate your account
+                Please click the button below to confirm your email address
+                <br /> and activate your account
               </p>
 
-              <button className="email-confirmation-btn" onClick={handleResend}>
-                Resend verification Link
+              <button className="email-confirmation-btn">
+                Confirm email address
               </button>
 
               <p className="email-confirmation-p2">
@@ -73,14 +38,4 @@ const EmailConfirmation = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  user: state.user,
-  ui: state.ui
-});
-
-const mapActionsToProps = {};
-
-export default connect(
-  mapStateToProps,
-  mapActionsToProps
-)(withRouter(EmailConfirmation));
+export default EmailConfirmation;

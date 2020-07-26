@@ -6,25 +6,35 @@ import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import BlogComponent from './blog_component'
 import dummydata from './dummydata'
 import showmoreimg from './img/Vector 1.png'
-import {SinglePost} from '../mainpages'
+import pageurl from '../../../router/url/pageurl'
+import {Button} from '../../../utilities'
 
-const Blog = () => {
+const Blog = ({...props}) => {
     const [blogStory,setBlogStory] = React.useState([]);
-    const [switchPage,setSwitchPage] = React.useState(false);
-    const [singlePageIndex,setSingPageIndex] = React.useState(0);
     React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory);}doIt();})
-    function handleSinglePost(index){setSingPageIndex(index);setSwitchPage(!switchPage);}
+    function handleSinglePost(index){props.history.push(pageurl.SINGLE_POST_URL,{postIndex:index});}
+    const[inputDetails,setInputDetails] = React.useState({});
+    function handleInput(e){
+        setInputDetails({...inputDetails,[e.target.name]:e.target.value});
+    }
+    function handleSubmit(e){
+        e.preventDefault();
+    }
     return(
         <ScrollIntoView>
             <Navbar/>
-                { !switchPage ? 
                 <div className={blog.blog_qobi}>                    
-                    <section className={blog.header_title_qobi}><div className={blog.main_container_qobi}><h1>The Blog</h1></div></section>
+                    <section className={blog.header_title_qobi}>
+                        <div className={blog.main_container_qobi}><h1>The Blog</h1></div>
+                        <div className={`${blog.main_container_qobi} ${blog.create_new_qobi}`}>
+                            <Link to={pageurl.CREATE_NEW_POST_URL}><button >Create New Blog Post</button></Link>
+                        </div>
+                    </section>
                     <section>
                         <div className={blog.main_container_qobi}>
                             <div className={blog.stories_qobi}>
                                 {blogStory.map((data,index)=>{return(
-                                    <BlogComponent key={index} img_src={data.img_src} img_alt={data.img_alt} title={data.title} description={data.description} postlink={()=>{handleSinglePost(index)}}/>
+                                    <BlogComponent key={index} img_src={data.article_img_src} img_alt={data.article_img_alt} title={data.article_title} description={data.article_post} postlink={()=>{handleSinglePost(index)}}/>
                                 )})}
                             </div>
                             <div className={blog.load_more_qobi}>
@@ -39,14 +49,15 @@ const Blog = () => {
                                     <h1>Subscribe to our newsletter</h1><p>Get the latest news from FundMyLaptop</p>
                                 </div>
                                 <div className={blog.subscribe_content_right_qobi}>
-                                    <form><input placeholder="Enter your email address"/><button>Subscribe</button></form>
+                                <form>
+                                    <input placeholder="Enter your email address" name="email" value={inputDetails.email} onChange={(e)=>handleInput(e)}/>
+                                    <Button onClick={(e)=>{handleSubmit(e)}} load={false} propsTitle={"Subscribe"}/>
+                                </form>
                                 </div>
                             </div>
                         </div>
                     </section>
                 </div>
-                : <SinglePost dataIndex={singlePageIndex}/>
-                }
             <Footer/>
         </ScrollIntoView>
     )

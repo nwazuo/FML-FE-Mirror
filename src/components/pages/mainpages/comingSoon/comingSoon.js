@@ -97,7 +97,7 @@ const ComingSoon = () => {
 				setLoading(false);
 				setShowModal(true);
 				setSuccess(false);
-				setStatusText('Something went wrong, try again!');
+				setStatusText(err.response.data.message);
 			});
 	};
 
