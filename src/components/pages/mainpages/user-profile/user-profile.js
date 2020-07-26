@@ -5,7 +5,7 @@ import { Navbar, Footer } from '../../navigation/navigation';
 import styles from './user-profile.module.css';
 import Breadcrumb from './breadcrumb/breadcrumb';
 import ProfileInfo from './profile-info/profile-info';
-// import profileImg from '../../../assets/images/man-in-red-jacket-1681010.jpg';
+import profileImg from '../../../assets/images/man-in-red-jacket-1681010.jpg';
 import ProfileStat from './profile-stat/profile-stat';
 import RecommendBox from './recommend-box/recommend-box';
 import trusteeImg from '../../../assets/images/image 8.png';

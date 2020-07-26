@@ -48,17 +48,16 @@ class Contact extends Component {
      
 
       
-      // eslint-disable-next-line
       let validMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
       if(document.getElementById("name").value !=="" && document.getElementById("email").value !=="" && document.getElementById("title").value !=="" && document.getElementById("tel").value !=="" && document.getElementById("comment").value !=="" && document.getElementById("email").value.match(validMail)) {
 
 
-      document.getElementById("name").value="";
-      document.getElementById("email").value="";
-      document.getElementById("title").value="";
-      document.getElementById("tel").value="";
-      document.getElementById("comment").value="";
+        document.getElementById("name").value="";
+        document.getElementById("email").value="";
+        document.getElementById("title").value="";
+       document.getElementById("tel").value="";
+       document.getElementById("comment").value="";
 
 
         var x = document.getElementById("snackbar");

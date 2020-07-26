@@ -1,3 +1,4 @@
-import { loginUser } from './userActions';
+import { loginUser, recommendUser } from './userActions';
+import { fetchFaqs, fetchSearchFaqs, addFaqs } from './dataActions'
 
-export { loginUser };
+export { loginUser, fetchFaqs, fetchSearchFaqs, recommendUser, addFaqs };

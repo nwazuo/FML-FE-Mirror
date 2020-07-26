@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "short_name": "Fund My Laptop",
   "name": "Fund My Laptop",
+=======
+  "short_name": "React App",
+  "name": "Create React App Sample",
+>>>>>>> d0a38130cf095017cab25253bf9e1648a46a1261
   "icons": [
     {
       "src": "favicon.ico",
