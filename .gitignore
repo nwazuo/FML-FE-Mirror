@@ -29,4 +29,4 @@ yarn-error.log*
 .netlify
 
 #css files
-/src/components/pages/dashboards/
+
