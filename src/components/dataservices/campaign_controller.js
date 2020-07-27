@@ -106,14 +106,14 @@ const Campaign = () => {
           <div className="row d-flex justify-content-between">
             <Tween from={{ opacity: 0, y: 30 }} delay={1} duration={1.5}>
               <h3 className="col-7">Featured Campaigns </h3>
-              <span className="mt-1 btn-view-all ">View All+</span>
+              <a href="#4"><span className="mt-1 btn-view-all ">View All+</span></a>
             </Tween>
           </div>
         </Timeline>
         <div className="row compaign-cards ">
           {campaign.map((i) => {
             return (
-              <div className="col-lg-4 my-3 ">
+              <div className="col-lg-4 my-3 " id={i._id}>
                 <div className="card ">
                   <img
                     className="card-img-top"

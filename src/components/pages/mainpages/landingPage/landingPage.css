@@ -106,6 +106,10 @@ color: white;}
     margin-bottom: 150px!important;
     /* background-color: #E5E5E5; */
 }
+
+.landingPage .trending-section .trend-details{
+    display: none;
+}
 @media screen and (max-width:650px) {
     .landingPage .trending-section{
         margin-top: 50px!important;

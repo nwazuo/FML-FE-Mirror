@@ -51,14 +51,15 @@ const LandingPage = () => {
                         type="text"
                         className="form-control"
                         id="CampaignName"
-                        placeholder="Campaign name here.."
+						placeholder="Campaign name here.."
+						required
                       />
                     </div>
                     <div className="form-group">
                       <label htmlFor="inputState">Target</label>
-                      <select id="inputState" className="form-control">
-                        <option selected>$1000</option>
-                        <option>$10000</option>
+                      <select id="inputState" className="form-control" required>
+                        <option selected>N1000</option>
+                        <option>N10000</option>
                       </select>
                     </div>
                     {/* date row */}
@@ -73,7 +74,8 @@ const LandingPage = () => {
                         <input
                           className="form-control"
                           type="date"
-                          id="example-date-input"
+						  id="example-date-input"
+						  required
                         />
                       </div>
                       <div className="form-group col-md-6  pl-lg-1">
@@ -86,7 +88,8 @@ const LandingPage = () => {
                         <input
                           className="form-control"
                           type="date"
-                          id="example-date-input"
+						  id="example-date-input"
+						  required
                         />
                       </div>
                     </div>
