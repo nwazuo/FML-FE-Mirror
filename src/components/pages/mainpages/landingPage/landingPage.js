@@ -17,6 +17,11 @@ const LandingPage = () => {
     <Tween from={{ x: -40, opacity: 0 }}>{children}</Tween>
   );
 
+  const SubmitCampaign = (e) => {
+	  e.preventDefault();
+	  window.location.href = '/campaign';
+  }
+
 
   return (
     <ScrollIntoView>
@@ -38,7 +43,7 @@ const LandingPage = () => {
               <Tween from={{ opacity: 0, y: 30 }} duration={1.5}>
                 <div className="  header-form col-xl-4 my-5  pt-3 pb-5 bg-white">
                   {/* here should be form */}
-                  <form className=" px-md-3 d-flex flex-column justify-content-center">
+                  <form onSubmit={SubmitCampaign} className=" px-md-3 d-flex flex-column justify-content-center">
                     <h5 className=" text-center mb-5 mt-0">Laptop Funding</h5>
                     <div className="form-group">
                       <label htmlFor="inputAddress">Campaign Name</label>
@@ -85,7 +90,8 @@ const LandingPage = () => {
                         />
                       </div>
                     </div>
-                    <button className="btn-form mx-auto my-4">
+					<button 
+					className="btn-form mx-auto my-4">
                       Start Campaign
                     </button>
                   </form>
@@ -101,7 +107,7 @@ const LandingPage = () => {
           {/* trending section */}
 
           <Trending />
-		  
+
           {/* about us section */}
             <section className="container-fluid bg-white about-us-section my-5">
               <div className="container">
