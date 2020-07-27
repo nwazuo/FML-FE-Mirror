@@ -110,16 +110,16 @@ const Navbar = (props) => {
                     >
                       <Link
                         className="dropdown-item text-fml-primary"
+                        to={pageurl.USER_PROFILE_PAGE_URL}
+                      >
+                        Profile
+                      </Link>
+                      <Link
+                        className="dropdown-item text-fml-primary"
                         to="#"
                         onClick={logout}
                       >
                         Logout
-                      </Link>
-                      <Link className="dropdown-item text-fml-primary" to="#">
-                        Another action
-                      </Link>
-                      <Link className="dropdown-item text-fml-primary" to="#">
-                        Something else here
                       </Link>
                     </div>
                   </div>
@@ -130,7 +130,10 @@ const Navbar = (props) => {
 
               {props.user.authenticated && (
                 <li className="nav-item ">
-                  <button className="btn btn-fml-secondary" to="#">
+                  <button
+                    className="btn btn-fml-secondary"
+                    to={pageurl.COMPAIGN_PAGE_URL}
+                  >
                     Start a campaign <span className="sr-only">(current)</span>
                   </button>
                 </li>
