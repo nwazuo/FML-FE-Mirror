@@ -21,7 +21,8 @@ const Trending = () => {
             photoUrl: 'https://placeimg.com/400/300/people',
             company: 'FundMyLaptop',
             percent: '80%',
-            price: 'N1,000,000'
+            price: 'N1,000,000',
+            details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation'
         },
         {
             _id: 2,
@@ -32,7 +33,8 @@ const Trending = () => {
             photoUrl: 'https://placeimg.com/400/300/people',
             company: 'TalentPool',
             percent: '62%',
-            price: 'N1,000,000'
+            price: 'N1,000,000',
+            details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation'
         },
         {
             _id: 3,
@@ -43,7 +45,8 @@ const Trending = () => {
             photoUrl: 'https://placeimg.com/400/300/people',
             company: 'TalentPool',
             percent: '54%',
-            price: 'N1,000,000'
+            price: 'N1,000,000',
+            details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation'
         },
     ];
 
@@ -53,6 +56,12 @@ const Trending = () => {
     const FadeInLeft = ({ children }) => (
         <Tween from={{ x: -40, opacity: 0 }}>{children}</Tween>
       );
+
+    const showDetails = () => {
+        window.location.href = '/about'
+        // const trendDetails = document.querySelector('.trend-details');
+        // trendDetails.style.display = "block"
+    }
 
     return data ? (
         <section className="container trending-section my-md-5">
@@ -98,9 +107,12 @@ const Trending = () => {
                                     {/* card footer */}
                                     <FadeInUp>
                                     <div className="card-footer d-flex align-center justify-content-between p-0">
-                                        <a href className="m-auto ">
+                                        <a href className="m-auto " onClick={showDetails}>
                                             {" "}view details <img src={arrow} alt="a1" />{" "}
                                         </a>
+                                    </div>
+                                    <div className="trend-details">
+                                        <p>{i.details}</p>
                                     </div>
                                     </FadeInUp>
                                 </div>

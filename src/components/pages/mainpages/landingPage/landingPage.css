@@ -34,7 +34,14 @@ color: white;}
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
+    padding-left: 20px;
     color: rgba(51, 51, 51, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+    .landingPage .form-group>label{
+        padding-left: 30px;
+    }
 }
 .landingPage .form-group>input{
  height: 48px;
@@ -98,6 +105,10 @@ color: white;}
     margin-top: 150px!important;
     margin-bottom: 150px!important;
     /* background-color: #E5E5E5; */
+}
+
+.landingPage .trending-section .trend-details{
+    display: none;
 }
 @media screen and (max-width:650px) {
     .landingPage .trending-section{
@@ -181,11 +192,21 @@ color: white;}
 /* Testimonials-section  start Here */
 .landingPage .testimonials-section{
     background: url(./img/test-back.png) center no-repeat;
-    background-size: cover;
+    background-size: cover!important;
     min-height:  742px;
     margin:0;
     padding: 6rem 0;
 }
+
+
+@media screen and (min-width: 768px){
+    .test-carousel .carousel, .slide {
+        margin-left: -114px;
+        margin-right: -114px;
+    }
+}
+
+
 .landingPage .testimonials-text>p{
     font-style: italic;
     font-weight: 500;
