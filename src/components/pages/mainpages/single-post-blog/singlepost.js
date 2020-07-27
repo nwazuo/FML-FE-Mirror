@@ -12,33 +12,42 @@ import {Link,withRouter} from 'react-router-dom';
 import pageurl from '../../../router/url/pageurl'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import {Navbar,Footer} from '../../navigation'
+import {BlogController} from '../../../dataservices' 
+import defaultimg from './images/default.png'
 
 const SinglePost = ({...props}) => {
+    // let history = createBrowserHistory();
+    // history.location.pathname.includes('admin')
+    const details = window.location.href;
+    // var token = details.substring(details.lastIndexOf('=')+1)
+    let story_id = details.substring(details.lastIndexOf('/')+1);
     const [dataIndex] = React.useState(props.location.state ? props.location.state.postIndex : 0)
     const [blogStory,setBlogStory] = React.useState([]);
     const[inputValues,setInputValues]=React.useState({});
-    React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory);}doIt();})
+    // React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory);!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
+    React.useEffect(()=>{function doIt(){!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
     function handleComment(e){e.preventDefault();}
     function handleInput(e){setInputValues({...inputValues,[e.target.name]:e.target.value})}
+    console.log(blogStory,'blog story');
     return(    
         <ScrollIntoView>
         <Navbar/>
         <div className={singlepost.singlepost}> 
             <section className={singlepost.bg_qobi}>
-                <img src={blogStory[0] && blogStory[dataIndex].article_img_src} alt={blogStory[0] && blogStory[dataIndex].article_img_alt} className={singlepost.singe_page_img_qobi} />
+                <img src={(blogStory[0] && blogStory[0].imgSrc)} alt={blogStory[0] && blogStory[0].imgAlt} className={singlepost.singe_page_img_qobi} />
             </section>
             <section className={singlepost.article_container_qobi}>
                 <div className={singlepost.main_container_qobi}>
                     <div className={singlepost.article_qobi}>
                         <div className={singlepost.article_content_qobi}>
                             <div style={{padding:"10px 0",textAlign:"right"}}><Link to={pageurl.BLOG_PAGE_URL}>Back To Blog</Link></div>
-                            <div className={singlepost.single_post_header_qobi}><h1>{blogStory[0] && blogStory[dataIndex].article_title}</h1></div>
+                            <div className={singlepost.single_post_header_qobi}><h1>{(blogStory[0] && blogStory[0].title) ? blogStory[0].title : "No Title"}</h1></div>
                             <div className={singlepost.meta_info_qobi}>
-                                <span><img src={timeimg} alt="" /><p>{blogStory[0] && blogStory[dataIndex].article_post_time}</p></span>
-                                <span><img src={shareimg} alt="" /><p>{blogStory[0] && blogStory[dataIndex].comments.length}&nbsp;COMMENT</p></span>
-                                <span><img src={commentimg} alt="" /><p>{blogStory[0] && blogStory[dataIndex].share.length}&nbsp;SHARE</p></span>
+                                <span><img src={timeimg} alt="" /><p>{blogStory[0] && blogStory[0].createdAt}</p></span>
+                                <span><img src={shareimg} alt="" /><p>{blogStory[0] && blogStory[0].comments && blogStory[0].comments.length}&nbsp;COMMENT</p></span>
+                                <span><img src={commentimg} alt="" /><p>{0}&nbsp;SHARE</p></span>
                             </div>
-                            <div className={singlepost.article_body_qobi}><p>{blogStory[0] && blogStory[dataIndex].article_post}</p></div>
+                            <div className={singlepost.article_body_qobi}><p>{blogStory[0] && blogStory[0].post}</p></div>
                             <div className={singlepost.share_container_qobi}>
                                 <p>SHARE</p>                    
                                 <div class="fb-share-button" data-href="https://fmlblog.netlify.app/blog/post" data-layout="button_count" data-size="large">
@@ -57,10 +66,10 @@ const SinglePost = ({...props}) => {
 
                             </div>
                             <div className={singlepost.comment_container_qobi}>
-                                <div className={singlepost.comment_header_qobi}><p>COMMENTS&nbsp;({blogStory[0] && blogStory[dataIndex].comments.length})</p></div>
-                                {blogStory[0] && blogStory[dataIndex].comments.map((data,index)=>{
-                                        return(<CommentComponent key={index} singlepost={singlepost} avatar={data.avatar} comment={data.comment} 
-                                                               user_name={data.user_name} comment_date={data.comment_date} reply_click={()=>{}} />)
+                                <div className={singlepost.comment_header_qobi}><p>COMMENTS&nbsp;({blogStory[0] && blogStory[0].comments && blogStory[0].comments.length})</p></div>
+                                {blogStory[0] && blogStory[0].comments && blogStory[0].comments.map((data,index)=>{
+                                        return(<CommentComponent key={index} singlepost={singlepost} avatar={""} comment={data.comment} 
+                                                               user_name={data.author.name} comment_date={data.createdAt} reply_click={()=>{}} />)
                                 })}      
                             </div>
                             <div className={singlepost.comment_form_qobi}>
