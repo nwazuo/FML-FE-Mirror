@@ -67,14 +67,11 @@ export function addFaqs (query) {
 
 export function makePayment (data) {
     return dispatch => {
-        //axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
+        console.log(data)
         axios
-            .post(`${baseURL}/api/payment/pay`, 
-                data,
-                {headers: {
-                    'Authorization': localStorage.getItem('FMLToken')
-                }
-            })
-            .then(res => console.log(res))
+            .post(`${baseURL}/api/payment/pay`, data)
+            .then(res => console.log(res.data))
+            .catch(err => console.error(err))
     }
 }

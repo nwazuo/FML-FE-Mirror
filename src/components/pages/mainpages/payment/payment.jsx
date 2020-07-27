@@ -37,7 +37,7 @@ class Payment extends React.Component {
             amount,
             expiry_year: newDate[1],
             expiry_month: newDate[0],
-            fundee: 'adio.mojeed@gmail.com'
+            fundee: 'alkaseemabubakar27@gmail.com'
         }
         this.props.makePayment(data)
         this.setState({ INITIAL_STATE })
@@ -49,9 +49,9 @@ class Payment extends React.Component {
         const { amount, holder, number, date, cvv } = this.state
 
         return (
-            <div className="container-fluid py-0">
+            <div className="container-fluid py-0 bg-light">
                 <div className="row vh-100 justify-content-center align-items-center px-4 px-md-0">
-                    <div className={["col-md-8 col-lg-6 shadow-sm px-0 px-lg-0 px-xl-5 py-5", PaymentCss.box_shadow].join(' ')}>
+                    <div className={["col-md-8 col-lg-6 shadow-sm px-0 px-lg-0 px-xl-5 py-5 bg-white", PaymentCss.box_shadow].join(' ')}>
                         <h2 className="text-center">Fund this Campaign</h2>
                         <form className="px-5 mt-4" onSubmit={this.onHandleSubmit}>
                             <div className="form-group">

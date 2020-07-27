@@ -23,6 +23,8 @@ const INVITE_RECOMMENDER_PAGE_URL = '/invite-recommender';
 const EMAIL_VERIFICATION_URL = '/email-verification';
 const EMAIL_CONFIRMATION_FAILURE_URL = '/email-confirmation-failure';
 const EMAIL_CONFIRMATION_URL = '/email-confirmation';
+const SINGLE_POST_URL="/blog/post"
+const CREATE_NEW_POST_URL="/create-new-post"
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -48,7 +50,9 @@ const pageurl = {
   INVITE_RECOMMENDER_PAGE_URL,
   EMAIL_VERIFICATION_URL,
   EMAIL_CONFIRMATION_FAILURE_URL,
-  EMAIL_CONFIRMATION_URL
+  EMAIL_CONFIRMATION_URL,
+  SINGLE_POST_URL,
+  CREATE_NEW_POST_URL
 };
 
 export default pageurl;
