@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './components/router/protectedroute/ProtectedRoute';
 import pageurl from './components/router/url/pageurl';
+
 import {
   Login,
   SignUp,
@@ -18,7 +19,7 @@ import {
   Page404,
   ComingSoon,
   Payment,
-  Compaign,
+  Campaign,
   Blog,
   InviteRecommender,
   EmailVerification,
@@ -82,7 +83,7 @@ function App() {
 
 				<ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
 
-				<ProtectedRoute exact path={pageurl.COMPAIGN_PAGE_URL} component={Compaign} />
+				<ProtectedRoute exact path={pageurl.COMPAIGN_PAGE_URL} component={Campaign} />
 
 				<ProtectedRoute exact path={pageurl.ADMIN_DASHBOARD_PAGE_URL} component={AdminDashboard} />
 

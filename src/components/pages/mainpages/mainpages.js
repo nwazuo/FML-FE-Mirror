@@ -10,7 +10,7 @@ import UserProfile from './user-profile/user-profile';
 import Recommendations from './recommendations/recommendations';
 import Page404 from './page404/Page404';
 import ComingSoon from './comingSoon/comingSoon';
-import Compaign from './compaign/compaign';
+import Campaign from './Campaign/Campaign';
 import Blog from '../mainpages/blog/blog';
 import SinglePost from '../mainpages/single-post-blog/singlepost';
 import Payment from '../mainpages/payment/payment';
@@ -20,6 +20,7 @@ import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerifi
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 import CreateBlogPost from './blog/create_blog_post'
+
 
 export {
   Login,
@@ -35,7 +36,7 @@ export {
   LoanRequest,
   Page404,
   ComingSoon,
-  Compaign,
+  Campaign,
   Blog,
   SinglePost,
   Payment,
