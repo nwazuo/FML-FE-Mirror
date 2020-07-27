@@ -31,7 +31,7 @@ import {
   FundeeDashboard,
   AdminDashboard,
   DefaultDashboard,
-  InvestorDashboard,
+  InvestorDashboard
 } from './components/pages/dashboards';
 
 
