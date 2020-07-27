@@ -7,10 +7,13 @@ const AdminTable = () => {
 		const apiUrl =
 			"https://fundmylaptopadmin.herokuapp.com/api/admin/dashboard";
 		axios.get(apiUrl).then((response) => setAdmin(response.data.data.campaigns));
-	});
+	},[]);
+
+	const totalProfit = admins.totalProfit
+
 
 	return admins ? (
-		<table className="table table-ligh bg-white mt-3 shadow-sm">
+		<table className="table table-light bg-white mt-3 shadow-sm">
 			<thead className="thead-blue text-white">
 				<tr>
 					<td className="py-3 d-none d-md-block">ID</td>
@@ -25,7 +28,8 @@ const AdminTable = () => {
 						<tr>
 							<td className="py-4 d-none d-md-block"></td>
 							<td className="py-4 py-md-2">
-								<img src={admin.photoURL} className="img-fluid d-none d-md-inline mr-3" alt="" />{" "}
+								<img src= {admin.photoURL} className="img-fluid d-none d-md-inline mr-3" alt="img" 
+								style={{height:"40px", width:"40px", borderRadius:"50%"}} />{" "}
 								{admin.name}
 							</td>
 							<td className="py-4 d-none d-md-block">{admin.amount}</td>

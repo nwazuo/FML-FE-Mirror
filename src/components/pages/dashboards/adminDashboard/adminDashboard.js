@@ -15,7 +15,9 @@ import user3 from "./img/user3.png";
 import Ham1 from "./img/Ham-1.png";
 import Ham2 from "./img/Ham-2.png";
 import { Navbar, Footer } from "../../navigation";
-import AdminTable from '../../../dataservices/adminDashboard_controller.js'
+import AdminTable from '../../../dataservices/adminDashboard_controller.js';
+import Dashboard from '../../../dataservices/admin_controller.js';
+
 
 class AdminDashboard extends Component {
   componentDidMount() {
@@ -129,68 +131,7 @@ class AdminDashboard extends Component {
                     Dashboard
                   </h5>
                   {/* Dashboard card  */}
-                  <div className="row mt-md-3">
-                    <div className="col-12 col-md-6 col-lg-4 px-3 px-md-2 px-lg-2 px-xl-3 my-2 my-lg-0">
-                      <div className="bg-white px-4 pt-4 pb-3 d-flex align-items-center justify-content-between status__card">
-                        <div>
-                          <p className="small">TOTAL PROFIT</p>
-                          <h5>N25,000,000</h5>
-                          <p>
-                            <img src={down} alt="" />{" "}
-                            <span className="text-danger">5%</span> Less profit
-                          </p>
-                        </div>
-                        <div className="bg-blue50 p-4 rounded-circle">
-                          <img
-                            src={profit}
-                            className="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4 px-3 px-md-2 px-lg-2 px-xl-3 my-2 my-lg-0">
-                      <div className="bg-white px-4 pt-4 pb-3 d-flex align-items-center justify-content-between status__card status__card--blue">
-                        <div>
-                          <p className="small">TOTAL FUNDEES</p>
-                          <h5>12,080</h5>
-                          <p>
-                            <img src={up} alt="" />{" "}
-                            <span className="text-success">21%</span> Increase
-                            this month
-                          </p>
-                        </div>
-                        <div className="bg-blue py-4 px-3 rounded-circle">
-                          <img
-                            src={fundee}
-                            className="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-6 col-lg-4 px-3 px-md-2 px-lg-2 px-xl-3 my-2 my-lg-0">
-                      <div className="bg-white px-4 pt-4 pb-3 d-flex align-items-center justify-content-between status__card status__card--red">
-                        <div>
-                          <p className="small">TOTAL FUNDERS</p>
-                          <h5>5,060</h5>
-                          <p>
-                            <img src={up} alt="" />{" "}
-                            <span className="text-success">21%</span> Increase
-                            this month
-                          </p>
-                        </div>
-                        <div className="bg-red p-4 rounded-circle">
-                          <img
-                            src={funder}
-                            className="img-fluid"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Fund Requests */}
+                  <Dashboard/>
                   <div className="row mt-4 mt-lg-5">
                     <div className="col-lg-9">
                       <div className="d-flex justify-content-between align-items-center mb-4 mb-md-0">
