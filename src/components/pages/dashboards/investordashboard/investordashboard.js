@@ -157,23 +157,23 @@ class InvestorsDashboard extends Component{
     
                                     <div className="investorhelp-card-contain row mx-0 px-0 overflow-auto mt-4">
                                         <div className="investorhelp-card rounded p-3 p-md-3">
-                                        <div className="investorprofile">
-                                            <span className="investorplaceholder"></span>
-                                            <div className="investorprofile-text">
-                                            <h5>John Doe</h5>
-                                            <small>Intern</small>
+                                            <div className="investorprofile">
+                                                <span className="investorplaceholder"></span>
+                                                <div className="investorprofile-text">
+                                                <h5>John Doe</h5>
+                                                <small>Intern</small>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <p className="investorloan-amount">Loan Amount: $1,000</p>
-                                        <div className="investorfunded-progress">
-                                            <div className="investorfunded"></div>
-                                        </div>
-                                        <div className="investorfunded-info">
-                                            <span className="investorfunded">$700 Funded</span>
-                                            <span className="investorfund-left">$300 Left</span>
-                                        </div>
-                                        <div className="w-100"></div>
-                                        <button className="btn btn-fml-secondary mt-3">Invest Now</button>
+                                            <p className="investorloan-amount">Loan Amount: $1,000</p>
+                                            <div className="investorfunded-progress">
+                                                <div className="investorfunded"></div>
+                                            </div>
+                                            <div className="investorfunded-info">
+                                                <span className="investorfunded">$700 Funded</span>
+                                                <span className="investorfund-left">$300 Left</span>
+                                            </div>
+                                            <div className="w-100"></div>
+                                            <button className="btn btn-fml-secondary mt-3">Invest Now</button>
                                         </div>
                                         <div className="investorhelp-card rounded p-3 p-md-3">
                                         <div className="investorprofile">
