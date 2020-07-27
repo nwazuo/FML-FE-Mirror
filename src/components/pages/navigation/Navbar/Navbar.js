@@ -130,12 +130,12 @@ const Navbar = (props) => {
 
               {props.user.authenticated && (
                 <li className="nav-item ">
-                  <button
-                    className="btn btn-fml-secondary"
-                    to={pageurl.COMPAIGN_PAGE_URL}
-                  >
-                    Start a campaign <span className="sr-only">(current)</span>
-                  </button>
+                  <Link to={pageurl.COMPAIGN_PAGE_URL}>
+                    <button className="btn btn-fml-secondary">
+                      Start a campaign{' '}
+                      <span className="sr-only">(current)</span>
+                    </button>
+                  </Link>
                 </li>
               )}
             </ul>
