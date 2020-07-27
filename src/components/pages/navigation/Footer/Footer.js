@@ -31,7 +31,7 @@ const Footer = () => {
                 <li className="nav-item">
                   <Link to="">Phone </Link>
                 </li>
-                <ul className="row list-unstyled m-0">
+                <ul className="row list-unstyled m-0 justify-content-center justify-content-md-start">
                   <li className="nav-item">
                     <Link to="">
                       {' '}
