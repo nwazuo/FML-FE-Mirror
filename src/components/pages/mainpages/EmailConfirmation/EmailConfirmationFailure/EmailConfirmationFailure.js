@@ -19,9 +19,7 @@ const EmailConfirmationFailure = () => {
                 <b>Please try again!</b>{' '}
               </p>
 
-              <button className="email-success-btn">
-                Back to Verification
-              </button>
+              <button className="email-success-btn">Resend Verification</button>
             </div>
           </div>
         </div>

@@ -23,14 +23,14 @@ import {
   InviteRecommender,
   EmailVerification,
   EmailConfirmationFailure,
-  EmailConfirmation,
+  EmailConfirmation
 } from './components/pages/mainpages';
 
 import {
   FundeeDashboard,
   AdminDashboard,
   DefaultDashboard,
-  InvestorDashboard,
+  InvestorDashboard
 } from './components/pages/dashboards';
 
 function App() {
