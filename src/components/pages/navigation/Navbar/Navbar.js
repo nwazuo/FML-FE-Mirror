@@ -42,13 +42,16 @@ const Navbar = (props) => {
           >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item ">
-                <Link className="nav-link" to="#">
+                <Link
+                  className="nav-link"
+                  to={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
+                >
                   FUND <span className="sr-only">(current)</span>
                 </Link>
               </li>
 
               <li className="nav-item ">
-                <Link className="nav-link" to="#">
+                <Link className="nav-link" to={pageurl.LOAN_REQUEST_PAGE_URL}>
                   REQUEST <span className="sr-only">(current)</span>
                 </Link>
               </li>
@@ -60,7 +63,10 @@ const Navbar = (props) => {
               </li>
 
               <li className="nav-item ">
-                <Link className="nav-link" to="#">
+                <Link
+                  className="nav-link"
+                  to={pageurl.DEFAULT_DASHBOARD_PAGE_URL}
+                >
                   DASHBOARD <span className="sr-only">(current)</span>
                 </Link>
               </li>
@@ -104,16 +110,16 @@ const Navbar = (props) => {
                     >
                       <Link
                         className="dropdown-item text-fml-primary"
+                        to={pageurl.USER_PROFILE_PAGE_URL}
+                      >
+                        Profile
+                      </Link>
+                      <Link
+                        className="dropdown-item text-fml-primary"
                         to="#"
                         onClick={logout}
                       >
                         Logout
-                      </Link>
-                      <Link className="dropdown-item text-fml-primary" to="#">
-                        Another action
-                      </Link>
-                      <Link className="dropdown-item text-fml-primary" to="#">
-                        Something else here
                       </Link>
                     </div>
                   </div>
@@ -124,9 +130,12 @@ const Navbar = (props) => {
 
               {props.user.authenticated && (
                 <li className="nav-item ">
-                  <button className="btn btn-fml-secondary" to="#">
-                    Start a campaign <span className="sr-only">(current)</span>
-                  </button>
+                  <Link to={pageurl.COMPAIGN_PAGE_URL}>
+                    <button className="btn btn-fml-secondary">
+                      Start a campaign{' '}
+                      <span className="sr-only">(current)</span>
+                    </button>
+                  </Link>
                 </li>
               )}
             </ul>
