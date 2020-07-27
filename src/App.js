@@ -31,7 +31,8 @@ import {
 
 import {
   FundeeDashboard,
-  AdminDashboard,
+  AdminLanding,
+  AddFaq,
   DefaultDashboard,
   InvestorDashboard,
 } from './components/pages/dashboards';
@@ -136,7 +137,13 @@ function App() {
         <ProtectedRoute
           exact
           path={pageurl.ADMIN_DASHBOARD_PAGE_URL}
-          component={AdminDashboard}
+          component={AdminLanding}
+        />
+
+        <ProtectedRoute
+          exact
+          path={pageurl.ADMIN_FAQ_PAGE_URL}
+          component={AddFaq}
         />
 
         <ProtectedRoute
