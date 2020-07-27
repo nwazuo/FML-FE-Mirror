@@ -193,7 +193,7 @@ const Login = (props) => {
               type="submit"
               className="form-control login-btn btn-fml-secondary"
             >
-              Log in{loading ? <PinWheel /> : null}
+              Log in {loading ? <PinWheel /> : null}
             </button>
           </div>
           {errors && (
