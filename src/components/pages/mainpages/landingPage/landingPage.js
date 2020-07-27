@@ -120,7 +120,7 @@ const LandingPage = () => {
                     <div className="col-lg-6">
                       <img
                         className="aboutus-img img-fluid "
-                        src={about}
+                        src="https://placeimg.com/500/500/people1"
                         alt="mm"
                       />
                     </div>
