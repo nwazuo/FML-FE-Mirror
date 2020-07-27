@@ -10,9 +10,7 @@ function validate(data,setDataError){
     article_description = data.article_description.length < 3 ? "8 words is the minimum" : "";
     article_post = data.article_post.length < 3 ? "8 words is the minimum" : "";
     setDataError({article_title,article_description,article_post})
-    if(article_title!=="" || article_description !== "" || article_post!=="" ){
-        return false;
-    }return true;
+    if(article_title!=="" || article_description !== "" || article_post!=="" ){return false;}return true;
 }
 
 function createBlogPost(data,setStatus,setRequested,setLoading){
@@ -40,11 +38,19 @@ function getBlogPost(id,setBlogStory){
     .catch(error=>{console.log(error)});    
 }
 
+function makeComment(id,data){
+    // setLoading(true);
+    // Server.authBlogPost(`${createBlogPostEndPoint}/${id}/comment`,data,token,headers)
+    // .then(response=>{response && setRequested(true); response && setLoading(false);setStatus(response.data.success);})
+    // .catch(error=>{error && setRequested(true); error && setLoading(false);});    
+}
+
 const BlogController ={
     createBlogPost,
     validate,
     getAllBlogPosts,
-    getBlogPost
+    getBlogPost,
+    makeComment
 }
 
 export default BlogController;
