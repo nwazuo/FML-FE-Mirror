@@ -9,7 +9,7 @@
 .img_content_qobi h3{font-style:normal;font-weight:500;font-size:30px;line-height:39px;letter-spacing:0.02em;color:#000;cursor: pointer;transition:.2s ease-in-out;}
 .img_content_qobi h3:hover{color:#FB405C;}
 .img_content_qobi p{font-style:normal;font-weight:500;font-size:16px;line-height:21px;letter-spacing:0.02em;color:#717171;}
-.img_container_qobi, .img_container_qobi img{width:100%;height:auto;margin-bottom:20px;}
+.img_container_qobi, .img_container_qobi img{width:100%;height:auto;margin-bottom:20px;background: #CBCBCB;}
 .title_qobi{margin-bottom:10px;}.description_qobi{height:65px;overflow:hidden;}
 .text_content_qobi,.title_qobi,.description_qobi{width:100%;}
 /* blog component ends */

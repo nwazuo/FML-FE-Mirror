@@ -2,7 +2,7 @@ import {
   SET_USER,
   // SET_AUTHENTICATED,
   SET_ERRORS,
-  // SET_UNAUTHENTICATED,
+  SET_UNAUTHENTICATED,
   LOADING_UI,
   LOADED_UI,
   CLEAR_ERRORS,
@@ -35,8 +35,7 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
       let userDetails = { ...userData };
       console.log(userDetails);
       setAuthorizationHeader(token);
-      dispatch(getUserData());
-      history.push(pageurl.USER_PROFILE_PAGE_URL);
+      dispatch(getLoginUserData(history));
     })
     .catch((err) => {
       // console.log(err.response.data);
@@ -46,6 +45,12 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
         payload: err.response.data.message,
       });
     });
+};
+export const logoutUser = (history) => (dispatch) => {
+  localStorage.removeItem('FMLToken');
+  delete axios.defaults.headers.common['Authorization'];
+  dispatch({ type: SET_UNAUTHENTICATED });
+  history.push(pageurl.LOGIN_PAGE_URL);
 };
 export const loginUser = (formInput, history) => (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
@@ -59,20 +64,18 @@ export const loginUser = (formInput, history) => (dispatch) => {
       let userDetails = { ...userData };
       console.log(userDetails);
       setAuthorizationHeader(token);
-      dispatch(getUserData());
-      dispatch({ type: LOADED_UI });
+      dispatch(getLoginUserData(history));
       // dispatch({
       //   type: VERIFY_EMAIL,
       //   payload: res.data,
       // });
-      history.push(pageurl.USER_PROFILE_PAGE_URL);
     })
     .catch((err) => {
-      // console.log(err.response.data);
+      console.log(err.response);
       dispatch({ type: LOADED_UI });
       dispatch({
         type: SET_ERRORS,
-        payload: err.response.data.message,
+        payload: err.response,
       });
     });
 };
@@ -132,6 +135,22 @@ export const getUserData = () => (dispatch) => {
         type: SET_USER,
         payload: res.data,
       });
+      console.log(res.data);
+    })
+    .catch((err) => console.log(err));
+};
+
+export const getLoginUserData = (history) => (dispatch) => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .get(`${baseURL}/api/users/active`)
+    .then((res) => {
+      dispatch({
+        type: SET_USER,
+        payload: res.data,
+      });
+
+      history.push(pageurl.DEFAULT_DASHBOARD_PAGE_URL);
       console.log(res.data);
       dispatch({ type: LOADED_UI });
     })

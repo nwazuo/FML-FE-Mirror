@@ -8,15 +8,20 @@ import dummydata from './dummydata'
 import showmoreimg from './img/Vector 1.png'
 import pageurl from '../../../router/url/pageurl'
 import {Button} from '../../../utilities'
+import {BlogController} from '../../../dataservices' 
+import defaultimg from './img/default.png'
 
 const Blog = ({...props}) => {
     const [blogStory,setBlogStory] = React.useState([]);
-    React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory);}doIt();})
-    function handleSinglePost(index){props.history.push(pageurl.SINGLE_POST_URL,{postIndex:index});}
+    // React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory); blogStory[0] && BlogController.getAllBlogPosts();}doIt();})
+    React.useEffect(()=>{function doIt(){!blogStory[0] && BlogController.getAllBlogPosts(setBlogStory);}doIt();})
+    // function handleSinglePost(index){props.history.push(pageurl.SINGLE_POST_URL,{postIndex:index});}
+    function handleSinglePost(index){props.history.push(pageurl.SINGLE_POST_URL+`/${index}`);}
     const[inputDetails,setInputDetails] = React.useState({});
     function handleInput(e){
         setInputDetails({...inputDetails,[e.target.name]:e.target.value});
     }
+    
     function handleSubmit(e){
         e.preventDefault();
     }
@@ -34,7 +39,8 @@ const Blog = ({...props}) => {
                         <div className={blog.main_container_qobi}>
                             <div className={blog.stories_qobi}>
                                 {blogStory.map((data,index)=>{return(
-                                    <BlogComponent key={index} img_src={data.article_img_src} img_alt={data.article_img_alt} title={data.article_title} description={data.article_post} postlink={()=>{handleSinglePost(index)}}/>
+                                    <BlogComponent key={index} img_src={data.imgSrc} img_alt={data.imgAlt ? data.imgAlt : `No Image`} title={data.title ? data.title : `No Title`} 
+                                    description={data.post ? data.post : `No post`} postlink={()=>{handleSinglePost(data._id)}}/>
                                 )})}
                             </div>
                             <div className={blog.load_more_qobi}>
