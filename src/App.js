@@ -24,7 +24,13 @@ import {
   InviteRecommender,
   EmailVerification,
   EmailConfirmationFailure,
+<<<<<<< HEAD
   EmailConfirmation,SinglePost,CreateBlogPost
+=======
+  EmailConfirmation,
+  SinglePost,
+  CreateBlogPost
+>>>>>>> 698cce6912ed11535ebf1ac3ac8dc54f38ec9db7
 } from './components/pages/mainpages';
 
 import {
