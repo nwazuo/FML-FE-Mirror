@@ -1,6 +1,6 @@
 import React from 'react'
 import singlepost from './single-post.module.css'
-import dummydata from '../blog/dummydata'
+// import dummydata from '../blog/dummydata'
 import timeimg from './images/Group63.png'
 import shareimg from './images/Group64.png'
 import commentimg from './images/Vector.png'
@@ -13,25 +13,28 @@ import pageurl from '../../../router/url/pageurl'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import {Navbar,Footer} from '../../navigation'
 import {BlogController} from '../../../dataservices' 
-import defaultimg from './images/default.png'
+// import defaultimg from './images/default.png'
+import {Button,Status} from '../../../utilities'
 
 const SinglePost = ({...props}) => {
-    // let history = createBrowserHistory();
-    // history.location.pathname.includes('admin')
     const details = window.location.href;
-    // var token = details.substring(details.lastIndexOf('=')+1)
     let story_id = details.substring(details.lastIndexOf('/')+1);
-    const [dataIndex] = React.useState(props.location.state ? props.location.state.postIndex : 0)
     const [blogStory,setBlogStory] = React.useState([]);
     const[inputValues,setInputValues]=React.useState({});
+    const[isStatus,setIsStatus]=React.useState(false);
+    const[isRequested,setIsRequested]=React.useState(false);
+    const[isLoading,setIsLoading]=React.useState(false);
+    const[inputError,setInputError] = React.useState({});
+
     // React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory);!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
     React.useEffect(()=>{function doIt(){!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
-    function handleComment(e){e.preventDefault();}
+    function handleComment(e){e.preventDefault();BlogController.makeComment(story_id,inputValues,setIsStatus,setIsRequested,setIsLoading,setInputError);}
+        
     function handleInput(e){setInputValues({...inputValues,[e.target.name]:e.target.value})}
-    console.log(blogStory,'blog story');
     return(    
         <ScrollIntoView>
         <Navbar/>
+        {isRequested && <Status closeStatus={()=>{setIsRequested(false);setIsLoading(false);isStatus && window.open(pageurl.SINGLE_POST_URL+`/${story_id}`,'_self')}} status_message={isStatus ? "Comment Added Successfully" : "Comment Not Added"} />}
         <div className={singlepost.singlepost}> 
             <section className={singlepost.bg_qobi}>
                 <img src={(blogStory[0] && blogStory[0].imgSrc)} alt={blogStory[0] && blogStory[0].imgAlt} className={singlepost.singe_page_img_qobi} />
@@ -56,7 +59,7 @@ const SinglePost = ({...props}) => {
                                     </a>
                                 </div>
                                 
-                                <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" target="_blank" rel="noopener noreferrer" data-size="large">
+                                <a class="twitter-share-button" href={`https://twitter.com/intent/tweet?text=${blogStory[0] && blogStory[0].title} FML Blog Post : ${window.location.hostname}${pageurl.SINGLE_POST_URL}/${story_id}`} target="_blank" rel="noopener noreferrer" data-size="large">
                                     <button className={singlepost.tw_qobi}><img src={twitt} alt="share on twitter"/>&nbsp;Share on Twitter</button>
                                 </a>
 
@@ -76,13 +79,14 @@ const SinglePost = ({...props}) => {
                                 <div className={singlepost.comment_form_header}><p>LEAVE A COMMENT</p></div>
                                 <div className={singlepost.comment_form_form_detaile_qobi}>
                                     <form>
-                                        <label>Your Name</label>
+                                        {/* <label>Your Name</label>
                                         <input type="text" name="user_name" onChange={(e)=>handleInput(e)} value={inputValues.user_name}/>
                                         <label>Your Email</label>
-                                        <input type="text" name="email" onChange={(e)=>handleInput(e)} value={inputValues.email}/>
+                                        <input type="text" name="email" onChange={(e)=>handleInput(e)} value={inputValues.email}/> */}
                                         <label>Your Comment</label>
                                         <textarea name="comment" onChange={(e)=>handleInput(e)} value={inputValues.comment}/>
-                                        <button onClick={(e)=>handleComment(e)}>Post Comment</button>
+                                        <p>{inputError.comment}</p>
+                                        <Button load={isLoading} propsTitle={"Post Comment"} onClick={(e)=>{handleComment(e)}} />
                                     </form>
                                 </div>
                                 
