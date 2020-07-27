@@ -1,11 +1,11 @@
-import { CREATE_REQUEST, SET_ERRORS, LOADING_USER, CLEAR_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS, MAKE_PAYMENT } from './types';
+import { CREATE_REQUEST, SET_ERRORS, LOADING_USER, CLEAR_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS, MAKE_PAYMENT, FETCH_FUNDEE_DASHBOARD_INFOS } from './types';
   
 const initialState = {
     createdRequest: false,
     loading: false,
     errors: null,
     faqs: null,
-    data: {}
+    data: {},
 };
 
 export default function (state = initialState, action) {

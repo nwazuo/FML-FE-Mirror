@@ -1,5 +1,6 @@
 import { loginUser, recommendUser, logoutUser } from './userActions';
 import { fetchFaqs, fetchSearchFaqs, addFaqs, makePayment } from './dataActions';
+import {fetchFundeeDashboard } from './fundeeAction'
 
 export {
   loginUser,
@@ -8,5 +9,6 @@ export {
   recommendUser,
   addFaqs,
   logoutUser,
-  makePayment
+  makePayment,
+  fetchFundeeDashboard
 };
