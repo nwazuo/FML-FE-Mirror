@@ -4,6 +4,9 @@ import '../../../assets/bootstrap.css';
 import footerLogo from '../../../assets/images/footer-logo.svg';
 import { Link } from 'react-router-dom';
 import pageurl from '../../../router/url/pageurl';
+import facebookIcon from '../../../assets/images/facebook.svg';
+import twitterIcon from '../../../assets/images/twitter-icon.svg';
+import instagramIcon from '../../../assets/images/instagram.svg';
 
 const Footer = () => {
   return (
@@ -32,28 +35,19 @@ const Footer = () => {
                   <li className="nav-item">
                     <Link to="">
                       {' '}
-                      <img
-                        src="../../../assets/images/facebook.svg"
-                        alt=""
-                      />{' '}
+                      <img src={facebookIcon} alt="" />{' '}
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link to="">
                       {' '}
-                      <img
-                        src="../../../assets/images/instagram.svg"
-                        alt=""
-                      />{' '}
+                      <img src={instagramIcon} alt="" />{' '}
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link to="">
                       {' '}
-                      <img
-                        src="../../../assets/images/twitter.svg"
-                        alt=""
-                      />{' '}
+                      <img src={twitterIcon} alt="" />{' '}
                     </Link>
                   </li>
                 </ul>
