@@ -17,6 +17,11 @@ const LandingPage = () => {
     <Tween from={{ x: -40, opacity: 0 }}>{children}</Tween>
   );
 
+  const SubmitCampaign = (e) => {
+	  e.preventDefault();
+	  window.location.href = '/campaign';
+  }
+
 
   return (
     <ScrollIntoView>
@@ -38,7 +43,7 @@ const LandingPage = () => {
               <Tween from={{ opacity: 0, y: 30 }} duration={1.5}>
                 <div className="  header-form col-xl-4 my-5  pt-3 pb-5 bg-white">
                   {/* here should be form */}
-                  <form className=" px-md-3 d-flex flex-column justify-content-center">
+                  <form onSubmit={SubmitCampaign} className=" px-md-3 d-flex flex-column justify-content-center">
                     <h5 className=" text-center mb-5 mt-0">Laptop Funding</h5>
                     <div className="form-group">
                       <label htmlFor="inputAddress">Campaign Name</label>
@@ -46,14 +51,15 @@ const LandingPage = () => {
                         type="text"
                         className="form-control"
                         id="CampaignName"
-                        placeholder="Campaign name here.."
+						placeholder="Campaign name here.."
+						required
                       />
                     </div>
                     <div className="form-group">
                       <label htmlFor="inputState">Target</label>
-                      <select id="inputState" className="form-control">
-                        <option selected>$1000</option>
-                        <option>$10000</option>
+                      <select id="inputState" className="form-control" required>
+                        <option selected>N1000</option>
+                        <option>N10000</option>
                       </select>
                     </div>
                     {/* date row */}
@@ -68,7 +74,8 @@ const LandingPage = () => {
                         <input
                           className="form-control"
                           type="date"
-                          id="example-date-input"
+						  id="example-date-input"
+						  required
                         />
                       </div>
                       <div className="form-group col-md-6  pl-lg-1">
@@ -81,11 +88,13 @@ const LandingPage = () => {
                         <input
                           className="form-control"
                           type="date"
-                          id="example-date-input"
+						  id="example-date-input"
+						  required
                         />
                       </div>
                     </div>
-                    <button className="btn-form mx-auto my-4">
+					<button 
+					className="btn-form mx-auto my-4">
                       Start Campaign
                     </button>
                   </form>
@@ -97,8 +106,11 @@ const LandingPage = () => {
         {/* ***** Header content Finish here********/}
         {/* ******* Main section Start Here ******** */}
         <main>
+
           {/* trending section */}
+
           <Trending />
+
           {/* about us section */}
             <section className="container-fluid bg-white about-us-section my-5">
               <div className="container">
@@ -108,7 +120,7 @@ const LandingPage = () => {
                     <div className="col-lg-6">
                       <img
                         className="aboutus-img img-fluid "
-                        src={about}
+                        src="https://placeimg.com/500/500/people1"
                         alt="mm"
                       />
                     </div>
@@ -132,10 +144,15 @@ const LandingPage = () => {
                 </div>
               </div>
             </section>
+
           {/* Campaign Section */}
+
           <Campaign />
+
           {/* Testimonials section */}
+
           <Testimonial />
+
         </main>
         {/* ******* Main section Finish Here ******** */}
         <div className="spacer py-md-5" />

@@ -3,10 +3,37 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './components/router/protectedroute/ProtectedRoute';
 import pageurl from './components/router/url/pageurl';
-import {Login,SignUp,Terms,PrivacyPage,FAQ,LoanRequest,ContactUs,UserProfile,Recommendations,LandingPage,AboutUs,
-		Page404,ComingSoon,Payment,Compaign,Blog,InviteRecommender,EmailVerification,EmailConfirmationFailure,EmailConfirmation,
-		SinglePost,CreateBlogPost} from './components/pages/mainpages';
-import {FundeeDashboard,AdminDashboard,DefaultDashboard,InvestorDashboard} from './components/pages/dashboards';
+
+import {
+  Login,
+  SignUp,
+  Terms,
+  PrivacyPage,
+  FAQ,
+  LoanRequest,
+  ContactUs,
+  UserProfile,
+  Recommendations,
+  LandingPage,
+  AboutUs,
+  Page404,
+  ComingSoon,
+  Payment,
+  Campaign,
+  Blog,
+  InviteRecommender,
+  EmailVerification,
+  EmailConfirmationFailure,
+  EmailConfirmation,SinglePost,CreateBlogPost
+} from './components/pages/mainpages';
+
+import {
+  FundeeDashboard,
+  AdminDashboard,
+  DefaultDashboard,
+  InvestorDashboard
+} from './components/pages/dashboards';
+
 
 function App() {
 	return (
@@ -34,7 +61,7 @@ function App() {
 
 				<Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
 
-				<Route exact path={pageurl.SINGLE_POST_URL} component={SinglePost} />
+				<Route exact path={pageurl.SINGLE_POST_URL+`/:details`} component={SinglePost} />
 
 				<Route exact path={pageurl.CREATE_NEW_POST_URL} component={CreateBlogPost} />
 
@@ -56,7 +83,7 @@ function App() {
 
 				<ProtectedRoute exact path={pageurl.FUNDEE_DASHBOARD_PAGE_URL} component={FundeeDashboard} />
 
-				<ProtectedRoute exact path={pageurl.COMPAIGN_PAGE_URL} component={Compaign} />
+				<ProtectedRoute exact path={pageurl.COMPAIGN_PAGE_URL} component={Campaign} />
 
 				<ProtectedRoute exact path={pageurl.ADMIN_DASHBOARD_PAGE_URL} component={AdminDashboard} />
 
