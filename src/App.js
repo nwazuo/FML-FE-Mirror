@@ -23,14 +23,14 @@ import {
   InviteRecommender,
   EmailVerification,
   EmailConfirmationFailure,
-  EmailConfirmation
+  EmailConfirmation,
 } from './components/pages/mainpages';
 
 import {
   FundeeDashboard,
   AdminDashboard,
   DefaultDashboard,
-  InvestorDashboard
+  InvestorDashboard,
 } from './components/pages/dashboards';
 
 function App() {
@@ -88,7 +88,7 @@ function App() {
 
         <Route
           exact
-          path={pageurl.EMAIL_CONFIRMATION}
+          path={pageurl.EMAIL_CONFIRMATION_URL}
           component={EmailConfirmation}
         />
 

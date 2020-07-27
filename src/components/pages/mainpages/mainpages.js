@@ -19,6 +19,7 @@ import LoanRequest from './loanrequest/LoanRequest';
 import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerification';
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
+import CreateBlogPost from './blog/create_blog_post'
 
 
 export {
@@ -42,5 +43,6 @@ export {
   InviteRecommender,
   EmailConfirmation,
   EmailVerification,
-  EmailConfirmationFailure
+  EmailConfirmationFailure,
+  CreateBlogPost
 };

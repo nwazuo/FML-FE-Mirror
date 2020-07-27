@@ -10,6 +10,7 @@ import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import fcbIcon from './facebook-square-brands.svg';
 import { GoogleLogin } from 'react-google-login';
 import PinWheel from '../../../ui/loaders/pin-wheel';
+import Button from '../../../utilities/Button/CustomizedButton';
 // Redux Stuff
 import { connect } from 'react-redux';
 import { loginUser, googleLogin } from '../../../../actions/userActions';
@@ -189,12 +190,20 @@ const Login = (props) => {
             ></p>
           </div>
           <div>
-            <button
+            {/* <button
               type="submit"
               className="form-control login-btn btn-fml-secondary"
             >
-              Log in{loading ? <PinWheel /> : null}
-            </button>
+              Log in {loading ? <PinWheel /> : null}
+            </button> */}
+            <Button
+              load={loading}
+              propsTitle={'Log In'}
+              className="form-control login-btn btn-fml-secondary"
+              onClick={(e) => {
+                onSubmit(e);
+              }}
+            ></Button>
           </div>
           {errors && (
             <p className="text-center textWidth py-1" style={{ color: 'red' }}>
