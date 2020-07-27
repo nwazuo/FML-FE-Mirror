@@ -30,6 +30,5 @@ yarn-error.log*
 
 #css files
 /src/components/pages/dashboards/
-# /src/components/pages/dashboards/defaultDashboard
-# /src/components/pages/dashboards/fundee-Dashboard
-# /src/components/pages/dashboards/investorDashboard
+
+/src/components/pages/mainpages/AboutUs/*
