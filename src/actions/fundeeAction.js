@@ -12,7 +12,7 @@ export function  fetchFundeeDashboard  () {
    return dispatch=>{
    
        axios.get(`${baseURL}/api/campaigns/fundeeOverview`,
-      { headers:{ Authorization: `Bearer ${tokenfml}`}}
+      { headers:{ Authorization: `Bearer ${token}`}}
       )
       .then(function (response) {
         
