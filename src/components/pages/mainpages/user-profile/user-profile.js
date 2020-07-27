@@ -62,6 +62,9 @@ const UserProfile = (props) => {
     photoURL,
     email,
     phone,
+    address,
+    occupation,
+    gender,
     // isVerified,
     // isAdmin,
     // isAuth,
@@ -122,15 +125,15 @@ const UserProfile = (props) => {
                 <div className="col-md-5">
                   <ProfileInfo title="Full Name">{`${firstName} ${lastName}`}</ProfileInfo>
                   <ProfileInfo title="Contact Information">{phone}</ProfileInfo>
-                  <ProfileInfo title="Gender">Male</ProfileInfo>
+                  <ProfileInfo title="Gender">{gender ? {gender} : null}</ProfileInfo>
                 </div>
                 <div className="col-md-7">
                   <ProfileInfo title="Address">
-                    34, Bill Clinton Crescent, Old watermill road, Trafford.
+                    {address}
                   </ProfileInfo>
                   <ProfileInfo title="Email address">{email}</ProfileInfo>
                   <ProfileInfo title="Occupation">
-                    Software Intern at Andela
+                    {occupation ? {occupation} : null }
                   </ProfileInfo>
                 </div>
               </div>
