@@ -12,7 +12,7 @@
 /build
 
 # deployment
-/.netlify
+# /.netlify
 
 # misc
 .DS_Store
@@ -27,3 +27,9 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+#css files
+/src/components/pages/dashboards/*
+# /src/components/pages/dashboards/defaultDashboard
+# /src/components/pages/dashboards/fundee-Dashboard
+# /src/components/pages/dashboards/investorDashboard
