@@ -23,7 +23,7 @@ import {
   InviteRecommender,
   EmailVerification,
   EmailConfirmationFailure,
-  EmailConfirmation,
+  EmailConfirmation,SinglePost,CreateBlogPost
 } from './components/pages/mainpages';
 
 import {
