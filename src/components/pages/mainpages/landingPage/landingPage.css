@@ -1,3 +1,18 @@
+
+.landingPage{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #E5E5E5;
+
+}
+
+.landingPage main{
+    margin: 0;
+    padding: 0;
+}
+
 .landingPage button{
     font-weight: 500;
     font-size: 16px;
@@ -34,7 +49,14 @@ color: white;}
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
+    padding-left: 20px;
     color: rgba(51, 51, 51, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+    .landingPage .form-group>label{
+        padding-left: 30px;
+    }
 }
 .landingPage .form-group>input{
  height: 48px;
@@ -95,9 +117,15 @@ color: white;}
     cursor: pointer;
 }
 .landingPage .trending-section{
-    margin-top: 150px!important;
-    margin-bottom: 150px!important;
+    margin-top: 50px!important;
+    margin-bottom: 50px!important;
+    background: #E5E5E5;
+    width: 100%;
     /* background-color: #E5E5E5; */
+}
+
+.landingPage .trending-section .trend-details{
+    display: none;
 }
 @media screen and (max-width:650px) {
     .landingPage .trending-section{
@@ -157,7 +185,7 @@ color: white;}
 /*  Trending section Finish */
 /* About Us start Here */
 .landingPage .about-us-section>div{
-    padding-top: 0rem;
+    padding-top: 4rem;
     padding-bottom: 6rem;
 }
 .landingPage .about-us-title{
@@ -181,11 +209,12 @@ color: white;}
 /* Testimonials-section  start Here */
 .landingPage .testimonials-section{
     background: url(./img/test-back.png) center no-repeat;
-    background-size: cover;
+    background-size: cover!important;
     min-height:  742px;
     margin:0;
     padding: 6rem 0;
 }
+
 .landingPage .testimonials-text>p{
     font-style: italic;
     font-weight: 500;
