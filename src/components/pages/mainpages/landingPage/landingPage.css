@@ -34,7 +34,14 @@ color: white;}
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
+    padding-left: 20px;
     color: rgba(51, 51, 51, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+    .landingPage .form-group>label{
+        padding-left: 30px;
+    }
 }
 .landingPage .form-group>input{
  height: 48px;
@@ -185,6 +192,14 @@ color: white;}
     min-height:  742px;
     margin:0;
     padding: 6rem 0;
+}
+
+
+@media screen and (min-width: 768px){
+    .test-carousel .carousel, .slide {
+        margin-left: -112px;
+        margin-right: -112px;
+    }
 }
 
 

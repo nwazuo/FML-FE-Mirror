@@ -97,8 +97,11 @@ const LandingPage = () => {
         {/* ***** Header content Finish here********/}
         {/* ******* Main section Start Here ******** */}
         <main>
+
           {/* trending section */}
+
           <Trending />
+		  
           {/* about us section */}
             <section className="container-fluid bg-white about-us-section my-5">
               <div className="container">
@@ -132,10 +135,15 @@ const LandingPage = () => {
                 </div>
               </div>
             </section>
+
           {/* Campaign Section */}
+
           <Campaign />
+
           {/* Testimonials section */}
+
           <Testimonial />
+
         </main>
         {/* ******* Main section Finish Here ******** */}
         <div className="spacer py-md-5" />
