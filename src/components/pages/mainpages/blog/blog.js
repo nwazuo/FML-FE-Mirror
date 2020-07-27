@@ -4,27 +4,21 @@ import {Link} from 'react-router-dom'
 import {Footer,Navbar} from '../../navigation'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import BlogComponent from './blog_component'
-import dummydata from './dummydata'
+// import dummydata from './dummydata'
 import showmoreimg from './img/Vector 1.png'
 import pageurl from '../../../router/url/pageurl'
 import {Button} from '../../../utilities'
 import {BlogController} from '../../../dataservices' 
-import defaultimg from './img/default.png'
 
 const Blog = ({...props}) => {
-    const [blogStory,setBlogStory] = React.useState([]);
     // React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory); blogStory[0] && BlogController.getAllBlogPosts();}doIt();})
-    React.useEffect(()=>{function doIt(){!blogStory[0] && BlogController.getAllBlogPosts(setBlogStory);}doIt();})
     // function handleSinglePost(index){props.history.push(pageurl.SINGLE_POST_URL,{postIndex:index});}
+    const [blogStory,setBlogStory] = React.useState([]);
+    React.useEffect(()=>{function doIt(){!blogStory[0] && BlogController.getAllBlogPosts(setBlogStory);}doIt();})
     function handleSinglePost(index){props.history.push(pageurl.SINGLE_POST_URL+`/${index}`);}
     const[inputDetails,setInputDetails] = React.useState({});
-    function handleInput(e){
-        setInputDetails({...inputDetails,[e.target.name]:e.target.value});
-    }
-    
-    function handleSubmit(e){
-        e.preventDefault();
-    }
+    function handleInput(e){setInputDetails({...inputDetails,[e.target.name]:e.target.value});}
+    function handleSubmit(e){e.preventDefault();BlogController.makeComment();}
     return(
         <ScrollIntoView>
             <Navbar/>
