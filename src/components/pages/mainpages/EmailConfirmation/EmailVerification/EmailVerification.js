@@ -54,7 +54,7 @@ const EmailVerification = (props) => {
                   Your email address has been successfully verified
                 </p>
 
-                <Link to={pageurl.USER_PROFILE_PAGE_URL}>
+                <Link to={pageurl.DEFAULT_DASHBOARD_PAGE_URL}>
                   <button className="email-success-btn">
                     Continue to Profile
                   </button>
