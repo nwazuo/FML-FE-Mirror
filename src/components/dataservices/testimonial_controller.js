@@ -77,6 +77,7 @@ const Testimonial = () => {
 									className="mb-3 "
 									src="https://placeimg.com/100/100/people0"
 									alt="testimonial"
+									style={{borderRadius: '50%'}}
 								/>
 								<h5 className="mb-0" style={{ color: 'white' }}>
 									Gbolade Popoola</h5>
@@ -95,7 +96,7 @@ const Testimonial = () => {
 										<p className=" text-white px-5">{`"${i.testimonial}"`}</p>
 									</div>
 									<div className=" col-md-10 text-center ">
-										<img className="mb-3 " src={i.photoUrl} alt="testimonial" />
+										<img className="mb-3 " src={i.photoUrl} alt="testimonial" style={{borderRadius: '50%'}} />
 										<h5 className="mb-0" style={{ color: 'white' }}>
 											{i.name}
 										</h5>

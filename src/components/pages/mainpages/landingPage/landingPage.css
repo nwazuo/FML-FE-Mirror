@@ -1,3 +1,18 @@
+
+.landingPage{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #E5E5E5;
+
+}
+
+.landingPage main{
+    margin: 0;
+    padding: 0;
+}
+
 .landingPage button{
     font-weight: 500;
     font-size: 16px;
@@ -102,8 +117,10 @@ color: white;}
     cursor: pointer;
 }
 .landingPage .trending-section{
-    margin-top: 150px!important;
-    margin-bottom: 150px!important;
+    margin-top: 50px!important;
+    margin-bottom: 50px!important;
+    background: #E5E5E5;
+    width: 100%;
     /* background-color: #E5E5E5; */
 }
 
@@ -168,7 +185,7 @@ color: white;}
 /*  Trending section Finish */
 /* About Us start Here */
 .landingPage .about-us-section>div{
-    padding-top: 0rem;
+    padding-top: 4rem;
     padding-bottom: 6rem;
 }
 .landingPage .about-us-title{
@@ -197,15 +214,6 @@ color: white;}
     margin:0;
     padding: 6rem 0;
 }
-
-
-@media screen and (min-width: 768px){
-    .test-carousel .carousel, .slide {
-        margin-left: -114px;
-        margin-right: -114px;
-    }
-}
-
 
 .landingPage .testimonials-text>p{
     font-style: italic;

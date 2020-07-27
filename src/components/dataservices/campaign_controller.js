@@ -119,6 +119,7 @@ const Campaign = () => {
                     className="card-img-top"
                     src={i.photoUrl}
                     alt="Camp1"
+                    style={{height: '20em'}}
                   />
                   {/* card body */}
                   <div className="card-body">
