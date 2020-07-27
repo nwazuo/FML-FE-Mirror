@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react';
+import React, {useEffect, useState } from 'react';
 
 import "./fundee-dashboard.css";
 import paymentIcon from "../../../assets/images/paid-progress.svg"
@@ -9,11 +9,13 @@ import copyIcon from "../../../assets/images/bx_bxs-copy.svg"
 import leftArrow from "../../../assets/images/arrow-left.svg"
 import rightArrow from "../../../assets/images/arrow-right.svg"
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
+import { connect } from 'react-redux';
+import { fetchFundeeDashboard } from '../../../../actions/actions'
 
 // import seach from './search.svg'
 import { Navbar, Footer } from '../../navigation/navigation';
 
-const FundeeDashboard = () => {
+const FundeeDashboard = ({fundee,fetchFundeeDashboard }) => {
   useEffect(() => {
         //slider scroll feature
         const slideArea = document.querySelector(".help-card-contain");
@@ -42,7 +44,14 @@ const FundeeDashboard = () => {
         });
      
   });
+  useEffect( ()=>{
+    // props.fetchFundeeDashboard()
+    fetchFundeeDashboard()
+  }, [])
   let url = "";
+  
+ const  {allrefunds, amountPermonth, interestPerMonth, interestRate, loanedAmount, paidAmount,
+ pendingAmount , totalTerm}=fundee
   return (
     <ScrollIntoView>
       <Navbar />
@@ -160,49 +169,49 @@ const FundeeDashboard = () => {
               <small>Pending Amount</small>
               <br />
               <h2>
-                <span className="right">INR </span>30,000
+                <span className="right">INR </span>{pendingAmount}
               </h2>
             </div>
             <div className="account-detail">
               <small>Loaned amount</small>
               <br />
               <h2>
-                <span className="right">INR </span>50,000
+                <span className="right">INR </span>{loanedAmount}
               </h2>
             </div>
             <div className="account-detail">
               <small>Paid amount</small>
               <br />
               <h2>
-                <span className="right">INR </span>20,000
+                <span className="right">INR </span>{paidAmount}
               </h2>
             </div>
             <div className="account-detail">
               <small>Interest rate</small>
               <br />
               <h2>
-                2.5<span className="left"> %</span>
+              {interestRate}<span className="left"> %</span>
               </h2>
             </div>
             <div className="account-detail">
               <small>Amount per month</small>
               <br />
               <h2>
-                <span className="right">INR </span>5,125
+                <span className="right">INR </span>{amountPermonth}
               </h2>
             </div>
             <div className="account-detail">
               <small>Interest per month</small>
               <br />
               <h2>
-                <span className="right">INR </span>125
+                <span className="right">INR </span>{interestPerMonth}
               </h2>
             </div>
             <div className="account-detail">
               <small>Total Term</small>
               <br />
               <h2>
-                10<span className="left"> months</span>
+                {totalTerm}<span className="left"> months</span>
               </h2>
             </div>
             <div className="account-detail">
@@ -444,4 +453,13 @@ const FundeeDashboard = () => {
     </ScrollIntoView>
   );
 };
-export default FundeeDashboard;
+const mapStateToProps = (state) => ({
+  fundee: state.fundee.fundee
+});
+
+const mapDispatchToProps  = dispatch =>{ 
+
+     return {fetchFundeeDashboard:()=>dispatch(fetchFundeeDashboard())}
+  
+};
+export default connect(mapStateToProps,mapDispatchToProps) (FundeeDashboard);
