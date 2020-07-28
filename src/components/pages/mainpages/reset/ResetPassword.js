@@ -3,8 +3,19 @@ import './ResetPassword.css';
 import '../../../assets/bootstrap.css';
 import { Navbar,Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
+import {ResetPasswordController} from '../../../dataservices'
+import {Button,Status} from '../../../utilities'
 
-const ResetPassword = () => {
+const ResetPassword = ({...props}) => {
+
+    const [token,setToken] = React.useState({});
+
+    React.useEffect(()=>{
+      const {match:{params}} = props; setToken(params.token); 
+      if(ResetPasswordController.validatePasswordInput()){
+        ResetPasswordController.resetPassword();
+      }
+    })
 
     return(
         <ScrollIntoView>
@@ -35,6 +46,7 @@ const ResetPassword = () => {
               className="form-control btn-continue login-btn btn-fml-secondary "
               value="Continue" style={{marginBottom: '15%' ,marginTop: '5%' }}
             />
+            {/* <Button propsTitle={} /> */}
           </div>
       </form>
         </div>
