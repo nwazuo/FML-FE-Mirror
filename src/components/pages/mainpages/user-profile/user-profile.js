@@ -17,8 +17,8 @@ import pageurl from '../../../router/url/pageurl';
 import { connect } from 'react-redux';
 
 const breadcrumbLinks = [
-  { link: '/default-dashboard', label: 'Dashboard' },
-  { link: '/user-profile', label: 'Profile' },
+  { link: pageurl.DEFAULT_DASHBOARD_PAGE_URL, label: 'Dashboard' },
+  { link: pageurl.USER_PROFILE_PAGE_URL, label: 'Profile' },
 ];
 
 const trustees = [

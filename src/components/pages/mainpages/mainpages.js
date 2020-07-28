@@ -21,7 +21,7 @@ import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailu
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 import CreateBlogPost from './blog/create_blog_post';
 import EditProfile from './editProfile/editProfile';
-
+import ResetPassword from './reset/ResetPassword';
 
 
 export {
@@ -47,5 +47,6 @@ export {
   EmailVerification,
   EmailConfirmationFailure,
   CreateBlogPost,
-  EditProfile
+  EditProfile,
+  ResetPassword
 };
