@@ -151,7 +151,7 @@ const Login = (props) => {
             align-items-center"
               style={{
                 boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)',
-                color: '#1c7ed6',
+                color: '#24292e',
               }}
             >
               <img className="" src={github} alt="github" />
