@@ -1,34 +1,47 @@
 import React, { Component } from "react";
 import "./adminDashboard.css";
-import {Link} from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import alerm from "./img/alerm.png";
 import avatar from "./img/avatar.png";
 import left from "./img/left-logo.png";
 import Ham1 from "./img/Ham-1.png";
 import Ham2 from "./img/Ham-2.png";
-
-
+import pageurl from "../../../router/url/pageurl";
+import { connect } from 'react-redux';
+import { logoutUser } from "../../../../actions/actions";
 
 class AdminDashboard extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props)
+    this.onHandleLogout = this.onHandleLogout.bind(this)
+  }
 
+  componentDidMount() {
     let sidebar_opener = document.querySelector('#sidebar-opener')
     let sidebar_closer = document.querySelector('#sidebar-closer')
     let sidebar = document.querySelector('#sidebar')
 
-  sidebar_opener.addEventListener('click', function(){
-    sidebar.style.display = 'block';
-    sidebar.classList.remove("sidebar_close");
-    sidebar.classList.add("sidebar_open");
-})
+    sidebar_opener.addEventListener('click', function(){
+      sidebar.style.display = 'block';
+      sidebar.classList.remove("sidebar_close");
+      sidebar.classList.add("sidebar_open");
+    })
 
-  sidebar_closer.addEventListener("click", function () {
-    sidebar.classList.remove("sidebar_open");
-    sidebar.classList.add("sidebar_close");
-});
+    sidebar_closer.addEventListener("click", function () {
+      sidebar.classList.remove("sidebar_open");
+      sidebar.classList.add("sidebar_close");
+    });
+  }
+
+  onHandleLogout() {
+    const { logoutUser, history } = this.props
+    logoutUser(history);
   }
 
   render() {
+
+    const { firstName, lastName, photoURL } = this.props.user.credentials.data
+
     return (
       <>
         <div className="adminDashboard py-0 my-0">
@@ -36,35 +49,52 @@ class AdminDashboard extends Component {
             <div className="row">
               {/* Sidebar Section */}
               <aside
-                className="col-7 col-md-3 col-lg-2 custom__bg-dark vh-100 sidebar"
+                className="col-6 col-md-3 col-lg-2 custom__bg-dark vh-100 p-0 sidebar d-flex flex-column align-items-center"
                 id="sidebar"
               >
-                <img src={Ham2} alt="Ham2" className="text-white d-md-none xander" id="sidebar-closer" />
-                <img src={left} alt="left" className="ml-2"/> 
-                <ul className="navbar-nav  mt-2 mt-lg-0 anchor">
-                    <li className="nav-item ">
-                      <Link className="nav-link " to="/admin-dashboard">Campaign</Link>
+                <div className="logo-container py-1 position-relative">
+                  <img src={Ham2} alt="Ham2" className="text-white d-md-none pos__abs" id="sidebar-closer" />
+                  <img src={left} alt="left" className="ml-2"/> 
+                </div>
+                <ul className="navbar-nav mt-2 mt-lg-4 anchor">
+                    <li className="nav-item my-2">
+                      <NavLink 
+                        className="nav-link font-weight-bold px-5" 
+                        to={pageurl.ADMIN_DASHBOARD_PAGE_URL} 
+                        activeClassName="active-link"
+                        exact
+                      >
+                        DASHBOARD
+                      </NavLink>
                     </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/admin-dashboard">Fundings</Link>
+                    <li className="nav-item my-2">
+                      <NavLink 
+                        className="nav-link font-weight-bold px-5" 
+                        to={pageurl.ADMIN_FAQ_PAGE_URL} 
+                        activeClassName="active-link"
+                        exact
+                      >
+                        ADD FAQS
+                      </NavLink>
                     </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/admin-dashboard">Payments</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/admin-dashboard/add-faq">Add Faqs</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/admin-dashboard">Settings</Link>
+                    <li className="nav-item my-2">
+                      <NavLink 
+                        className="nav-link font-weight-bold px-5" 
+                        to={pageurl.ADMIN_CAMPAIGN_PAGE_URL}
+                        activeClassName="active-link"
+                        exact
+                      >
+                        CAMPAIGN
+                      </NavLink>
                     </li>
                 </ul>
               </aside>
               {/* Main Section  */}
               <main className="col-12 col-md-9 col-lg-10 bg-light px-0 vh-100 overflow">
                 {/* TopNav Section */}
-                <nav className="bg-white d-flex sticky-top justify-content-en align-items-center py-2 py-md-3 px-2 px-md-5">
+                <nav className="bg-white d-flex sticky-top justify-content-end align-items-center mx-0 py-2 py-md-3 px-2 px-md-5">
                 {/* eslint-disable-next-line */}
-                <img src={Ham1} className="d-md-none" id="sidebar-opener" />
+                <img src={Ham1} className="d-md-none pl-4 pointer" id="sidebar-opener" />
                   <h5 className="font-weight-bold d-md-none ml-3 mb-0">
                     Dashboard
                   </h5>
@@ -74,13 +104,13 @@ class AdminDashboard extends Component {
                     alt=""
                   />
                   <img
-                    src={avatar}
+                    src={photoURL}
                     className="img-fluid avatar"
                     alt=""
                   />
                   <div className="ml-2">
                     <p className="font-weight-bold my-0 d-none d-md-block">
-                      Oluwakemi Adeleke
+                      {`${firstName.toUpperCase()} ${lastName.toUpperCase()}`}
                     </p>
                     <p className="my-0 d-none d-md-block">Administrator</p>
                   </div>
@@ -94,14 +124,8 @@ class AdminDashboard extends Component {
                         aria-expanded="false"
                       />
                       <div className="dropdown-menu dropdown-menu-right">
-                        <button className="dropdown-item" type="button">
-                          Action
-                        </button>
-                        <button className="dropdown-item" type="button">
-                          Another action
-                        </button>
-                        <button className="dropdown-item" type="button">
-                          Something else here
+                        <button className="dropdown-item" type="button" onClick={this.onHandleLogout}>
+                          Logout
                         </button>
                       </div>
                     </div>
@@ -109,8 +133,7 @@ class AdminDashboard extends Component {
                 </nav>
                 
                 {/** Dashboard Routing */}
-
-                {this.props.children}
+                  {this.props.children}
                 
                   
               </main>
@@ -122,4 +145,11 @@ class AdminDashboard extends Component {
   }
 }
 
-export default AdminDashboard;
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+const mapDispatchToProps = {
+  logoutUser,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AdminDashboard));
