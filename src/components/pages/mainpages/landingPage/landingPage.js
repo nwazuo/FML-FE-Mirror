@@ -1,13 +1,13 @@
 import React from "react";
 // import "./bootstrap.module.css";
 import "./landingPage.css";
-import about from "./img/about.png";
 import {Tween, Timeline } from "react-gsap";
 import { Navbar, Footer } from "../../navigation/navigation";
 import ScrollIntoView from "../../../router/scrollintoview/ScrollIntoView";
 import Testimonial from "../../../dataservices/testimonial_controller";
 import Campaign from "../../../dataservices/campaign_controller";
 import Trending from "../../../dataservices/trending_controller";
+import CampaignForm from "./CampaignForm";
 
 const LandingPage = () => {
   const FadeInUp = ({ children }) => (
@@ -16,11 +16,6 @@ const LandingPage = () => {
   const FadeInLeft = ({ children }) => (
     <Tween from={{ x: -40, opacity: 0 }}>{children}</Tween>
   );
-
-  const SubmitCampaign = (e) => {
-	  e.preventDefault();
-	  window.location.href = '/campaign';
-  }
 
 
   return (
@@ -40,66 +35,10 @@ const LandingPage = () => {
                   </p>
                 </div>
               </Tween>
-              <Tween from={{ opacity: 0, y: 30 }} duration={1.5}>
-                <div className="  header-form col-xl-4 my-5  pt-3 pb-5 bg-white">
+              
                   {/* here should be form */}
-                  <form onSubmit={SubmitCampaign} className=" px-md-3 d-flex flex-column justify-content-center">
-                    <h5 className=" text-center mb-5 mt-0">Laptop Funding</h5>
-                    <div className="form-group">
-                      <label htmlFor="inputAddress">Campaign Name</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="CampaignName"
-						placeholder="Campaign name here.."
-						required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="inputState">Target</label>
-                      <select id="inputState" className="form-control" required>
-                        <option selected>N1000</option>
-                        <option>N10000</option>
-                      </select>
-                    </div>
-                    {/* date row */}
-                    <div className="row">
-                      <div className="form-group col-md-6 pr-lg-1">
-                        <label
-                          htmlFor="example-date-input"
-                          className=" col-form-label"
-                        >
-                          Start Date
-                        </label>
-                        <input
-                          className="form-control"
-                          type="date"
-						  id="example-date-input"
-						  required
-                        />
-                      </div>
-                      <div className="form-group col-md-6  pl-lg-1">
-                        <label
-                          htmlFor="example-date-input"
-                          className=" col-form-label"
-                        >
-                          End Date
-                        </label>
-                        <input
-                          className="form-control"
-                          type="date"
-						  id="example-date-input"
-						  required
-                        />
-                      </div>
-                    </div>
-					<button 
-					className="btn-form mx-auto my-4">
-                      Start Campaign
-                    </button>
-                  </form>
-                </div>
-              </Tween>
+                  <CampaignForm />
+               
             </div>
           </div>
         </Timeline>
