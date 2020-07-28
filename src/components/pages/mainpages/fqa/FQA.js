@@ -55,7 +55,7 @@ class FQA extends React.Component {
                     <section className={[FQACss.custom__py_main, FQACss.bg_light, "container-fluid"].join(' ')}>
                         <div className="row justify-content-center">
                             <div className="col-12 col-md-9 col-xl-6">
-                                <h2 className="text-center">How can we help you?</h2>
+                                <h2 className={["text-center", FQACss.h2].join(' ')}>How can we help you?</h2>
                                 <form className="position-relative my-4 px-2 px-md-5 px-lg-5 px-xl-0 d-flex justify-content-center" onSubmit={this.onHandleSubmit}>
                                     <input 
                                         type="text" 
@@ -68,7 +68,7 @@ class FQA extends React.Component {
                                         <img src={search} className="img-fluid" alt="search" />
                                     </button>
                                 </form>
-                                <h3 className={[FQACss.text_light, "text-center mb-0 mt-0"].join(' ')}>You can also browse the topics below to find what you’re looking for</h3>
+                                <h3 className={[FQACss.text_light, FQACss.h3, "text-center mb-0 mt-0"].join(' ')}>You can also browse the topics below to find what you’re looking for</h3>
                             </div>
                         </div>
                     </section>
@@ -76,16 +76,16 @@ class FQA extends React.Component {
                         <section className="container py-md-4 px-3 px-md-0">
                             <div className="row">
                                 <div className="col-12 col-md-3">
-                                    <h6>Getting Started</h6>
+                                    <h6 className={FQACss.h6}>Getting Started</h6>
                                     <div className="d-flex flex-column">
-                                        <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/faq">Funding </a></h6>
-                                        <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/faq">Menu III </a></h6>
-                                        <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/faq">Menu IV </a></h6>
-                                        <h6 className="py-0 my-3"><a className={[FQACss.links].join(' ')} href="/faq">Menu V </a></h6>
+                                        <h6 className="py-0 my-3"><a className={[FQACss.links, FQACss.h6].join(' ')} href="/faq">Funding </a></h6>
+                                        <h6 className="py-0 my-3"><a className={[FQACss.links, FQACss.h6].join(' ')} href="/faq">Menu III </a></h6>
+                                        <h6 className="py-0 my-3"><a className={[FQACss.links, FQACss.h6].join(' ')} href="/faq">Menu IV </a></h6>
+                                        <h6 className="py-0 my-3"><a className={[FQACss.links, FQACss.h6].join(' ')} href="/faq">Menu V </a></h6>
                                     </div>
                                 </div>
                                 <div className="col-12 col-md-9">
-                                    <h2 className="mb-4 mt-4 mt-lg-3">Getting Started</h2>
+                                    <h2 className={["mb-4 mt-4 mt-lg-3", FQACss.h2].join(' ')}>Getting Started</h2>
                                     <div id="accordion">
                                         {!faqs ? (
                                             <BeatLoader css={override} size={40} color={"#04172A"} />
@@ -93,9 +93,9 @@ class FQA extends React.Component {
                                             faqs.map((data, idx) => (
                                                 <div className="card mb-4" key={data._id}>
                                                     <div className={[FQACss.accordion_header, "card-header text-center"].join(' ')} id={`heading${idx}`}>
-                                                        <h5 className="mb-0">
+                                                        <h5 className={["mb-0", FQACss.h5].join(' ')}>
                                                             <button className={["pt-md-2", FQACss.no_border].join(' ')} data-toggle="collapse" data-target={`#collapse${idx}`} aria-expanded="true" aria-controls={`collapse${idx}`}>
-                                                                <h5 className="text-white">{data.question}</h5>
+                                                                <h5 className={["text-white", FQACss.h5].join(' ')}>{data.question}</h5>
                                                             </button>
                                                         </h5>
                                                     </div>
@@ -110,8 +110,6 @@ class FQA extends React.Component {
                                                 </div>
                                             ))
                                         )}
-                                    </div>
-                                    <div>
                                     </div>
                                 </div>
                             </div>
