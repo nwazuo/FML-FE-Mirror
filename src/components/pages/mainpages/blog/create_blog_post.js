@@ -4,9 +4,8 @@ import {withRouter,Link} from 'react-router-dom'
 import {Navbar,Footer} from '../../navigation'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import blog from './blog.module.css'
-import Status from './status';  
 import {BlogController} from '../../../dataservices' 
-import {Button} from '../../../utilities'
+import {Button,Status} from '../../../utilities'
 import TermsAndCondition from './termsandcondition'
 
 const CreateBlogPost = ({...props}) => {

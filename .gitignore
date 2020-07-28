@@ -12,7 +12,7 @@
 /build
 
 # deployment
-/.netlify
+# /.netlify
 
 # misc
 .DS_Store
@@ -27,3 +27,6 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+#css files
+
