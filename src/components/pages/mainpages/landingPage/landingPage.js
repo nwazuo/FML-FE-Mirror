@@ -2,7 +2,7 @@ import React from "react";
 // import "./bootstrap.module.css";
 import "./landingPage.css";
 import about from "./img/about.png";
-import {Tween, Timeline } from "react-gsap";
+import { Tween, Timeline } from "react-gsap";
 import { Navbar, Footer } from "../../navigation/navigation";
 import ScrollIntoView from "../../../router/scrollintoview/ScrollIntoView";
 import Testimonial from "../../../dataservices/testimonial_controller";
@@ -18,10 +18,9 @@ const LandingPage = () => {
   );
 
   const SubmitCampaign = (e) => {
-	  e.preventDefault();
-	  window.location.href = '/campaign';
-  }
-
+    e.preventDefault();
+    window.location.href = "/campaign";
+  };
 
   return (
     <ScrollIntoView>
@@ -43,7 +42,10 @@ const LandingPage = () => {
               <Tween from={{ opacity: 0, y: 30 }} duration={1.5}>
                 <div className="  header-form col-xl-4 my-5  pt-3 pb-5 bg-white">
                   {/* here should be form */}
-                  <form onSubmit={SubmitCampaign} className=" px-md-3 d-flex flex-column justify-content-center">
+                  <form
+                    onSubmit={SubmitCampaign}
+                    className=" px-md-3 d-flex flex-column justify-content-center"
+                  >
                     <h5 className=" text-center mb-5 mt-0">Laptop Funding</h5>
                     <div className="form-group">
                       <label htmlFor="inputAddress">Campaign Name</label>
@@ -51,8 +53,8 @@ const LandingPage = () => {
                         type="text"
                         className="form-control"
                         id="CampaignName"
-						placeholder="Campaign name here.."
-						required
+                        placeholder="Campaign name here.."
+                        required
                       />
                     </div>
                     <div className="form-group">
@@ -74,8 +76,8 @@ const LandingPage = () => {
                         <input
                           className="form-control"
                           type="date"
-						  id="example-date-input"
-						  required
+                          id="example-date-input"
+                          required
                         />
                       </div>
                       <div className="form-group col-md-6  pl-lg-1">
@@ -88,13 +90,12 @@ const LandingPage = () => {
                         <input
                           className="form-control"
                           type="date"
-						  id="example-date-input"
-						  required
+                          id="example-date-input"
+                          required
                         />
                       </div>
                     </div>
-					<button 
-					className="btn-form mx-auto my-4">
+                    <button className="btn-form mx-auto my-4">
                       Start Campaign
                     </button>
                   </form>
@@ -106,44 +107,45 @@ const LandingPage = () => {
         {/* ***** Header content Finish here********/}
         {/* ******* Main section Start Here ******** */}
         <main>
-
           {/* trending section */}
 
           <Trending />
 
           {/* about us section */}
-            <section className="container-fluid bg-white about-us-section my-5">
-              <div className="container">
-					<FadeInLeft><h3 className="mb-4">About Us</h3></FadeInLeft>
-                <div className="  row">
-					<FadeInLeft>
-                    <div className="col-lg-6">
-                      <img
-                        className="aboutus-img img-fluid "
-                        src="https://placeimg.com/500/500/people1"
-                        alt="mm"
-                      />
-                    </div>
-					</FadeInLeft>
-                  <div
-                    className="col-lg-6 pr-4 pl-lg-5
+          <section className="container-fluid bg-white about-us-section my-5">
+            <div className="container">
+              <FadeInLeft>
+                <h3 className="mb-4">About Us</h3>
+              </FadeInLeft>
+              <div className="  row">
+                <FadeInLeft>
+                  <div className="col-lg-6">
+                    <img
+                      className="aboutus-img img-fluid "
+                      src="https://placeimg.com/500/500/people1"
+                      alt="mm"
+                    />
+                  </div>
+                </FadeInLeft>
+                <div
+                  className="col-lg-6 pr-4 pl-lg-5
                 d-flex flex-column
                 justify-content-center
                 "
-                  >
-                    <h3 className=" mb-4 mt-4 mt-md-0 mb-md-5  about-us-title">
-                      We are here because of you
-                    </h3>
-                    <p className="aboutus-text">
-                      We are a group of tech experts trying to help the younger
-                      generation of tech enthusiast get into tech with the
-                      limitation of gadgets and other important stuff limiting
-                      the african tech community
-                    </p>
-                  </div>
+                >
+                  <h3 className=" mb-4 mt-4 mt-md-0 mb-md-5  about-us-title">
+                    We are here because of you
+                  </h3>
+                  <p className="aboutus-text">
+                    We are a group of tech experts trying to help the younger
+                    generation of tech enthusiast get into tech with the
+                    limitation of gadgets and other important stuff limiting the
+                    african tech community
+                  </p>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
 
           {/* Campaign Section */}
 
@@ -152,7 +154,6 @@ const LandingPage = () => {
           {/* Testimonials section */}
 
           <Testimonial />
-
         </main>
         {/* ******* Main section Finish Here ******** */}
         <div className="spacer py-md-5" />
