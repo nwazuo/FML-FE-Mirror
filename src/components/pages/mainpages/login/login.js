@@ -7,7 +7,8 @@ import loginBg from '../../../assets/images/login-bg.png';
 import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
-import fcbIcon from './facebook-square-brands.svg';
+import twitter from './twitterIcon.svg';
+import github from './github.svg';
 import { GoogleLogin } from 'react-google-login';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import Button from '../../../utilities/Button/CustomizedButton';
@@ -141,8 +142,20 @@ const Login = (props) => {
                 color: '#1c7ed6',
               }}
             >
-              <img className="" src={fcbIcon} alt="facebook" />
-              Login with Facebook
+              <img className="" src={twitter} alt="twitter" />
+              Login with Twitter
+            </Link>
+            <Link
+              className="text-center mt-3 py-3  
+            btnGoogle d-flex justify-content-center 
+            align-items-center"
+              style={{
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)',
+                color: '#1c7ed6',
+              }}
+            >
+              <img className="" src={github} alt="github" />
+              Login with GitHub
             </Link>
           </div>
 

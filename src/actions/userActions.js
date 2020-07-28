@@ -150,7 +150,7 @@ export const getLoginUserData = (history) => (dispatch) => {
         payload: res.data,
       });
 
-      history.push(pageurl.DEFAULT_DASHBOARD_PAGE_URL);
+      history.push(pageurl.LANDING_PAGE_URL);
       console.log(res.data);
       dispatch({ type: LOADED_UI });
     })

@@ -350,8 +350,15 @@ class Signup extends Component {
                 to=""
                 className="mt-2 form-control login-btn login-btn-facebook reg-btn "
               >
-                <i class="fab fa-facebook-square pr-3 facbook-logo"></i>
-                Sign up with Facebook
+                <i class="fab fa-twitter pr-3 facbook-logo"></i>
+                Sign up with Twitter
+              </Link>
+              <Link
+                to=""
+                className="mt-2 form-control login-btn login-btn-github reg-btn "
+              >
+                <i class="fab fa-github pr-3 facbook-logo"></i>
+                Sign up with GitHub
               </Link>
               {/* <a
                 href="#"
