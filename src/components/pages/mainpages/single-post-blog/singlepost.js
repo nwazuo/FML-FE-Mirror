@@ -69,7 +69,7 @@ const SinglePost = ({...props}) => {
                                 </div>
 
                             </div>
-                            <div className={singlepost.comment_container_qobi}>
+                            <div className={singlepost.comment_container_qobi} >
                                 <div className={singlepost.comment_header_qobi}><p>COMMENTS&nbsp;({blogStory[0] && blogStory[0].comments && blogStory[0].comments.length})</p></div>
                                 {blogStory[0] && blogStory[0].comments && blogStory[0].comments.map((data,index)=>{
                                         return(<CommentComponent key={index} singlepost={singlepost} avatar={""} comment={data.comment} 

@@ -46,7 +46,7 @@ const ResetPassword = ({...props}) => {
               className="form-control btn-continue login-btn btn-fml-secondary "
               value="Continue" style={{marginBottom: '15%' ,marginTop: '5%' }}
             />
-            <Button propsTitle={} />
+            {/* <Button propsTitle={} /> */}
           </div>
       </form>
         </div>
