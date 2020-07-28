@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import { registerUser, googleLogin } from '../../../../actions/userActions';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
+import Button from '../../../utilities/Button/CustomizedButton';
 import { GoogleLogin } from 'react-google-login';
 
 class Signup extends Component {
@@ -314,13 +315,14 @@ class Signup extends Component {
               </div>
             </div>
             <div>
-              <button
-                type="submit"
+              <Button
+                load={this.state.loading}
+                propsTitle={'Sign Up'}
                 className="form-control login-btn btn-fml-secondary"
-                value="Sign Up"
-              >
-                Sign Up {this.state.loading ? <PinWheel /> : null}
-              </button>
+                onClick={(e) => {
+                  this.onSubmit(e);
+                }}
+              ></Button>
             </div>
             <div className="my-4 text-center or d-flex align-items-center or-box">
               <hr />
