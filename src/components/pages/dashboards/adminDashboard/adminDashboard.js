@@ -52,7 +52,7 @@ class AdminDashboard extends Component {
                       <Link className="nav-link" to="/admin-dashboard">Payments</Link>
                     </li>
                     <li className="nav-item">
-                      <Link className="nav-link" to="/admin-dashboard/add-faq">ADD FAQS</Link>
+                      <Link className="nav-link" to="/admin-dashboard/add-faq">Add Faqs</Link>
                     </li>
                     <li className="nav-item">
                       <Link className="nav-link" to="/admin-dashboard">Settings</Link>

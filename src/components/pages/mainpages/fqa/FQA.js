@@ -6,20 +6,18 @@ import search from './search.svg'
 import { Navbar,Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import { connect } from 'react-redux';
-import { fetchFaqs, fetchSearchFaqs, addFaqs } from '../../../../actions/actions';
+import { fetchFaqs, fetchSearchFaqs } from '../../../../actions/actions';
 
 class FQA extends React.Component {
 
     constructor (props) {
         super (props);
         this.state = {
-            value: "",
-            question: ""
+            value: ""
         }
 
         this.onHandleChange = this.onHandleChange.bind(this)
         this.onHandleSubmit = this.onHandleSubmit.bind(this)
-        this.onHandleAddQuestion = this.onHandleAddQuestion.bind(this)
     }
 
     componentDidMount () {
@@ -38,15 +36,8 @@ class FQA extends React.Component {
         e.preventDefault()
     }
 
-    onHandleAddQuestion(e) {
-        const { question } = this.state
-        this.props.addFaqs(`${question}?`)
-        this.setState({ question: ""})
-        e.preventDefault()
-    }
-
     render () {
-        const { value, question } = this.state
+        const { value } = this.state
         const { faqs } = this.props
 
         const override = css`
@@ -121,36 +112,6 @@ class FQA extends React.Component {
                                         )}
                                     </div>
                                     <div>
-                                    <div className="d-flex justify-content-center align-items-center">
-                                        <h3>Can't find what you are looking for?</h3>
-                                        <button type="button" className={[FQACss.accordion_header, "btn ml-md-3 mb-2 py-2 px-md-4"].join(' ')} data-toggle="modal" data-target="#exampleModalCenter">
-                                            Add to our FAQs
-                                        </button>
-                                        <div className="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div className="modal-dialog modal-dialog-centered" role="document">
-                                                <div className="modal-content">
-                                                    <div className="modal-header">
-                                                        <h5 className="modal-title" id="exampleModalLongTitle">Ask a question</h5>
-                                                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div className="modal-body">
-                                                        <form className="d-flex justify-content-center flex-wrap" onSubmit={this.onHandleAddQuestion}>
-                                                            <input 
-                                                                type="text" 
-                                                                className="form-control w-100" 
-                                                                name="question"
-                                                                value={question}
-                                                                onChange={this.onHandleChange}
-                                                            />
-                                                            <button type="submit" className={[FQACss.accordion_header, "btn py-2 px-5 mt-2 ml-auto mr-lg-4"].join(' ')}>Submit</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +131,6 @@ const mapDispatchToProps = dispatch => {
     return {
         fetchFaqs: () => dispatch(fetchFaqs()),
         fetchSearchFaqs: (val) => dispatch(fetchSearchFaqs(val)),
-        addFaqs: (val) => dispatch(addFaqs(val))
     }
 };
 
