@@ -27,6 +27,7 @@ import {
   EmailConfirmation,
   SinglePost,
   CreateBlogPost,
+  ResetPassword
 } from './components/pages/mainpages';
 
 import {
@@ -49,6 +50,8 @@ function App() {
 
         <Route exact path={pageurl.REGISTER_PAGE_URL} component={SignUp} />
 
+		<Route exact path={pageurl.RESET_PASSWORD_URL + `/:token`} component={ResetPassword} />
+
         <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
         <Route exact path={pageurl.PAYMENT_PAGE_URL} component={Payment} />
@@ -63,7 +66,7 @@ function App() {
 
         <Route
           exact
-          path={pageurl.SINGLE_POST_URL + `/:details`}
+          path={pageurl.SINGLE_POST_URL + `/:userid`}
           component={SinglePost}
         />
 

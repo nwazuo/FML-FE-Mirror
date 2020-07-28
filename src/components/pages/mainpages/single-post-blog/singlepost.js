@@ -18,7 +18,7 @@ import {Button,Status} from '../../../utilities'
 
 const SinglePost = ({...props}) => {
     const details = window.location.href;
-    let story_id = details.substring(details.lastIndexOf('/')+1);
+    // let story_id = details.substring(details.lastIndexOf('/')+1);
     const [blogStory,setBlogStory] = React.useState([]);
     const[inputValues,setInputValues]=React.useState({});
     const[isStatus,setIsStatus]=React.useState(false);
@@ -27,7 +27,8 @@ const SinglePost = ({...props}) => {
     const[inputError,setInputError] = React.useState({});
 
     // React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory);!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
-    React.useEffect(()=>{function doIt(){!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
+    const [story_id,setStoryId] = React.useState(null);
+    React.useEffect(()=>{const{match:{params}} = props; setStoryId(params.userid); function doIt(){!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
     function handleComment(e){e.preventDefault();BlogController.makeComment(story_id,inputValues,setIsStatus,setIsRequested,setIsLoading,setInputError);}
         
     function handleInput(e){setInputValues({...inputValues,[e.target.name]:e.target.value})}

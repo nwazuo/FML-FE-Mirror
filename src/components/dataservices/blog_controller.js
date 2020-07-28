@@ -1,5 +1,4 @@
 import Server from '../../services/server/Server';
-import defaultDashboard from '../pages/dashboards/defaultDashboard/defaultDashboard';
 
 const token = localStorage.getItem('FMLToken');
 const createBlogPostEndPoint  = process.env.REACT_APP_CREATE_BLOG_POST_END_POINT;

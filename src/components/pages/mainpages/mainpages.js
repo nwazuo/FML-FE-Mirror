@@ -20,7 +20,7 @@ import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerifi
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 import CreateBlogPost from './blog/create_blog_post';
-
+import ResetPassword from './reset/ResetPassword'
 
 
 export {
@@ -45,5 +45,6 @@ export {
   EmailConfirmation,
   EmailVerification,
   EmailConfirmationFailure,
-  CreateBlogPost
+  CreateBlogPost,
+  ResetPassword
 };
