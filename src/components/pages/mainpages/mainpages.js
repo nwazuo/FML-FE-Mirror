@@ -20,6 +20,7 @@ import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerifi
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 import CreateBlogPost from './blog/create_blog_post';
+import EditProfile from './editProfile/editProfile';
 
 
 
@@ -45,5 +46,6 @@ export {
   EmailConfirmation,
   EmailVerification,
   EmailConfirmationFailure,
-  CreateBlogPost
+  CreateBlogPost,
+  EditProfile
 };

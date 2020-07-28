@@ -9,12 +9,15 @@ import profileImg from '../../../assets/images/man-in-red-jacket-1681010.jpg';
 import ProfileStat from './profile-stat/profile-stat';
 import RecommendBox from './recommend-box/recommend-box';
 import trusteeImg from '../../../assets/images/image 8.png';
+// import {EditProfile} from '../../mainpages/EditProfile/EditProfile'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
+import pageurl from '../../../router/url/pageurl';
+
 //Redux stuff
 import { connect } from 'react-redux';
 
 const breadcrumbLinks = [
-  { link: '/dashboard', label: 'Dashboard' },
+  { link: '/default-dashboard', label: 'Dashboard' },
   { link: '/user-profile', label: 'Profile' },
 ];
 
@@ -103,7 +106,7 @@ const UserProfile = (props) => {
                   <p className={styles.UserType}>Fundee</p>
                 </div>
               </div>
-              <Link to="/user-profile" className={styles.Edit}>
+              <Link to={pageurl.EDIT_PROFILE} className={styles.Edit}>
                 <svg
                   width="1.8em"
                   height="1.8em"

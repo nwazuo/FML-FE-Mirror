@@ -25,6 +25,7 @@ const EMAIL_CONFIRMATION_FAILURE_URL = '/email-confirmation-failure';
 const EMAIL_CONFIRMATION_URL = '/email-confirmation';
 const SINGLE_POST_URL = '/blog/post';
 const CREATE_NEW_POST_URL = '/create-new-post';
+const EDIT_PROFILE = '/edit-profile';
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -52,7 +53,8 @@ const pageurl = {
   EMAIL_CONFIRMATION_FAILURE_URL,
   EMAIL_CONFIRMATION_URL,
   SINGLE_POST_URL,
-  CREATE_NEW_POST_URL
+  CREATE_NEW_POST_URL,
+  EDIT_PROFILE,
 };
 
 export default pageurl;

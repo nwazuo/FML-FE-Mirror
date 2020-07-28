@@ -139,6 +139,20 @@ export const getUserData = () => (dispatch) => {
     })
     .catch((err) => console.log(err));
 };
+export const editUserProfile = (history, _id) => (dispatch) => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .put(`${baseURL}/api/users/${_id}`)
+    .then((res) => {
+      dispatch({
+        type: SET_USER,
+        payload: res.data,
+      });
+      dispatch({ type: LOADED_UI });
+      history.push(pageurl.USER_PROFILE_PAGE_URL);
+    })
+    .catch((err) => console.log(err));
+};
 
 export const getLoginUserData = (history) => (dispatch) => {
   dispatch({ type: LOADING_UI });

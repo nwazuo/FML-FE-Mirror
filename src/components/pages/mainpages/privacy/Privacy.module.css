@@ -5,7 +5,7 @@
 
 /** Fonts styling */
 
-h1 {
+/* h1 {
     font-size: calc(26px + (40 - 26) * ((100vw - 320px) / (1600 - 320)));
     line-height: calc(34px + (52 - 34) * ((100vw - 320px) / (1600 - 320)));
 }
@@ -23,7 +23,7 @@ h6 {
     margin-top: 25px;
     margin-bottom: 10px;
     font-weight: normal;
-}
+} */
 
 p {
     font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1600 - 320)));

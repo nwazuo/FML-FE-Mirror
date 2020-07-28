@@ -150,7 +150,7 @@ input::placeholder{
   background-color: #1c7ed6;
 }
 @media only screen and (min-width: 1000px) {
-  .form-control,
+  .signup-form,
   .btn-google,
   .textWidth,
   .check-control .or-box {
@@ -169,7 +169,7 @@ input::placeholder{
     width: 87%;
     margin: auto;
   }
-  .form-control,
+  .signup-form,
   .check-control,
   .btn-google,
   .textWidth,

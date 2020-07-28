@@ -164,7 +164,7 @@ const Login = (props) => {
               type="email"
               placeholder="Email"
               name="email"
-              className="form-control"
+              className="login-form form-control"
               id="email"
               onChange={onChange}
               value={email}
@@ -179,7 +179,7 @@ const Login = (props) => {
               type="password"
               placeholder="Password"
               name="password"
-              className="form-control"
+              className="login-form form-control"
               id="password"
               onChange={onChange}
               value={password}
@@ -199,7 +199,7 @@ const Login = (props) => {
             <Button
               load={loading}
               propsTitle={'Log In'}
-              className="form-control login-btn btn-fml-secondary"
+              className="login-form form-control login-btn btn-fml-secondary"
               onClick={(e) => {
                 onSubmit(e);
               }}
