@@ -14,10 +14,10 @@ class PrivacyPage extends Component {
         return (
             <ScrollIntoView>
             <Navbar/>          
-                <div className={[Privacy.main_bg, Privacy.custom__px_main, Privacy.custom__py_main].join(' ')}>
+                <div className={[Privacy.main_bg, Privacy.text, Privacy.custom__px_main, Privacy.custom__py_main].join(' ')}>
                     <h1 className={Privacy.text_light}>PRIVACY POLICY</h1>
                 </div>
-                <div className={[Privacy.custom__px_main, Privacy.text_dark].join(' ')}>
+                <div className={[Privacy.custom__px_main, Privacy.text, Privacy.text_dark].join(' ')}>
                     <div className={[Privacy.box_shadow, Privacy.custom__px1_main, Privacy.custom__py1_main, Privacy.mt_offset, Privacy.mb_main].join(' ')}>
                         <h4 className={Privacy.text_center}>Last updated: 23rd June, 2020.</h4>
                         <p>

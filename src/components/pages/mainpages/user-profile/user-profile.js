@@ -10,12 +10,13 @@ import ProfileStat from './profile-stat/profile-stat';
 import RecommendBox from './recommend-box/recommend-box';
 import trusteeImg from '../../../assets/images/image 8.png';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
+import pageurl from '../../../router/url/pageurl'
 //Redux stuff
 import { connect } from 'react-redux';
 
 const breadcrumbLinks = [
-  { link: '/dashboard', label: 'Dashboard' },
-  { link: '/user-profile', label: 'Profile' },
+  { link: pageurl.DEFAULT_DASHBOARD_PAGE_URL, label: 'Dashboard' },
+  { link: pageurl.USER_PROFILE_PAGE_URL, label: 'Profile' },
 ];
 
 const trustees = [
