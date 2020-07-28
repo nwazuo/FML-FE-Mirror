@@ -41,20 +41,24 @@ const Navbar = (props) => {
             id="exCollapsingNavbar"
           >
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item ">
-                <Link
-                  className="nav-link"
-                  to={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
-                >
-                  FUND <span className="sr-only">(current)</span>
-                </Link>
-              </li>
+              {props.user.authenticated && (
+                <li className="nav-item ">
+                  <Link
+                    className="nav-link"
+                    to={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
+                  >
+                    FUND <span className="sr-only">(current)</span>
+                  </Link>
+                </li>
+              )}
 
-              <li className="nav-item ">
-                <Link className="nav-link" to={pageurl.LOAN_REQUEST_PAGE_URL}>
-                  REQUEST <span className="sr-only">(current)</span>
-                </Link>
-              </li>
+              {props.user.authenticated && (
+                <li className="nav-item ">
+                  <Link className="nav-link" to={pageurl.LOAN_REQUEST_PAGE_URL}>
+                    REQUEST <span className="sr-only">(current)</span>
+                  </Link>
+                </li>
+              )}
 
               <li className="nav-item ">
                 <Link className="nav-link" to={pageurl.ABOUT_US_PAGE_URL}>
@@ -62,14 +66,16 @@ const Navbar = (props) => {
                 </Link>
               </li>
 
-              <li className="nav-item ">
-                <Link
-                  className="nav-link"
-                  to={pageurl.DEFAULT_DASHBOARD_PAGE_URL}
-                >
-                  DASHBOARD <span className="sr-only">(current)</span>
-                </Link>
-              </li>
+              {props.user.authenticated && (
+                <li className="nav-item ">
+                  <Link
+                    className="nav-link"
+                    to={pageurl.DEFAULT_DASHBOARD_PAGE_URL}
+                  >
+                    DASHBOARD <span className="sr-only">(current)</span>
+                  </Link>
+                </li>
+              )}
               {!props.user.authenticated ? (
                 <li className="nav-item ">
                   <Link
