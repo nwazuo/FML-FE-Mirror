@@ -20,30 +20,30 @@ import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerifi
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 import CreateBlogPost from './blog/create_blog_post';
-
-
+import CampaignDetail from './campaignDetail/campaign';
 
 export {
-  Login,
-  SignUp,
-  Terms,
-  PrivacyPage,
-  FAQ,
-  ContactUs,
-  LandingPage,
-  UserProfile,
-  Recommendations,
-  AboutUs,
-  LoanRequest,
-  Page404,
-  ComingSoon,
-  Campaign,
-  Blog,
-  SinglePost,
-  Payment,
-  InviteRecommender,
-  EmailConfirmation,
-  EmailVerification,
-  EmailConfirmationFailure,
-  CreateBlogPost
+	Login,
+	SignUp,
+	Terms,
+	PrivacyPage,
+	FAQ,
+	ContactUs,
+	LandingPage,
+	UserProfile,
+	Recommendations,
+	AboutUs,
+	LoanRequest,
+	Page404,
+	ComingSoon,
+	Campaign,
+	Blog,
+	SinglePost,
+	Payment,
+	InviteRecommender,
+	EmailConfirmation,
+	EmailVerification,
+	EmailConfirmationFailure,
+	CreateBlogPost,
+	CampaignDetail,
 };
