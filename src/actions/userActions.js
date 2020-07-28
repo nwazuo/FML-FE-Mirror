@@ -71,11 +71,11 @@ export const loginUser = (formInput, history) => (dispatch) => {
       // });
     })
     .catch((err) => {
-      console.log(err.response);
+      console.log(err.response.data.message);
       dispatch({ type: LOADED_UI });
       dispatch({
         type: SET_ERRORS,
-        payload: err.response,
+        payload: err.response.data.message,
       });
     });
 };
