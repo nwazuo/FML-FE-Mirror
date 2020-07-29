@@ -92,7 +92,7 @@ const EditProfile = (props) => {
                         <h4><b>Basic Information</b></h4>
                     </div>
                     <div className="col-md-7">
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={onSubmit} method="POST">
                             {/* {First column} */}
                             <div class="form-row">
                                 <div className="form-group col-md-6 col-6 mb-4">
@@ -172,7 +172,8 @@ const EditProfile = (props) => {
                                     placeholder={`${address}`} />
                                 </div>
                             </div>
-                            <button type="submit" className="btn btn-primary col-md-6 col-5 btn-fml-secondary mb-4">Save Changes</button>
+                            <button type="submit" className="btn btn-primary col-md-6 col-5 btn-fml-secondary mb-4"  
+                            onClick={(e) => { onSubmit(e); }}>Save Changes</button>
                         </form>   
                     </div>
                 </div>
