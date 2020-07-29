@@ -137,7 +137,7 @@ class Recommendations extends Component {
                     <h2 className="font-weight-bold">Recommendations ({  (recommendations.length < 13  || recommendations.length === 12 ) ? recommendations.length : <span>12</span> })</h2> 
                      
      
-                { recommendations.length > 0 ? recommendations.slice(0,12).map((recommendation, idx) => {
+                { recommendations.length !== 0 ? recommendations.slice(0,12).map((recommendation, idx) => {
                   const fName = {...{...recommendation}.user}.firstName;
                   const lName = {...{...recommendation}.user}.lastName;
                   const photo = {...{...recommendation}.user}.photoURL;
@@ -159,7 +159,9 @@ class Recommendations extends Component {
                 </div>       
 
                   );
-                }) : 
+                }) : <div>
+
+
                 <div  className={["py-5", "d-flex", "justify-content-center", "align-items-center","jumbotron",styles.bgnone, 
                   styles.NoData].join(' ')}>
                  <div id="noRcom" className={["spinner-grow  text-danger bigig"].join(' ')} style={{transform:"translateX(-50%)"}}></div>
@@ -170,7 +172,11 @@ class Recommendations extends Component {
                   </h3>
                  </div>
                
-                </div>}
+                </div>
+
+
+                </div>
+                }
               </div>
 
 
