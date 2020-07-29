@@ -14,6 +14,9 @@ function validate(data,setDataError){
     if(article_title!=="" || article_description !== "" || article_post!=="" ){return false;}return true;
 }
 
+function verifyUser(){if(token){return true;}return false}
+
+
 function createBlogPost(data,setStatus,setRequested,setLoading){
     setLoading(true);
     Server.authBlogPost(`${createBlogPostEndPoint}`,data,token,headers)
@@ -53,7 +56,8 @@ const BlogController ={
     validate,
     getAllBlogPosts,
     getBlogPost,
-    makeComment
+    makeComment,
+    verifyUser
 }
 
 export default BlogController;

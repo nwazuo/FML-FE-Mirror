@@ -1,10 +1,19 @@
-import { LOADING_USER, CLEAR_ERRORS, SET_ERRORS, LOADING_UI, LOADED_UI, VERIFY_EMAIL } from './types';
-
+import {
+  LOADING_USER,
+  CLEAR_ERRORS,
+  SET_ERRORS,
+  LOADING_UI,
+  LOADED_UI,
+  VERIFY_EMAIL,
+  TERMS_CHECKED,
+  TERMS_UNCHECKED,
+} from './types';
 
 const initialState = {
   loading: false,
   errors: null,
-  message: null
+  message: null,
+  termsChecked: false,
 };
 
 export default function (state = initialState, action) {
@@ -32,8 +41,9 @@ export default function (state = initialState, action) {
     case VERIFY_EMAIL:
       return {
         ...state,
-        message: action.payload
-      }
+        message: action.payload,
+      };
+
     default:
       return state;
   }
