@@ -145,7 +145,7 @@ const EditProfile = (props) => {
                                     <input 
                                     type="text"
                                     id="inputState" 
-                                    value={genderP}
+                                    value={"Male"}
                                     onChange={handleGender}
                                     class="form-control form-control-sm" disabled  />
                                 </div>

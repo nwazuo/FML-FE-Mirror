@@ -52,6 +52,7 @@ export const logoutUser = (history) => (dispatch) => {
   dispatch({ type: SET_UNAUTHENTICATED });
   history.push(pageurl.LOGIN_PAGE_URL);
 };
+
 export const loginUser = (formInput, history) => (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
   dispatch({ type: LOADING_UI });
@@ -135,12 +136,15 @@ export const getUserData = () => (dispatch) => {
         type: SET_USER,
         payload: res.data,
       });
+      
       console.log(res.data);
     })
     .catch((err) => console.log(err));
 };
-export const editUserProfile = (history, _id) => (dispatch) => {
+export const editUserProfile = (history, _id,{}) => (dispatch) => {
+  dispatch({ type: CLEAR_ERRORS });
   dispatch({ type: LOADING_UI });
+  
   axios
     .put(`${baseURL}/api/users/${_id}`)
     .then((res) => {
@@ -148,8 +152,11 @@ export const editUserProfile = (history, _id) => (dispatch) => {
         type: SET_USER,
         payload: res.data,
       });
+      const { token} = res.data.data;
+      setAuthorizationHeader(token);
       dispatch({ type: LOADED_UI });
       history.push(pageurl.USER_PROFILE_PAGE_URL);
+      console.log(history);
     })
     .catch((err) => console.log(err));
 };
