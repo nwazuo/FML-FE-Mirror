@@ -60,11 +60,13 @@ const Navbar = (props) => {
                 </li>
               )}
 
-              <li className="nav-item ">
-                <Link className="nav-link" to={pageurl.ABOUT_US_PAGE_URL}>
-                  ABOUT <span className="sr-only">(current)</span>
-                </Link>
-              </li>
+              {!props.user.authenticated && (
+                <li className="nav-item ">
+                  <Link className="nav-link" to={pageurl.ABOUT_US_PAGE_URL}>
+                    ABOUT <span className="sr-only">(current)</span>
+                  </Link>
+                </li>
+              )}
 
               {props.user.authenticated && (
                 <li className="nav-item ">

@@ -9,6 +9,7 @@ import {Button,Status} from '../../../utilities'
 import TermsAndCondition from './termsandcondition'
 
 const CreateBlogPost = ({...props}) => {
+const[isLogged,setIsLogged]=React.useState(true);
 const[isStatus,setIsStatus]=React.useState(false);const[isRequested,setIsRequested]=React.useState(false);
 const[isLoading,setIsLoading]=React.useState(false);
 const[inputDetails,setInputDetails] = React.useState({article_title:"",article_description:"",article_post:"",article_img_src:"",article_img_alt:"blog_post"});
@@ -17,15 +18,21 @@ const[showAgreeTC,setShowAgreeTC] = React.useState(false);
 const[agreeTC,setAgreeTC] = React.useState(false);
 function handleForm(e){setInputDetails({...inputDetails,[e.target.name]:e.target.value});}
 function handleSubmit(e){e.preventDefault();
-    if(BlogController.validate(inputDetails,setInputError)){
-        BlogController.createBlogPost(inputDetails,setIsStatus,setIsRequested,setIsLoading,setInputError,inputError);
+    if(BlogController.verifyUser()){
+        if(BlogController.validate(inputDetails,setInputError)){
+            BlogController.createBlogPost(inputDetails,setIsStatus,setIsRequested,setIsLoading,setInputError,inputError);
+        }
+        setIsLogged(true);
+    }else{
+        setIsLogged(false);
     }
+    
 }
 function handleUpload(e){try{const image = e.target.files[0];setInputDetails({...inputDetails,'article_img_src':`${image}`});}catch(error){console.log(error.message);}}    
 
-
 return(<ScrollIntoView><Navbar/>
-    {isRequested && <Status closeStatus={()=>{setIsRequested(false);setIsLoading(false);isStatus && window.open(pageurl.CREATE_NEW_POST_URL,'_self')}} status_message={isStatus ? "Post Submitted Successfully" : "Post Not Submitted"} />}
+    {isRequested && <Status buttonTxt="Back To Blog" buttonUrl={pageurl.BLOG_PAGE_URL} closeStatus={()=>{setIsRequested(false);setIsLoading(false);isStatus && window.open(pageurl.CREATE_NEW_POST_URL,'_self')}} status_message={isStatus ? "Post Submitted Successfully" : "Post Not Submitted"} />}
+    {!isLogged && <Status buttonTxt="Go To Login Page" buttonUrl={pageurl.LOGIN_PAGE_URL} closeStatus={()=>{setIsLogged(true);setIsLoading(false);}} status_message={"Login To Continue"} />}
     <div className={blog.create_blog_post_qobi}>
         {showAgreeTC&&<TermsAndCondition agree_btn={()=>{setShowAgreeTC(!showAgreeTC);setAgreeTC(true)}} cancel_btn={()=>{setShowAgreeTC(!showAgreeTC);setAgreeTC(false)}}/>}
          <div className={blog.main_container_qobi}>
@@ -46,7 +53,7 @@ return(<ScrollIntoView><Navbar/>
                             <span onClick={()=>{setShowAgreeTC(!showAgreeTC)}} style={{color:"#FB405C",cursor:"pointer"}}>&nbsp;FundMyLaptop Terms and Conditions</span></p>
                         </span>
                         <Button load={isLoading} propsTitle={"Submit Post"} onClick={(e)=>{handleSubmit(e)}}></Button>
-                        <div style={{padding:"30px 0"}}><Link to={pageurl.BLOG_PAGE_URL}>Back To Blog Page</Link></div>
+                        <div style={{padding:"30px 0"}}><Link to={pageurl.BLOG_PAGE_URL} style={{color:"#FB405C"}}>Back To Blog Page</Link></div>
                     </form>
                 </div>
             </div>

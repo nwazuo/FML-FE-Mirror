@@ -1,7 +1,8 @@
 .main_container_qobi{width:90%;margin:0 auto;}
+.main_container_qobi img{width:25px;}
 .header_title_qobi{margin:0;padding:0;width:100%;height:300px;text-align:center;background:#04172A;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.create_new_qobi{text-align:right;padding:20px 0;margin-top:auto;}
-.create_new_qobi button{width:200px;height:50px;border:none;background:#FB405C;font-size:16px;font-weight:400;color:#fff;outline:none;}
+.create_new_qobi{text-align:center;padding:30px 0 0;}
+.create_new_qobi button{width:max-content;height:50px;border:none;border-bottom:1px solid #8b0116;background:none;font-size:14px;font-weight:bold;color:#FB405C;outline:none;}
 .header_title_qobi h1{margin:0;color:#fff;font-style: normal;font-weight: bold;font-size: 48px;line-height: 62px;letter-spacing: 0.02em;}
 .stories_qobi{margin:0;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 /* blog component starts*/
@@ -9,6 +10,7 @@
 .img_content_qobi h3{font-style:normal;font-weight:500;font-size:30px;line-height:39px;letter-spacing:0.02em;color:#000;cursor: pointer;transition:.2s ease-in-out;}
 .img_content_qobi h3:hover{color:#FB405C;}
 .img_content_qobi p{font-style:normal;font-weight:500;font-size:16px;line-height:21px;letter-spacing:0.02em;color:#717171;}
+.img_container_qobi{cursor:pointer;}
 .img_container_qobi, .img_container_qobi img{width:100%;height:auto;margin-bottom:20px;background: #CBCBCB;}
 .title_qobi{margin-bottom:10px;}.description_qobi{height:65px;overflow:hidden;}
 .text_content_qobi,.title_qobi,.description_qobi{width:100%;}
