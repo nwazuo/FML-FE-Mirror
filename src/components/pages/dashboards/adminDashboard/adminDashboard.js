@@ -74,7 +74,7 @@ class AdminDashboard extends Component {
                         activeClassName="active-link"
                         exact
                       >
-                        ADD FAQS
+                        FAQS
                       </NavLink>
                     </li>
                     <li className="nav-item my-2">

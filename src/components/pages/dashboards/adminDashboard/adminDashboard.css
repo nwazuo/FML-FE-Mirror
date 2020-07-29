@@ -166,14 +166,13 @@
   font-weight: lighter;
 }
 
-/** Sidebar stylings */
+/** FAQs page */
 
-@media screen and (max-width: 392px) {
-  .adminDashboard .xander {
-    margin-top: 40px;
-  }
+.adminDashboard .box-radius {
+  border-radius: 10px;
 }
 
+/** Sidebar stylings */
 
 @media screen and (max-width: 767.98px) {
  .adminDashboard .avatar {

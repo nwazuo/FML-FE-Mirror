@@ -1,6 +1,6 @@
 // import {FORM_SUBMITED} from '../reducers/types';
 import axios from 'axios';
-import {CREATE_REQUEST, SET_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS} from '../reducers/types';
+import {CREATE_REQUEST, SET_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS, DELETE_FAQS} from '../reducers/types';
 // let baseURL = process.env.REACT_APP_BASE_URL;
 let baseURL = 'https://api.fundmylaptop.com';
 
@@ -61,5 +61,18 @@ export function addFaqs (data) {
                 payload: res.statusText
             }))
             .catch(err => console.error(err))
+    }
+}
+
+export function deleteFaqs (data) {
+    return dispatch => {
+        console.log(data)
+        //axios
+        //    .delete(`${baseURL}/api/faqs/create`, data)
+        //    .then(res => dispatch({
+        //        type: ADD_FAQS,
+        //        payload: res.statusText
+        //    }))
+        //    .catch(err => console.error(err))
     }
 }
