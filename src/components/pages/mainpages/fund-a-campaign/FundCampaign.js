@@ -4,6 +4,7 @@ import '../../../assets/bootstrap.css';
 import styles from './Fundcampaign.module.css';
 import head from './images/head.png';
 import tag from './images/tag.png';
+import fakedata from './fakedata.js';
 
 
 class EachCampaign extends Component {
@@ -19,28 +20,28 @@ class EachCampaign extends Component {
             <div className={styles.campaign_component}>
                 <div className={['mb-4', styles.line].join(" ")}></div>
                 <div className="container">
-                    <h3>Fund John Doe laptop purchase</h3>
+                    <h3>Fund {this.props.camp.Name} laptop purchase</h3>
                     <div className="row mb-4">
                         <div className={['col-12', styles.details_row].join(" ")}>
                             <img src={head} className={['float-left',styles.row_img].join(" ")}></img>
                             <div className={["d-flex flex-wrap align-items-center", styles.details_flex].join(" ")}>
                                 <div className='mr-5'>
-                                    <h3>by <span style={span1}>John Doe</span><span><img className="ml-2" src={tag}className={styles.img2}></img></span></h3>
+                                    <h3>by <span style={span1}>{this.props.camp.Name}</span><span><img className="ml-2" src={tag}className={styles.img2}></img></span></h3>
                                 </div>
                                 <div className="pt-2">
-                                    <p><span style={span2}>1 Campaign Created</span><span style={span2}>|</span>  <span style={span2}>Lagos, Nigeria</span><span style={span2}>|</span><span style={span2}>12/08/2020</span></p>
+                                    <p><span style={span2}>{this.props.camp.campaigns} Campaign Created</span><span style={span2}>|</span>  <span style={span2}>{this.props.camp.location}</span><span style={span2}>|</span><span style={span2}>{this.props.camp.date}</span></p>
                                 </div>
                             </div>
                         </div>
                         <div className={['container mb-4', styles.description].join(" ")}>
-                            <p>I run a small freelancing business in the heart of Lagos. My former laptop finally packed up after several attempts at refurbishing it, I would like a loan to get a new laptop to continue my business. My business loremipsum.com generates enough money to repay the loan in three months. I would really appreciate funding for this campaign. Thank you for your time 🙂...........</p>
+                            <p>{this.props.camp.description}</p>
                             <div className={styles.progress_div}>
                                 <div className="row">
                                     <div className="col-9">
-                                        <h3>Raised : NGN 65,200 of NGN 250,000</h3>
+                                        <h3>Raised : NGN {this.props.camp.raised} of NGN {this.props.camp.total}</h3>
                                     </div>
                                     <div className="col-3">
-                                        <h3 className="float-right">36.54%</h3>
+                                        <h3 className="float-right">{(this.props.camp.raised/this.props.camp.total) * 100}%</h3>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +50,7 @@ class EachCampaign extends Component {
                             </div>
                             <div className={['d-flex flex-wrap', styles.button_flex].join(" ")}>
                                 <button className={styles.btn1}>FUND THIS CAMPAIGN</button>
-                                <button className={styles.btn2}>SHARE THIS CAMPAIGN</button>
+                                <button className={styles.btn2}>VIEW THIS CAMPAIGN</button>
                             </div>
                         </div>
                     </div>
@@ -61,12 +62,24 @@ class EachCampaign extends Component {
 
 
 export default class FundCampaign extends Component {
+        state = {
+            data : fakedata,
+            clicked: 0
+        }
+        handleclick = () => {
+            this.setState(prevstate => {
+                return {
+                    clicked: prevstate.clicked + 1
+                }
+            })
+        }
     render() {
         let load = {
             width:120,
             height:60,
             backgroundColor: "#FB3F5C"
         }
+        let comps = this.state.data.map(camp => <EachCampaign camp={camp} key = {camp.id} /> )
         return (
             <div className={styles.body}>
                 <Navbar />
@@ -87,13 +100,10 @@ export default class FundCampaign extends Component {
                         </div>
                     </div>
                     {/*  */}
-                    <EachCampaign />
-                    <EachCampaign />
-                    <EachCampaign />
+                    {this.state.clicked == 0 ? [comps[0], comps[1], comps[2]] : this.state.clicked > 0 ? comps : null}
                     <div className="d-flex justify-content-center align-items-center mb-4">
-                        <button className="btn btn-sm btn-danger" style={load}>Load More</button>
+                        <button className="btn btn-sm btn-danger" onClick ={this.handleclick} style={load}>Load More</button>
                     </div>
-                
                 <Footer />
             </div>
         )
