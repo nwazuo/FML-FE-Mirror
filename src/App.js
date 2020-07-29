@@ -27,6 +27,7 @@ import {
   EmailConfirmation,
   SinglePost,
   CreateBlogPost,
+  EditProfile,
   ResetPassword,
   FundCampaign,
 } from './components/pages/mainpages';
@@ -62,6 +63,9 @@ function App() {
         <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
         <Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
+
+        <Route exact path={pageurl.EDIT_PROFILE} component={EditProfile} />
+
 
         <Route
           exact

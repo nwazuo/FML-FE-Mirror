@@ -104,7 +104,7 @@ const UserProfile = (props) => {
                   <p className={styles.UserType}>Fundee</p>
                 </div>
               </div>
-              <Link to="/user-profile" className={styles.Edit}>
+              <Link to={pageurl.EDIT_PROFILE} className={styles.Edit}>
                 <svg
                   width="1.8em"
                   height="1.8em"
