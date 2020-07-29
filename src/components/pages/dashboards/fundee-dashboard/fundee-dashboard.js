@@ -46,15 +46,12 @@ const FundeeDashboard = ({fundee,fetchFundeeDashboard }) => {
      
   });
   useEffect( ()=>{
-    // props.fetchFundeeDashboard()
     fetchFundeeDashboard()
   }, [])
   let url = "";
   
  const  {allrefunds, amountPermonth, interestPerMonth, interestRate, loanedAmount, paidAmount,
  pendingAmount , totalTerm}=fundee
- console.log('here fundeee',fundee)
- console.log('heree allrefunds',allrefunds)
 
   return (
     <ScrollIntoView>
@@ -232,60 +229,45 @@ const FundeeDashboard = ({fundee,fetchFundeeDashboard }) => {
             Repayment History
           </h4>
           <div className="table-container mt-3 overflow-auto">
-            
-              { allrefunds && allrefunds.length>0
-              ? <table className="table border-bottom">
-              <thead className="bg-fml-secondary text-light font-weight-bold">
-                <tr>
-                  <td>DATE</td>
-                  <td>AMOUNT PAID</td>
-                  <td>AMOUNT REMAINING</td>
-                  <td>PAYMENT METHOD</td>
-                  <td>REFERENCE ID</td>
-                </tr>
-              </thead>
-              <tbody>
-                  { allrefunds.map(history=> 
+              <table className="table border-bottom">
+                  <thead className="bg-fml-secondary text-light font-weight-bold">
                     <tr>
-                       <td className="date">
+                      <td>DATE</td>
+                      <td>AMOUNT PAID</td>
+                      <td>AMOUNT REMAINING</td>
+                      <td>PAYMENT METHOD</td>
+                      <td>REFERENCE ID</td>
+                    </tr>
+                  </thead>
+                  { allrefunds && allrefunds.length>0 &&
+                  <tbody>
+                      { allrefunds.map(history=> 
+                        <tr key={history.referenceId}>
+                          <td className="date">
                             {/* <span className="day">25</span>
                             <br />
                             <span className="month">JULY</span> */}
                             {history.date}
                           </td>
-                      <td>INR {history.amountPaid}</td>
-                      <td>INR {history.amountRemaining}</td>
-                      <td>{history.refundMedium}</td>
-                      <td>{history.referenceId}</td>
-                    </tr>)
+                          <td>INR {history.amountPaid}</td>
+                          <td>INR {history.amountRemaining}</td>
+                          <td>{history.refundMedium}</td>
+                          <td>{history.referenceId}</td>
+                        </tr>) 
+                      }
+                  </tbody>
+                  }
                 
-              }
-              </tbody>
-                </table>
-              :<div>
-              <table className="table border-bottom">
-              <thead className="bg-fml-secondary text-light font-weight-bold">
-                <tr>
-                  <td>DATE</td>
-                  <td>AMOUNT PAID</td>
-                  <td>AMOUNT REMAINING</td>
-                  <td>PAYMENT METHOD</td>
-                  <td>REFERENCE ID</td>
-                </tr>
-                 </thead>
-                </table>
+              </table>
+
+              {allrefunds.length<=0 && 
                 <div className="my-5 d-flex flex-column align-items-center">
-                    <img className="img-fluid" src={noHistory} alt="no history" />
-                    <h3 className="mb-4 text-center table__no-history-title">
-                      You Have No History Yet.
-                      
-                    </h3>
+                  <img className="img-fluid" src={noHistory} alt="no history" />
+                   <h3 className="mb-4 text-center table__no-history-title">
+                     You Have No History Yet.
+                   </h3>
                 </div>
-              </div>
               }
-               
-           
-            
           </div>
         </section>
 
