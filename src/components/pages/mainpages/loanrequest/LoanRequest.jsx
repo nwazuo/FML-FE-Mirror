@@ -29,6 +29,8 @@ function reducer(state, { field, value }) {
   };
 }
 
+
+
 const LoanRequest = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -71,6 +73,9 @@ const LoanRequest = (props) => {
   // }
 
   function closeModal() {
+    let textfont = {
+      color: 'white',
+    }
     document.getElementById('message').classList.add('inactive');
     document.getElementById('overlay').classList.add('inactive');
   }
@@ -97,19 +102,20 @@ const LoanRequest = (props) => {
                 } */}
 
       <div className="loan-wrapper mt-4">
-        <div>
-          <span>Dashboard > </span>
+        <div className="breadcrumb-1">
+          <span>Dashboard ></span>
           <span className="create"> Create Loan Request</span>
         </div>
 
         <form id="loanRequest" onSubmit={onSubmit} method="POST">
-          <div className="top-content">
-            <div className="upload-wrapper">
-              <div className="d-flex flex-column align-items-center upload">
-                <h4>Upload a Picture</h4>
-                <p>Click button to upload a picture of yourself</p>
-                {/* eslint-disable-next-line */}
-                <input
+          
+          <div className="top-content" style={{color: "white"}}>
+            <div className="upload-wrapper" style={{color: "white" }}>
+              <div className="d-flex flex-column align-items-center upload" style={{color: "white" , borderColor: "white"}}>
+                <h4 style={{color: "white"}}>Upload your video </h4>
+                <p style={{color: "white"}}>Click button to upload your pitch video</p>
+                
+                <input style={{color: "white", width:"50%"}}
                   type="file"
                   placeholder="Browse"
                   name="photoUrl"
@@ -117,79 +123,40 @@ const LoanRequest = (props) => {
                   onChange={onChange}
                   value={photoUrl}
                 />
-                <p>File type: Jpg, Png</p>
-                <p>File size: not more than 2MB</p>
+                <p style={{color: "white"}}>File type: Jpg, Png</p>
+                <p style={{color: "white"}}> File size: not more than 2MB</p>
               </div>
 
-              <div className="d-flex upload-add">
+              {/* <div className="d-flex upload-add">
                 <div className="d-flex align-items-center justify-content-center">
                   <img src={PlusIcon} alt="" />
                 </div>
                 <div className="d-flex align-items-center justify-content-center">
                   <img src={PlusIcon} alt="" />
                 </div>
-              </div>
-            </div>
+              </div> */}
+          </div>
 
-            <div className="motivational-wrapper">
-              <h5>Motivational text</h5>
-              <p>
-                Why do you want this loan? Why is it important to you get the
-                loan? Put all this down in the field
+            <div className="motivational-wrapper" style={{color: "white"}}>
+              <h5 style={{color: "white"}}>Pitch</h5>
+              <p style={{color: "white"}}>
+                Why do you need a loan?
+                
               </p>
 
-              <label>Description</label>
-              <textarea placeholder="Description of loan br asked for"></textarea>
-              <p>Not more than 100 words</p>
+              <label style={{color: "white"}}>Loan Purpose</label>
+              <textarea style={{backgroundColor: "#FB3F5C", borderColor: "white"}} placeholder="Description of loan br asked for"></textarea>
+              <p style={{color: "white"}}>Not more than 100 words</p>
             </div>
           </div>
-
-          <div className="loan-details-wrapper">
-            <div className="loan-details-content">
-              <h5>Loan details</h5>
-              <div className="form-group">
-                <div>
-                  <label>Title*</label>
-                  <input
-                    type="text"
-                    placeholder="Title"
-                    name="title"
-                    id="title"
-                    onChange={onChange}
-                    value={title}
-                  />
-                </div>
-
-                <div>
-                  <label>Amount needed*</label>
-                  <input
-                    type="number"
-                    placeholder="200, 000"
-                    name="amount"
-                    id="amount"
-                    onChange={onChange}
-                    value={amount}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label>Description</label>
-                <textarea
-                  placeholder="Description of loan being asked for"
-                  name="description"
-                  id="description"
-                  onChange={onChange}
-                  value={description}
-                ></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div className="payback-wrapper">
-            <h5>Payback plan</h5>
-            <div className="form-group">
-              <div>
+       
+          <div className="payback-wrapper card loan-form">
+            {/* <h5>Payback plan</h5> */}
+            <div className="container ">
+              <div className="column">
+              <div className="row">
+              <div className="col-6">
+              <h5>Payback plan</h5>
                 <label>Repayment Period</label>
                 <input
                   type="date"
@@ -200,23 +167,50 @@ const LoanRequest = (props) => {
                   value={repaymentPeriod}
                 />
               </div>
-
-              <div>
-                <label>Repayment Period</label>
+              <div className="col-6"> 
+              <h5>Loan details</h5>
+                <label>Loan Title</label>
                 <input
                   type="text"
+                  placeholder="Title"
+                  name="title"
+                  id="title"
+                  onChange={onChange}
+                  value={title}
+                  
+                />
+              </div>
+              </div>
+              <div className="row">
+              <div className="col-6">
+                <label>Payment Location</label>
+                <input
+                  type="location"
                   placeholder="Lagos, Nigeria"
                   name="location"
                   id="location"
                   onChange={onChange}
                   value={location}
+  
                 />
               </div>
-
-              <div>
+              <div className="col-6"> 
+                <label>Amount </label>
+                <input
+                  type="number"
+                  placeholder="Enter up to 200,000"
+                  name="amount"
+                  id="amount"
+                  onChange={onChange}
+                  value={amount}
+                />
+              </div>
+              </div>
+              <div className="row">
+              <div className="col-6">
                 <label>Repayment Times</label>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="6"
                   name="repaymentTimes"
                   id="repaymentTimes"
@@ -224,12 +218,83 @@ const LoanRequest = (props) => {
                   value={repaymentTimes}
                 />
               </div>
+              <div className="col-6"> 
+                <label>Loan Description</label>
+                <input
+                  type="text"
+                  placeholder="Description of loan asked for"
+                  name="description"
+                  id="description"
+                  onChange={onChange}
+                  value={description}
+                />
+              </div>
+              </div>
+              </div>
             </div>
           </div>
+          <div className="social-head" >
+          <h4>Social Media</h4>
+          </div>
 
-          <div className="invite-wrapper">
+          <div className="payback-wrapper ">
+            <div className="container social-form card ">
+            <div className="column">
+              <div className="row">
+              <div className="col-6">
+                <label>Twitter Profile</label>
+                <input
+                  type="text"
+                  placeholder="Enter Url"
+                  name="twitter"
+                  id="twitter"
+                  // onChange={onChange}
+                  // value={twitter}
+                />
+              </div>
+              <div className="col-6"> 
+                <label>Facebook Profile</label>
+                <input
+                  type="text"
+                  placeholder="Enter Url"
+                  name="facebook"
+                  id="facebook"
+                  // onChange={onChange}
+                  // value={facebook}
+                />
+              </div>
+              </div>
+              <div className="row">
+              <div className="col-6">
+                <label>LinkendIn profile</label>
+                <input
+                  type="text"
+                  placeholder="Enter Url"
+                  name="linkedin"
+                  id="linkedin"
+                  // onChange={onChange}
+                  // value={linkedin}
+  
+                />
+              </div>
+              <div className="col-6"> 
+                <label>Instagram Profile</label>
+                <input
+                  type="text"
+                  placeholder="Enter Url"
+                  name="text"
+                  id="instagram"
+                  // onChange={onChange}
+                  // value={instagram}
+                />
+              </div>
+              </div>          
+              </div>
+              </div>
+              </div>
+              
+          {/* <div className="invite-wrapper">
             <h5>Invite a recommender</h5>
-
             <div className="form-group">
               <div>
                 <label>Name</label>
@@ -240,8 +305,8 @@ const LoanRequest = (props) => {
                 <input type="email" placeholder="recommender@gmail.com"></input>
               </div>
             </div>
-          </div>
-
+          </div> */}
+          
           <button className="btn" type="submit" disabled={loading}>
             {loading && (
               <span
@@ -251,7 +316,7 @@ const LoanRequest = (props) => {
               ></span>
             )}
             {loading && <span>Loading</span>}
-            {!loading && <span>Create Request</span>}
+            {!loading && <span>Submit Request</span>}
           </button>
         </form>
       </div>
