@@ -65,7 +65,7 @@ function App() {
 
         <Route
           exact
-          path={pageurl.SINGLE_POST_URL + `/:details`}
+          path={pageurl.SINGLE_POST_URL + `/:userid`}
           component={SinglePost}
         />
 
