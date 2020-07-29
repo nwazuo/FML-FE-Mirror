@@ -6,6 +6,42 @@
   --red: #fb3f5c;
 }
 
+.adminDashboard .container-fluid {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.adminDashboard .logo-container {
+  border-bottom: 1px solid #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.adminDashboard .avatar {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.adminDashboard .pos__abs {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.adminDashboard .pointer {
+  cursor: pointer;
+}
+
+.adminDashboard .active-link {
+  color: #06305b;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
 .adminDashboard h5 {
   font-size: calc(13px + (24 - 13) * ((100vw - 320px) / (1600 - 320)));
   line-height: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));
@@ -81,19 +117,17 @@
 }
 
 .adminDashboard .nav-link {
-  color: #FFFFFF;
+  border-radius: 12px;
   transition: all 1s;
   text-align: center;
   font-family: DM Sans;
-    font-style: normal;
+  font-style: normal;
 }
 
 .adminDashboard .nav-link:hover{
   color:  #05182B;
   background-color: #FFFFFF;
   border-radius: 12px;
-  margin-right: 28px;
-  margin-left: -10px;
   text-align: center;
 }
 
@@ -144,6 +178,7 @@
 @media screen and (max-width: 767.98px) {
  .adminDashboard .avatar {
     width: 40px;
+    border-radius: 50%;
   }
   .adminDashboard .sidebar {
     position: absolute;
@@ -152,12 +187,9 @@
     top: 0;
     left: 0;
     z-index: 1100;
-    margin-left: -58.333%;
+    margin-left: -50%;
   }
 
-  
-
-  
   .adminDashboard .sidebar_open {
     animation: sidebar-open 0.3s forwards;
   }
@@ -168,7 +200,7 @@
   
   @keyframes sidebar-open {
     from {
-      margin-left: -58.333%;
+      margin-left: -50%;
     }
     to {
       margin-left: 0%;
@@ -180,7 +212,7 @@
       margin-left: 0;
     }
     to {
-      margin-left: -58.333%;
+      margin-left: -50%;
     }
   }
 }

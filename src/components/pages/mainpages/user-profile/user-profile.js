@@ -8,7 +8,7 @@ import ProfileInfo from './profile-info/profile-info';
 import ProfileStat from './profile-stat/profile-stat';
 import RecommendBox from './recommend-box/recommend-box';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
-import pageurl from '../../../router/url/pageurl';
+import pageurl from '../../../router/url/pageurl'
 //Redux stuff
 import { connect } from 'react-redux';
 import axios from 'axios';

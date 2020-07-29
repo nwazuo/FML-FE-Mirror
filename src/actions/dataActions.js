@@ -52,15 +52,13 @@ export function fetchSearchFaqs (query) {
     }
 }
 
-export function addFaqs (query) {
+export function addFaqs (data) {
     return dispatch => {
         axios
-            .post(`${baseURL}/api/faqs/create`, {
-                question: query
-            })
+            .post(`${baseURL}/api/faqs/create`, data)
             .then(res => dispatch({
                 type: ADD_FAQS,
-                payload: res
+                payload: res.statusText
             }))
             .catch(err => console.error(err))
     }
