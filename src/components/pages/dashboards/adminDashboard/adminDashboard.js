@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./adminDashboard.css";
 import { NavLink, withRouter } from 'react-router-dom';
 import alerm from "./img/alerm.png";
-import avatar from "./img/avatar.png";
 import left from "./img/left-logo.png";
 import Ham1 from "./img/Ham-1.png";
 import Ham2 from "./img/Ham-2.png";

@@ -29,7 +29,7 @@ class Payment extends React.Component {
     }
 
     onHandleSubmit(e) {
-        const { amount, holder, number, date, cvv } = this.state
+        const { amount, number, date, cvv } = this.state
         const newDate = date.split('/')
         const data = {
             card_number: number,
@@ -37,7 +37,7 @@ class Payment extends React.Component {
             amount,
             expiry_year: newDate[1],
             expiry_month: newDate[0],
-            fundee: 'alkaseemabubakar27@gmail.com'
+            fundee: this.props.user.credentials.data.email
         }
         this.props.makePayment(data)
         this.setState({ INITIAL_STATE })
@@ -51,7 +51,7 @@ class Payment extends React.Component {
         return (
             <div className="container-fluid py-0 bg-light">
                 <div className="row vh-100 justify-content-center align-items-center px-4 px-md-0">
-                    <div className={["col-md-8 col-lg-6 shadow-sm px-0 px-lg-0 px-xl-5 py-5 bg-white", PaymentCss.box_shadow].join(' ')}>
+                    <div className={["col-md-8 col-lg-6 shadow-sm px-0 px-lg-0 px-xl-5 py-5 bg-white", PaymentCss.box_shadow, PaymentCss.payment_card].join(' ')}>
                         <h2 className="text-center">Fund this Campaign</h2>
                         <form className="px-5 mt-4" onSubmit={this.onHandleSubmit}>
                             <div className="form-group">
@@ -116,6 +116,7 @@ class Payment extends React.Component {
                             <div className="form-group row justify-content-center mt-4">
                                 <div className="col-6 col-lg-5">
                                     <button className="btn btn-danger btn-block py-3 font-weight-bold" type="submit">FUND NOW</button>
+                                    <p className="small text-muted mt-2 text-center">An OTP will be sent to your mail</p>
                                 </div>
                             </div>
                             <p className="text-center mt-4">Secured by Flutterwave</p>
@@ -127,12 +128,14 @@ class Payment extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => ({
+    user: state.user,
+});
   
 const mapDispatchToProps = dispatch => {
     return {
-        //fetchSearchFaqs: (val) => dispatch(fetchSearchFaqs(val)),
         makePayment: (data) => dispatch(makePayment(data))
     }
 };
 
-export default connect(null, mapDispatchToProps)(Payment);
+export default connect(mapStateToProps, mapDispatchToProps)(Payment);

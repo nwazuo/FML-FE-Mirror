@@ -14,6 +14,8 @@ import Campaign from './Campaign/Campaign';
 import Blog from '../mainpages/blog/blog';
 import SinglePost from '../mainpages/single-post-blog/singlepost';
 import Payment from '../mainpages/payment/payment';
+import PaymentOtp from './payment/PaymentOtp';
+import PaymentSuccess from './payment/PaymentSuccess';
 import InviteRecommender from '../mainpages/InviteRecommender/invite';
 import LoanRequest from './loanrequest/LoanRequest';
 import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerification';
@@ -22,7 +24,6 @@ import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfir
 import CreateBlogPost from './blog/create_blog_post';
 import ResetPassword from './reset/ResetPassword';
 import FundCampaign from './fund-a-campaign/FundCampaign'
-
 
 export {
   Login,
@@ -42,6 +43,8 @@ export {
   Blog,
   SinglePost,
   Payment,
+  PaymentOtp,
+  PaymentSuccess,
   InviteRecommender,
   EmailConfirmation,
   EmailVerification,

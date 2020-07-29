@@ -19,6 +19,8 @@ import {
   Page404,
   ComingSoon,
   Payment,
+  PaymentOtp,
+  PaymentSuccess,
   Campaign,
   Blog,
   InviteRecommender,
@@ -28,7 +30,7 @@ import {
   SinglePost,
   CreateBlogPost,
   ResetPassword,
-  FundCampaign
+  FundCampaign,
 } from './components/pages/mainpages';
 
 import {
@@ -56,11 +58,15 @@ function App() {
 
         <Route exact path={pageurl.REGISTER_PAGE_URL} component={SignUp} />
 
-		<Route exact path={pageurl.RESET_PASSWORD_URL + `/:token`} component={ResetPassword} />
+		    <Route exact path={pageurl.RESET_PASSWORD_URL + `/:token`} component={ResetPassword} />
 
         <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
         <Route exact path={pageurl.PAYMENT_PAGE_URL} component={Payment} />
+
+        <Route exact path={pageurl.PAYMENT_OTP_PAGE_URL} component={PaymentOtp} />
+
+        <Route exact path={pageurl.PAYMENT_SUCCESS_PAGE_URL} component={PaymentSuccess} />
 
         <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 

@@ -1,10 +1,21 @@
-import { CREATE_REQUEST, SET_ERRORS, LOADING_USER, CLEAR_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS, MAKE_PAYMENT, FETCH_FUNDEE_DASHBOARD_INFOS } from './types';
+import { 
+    CREATE_REQUEST, 
+    SET_ERRORS, 
+    LOADING_USER, 
+    CLEAR_ERRORS, 
+    FETCH_FAQS, 
+    FETCH_SEARCH_FAQS, 
+    ADD_FAQS, 
+    MAKE_PAYMENT, 
+    MAKE_PAYMENT_OTP
+} from './types';
   
 const initialState = {
     createdRequest: false,
     loading: false,
     errors: null,
     faqs: null,
+    payment: null,
     data: {},
 };
 
@@ -44,7 +55,14 @@ export default function (state = initialState, action) {
         case ADD_FAQS:
             return {...state}
         case MAKE_PAYMENT:
-            return {...state}
+            return {
+                ...state,
+                payment: action.payload
+            }
+        case MAKE_PAYMENT_OTP:
+            return {
+                ...state
+            }
         default:
         return state;
     }
