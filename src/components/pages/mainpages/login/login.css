@@ -52,7 +52,9 @@ a:hover {
   background-color: #fa1a3c;
   border-color: #fa0d32;
 }
-
+.sign-up-link {
+  color: #fb3f5c;
+}
 .btn-fml-secondary:focus,
 .btn-fml-secondary.focus {
   color: #fff;

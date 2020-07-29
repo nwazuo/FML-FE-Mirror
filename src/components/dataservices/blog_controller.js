@@ -4,6 +4,7 @@ const token = localStorage.getItem('FMLToken');
 const createBlogPostEndPoint  = process.env.REACT_APP_CREATE_BLOG_POST_END_POINT;
 const headers = {"Content-Type": "application/json","Access-Control-Allow-Origin": "*",};
 
+
 function validate(data,setDataError){
     let article_title = ""; let article_description = ""; let article_post = "";
     article_title = data.article_title.length < 3 ? "8 words is the minimum" : ""; 
@@ -12,6 +13,9 @@ function validate(data,setDataError){
     setDataError({article_title,article_description,article_post})
     if(article_title!=="" || article_description !== "" || article_post!=="" ){return false;}return true;
 }
+
+function verifyUser(){if(token){return true;}return false}
+
 
 function createBlogPost(data,setStatus,setRequested,setLoading){
     setLoading(true);
@@ -38,11 +42,13 @@ function getBlogPost(id,setBlogStory){
     .catch(error=>{console.log(error)});    
 }
 
-function makeComment(id,data){
-    // setLoading(true);
-    // Server.authBlogPost(`${createBlogPostEndPoint}/${id}/comment`,data,token,headers)
-    // .then(response=>{response && setRequested(true); response && setLoading(false);setStatus(response.data.success);})
-    // .catch(error=>{error && setRequested(true); error && setLoading(false);});    
+function makeComment(id,data,setStatus,setRequested,setLoading,setInputError){
+    setLoading(true);
+    if(data && data.comment && data.comment.length > 0 && data.comment.length !== " "){
+        Server.authBlogPost(`${createBlogPostEndPoint}/${id}/comment`,data,token,headers)
+        .then(response=>{response && setRequested(true); response && setLoading(false);setStatus(response.data.success);})
+        .catch(error=>{error && setRequested(true); error && setLoading(false);});    
+    }else{setLoading(false);let comment = "Cant send an empty comment!!!"; setInputError({comment});}
 }
 
 const BlogController ={
@@ -50,7 +56,8 @@ const BlogController ={
     validate,
     getAllBlogPosts,
     getBlogPost,
-    makeComment
+    makeComment,
+    verifyUser
 }
 
 export default BlogController;

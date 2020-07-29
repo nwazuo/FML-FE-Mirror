@@ -4,11 +4,12 @@ import {Link} from 'react-router-dom'
 import {Footer,Navbar} from '../../navigation'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import BlogComponent from './blog_component'
-// import dummydata from './dummydata'
 import showmoreimg from './img/Vector 1.png'
 import pageurl from '../../../router/url/pageurl'
 import {Button} from '../../../utilities'
 import {BlogController} from '../../../dataservices' 
+import featherstripe from './img/Group.svg'
+import feathersolid from './img/Group2.svg'
 
 const Blog = ({...props}) => {
     // React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory); blogStory[0] && BlogController.getAllBlogPosts();}doIt();})
@@ -18,7 +19,7 @@ const Blog = ({...props}) => {
     function handleSinglePost(index){props.history.push(pageurl.SINGLE_POST_URL+`/${index}`);}
     const[inputDetails,setInputDetails] = React.useState({});
     function handleInput(e){setInputDetails({...inputDetails,[e.target.name]:e.target.value});}
-    function handleSubmit(e){e.preventDefault();BlogController.makeComment();}
+    function handleSubmit(e){e.preventDefault();}
     return(
         <ScrollIntoView>
             <Navbar/>
@@ -26,7 +27,14 @@ const Blog = ({...props}) => {
                     <section className={blog.header_title_qobi}>
                         <div className={blog.main_container_qobi}><h1>The Blog</h1></div>
                         <div className={`${blog.main_container_qobi} ${blog.create_new_qobi}`}>
-                            <Link to={pageurl.CREATE_NEW_POST_URL}><button >Create New Blog Post</button></Link>
+                            <Link to={pageurl.CREATE_NEW_POST_URL}>
+                                <button >Create New Post&nbsp;&nbsp;
+                                    <span style={{color:"#fff",fontSize:"20px"}}>
+                                    <img src={feathersolid} alt="feather logo" />    
+                                    {/* <img src={featherstripe} alt="feather logo" />     */}
+                                    </span>
+                                </button>
+                            </Link>
                         </div>
                     </section>
                     <section>

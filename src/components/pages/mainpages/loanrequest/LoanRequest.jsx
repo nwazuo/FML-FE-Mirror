@@ -102,8 +102,8 @@ const LoanRequest = (props) => {
                 } */}
 
       <div className="loan-wrapper mt-4">
-        <div className="breadcrumb-1">
-          <span>Dashboard ></span>
+        <div>
+          <span>Dashboard &gt; </span>
           <span className="create"> Create Loan Request</span>
         </div>
 

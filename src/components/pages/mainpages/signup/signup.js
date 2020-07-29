@@ -8,9 +8,14 @@ import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import { connect } from 'react-redux';
-import { registerUser, googleLogin } from '../../../../actions/userActions';
+import {
+  registerUser,
+  googleLogin,
+  // githubLogin,
+} from '../../../../actions/userActions';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
+import Button from '../../../utilities/Button/CustomizedButton';
 import { GoogleLogin } from 'react-google-login';
 
 class Signup extends Component {
@@ -163,6 +168,12 @@ class Signup extends Component {
       sendGoogleToken(response.tokenId);
     };
 
+    //GitHub Auth
+    // const handleGithubAuth = () => {
+    //   console.log('you clicked');
+    //   this.props.githubLogin(this.props.history);
+    // };
+
     return (
       <ScrollIntoView>
         <Navbar />
@@ -302,7 +313,7 @@ class Signup extends Component {
                     style={{ color: 'blue' }}
                     className="atag"
                   >
-                    Terms Policy Conditions
+                    Terms and Conditions
                   </Link>
                   {/* <a href="" style={{ color: 'blue' }}>
                     Terms Policy Conditions
@@ -314,13 +325,14 @@ class Signup extends Component {
               </div>
             </div>
             <div>
-              <button
-                type="submit"
+              <Button
+                load={this.state.loading}
+                propsTitle={'Sign Up'}
                 className="form-control login-btn btn-fml-secondary"
-                value="Sign Up"
-              >
-                Sign Up {this.state.loading ? <PinWheel /> : null}
-              </button>
+                onClick={(e) => {
+                  this.onSubmit(e);
+                }}
+              ></Button>
             </div>
             <div className="my-4 text-center or d-flex align-items-center or-box">
               <hr />
@@ -344,13 +356,27 @@ class Signup extends Component {
                   </Link>
                 )}
               ></GoogleLogin>{' '}
+              {/* <Link
+                to=""
+                className="mt-2 form-control login-btn login-btn-facebook reg-btn "
+              >
+                <i class="fab fa-twitter pr-3 facbook-logo"></i>
+                Sign up with Twitter
+              </Link> */}
               <Link
                 to=""
                 className="mt-2 form-control login-btn login-btn-facebook reg-btn "
               >
-                <i class="fab fa-facebook-square pr-3 facbook-logo"></i>
+                <i class="fab fa-facebook pr-3 facbook-logo"></i>
                 Sign up with Facebook
               </Link>
+              {/* <Link
+                to=""
+                className="mt-2 form-control login-btn login-btn-github reg-btn "
+              >
+                <i class="fab fa-github pr-3 facbook-logo"></i>
+                Sign up with GitHub
+              </Link> */}
               {/* <a
                 href="#"
                 className="form-control login-btn reg-btn btn-outline-fml-secondary atag"
@@ -389,4 +415,8 @@ const mapStateToProps = (state) => ({
   ui: state.ui,
 });
 
-export default connect(mapStateToProps, { registerUser, googleLogin })(Signup);
+export default connect(mapStateToProps, {
+  registerUser,
+  googleLogin,
+  // githubLogin,
+})(Signup);
