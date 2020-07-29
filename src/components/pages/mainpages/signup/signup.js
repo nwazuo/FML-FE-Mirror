@@ -8,7 +8,11 @@ import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import { connect } from 'react-redux';
-import { registerUser, googleLogin } from '../../../../actions/userActions';
+import {
+  registerUser,
+  googleLogin,
+  githubLogin,
+} from '../../../../actions/userActions';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
 import Button from '../../../utilities/Button/CustomizedButton';
@@ -164,6 +168,12 @@ class Signup extends Component {
       sendGoogleToken(response.tokenId);
     };
 
+    //GitHub Auth
+    // const handleGithubAuth = () => {
+    //   console.log('you clicked');
+    //   this.props.githubLogin(this.props.history);
+    // };
+
     return (
       <ScrollIntoView>
         <Navbar />
@@ -303,7 +313,7 @@ class Signup extends Component {
                     style={{ color: 'blue' }}
                     className="atag"
                   >
-                    Terms Policy Conditions
+                    Terms and Conditions
                   </Link>
                   {/* <a href="" style={{ color: 'blue' }}>
                     Terms Policy Conditions
@@ -355,6 +365,13 @@ class Signup extends Component {
               </Link>
               <Link
                 to=""
+                className="mt-2 form-control login-btn login-btn-facebook reg-btn "
+              >
+                <i class="fab fa-facebook pr-3 facbook-logo"></i>
+                Sign up with Facebook
+              </Link>
+              <Link
+                to=""
                 className="mt-2 form-control login-btn login-btn-github reg-btn "
               >
                 <i class="fab fa-github pr-3 facbook-logo"></i>
@@ -398,4 +415,8 @@ const mapStateToProps = (state) => ({
   ui: state.ui,
 });
 
-export default connect(mapStateToProps, { registerUser, googleLogin })(Signup);
+export default connect(mapStateToProps, {
+  registerUser,
+  googleLogin,
+  githubLogin,
+})(Signup);
