@@ -15,7 +15,7 @@ const Testimonial = () => {
 			testimonial:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
 			name: 'Scott Eyawo',
-			photoUrl: 'https://placeimg.com/300/300/people1',
+			photoUrl: 'https://placeimg.com/100/100/people1',
 			company: 'FundMyLaptop',
 		},
 		{
@@ -23,7 +23,7 @@ const Testimonial = () => {
 			testimonial:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
 			name: 'Ekene Adim',
-			photoUrl: 'https://placeimg.com/300/300/people2',
+			photoUrl: 'https://placeimg.com/100/100/people2',
 			company: 'TalentPool',
 		},
 		{
@@ -31,7 +31,7 @@ const Testimonial = () => {
 			testimonial:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
 			name: 'Chizo Nwazuo',
-			photoUrl: 'https://placeimg.com/300/300/people3',
+			photoUrl: 'https://placeimg.com/100/100/people3',
 			company: 'TalentPool',
 		},
 		{

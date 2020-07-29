@@ -18,7 +18,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'Scott Eyawo',
-			photoUrl: 'https://placeimg.com/300/300/people1',
+			photoUrl: 'https://placeimg.com/400/400/people1',
       occupation: 'Student',
       currency: 'N',
       amountAccumulated: '100,000',
@@ -32,7 +32,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'Ekene Adim',
-			photoUrl: 'https://placeimg.com/300/300/people2',
+			photoUrl: 'https://placeimg.com/400/400/people2',
       occupation: 'Engineer',
       currency: 'N',
       amountAccumulated: '160,000',
@@ -46,7 +46,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'Chizo Nwazuo',
-			photoUrl: 'https://placeimg.com/300/300/people3',
+			photoUrl: 'https://placeimg.com/400/400/people3',
       occupation: 'Entrepreneur',
       currency: 'N',
       amountAccumulated: '700,000',
@@ -60,7 +60,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'CodeLeaf Adio',
-			photoUrl: 'https://placeimg.com/300/300/people4',
+			photoUrl: 'https://placeimg.com/400/400/people4',
       occupation: 'Student',
       currency: 'N',
       amountAccumulated: '300,000',
@@ -74,7 +74,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'CodeLeaf Adio',
-			photoUrl: 'https://placeimg.com/300/300/people5',
+			photoUrl: 'https://placeimg.com/400/400/people5',
       occupation: 'Teacher',
       currency: 'N',
       amountAccumulated: '400,000',
@@ -88,7 +88,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'CodeLeaf Adio',
-			photoUrl: 'https://placeimg.com/300/300/people6',
+			photoUrl: 'https://placeimg.com/400/400/people6',
       occupation: 'FreeLancer',
       currency: 'N',
       amountAccumulated: '500,000',

@@ -76,7 +76,7 @@ const LandingPage = () => {
           <div className="jumbotron jumbotron px-0 px-md-4 mb-0 mb-md-4 landing-top">
             <div className="row mt-lg-5 px-2 px-md-5 mx-auto mt-5">
               <Tween from={{ opacity: 0, y: 30 }} duration={1.5}>
-                <div className="col-xl-8 px-0  mb-2 mb-sm-5 px-md-5 header-text mt-5 d-flex flex-column justify-content-center">
+                <div className="header-text d-flex flex-column ">
                   <h1 className="mb-lg-5">Support or Start a Campaign today</h1>
                   <p className="pr-md-5">
                     Fundmylaptop is a platform where fundees can place requests
@@ -89,7 +89,7 @@ const LandingPage = () => {
                 <div className=" col-xl-4 my-5  pt-3 pb-5">
                   {/* here should be form */}
 				  <div className="stock-hero">
-				  	<img src={FMLHero}/>
+				  	{/* <img src={FMLHero}/> */}
 				  </div>
                 </div>
               </Tween>
