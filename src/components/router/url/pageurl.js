@@ -32,6 +32,7 @@ const SINGLE_POST_URL = '/blog/post';
 const CREATE_NEW_POST_URL = '/create-new-post';
 const EDIT_PROFILE = '/edit-profile';
 const RESET_PASSWORD_URL = '/reset-password';
+const FUND_A_CAMPAIGN = '/fund-a-campaign';
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -66,7 +67,8 @@ const pageurl = {
   SINGLE_POST_URL,
   CREATE_NEW_POST_URL,
   EDIT_PROFILE,
-  RESET_PASSWORD_URL
+  RESET_PASSWORD_URL,
+  FUND_A_CAMPAIGN
 };
 
 export default pageurl;

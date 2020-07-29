@@ -28,7 +28,8 @@ import {
   SinglePost,
   CreateBlogPost,
   EditProfile,
-  ResetPassword
+  ResetPassword,
+  FundCampaign
 } from './components/pages/mainpages';
 
 import {
@@ -119,6 +120,11 @@ function App() {
           exact
           path={pageurl.EMAIL_CONFIRMATION_URL}
           component={EmailConfirmation}
+        />
+        <Route
+          exact
+          path={pageurl.FUND_A_CAMPAIGN}
+          component={FundCampaign}
         />
 
         <ProtectedRoute
