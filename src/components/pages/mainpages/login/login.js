@@ -134,7 +134,7 @@ const Login = (props) => {
                 </Link>
               )}
             ></GoogleLogin>{' '}
-            <Link
+            {/* <Link
               className="text-center mt-3 py-3  
             btnGoogle d-flex justify-content-center 
             align-items-center"
@@ -145,7 +145,7 @@ const Login = (props) => {
             >
               <img className="" src={twitter} alt="twitter" />
               Login with Twitter
-            </Link>
+            </Link> */}
             <Link
               className="text-center mt-3 py-3  
             btnGoogle d-flex justify-content-center 
@@ -158,7 +158,7 @@ const Login = (props) => {
               <img className="" src={fbIcon} alt="facebook" />
               Login with Facebook
             </Link>
-            <Link
+            {/* <Link
               className="text-center mt-3 py-3  
             btnGoogle d-flex justify-content-center 
             align-items-center"
@@ -169,7 +169,7 @@ const Login = (props) => {
             >
               <img className="" src={github} alt="github" />
               Login with GitHub
-            </Link>
+            </Link> */}
           </div>
 
           <div className="my-4 text-center or d-flex align-items-center or-box">

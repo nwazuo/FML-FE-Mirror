@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import {
   registerUser,
   googleLogin,
-  githubLogin,
+  // githubLogin,
 } from '../../../../actions/userActions';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
@@ -356,13 +356,13 @@ class Signup extends Component {
                   </Link>
                 )}
               ></GoogleLogin>{' '}
-              <Link
+              {/* <Link
                 to=""
                 className="mt-2 form-control  signup-form login-btn login-btn-facebook reg-btn "
               >
                 <i class="fab fa-twitter pr-3 facbook-logo"></i>
                 Sign up with Twitter
-              </Link>
+              </Link> */}
               <Link
                 to=""
                 className="mt-2 form-control login-btn login-btn-facebook reg-btn "
@@ -370,13 +370,13 @@ class Signup extends Component {
                 <i class="fab fa-facebook pr-3 facbook-logo"></i>
                 Sign up with Facebook
               </Link>
-              <Link
+              {/* <Link
                 to=""
                 className="mt-2 form-control login-btn login-btn-github reg-btn "
               >
                 <i class="fab fa-github pr-3 facbook-logo"></i>
                 Sign up with GitHub
-              </Link>
+              </Link> */}
               {/* <a
                 href="#"
                 className="form-control  signup-form login-btn reg-btn btn-outline-fml-secondary atag"
@@ -418,5 +418,5 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   registerUser,
   googleLogin,
-  githubLogin,
+  // githubLogin,
 })(Signup);
