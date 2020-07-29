@@ -7,15 +7,14 @@ import Breadcrumb from './breadcrumb/breadcrumb';
 import ProfileInfo from './profile-info/profile-info';
 import ProfileStat from './profile-stat/profile-stat';
 import RecommendBox from './recommend-box/recommend-box';
+import FundeeCampaign from './fundee-campaign/fundee-campaign';
+// import FundeeInvestment from './fundee-investment/fundee-investment';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import pageurl from '../../../router/url/pageurl';
 import noRecommendation from './nohistory.svg';
 //Redux stuff
 import { connect } from 'react-redux';
 import axios from 'axios';
-
-// import {fetchFundeeCampaigns, fetchFundeeInvestments} from '../../../../actions/actions'
-// import FundeeCampaign from './fundee-campaigns/fundee-campaigns';
 
 
 const breadcrumbLinks = [
@@ -28,7 +27,10 @@ class UserProfile extends Component {
   state = {
     fullUserData: {},
     recommendations: [],
-    errorMessage: ''
+    errorMessage: '',
+    campaigns: [],
+    investments: []
+
   }
 
   componentDidMount () {
@@ -39,13 +41,32 @@ class UserProfile extends Component {
       this.setState({
         fullUserData: {...res.data.data},
         recommendations: [...res.data.data.recommendations]
-      }, () => {
-        console.log(this.state.fullUserData, this.state.recommendations[0].user.firstName);
       })
     }).catch(err => {
       console.log(err);
     })
-  }
+
+    axios.get(`https://api.fundmylaptop.com/api/campaigns/listRequests`, {
+      headers: {
+        'Authorization': localStorage.getItem('FMLToken')
+        }
+    })
+    .then (res=>{
+      this.setState({campaigns: res.data.data})
+    }
+    ).catch (err=>{
+      console.log(err);
+    })
+
+    axios.get(`https://api.fundmylaptop.com/api/campaigns/listCampaigns`)
+    .then (res=>{
+      this.setState({investments: res.data.data})
+    }
+    ).catch (err=>{
+      console.log(err);
+    })
+
+  } 
 
 
   render() {
@@ -156,6 +177,118 @@ class UserProfile extends Component {
                 </div>
               </div>
             </div>
+
+            <div className={styles.Recommendations}>
+            <div
+              className={[
+                'd-flex',
+                'align-items-center',
+                'justify-content-between',
+                styles.RecommendHeader,
+              ].join(' ')}
+            >
+              <h2 className="font-weight-bold pl-5">Fundee Campaign</h2>
+              <Link className={styles.RecommendLink} to="#">
+                See All
+                <svg
+                  width=".7em"
+                  height=".7em"
+                  viewBox="0 0 16 16"
+                  className="bi bi-chevron-right ml-1 mb-1"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    strokeWidth="10"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                  ></path>
+                </svg>
+              </Link>
+            </div>
+            <div className="row ">
+            {this.state.campaigns.length > 0 ? this.state.campaigns.map(campaign => {
+                  return (
+                        <div  className={`col-md-4 col-sm-12 px-2 mb-3 ${styles.RecommendContainer}`}>
+                          <ul className="list-unstyled ml-5 ">
+                            <li key={campaign._id}>
+                              <FundeeCampaign
+                                title= {campaign.title}
+                                description={campaign.description}
+                                amount={campaign.amount}
+                                location={campaign.location}
+                                fundeepic={campaign.photoURL}
+                                currency= {campaign.currency}/>
+                                
+                            </li>
+                          </ul>
+                      </div>
+                  );
+                }):<div className={["py-5", "d-flex", "flex-column", "align-items-center", 
+                styles.NoData].join(' ')}>
+                <img className="img-fluid" src={noRecommendation} alt="no data" />
+                <h3 className={['mb-3', 'text-center'].join(' ')}>
+                  You Have No<br/> campaigns Yet.
+                </h3>
+              </div>}
+            </div>
+          </div>
+
+          <div className={styles.Recommendations}>
+            <div
+              className={[
+                'd-flex',
+                'align-items-center',
+                'justify-content-between',
+                styles.RecommendHeader,
+              ].join(' ')}
+            >
+              <h2 className="font-weight-bold pl-5">Fundee investments</h2>
+              <Link className={styles.RecommendLink} to="#">
+                See All
+                <svg
+                  width=".7em"
+                  height=".7em"
+                  viewBox="0 0 16 16"
+                  className="bi bi-chevron-right ml-1 mb-1"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    strokeWidth="10"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                  ></path>
+                </svg>
+              </Link>
+            </div>
+            <div className="row">
+            {this.state.investments.length > 0 ? this.state.investments.map(investment => {
+                  return (
+                        <div  className="col-md-4 col-sm-12 px-2 mb-3">
+                          <ul className="list-unstyled ml-5 ">
+                            <li key={investment._id}>
+                              <FundeeCampaign
+                                title= {investment.campaign.title}
+                                description={investment.campaign.description}
+                                amount={investment.campaign.amount}
+                                location={investment.campaign.location}
+                                fundeepic={investment.campaign.photoURL}
+                                currency= {investment.campaign.currency}/>
+                                
+                            </li>
+                          </ul>
+                      </div>
+                  );
+                }):<div className={["py-5", "d-flex", "flex-column", "align-items-center", 
+                styles.NoData].join(' ')}>
+                <img className="img-fluid" src={noRecommendation} alt="no data" />
+                <h3 className={['mb-3', 'text-center'].join(' ')}>
+                  You Have No<br/> investments Yet.
+                </h3>
+              </div>}
+            </div>
+          </div>
   
             <div className={styles.Recommendations}>
               <div

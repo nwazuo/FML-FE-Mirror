@@ -9,5 +9,5 @@ export {
   recommendUser,
   addFaqs,
   logoutUser,
-  fetchFundeeDashboard,
+  fetchFundeeDashboard
 };
