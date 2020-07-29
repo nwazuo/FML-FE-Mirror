@@ -7,7 +7,6 @@ import ScrollIntoView from "../../../router/scrollintoview/ScrollIntoView";
 import Testimonial from "../../../dataservices/testimonial_controller";
 import Campaign from "../../../dataservices/campaign_controller";
 import Trending from "../../../dataservices/trending_controller";
-import FMLHero from './img/FML-stock_hero.jpg'
 import axios from "axios";
 
 const LandingPage = () => {
