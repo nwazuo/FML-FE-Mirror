@@ -18,7 +18,7 @@ const Blog = ({...props}) => {
     function handleSinglePost(index){props.history.push(pageurl.SINGLE_POST_URL+`/${index}`);}
     const[inputDetails,setInputDetails] = React.useState({});
     function handleInput(e){setInputDetails({...inputDetails,[e.target.name]:e.target.value});}
-    function handleSubmit(e){e.preventDefault();BlogController.makeComment();}
+    function handleSubmit(e){e.preventDefault();}
     return(
         <ScrollIntoView>
             <Navbar/>

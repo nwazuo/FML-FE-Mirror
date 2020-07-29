@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './components/router/protectedroute/ProtectedRoute';
 import pageurl from './components/router/url/pageurl';
-
+import Pace from './components/utilities/Pace/Pace';
 import {
 	Login,
 	SignUp,
@@ -27,12 +27,17 @@ import {
 	EmailConfirmation,
 	SinglePost,
 	CreateBlogPost,
-	CampaignDetail,
+	ResetPassword,
 } from './components/pages/mainpages';
 
 import {
 	FundeeDashboard,
-	AdminDashboard,
+	AdminLanding,
+	AddFaq,
+	AdminCampaign,
+	AdminPayment,
+	AdminSettings,
+	AdminFunding,
 	DefaultDashboard,
 	InvestorDashboard,
 } from './components/pages/dashboards';
@@ -40,6 +45,7 @@ import {
 function App() {
 	return (
 		<Router basename={process.env.PUBLIC_URL}>
+			<Pace />
 			<Switch>
 				<Route exact path={pageurl.LANDING_PAGE_URL} component={LandingPage} />
 
@@ -48,6 +54,12 @@ function App() {
 				<Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
 
 				<Route exact path={pageurl.REGISTER_PAGE_URL} component={SignUp} />
+
+				<Route
+					exact
+					path={pageurl.RESET_PASSWORD_URL + `/:token`}
+					component={ResetPassword}
+				/>
 
 				<Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
 
@@ -63,7 +75,7 @@ function App() {
 
 				<Route
 					exact
-					path={pageurl.SINGLE_POST_URL + `/:details`}
+					path={pageurl.SINGLE_POST_URL + `/:userid`}
 					component={SinglePost}
 				/>
 
@@ -109,12 +121,6 @@ function App() {
 					component={EmailConfirmation}
 				/>
 
-				<Route
-					exact
-					path={pageurl.CAMPAIGN_DETAIL + '/:campaignID'}
-					component={CampaignDetail}
-				/>
-
 				<ProtectedRoute
 					exact
 					path={pageurl.LOAN_REQUEST_PAGE_URL}
@@ -142,7 +148,37 @@ function App() {
 				<ProtectedRoute
 					exact
 					path={pageurl.ADMIN_DASHBOARD_PAGE_URL}
-					component={AdminDashboard}
+					component={AdminLanding}
+				/>
+
+				<ProtectedRoute
+					exact
+					path={pageurl.ADMIN_FAQ_PAGE_URL}
+					component={AddFaq}
+				/>
+
+				<ProtectedRoute
+					exact
+					path={pageurl.ADMIN_CAMPAIGN_PAGE_URL}
+					component={AdminCampaign}
+				/>
+
+				<ProtectedRoute
+					exact
+					path={pageurl.ADMIN_FUNDING_PAGE_URL}
+					component={AdminFunding}
+				/>
+
+				<ProtectedRoute
+					exact
+					path={pageurl.ADMIN_PAYMENT_PAGE_URL}
+					component={AdminPayment}
+				/>
+
+				<ProtectedRoute
+					exact
+					path={pageurl.ADMIN_SETTINGS_PAGE_URL}
+					component={AdminSettings}
 				/>
 
 				<ProtectedRoute
