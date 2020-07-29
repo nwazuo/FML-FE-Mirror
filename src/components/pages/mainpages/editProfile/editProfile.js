@@ -58,10 +58,19 @@ const EditProfile = (props) => {
   const handleOccupation = (e) => {
     setOccupation(e.target.value);
   };
+  const updatedUser = {
+      firstNameP,
+      lastNameP,
+      phoneP,
+      emailP,
+      addressP,
+      genderP,
+      occupationP
+  }
 
     const onSubmit = (e) => {
         e.preventDefault();
-        props.editUserProfile(props.history, _id);
+        props.editUserProfile(props.history,updatedUser,_id);
     }
     return (
         <div className="editProfile">
@@ -102,7 +111,7 @@ const EditProfile = (props) => {
                                     class="form-control form-control-sm" 
                                     id="" 
                                     onChange={handleFirstName}
-                                    value={firstNameP}
+                                    value={firstName}
                                     placeholder={`${firstName}`} disabled />
                                 </div>
                                 <div className="form-group col-md-6 col-6 mb-4">
@@ -111,7 +120,7 @@ const EditProfile = (props) => {
                                     type="name" 
                                     class="form-control form-control-sm" 
                                     onChange={handleLastName}
-                                    value={lastNameP}
+                                    value={lastName}
                                     id="" 
                                     placeholder={`${lastName}`} disabled />
                                 </div>
@@ -124,7 +133,7 @@ const EditProfile = (props) => {
                                     type="phone" 
                                     class="form-control form-control-sm" 
                                     id="" 
-                                    value={phoneP}
+                                    value={phone}
                                     onChange={handlePhone}
                                     placeholder={`${phone}`} />
                                 </div>
@@ -133,7 +142,7 @@ const EditProfile = (props) => {
                                     <input 
                                     type="email" 
                                     class="form-control form-control-sm" 
-                                    value={emailP}
+                                    value={email}
                                     onChange={handleEmail}
                                     id="" placeholder={`${email}`} disabled />
                                 </div>
@@ -154,7 +163,7 @@ const EditProfile = (props) => {
                                     <input 
                                     type="text" 
                                     class="form-control form-control-sm" 
-                                    value={occupationP}
+                                    value={occupation}
                                     onChange={handleOccupation}
                                     id=""
                                     placeholder={`${occupation}`}/>
@@ -173,7 +182,7 @@ const EditProfile = (props) => {
                                 </div>
                             </div>
                             <button type="submit" className="btn btn-primary col-md-6 col-5 btn-fml-secondary mb-4"  
-                            onClick={(e) => { onSubmit(e); }}>Save Changes</button>
+                        >Save Changes</button>
                         </form>   
                     </div>
                 </div>

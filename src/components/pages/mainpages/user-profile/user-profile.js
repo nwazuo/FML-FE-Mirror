@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import '../../../assets/bootstrap.css';
 import { Link } from 'react-router-dom';
@@ -8,18 +9,11 @@ import ProfileInfo from './profile-info/profile-info';
 import ProfileStat from './profile-stat/profile-stat';
 import RecommendBox from './recommend-box/recommend-box';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
-import noRecommendation from './nohistory.svg';
-import trusteeImg from '../../../assets/images/image 8.png';
-// import {EditProfile} from '../../mainpages/EditProfile/EditProfile'
 import pageurl from '../../../router/url/pageurl';
-
+import noRecommendation from './nohistory.svg';
 //Redux stuff
 import { connect } from 'react-redux';
 import axios from 'axios';
-
-// import {fetchFundeeCampaigns, fetchFundeeInvestments} from '../../../../actions/actions'
-// import FundeeCampaign from './fundee-campaigns/fundee-campaigns';
-
 
 const breadcrumbLinks = [
   { link: pageurl.DEFAULT_DASHBOARD_PAGE_URL, label: 'Dashboard' },
@@ -72,7 +66,7 @@ class UserProfile extends Component {
     } = credentials.data;
 
     const { fullUserData } = this.state;
-    const recommendations = [...this.state.recommendations];
+    const recommendations = [];
 
     return (
       <ScrollIntoView>
@@ -105,7 +99,7 @@ class UserProfile extends Component {
                     <p className={styles.UserType}>Fundee</p>
                   </div>
                 </div>
-                <Link to="/user-profile" className={styles.Edit}>
+                <Link to={pageurl.EDIT_PROFILE} className={styles.Edit}>
                   <svg
                     width="1.8em"
                     height="1.8em"
@@ -140,21 +134,8 @@ class UserProfile extends Component {
                   </div>
                 </div>
               </div>
-              <Link to={pageurl.EDIT_PROFILE} className={styles.Edit}>
-                <svg
-                  width="1.8em"
-                  height="1.8em"
-                  viewBox="0 0 16 16"
-                  className="bi bi-pencil-square pr-2"
-                  fill="#FB3F5C"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                </svg>
-                Edit Profile
-              </Link>
             </div>
-
+  
             <div className={styles.Stats}>
               <h2 className="font-weight-bold">Stats</h2>
               <div className="row">
@@ -172,7 +153,7 @@ class UserProfile extends Component {
                 </div>
               </div>
             </div>
-
+  
             <div className={styles.Recommendations}>
               <div
                 className={[
@@ -220,8 +201,8 @@ class UserProfile extends Component {
                       </RecommendBox>
                     </div>
                   );
-                }) :
-                <div className={["py-5", "d-flex", "flex-column", "align-items-center",
+                }) : 
+                <div className={["py-5", "d-flex", "flex-column", "align-items-center", 
                   styles.NoData].join(' ')}>
                   <img className="img-fluid" src={noRecommendation} alt="no data" />
                   <h3 className={['mb-3', 'text-center'].join(' ')}>
@@ -239,7 +220,6 @@ class UserProfile extends Component {
 };
 
 const mapStateToProps = (state) => ({
-  user: state.user
+  user: state.user,
 });
-
 export default connect(mapStateToProps)(UserProfile);

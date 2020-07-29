@@ -174,22 +174,27 @@ export const getUserData = () => (dispatch) => {
     })
     .catch((err) => console.log(err));
 };
-export const editUserProfile = (history, _id,{}) => (dispatch) => {
+
+export const editUserProfile = (history,updatedUser,_id) => (dispatch) => {
+  const token =  localStorage.getItem('FMLToken');
+        const config = {
+            headers: { 
+                Authorization: `${token}` 
+            }
+        };
   dispatch({ type: CLEAR_ERRORS });
   dispatch({ type: LOADING_UI });
-  
   axios
-    .put(`${baseURL}/api/users/${_id}`)
+    .put(`${baseURL}/api/users/${_id}`,config)
     .then((res) => {
+      console.log(res.data)
       dispatch({
         type: SET_USER,
         payload: res.data,
       });
-      const { token} = res.data.data;
-      setAuthorizationHeader(token);
       dispatch({ type: LOADED_UI });
       history.push(pageurl.USER_PROFILE_PAGE_URL);
-      console.log(history);
+      console.log(updatedUser);
     })
     .catch((err) => console.log(err));
 };
