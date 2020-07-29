@@ -14,6 +14,10 @@ import noRecommendation from './nohistory.svg';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+// import {fetchFundeeCampaigns, fetchFundeeInvestments} from '../../../../actions/actions'
+// import FundeeCampaign from './fundee-campaigns/fundee-campaigns';
+
+
 const breadcrumbLinks = [
   { link: pageurl.DEFAULT_DASHBOARD_PAGE_URL, label: 'Dashboard' },
   { link: pageurl.USER_PROFILE_PAGE_URL, label: 'Profile' },
@@ -219,6 +223,7 @@ class UserProfile extends Component {
 };
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  user: state.user
 });
+
 export default connect(mapStateToProps)(UserProfile);
