@@ -1,6 +1,5 @@
 import React from 'react'
 import singlepost from './single-post.module.css'
-// import dummydata from '../blog/dummydata'
 import timeimg from './images/Group63.png'
 import shareimg from './images/Group64.png'
 import commentimg from './images/Vector.png'
@@ -13,12 +12,10 @@ import pageurl from '../../../router/url/pageurl'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import {Navbar,Footer} from '../../navigation'
 import {BlogController} from '../../../dataservices' 
-// import defaultimg from './images/default.png'
 import {Button,Status} from '../../../utilities'
 
 const SinglePost = ({...props}) => {
-    const details = window.location.href;
-    // let story_id = details.substring(details.lastIndexOf('/')+1);
+    const[isLogged,setIsLogged]=React.useState(true);
     const [blogStory,setBlogStory] = React.useState([]);
     const[inputValues,setInputValues]=React.useState({});
     const[isStatus,setIsStatus]=React.useState(false);
@@ -29,13 +26,21 @@ const SinglePost = ({...props}) => {
     // React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory);!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
     const [story_id,setStoryId] = React.useState(null);
     React.useEffect(()=>{const{match:{params}} = props; setStoryId(params.userid); function doIt(){!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
-    function handleComment(e){e.preventDefault();BlogController.makeComment(story_id,inputValues,setIsStatus,setIsRequested,setIsLoading,setInputError);}
+    function handleComment(e){e.preventDefault();
+        if(BlogController.verifyUser()){
+            BlogController.makeComment(story_id,inputValues,setIsStatus,setIsRequested,setIsLoading,setInputError);
+            setIsLogged(true);
+        }else{
+            setIsLogged(false);
+        }
+    }
         
     function handleInput(e){setInputValues({...inputValues,[e.target.name]:e.target.value})}
     return(    
         <ScrollIntoView>
         <Navbar/>
         {isRequested && <Status closeStatus={()=>{setIsRequested(false);setIsLoading(false);isStatus && window.open(pageurl.SINGLE_POST_URL+`/${story_id}`,'_self')}} status_message={isStatus ? "Comment Added Successfully" : "Comment Not Added"} />}
+        {!isLogged && <Status buttonTxt="Go To Login Page" buttonUrl={pageurl.LOGIN_PAGE_URL} closeStatus={()=>{setIsLogged(true);setIsLoading(false);}} status_message={"Login To Comment"} />}
         <div className={singlepost.singlepost}> 
             <section className={singlepost.bg_qobi}>
                 <img src={(blogStory[0] && blogStory[0].imgSrc)} alt={blogStory[0] && blogStory[0].imgAlt} className={singlepost.singe_page_img_qobi} />
@@ -44,7 +49,7 @@ const SinglePost = ({...props}) => {
                 <div className={singlepost.main_container_qobi}>
                     <div className={singlepost.article_qobi}>
                         <div className={singlepost.article_content_qobi}>
-                            <div style={{padding:"10px 0",textAlign:"right"}}><Link to={pageurl.BLOG_PAGE_URL}>Back To Blog</Link></div>
+                            <div style={{padding:"10px 0",textAlign:"right"}}><Link style={{color:"#FB405C"}} to={pageurl.BLOG_PAGE_URL}>Back To Blog</Link></div>
                             <div className={singlepost.single_post_header_qobi}><h1>{(blogStory[0] && blogStory[0].title) ? blogStory[0].title : "No Title"}</h1></div>
                             <div className={singlepost.meta_info_qobi}>
                                 <span><img src={timeimg} alt="" /><p>{blogStory[0] && blogStory[0].createdAt}</p></span>
@@ -91,7 +96,7 @@ const SinglePost = ({...props}) => {
                                     </form>
                                 </div>
                                 
-                                <div style={{padding:"10px 0"}}><Link to={pageurl.BLOG_PAGE_URL}>Back To Blog Page</Link></div>
+                                <div style={{padding:"10px 0"}}><Link style={{color:"#FB405C"}} to={pageurl.BLOG_PAGE_URL}>Back To Blog Page</Link></div>
                             </div>
                         </div>
                     </div>

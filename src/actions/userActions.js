@@ -65,17 +65,17 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
 //       throw new Error('failed to authenticate user');
 //     })
 //     .then((responseJson) => {
-//       // this.setState({
-//       //   authenticated: true,
-//       //   user: responseJson.user,
-//       // });
+//       this.setState({
+//         authenticated: true,
+//         user: responseJson.user,
+//       });
 //     })
 //     .catch((error) => {
 //       console.log(error);
-//       // this.setState({
-//       //   authenticated: false,
-//       //   error: 'Failed to authenticate user',
-//       // });
+//       this.setState({
+//         authenticated: false,
+//         error: 'Failed to authenticate user',
+//       });
 //     });
 // };
 
@@ -183,7 +183,7 @@ export const getLoginUserData = (history) => (dispatch) => {
         payload: res.data,
       });
 
-      history.push(pageurl.LANDING_PAGE_URL);
+      history.push(pageurl.DEFAULT_DASHBOARD_PAGE_URL);
       console.log(res.data);
       dispatch({ type: LOADED_UI });
     })
