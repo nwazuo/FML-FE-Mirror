@@ -10,7 +10,7 @@ import ProfileStat from './profile-stat/profile-stat';
 import RecommendBox from './recommend-box/recommend-box';
 import trusteeImg from '../../../assets/images/image 8.png';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
-import pageurl from '../../../router/url/pageurl'
+import pageurl from '../../../router/url/pageurl';
 //Redux stuff
 import { connect } from 'react-redux';
 
@@ -126,15 +126,15 @@ const UserProfile = (props) => {
                 <div className="col-md-5">
                   <ProfileInfo title="Full Name">{`${firstName} ${lastName}`}</ProfileInfo>
                   <ProfileInfo title="Contact Information">{phone}</ProfileInfo>
-                  <ProfileInfo title="Gender">{gender ? {gender} : null}</ProfileInfo>
+                  <ProfileInfo title="Gender">
+                    {gender ? gender : null}
+                  </ProfileInfo>
                 </div>
                 <div className="col-md-7">
-                  <ProfileInfo title="Address">
-                    {address}
-                  </ProfileInfo>
+                  <ProfileInfo title="Address">{address}</ProfileInfo>
                   <ProfileInfo title="Email address">{email}</ProfileInfo>
                   <ProfileInfo title="Occupation">
-                    {occupation ? {occupation} : null }
+                    {occupation ? occupation : null}
                   </ProfileInfo>
                 </div>
               </div>

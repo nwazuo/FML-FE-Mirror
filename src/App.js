@@ -110,6 +110,7 @@ function App() {
           path={pageurl.EMAIL_CONFIRMATION_URL}
           component={EmailConfirmation}
         />
+
         <Route exact path={pageurl.FUND_A_CAMPAIGN} component={FundCampaign} />
 
         <ProtectedRoute
