@@ -31,7 +31,7 @@ const EMAIL_CONFIRMATION_URL = '/email-confirmation';
 const SINGLE_POST_URL = '/blog/post';
 const CREATE_NEW_POST_URL = '/create-new-post';
 const RESET_PASSWORD_URL = '/reset-password';
-const FUND_A_CAMPAIGN = '/fund-a-campaign'
+const FUND_A_CAMPAIGN = '/campaigns'
 
 const pageurl = {
   LANDING_PAGE_URL,
