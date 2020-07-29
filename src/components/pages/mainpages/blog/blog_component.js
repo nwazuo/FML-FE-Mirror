@@ -4,7 +4,7 @@ import blog from './blog.module.css'
 const Blog_Component = ({img_src,img_alt,title,description,postlink}) =>{
     return(
         <div className={blog.img_content_qobi}>
-            <div className={blog.img_container_qobi}>
+            <div className={blog.img_container_qobi} onClick={postlink}>
                 <img src={img_src} alt={img_alt} />
             </div>
             <div className={blog.text_content_qobi}>

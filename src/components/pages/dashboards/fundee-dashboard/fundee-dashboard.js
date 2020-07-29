@@ -11,6 +11,7 @@ import rightArrow from "../../../assets/images/arrow-right.svg"
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import { connect } from 'react-redux';
 import { fetchFundeeDashboard } from '../../../../actions/actions'
+import noHistory from './nohistory.svg'
 
 // import seach from './search.svg'
 import { Navbar, Footer } from '../../navigation/navigation';
@@ -45,13 +46,13 @@ const FundeeDashboard = ({fundee,fetchFundeeDashboard }) => {
      
   });
   useEffect( ()=>{
-    // props.fetchFundeeDashboard()
     fetchFundeeDashboard()
   }, [])
   let url = "";
   
  const  {allrefunds, amountPermonth, interestPerMonth, interestRate, loanedAmount, paidAmount,
  pendingAmount , totalTerm}=fundee
+
   return (
     <ScrollIntoView>
       <Navbar />
@@ -228,225 +229,48 @@ const FundeeDashboard = ({fundee,fetchFundeeDashboard }) => {
             Repayment History
           </h4>
           <div className="table-container mt-3 overflow-auto">
-            <table className="table border-bottom">
-              <thead className="bg-fml-secondary text-light font-weight-bold">
-                <tr>
-                  <td>DATE</td>
-                  <td>AMOUNT PAID</td>
-                  <td>AMOUNT REMAINING</td>
-                  <td>PAYMENT METHOD</td>
-                  <td>REFERENCE ID</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="date">
-                    <span className="day">25</span>
-                    <br />
-                    <span className="month">JULY</span>
-                  </td>
-                  <td>INR 5,000</td>
-                  <td>INR 30,000</td>
-                  <td>Bank Transfer</td>
-                  <td>646872757669746861</td>
-                </tr>
-                <tr>
-                  <td className="date">
-                    <span className="day">27</span>
-                    <br />
-                    <span className="month">JUNE</span>
-                  </td>
-                  <td>INR 5,000</td>
-                  <td>INR 35,000</td>
-                  <td>Bank Transfer</td>
-                  <td>646872757669746861</td>
-                </tr>
-                <tr>
-                  <td className="date">
-                    <span className="day">20</span>
-                    <br />
-                    <span className="month">MAY</span>
-                  </td>
-                  <td>INR 5,000</td>
-                  <td>INR 4O,000</td>
-                  <td>Bank Transfer</td>
-                  <td>646872757669746861</td>
-                </tr>
-                <tr>
-                  <td className="date">
-                    <span className="day">25</span>
-                    <br />
-                    <span className="month">APRIL</span>
-                  </td>
-                  <td>INR 5,000</td>
-                  <td>INR 45,000</td>
-                  <td>Bank Transfer</td>
-                  <td>646872757669746861</td>
-                </tr>
-              </tbody>
-            </table>
+              <table className="table border-bottom">
+                  <thead className="bg-fml-secondary text-light font-weight-bold">
+                    <tr>
+                      <td>DATE</td>
+                      <td>AMOUNT PAID</td>
+                      <td>AMOUNT REMAINING</td>
+                      <td>PAYMENT METHOD</td>
+                      <td>REFERENCE ID</td>
+                    </tr>
+                  </thead>
+                  { allrefunds && allrefunds.length>0 &&
+                  <tbody>
+                      { allrefunds.map(history=> 
+                        <tr key={history.referenceId}>
+                          <td className="date">
+                            {/* <span className="day">25</span>
+                            <br />
+                            <span className="month">JULY</span> */}
+                            {history.date}
+                          </td>
+                          <td>INR {history.amountPaid}</td>
+                          <td>INR {history.amountRemaining}</td>
+                          <td>{history.refundMedium}</td>
+                          <td>{history.referenceId}</td>
+                        </tr>) 
+                      }
+                  </tbody>
+                  }
+                
+              </table>
+
+              {allrefunds.length<=0 && 
+                <div className="my-5 d-flex flex-column align-items-center">
+                  <img className="img-fluid" src={noHistory} alt="no history" />
+                   <h3 className="mb-4 text-center table__no-history-title">
+                     You Have No History Yet.
+                   </h3>
+                </div>
+              }
           </div>
         </section>
-        <section className="investee-help-others container-md px-md-0 mt-5 pt-2">
-          <div className="row mx-0 px-0 justify-content-md-between flex-column flex-md-row">
-            <h4 className="help-others-intro font-weight-normal ">
-              Invest in helping others get their laptop.
-              <a href={url} className="text-fml-secondary">
-                View more <span className="align-middle d-inline">&gt;</span>
-              </a>
-            </h4>
-            <div className="d-none d-md-flex">
-              <h4 className="show-details font-weight-normal pr-md-2 ">
-                Show complete details
-              </h4>
-              <input
-                type="checkbox"
-                id="toggle"
-                className="checkbox d-none"
-                defaultChecked
-              />
-              <label htmlFor="toggle" className="switch" />
-            </div>
-          </div>
-          <div className="contain-arrow-helper">
-            <img
-              className="slide-control arrow-left d-block"
-              src={leftArrow} alt = "leftarrow"
-            />
-            <img
-              className="slide-control arrow-right d-block"
-              src={rightArrow} alt = "rightarrow"
-            />
-            <div className="help-card-contain row mx-0 mb-5 px-0 overflow-auto mt-4">
-              <div className="help-card rounded p-3 p-md-3">
-                <div className="profile">
-                  <span className="placeholder" />
-                  <div className="profile-text">
-                    <h5>John Doe</h5>
-                    <small>Intern</small>
-                  </div>
-                </div>
-                <p className="loan-amount">Loan Amount: $1,000</p>
-                <div className="funded-progress">
-                  <div className="funded" />
-                </div>
-                <div className="funded-info">
-                  <span className="funded">$700 Funded</span>
-                  <span className="fund-left">$300 Left</span>
-                </div>
-                <div className="w-100" />
-                <button className="btn btn-fml-secondary mt-3">
-                  Invest Now
-                </button>
-              </div>
-              <div className="help-card rounded p-3 p-md-3">
-                <div className="profile">
-                  <span className="placeholder" />
-                  <div className="profile-text">
-                    <h5>John Doe</h5>
-                    <small>Intern</small>
-                  </div>
-                </div>
-                <p className="loan-amount">Loan Amount: $1,000</p>
-                <div className="funded-progress">
-                  <div className="funded" />
-                </div>
-                <div className="funded-info">
-                  <span className="funded">$700 Funded</span>
-                  <span className="fund-left">$300 Left</span>
-                </div>
-                <div className="w-100" />
-                <button className="btn btn-fml-secondary mt-3">
-                  Invest Now
-                </button>
-              </div>
-              <div className="help-card rounded p-3 p-md-3">
-                <div className="profile">
-                  <span className="placeholder" />
-                  <div className="profile-text">
-                    <h5>John Doe</h5>
-                    <small>Intern</small>
-                  </div>
-                </div>
-                <p className="loan-amount">Loan Amount: $1,000</p>
-                <div className="funded-progress">
-                  <div className="funded" />
-                </div>
-                <div className="funded-info">
-                  <span className="funded">$700 Funded</span>
-                  <span className="fund-left">$300 Left</span>
-                </div>
-                <div className="w-100" />
-                <button className="btn btn-fml-secondary mt-3">
-                  Invest Now
-                </button>
-              </div>
-              <div className="help-card rounded p-3 p-md-3">
-                <div className="profile">
-                  <span className="placeholder" />
-                  <div className="profile-text">
-                    <h5>John Doe</h5>
-                    <small>Intern</small>
-                  </div>
-                </div>
-                <p className="loan-amount">Loan Amount: $1,000</p>
-                <div className="funded-progress">
-                  <div className="funded" />
-                </div>
-                <div className="funded-info">
-                  <span className="funded">$700 Funded</span>
-                  <span className="fund-left">$300 Left</span>
-                </div>
-                <div className="w-100" />
-                <button className="btn btn-fml-secondary mt-3">
-                  Invest Now
-                </button>
-              </div>
-              <div className="help-card rounded p-3 p-md-3">
-                <div className="profile">
-                  <span className="placeholder" />
-                  <div className="profile-text">
-                    <h5>John Doe</h5>
-                    <small>Intern</small>
-                  </div>
-                </div>
-                <p className="loan-amount">Loan Amount: $1,000</p>
-                <div className="funded-progress">
-                  <div className="funded" />
-                </div>
-                <div className="funded-info">
-                  <span className="funded">$700 Funded</span>
-                  <span className="fund-left">$300 Left</span>
-                </div>
-                <div className="w-100" />
-                <button className="btn btn-fml-secondary mt-3">
-                  Invest Now
-                </button>
-              </div>
-              <div className="help-card rounded p-3 p-md-3">
-                <div className="profile">
-                  <span className="placeholder" />
-                  <div className="profile-text">
-                    <h5>John Doe</h5>
-                    <small>Intern</small>
-                  </div>
-                </div>
-                <p className="loan-amount">Loan Amount: $1,000</p>
-                <div className="funded-progress">
-                  <div className="funded" />
-                </div>
-                <div className="funded-info">
-                  <span className="funded">$700 Funded</span>
-                  <span className="fund-left">$300 Left</span>
-                </div>
-                <div className="w-100" />
-                <button className="btn btn-fml-secondary mt-3">
-                  Invest Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+
       </div>
 
       <Footer />

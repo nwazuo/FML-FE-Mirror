@@ -16,6 +16,11 @@ const INVESTOR_DASHBOARD = '/investordashboard';
 const FUNDEE_DASHBOARD_PAGE_URL = '/fundee-dashboard';
 const COMPAIGN_PAGE_URL = '/campaign';
 const ADMIN_DASHBOARD_PAGE_URL = '/admin-dashboard';
+const ADMIN_FAQ_PAGE_URL = '/admin-dashboard/add-faq';
+const ADMIN_CAMPAIGN_PAGE_URL = '/admin-dashboard/campaign';
+const ADMIN_FUNDING_PAGE_URL = '/admin-dashboard/funding';
+const ADMIN_PAYMENT_PAGE_URL = '/admin-dashboard/payment';
+const ADMIN_SETTINGS_PAGE_URL = '/admin-dashboard/settings';
 const BLOG_PAGE_URL = '/blog';
 const DEFAULT_DASHBOARD_PAGE_URL = '/default-dashboard';
 const PAYMENT_PAGE_URL = '/payment';
@@ -46,6 +51,11 @@ const pageurl = {
   FUNDEE_DASHBOARD_PAGE_URL,
   COMPAIGN_PAGE_URL,
   ADMIN_DASHBOARD_PAGE_URL,
+  ADMIN_FAQ_PAGE_URL,
+  ADMIN_CAMPAIGN_PAGE_URL,
+  ADMIN_FUNDING_PAGE_URL,
+  ADMIN_PAYMENT_PAGE_URL,
+  ADMIN_SETTINGS_PAGE_URL,
   BLOG_PAGE_URL,
   DEFAULT_DASHBOARD_PAGE_URL,
   PAYMENT_PAGE_URL,
