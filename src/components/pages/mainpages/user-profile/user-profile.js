@@ -8,7 +8,8 @@ import ProfileInfo from './profile-info/profile-info';
 import ProfileStat from './profile-stat/profile-stat';
 import RecommendBox from './recommend-box/recommend-box';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
-import pageurl from '../../../router/url/pageurl'
+import pageurl from '../../../router/url/pageurl';
+import noRecommendation from './nohistory.svg';
 //Redux stuff
 import { connect } from 'react-redux';
 import axios from 'axios';
@@ -162,7 +163,7 @@ class UserProfile extends Component {
                 ].join(' ')}
               >
                 <h2 className="font-weight-bold">Recommendations</h2>
-                <Link className={styles.RecommendLink} to="/recommendations">
+                {recommendations.length > 0 ? <Link className={styles.RecommendLink} to="/recommendations">
                   See All
                   <svg
                     width=".7em"
@@ -178,10 +179,10 @@ class UserProfile extends Component {
                       d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                     ></path>
                   </svg>
-                </Link>
+                </Link> : null }
               </div>
               <div className="row">
-                {recommendations ? recommendations.map((recommendation, idx) => {
+                { recommendations.length > 0 ? recommendations.map((recommendation, idx) => {
                   const fName = {...{...recommendation}.user}.firstName;
                   const lName = {...{...recommendation}.user}.lastName;
                   const photo = {...{...recommendation}.user}.photoURL;
@@ -199,7 +200,14 @@ class UserProfile extends Component {
                       </RecommendBox>
                     </div>
                   );
-                }) : null}
+                }) : 
+                <div className={["py-5", "d-flex", "flex-column", "align-items-center", 
+                  styles.NoData].join(' ')}>
+                  <img className="img-fluid" src={noRecommendation} alt="no data" />
+                  <h3 className={['mb-3', 'text-center'].join(' ')}>
+                    You Have No<br/> Recommendations Yet.
+                  </h3>
+                </div>}
               </div>
             </div>
           </div>
