@@ -1,5 +1,4 @@
-import React from "react";
-// import "./bootstrap.module.css";
+import React, { useState, useEffect } from "react";
 import "./landingPage.css";
 import about from "./img/about.png";
 import { Tween, Timeline } from "react-gsap";
@@ -8,8 +7,11 @@ import ScrollIntoView from "../../../router/scrollintoview/ScrollIntoView";
 import Testimonial from "../../../dataservices/testimonial_controller";
 import Campaign from "../../../dataservices/campaign_controller";
 import Trending from "../../../dataservices/trending_controller";
+import FMLHero from './img/FML-stock_hero.jpg'
+import axios from "axios";
 
 const LandingPage = () => {
+  // GSAP consatants
   const FadeInUp = ({ children }) => (
     <Tween from={{ y: 20, opacity: 0 }}>{children}</Tween>
   );
@@ -17,6 +19,50 @@ const LandingPage = () => {
     <Tween from={{ x: -40, opacity: 0 }}>{children}</Tween>
   );
 
+  // Subscribe form constants
+  const [email, setEmail] = useState("");
+  const [valid, setValid] = useState();
+  const [success, setSuccess] = useState();
+  const [statusText, setStatusText] = useState();
+  const [isValid, setIsValid] = useState(true);
+
+  const handleInput = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const clearAlert = () => {
+    setTimeout(() => {
+      setSuccess();
+      setStatusText();
+      setEmail("");
+      setValid();
+      setIsValid(true);
+    }, 5000);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    if (email === "" || !emailRegex.test(email)) {
+      setIsValid(false);
+      setValid("Please provide a valid email");
+      return;
+    }
+    setIsValid(true);
+    axios
+      .post("https://api.fundmylaptop.com/api/users/subscribe", { email })
+      .then((res) => {
+        console.log(res.data);
+        setSuccess(true);
+        setStatusText(res.data.message);
+      })
+      .catch((err) => {
+        console.log(err);
+        setSuccess(false);
+        setStatusText(err.response.data.message);
+      });
+  };
+
+  // Campign Form - Hero Section
   const SubmitCampaign = (e) => {
     e.preventDefault();
     window.location.href = "/campaign";
@@ -40,78 +86,21 @@ const LandingPage = () => {
                 </div>
               </Tween>
               <Tween from={{ opacity: 0, y: 30 }} duration={1.5}>
-                <div className="  header-form col-xl-4 my-5  pt-3 pb-5 bg-white">
+                <div className=" col-xl-4 my-5  pt-3 pb-5">
                   {/* here should be form */}
-                  <form
-                    onSubmit={SubmitCampaign}
-                    className=" px-md-3 d-flex flex-column justify-content-center"
-                  >
-                    <h5 className=" text-center mb-5 mt-0">Laptop Funding</h5>
-                    <div className="form-group">
-                      <label htmlFor="inputAddress">Campaign Name</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="CampaignName"
-                        placeholder="Campaign name here.."
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="inputState">Target</label>
-                      <select id="inputState" className="form-control" required>
-                        <option selected>N1000</option>
-                        <option>N10000</option>
-                      </select>
-                    </div>
-                    {/* date row */}
-                    <div className="row">
-                      <div className="form-group col-md-6 pr-lg-1">
-                        <label
-                          htmlFor="example-date-input"
-                          className=" col-form-label"
-                        >
-                          Start Date
-                        </label>
-                        <input
-                          className="form-control"
-                          type="date"
-                          id="example-date-input"
-                          required
-                        />
-                      </div>
-                      <div className="form-group col-md-6  pl-lg-1">
-                        <label
-                          htmlFor="example-date-input"
-                          className=" col-form-label"
-                        >
-                          End Date
-                        </label>
-                        <input
-                          className="form-control"
-                          type="date"
-                          id="example-date-input"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <button className="btn-form mx-auto my-4">
-                      Start Campaign
-                    </button>
-                  </form>
+				  <div className="stock-hero">
+				  	<img src={FMLHero}/>
+				  </div>
                 </div>
               </Tween>
             </div>
           </div>
         </Timeline>
-        {/* ***** Header content Finish here********/}
-        {/* ******* Main section Start Here ******** */}
+
         <main>
-          {/* trending section */}
 
           <Trending />
 
-          {/* about us section */}
           <section className="container-fluid bg-white about-us-section my-5">
             <div className="container">
               <FadeInLeft>
@@ -147,17 +136,12 @@ const LandingPage = () => {
             </div>
           </section>
 
-          {/* Campaign Section */}
-
           <Campaign />
-
-          {/* Testimonials section */}
 
           <Testimonial />
         </main>
-        {/* ******* Main section Finish Here ******** */}
+
         <div className="spacer py-md-5" />
-        {/* News Letter */}
         <Timeline>
           <div className=" container-fluid mx-0 news-letter row">
             <div className="col-md-11 news-letter-text ml-md-5  my-auto my-lg-5 px-0">
@@ -178,15 +162,38 @@ const LandingPage = () => {
               </Tween>
             </div>
             <div className="col-md-8 news-letter-form ml-md-5">
-              <form action>
+              <p
+                className={
+                  success === false
+                    ? "alert-danger"
+                    : "" || success === true
+                    ? "alert-success"
+                    : ""
+                }
+                id="sub-alert"
+                style={{ textAlign: "center", padding: "10px" }}
+              >
+                {statusText}
+              </p>
+              <p
+                className={isValid === false ? "alert-danger" : ""}
+                style={{ textAlign: "center", padding: "10px" }}
+              >
+                {valid}
+              </p>
+              <form onSubmit={handleSubmit}>
                 <input
+                  onChange={handleInput}
+                  value={email}
+                  isValid={isValid}
                   type="text"
-                  name
                   id="subscribe-input"
                   className="mb-5 subscribe-input"
                   placeholder="Enter Email"
                 />
-                <button className="mb-5 subscribe-btn"> Subscribe</button>
+                <button onClick={clearAlert} className="mb-5 subscribe-btn">
+                  Subscribe
+                </button>
               </form>
             </div>
           </div>
