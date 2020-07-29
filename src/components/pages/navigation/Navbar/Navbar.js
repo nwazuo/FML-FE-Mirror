@@ -70,12 +70,35 @@ const Navbar = (props) => {
 
               {props.user.authenticated && (
                 <li className="nav-item ">
-                  <Link
-                    className="nav-link"
-                    to={pageurl.DEFAULT_DASHBOARD_PAGE_URL}
-                  >
-                    DASHBOARD <span className="sr-only">(current)</span>
-                  </Link>
+                  <div className="dropdown">
+                    <Link
+                      className="dropdown-toggle nav-link"
+                      to="#"
+                      id="dropdownDashboard"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      DASHBOARD <span className="sr-only">(current)</span>
+                    </Link>
+                    <div
+                      className="dropdown-menu"
+                      aria-labelledby="dropdownDashboard"
+                    >
+                      <Link
+                        className="dropdown-item text-fml-primary"
+                        to={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
+                      >
+                        Fundee Dashboard
+                      </Link>
+                      <Link
+                        className="dropdown-item text-fml-primary"
+                        to={pageurl.INVESTOR_DASHBOARD}
+                      >
+                        Investor Dashboard
+                      </Link>
+                    </div>
+                  </div>
                 </li>
               )}
               {!props.user.authenticated ? (
