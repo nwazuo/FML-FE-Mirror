@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-.request-loan{
+.investorrequest-loan{
   height: 52px;
   background: #FB3F5C;
   border-radius: 5px;
@@ -21,44 +21,44 @@
   border: none;
 }
 
-.title{
+.investortitle{
   font-weight: 500;
   font-size: 40px;
   line-height: 60px !important;
   color: #04172A;
 }
 
-.title span{
+.investortitle span{
   color: #FB3F5C;
 }
 
 /* CIRCLE PROGRESS BAR */
-.overview__progress{
+.investoroverview__progress{
   background-color: #FFFFFF;
   border-radius: 10.9946px; 
 }
 
-.overview__progress-bar{
+.investoroverview__progress-bar{
   max-width: 191.3px;
   max-height: 191.3px;
   position: relative;
 }
 
-.overview__progress-info{
+.investoroverview__progress-info{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
 
-.overview__progress-info h5{
+.investoroverview__progress-info h5{
   font-weight: 500;
   font-size: 47.8261px;
   line-height: 62px;
   color: #04172A
 }
 
-.compaign-card__progress-info span{
+.investorcompaign-card__progress-info span{
   font-size: 21.7391px;
   line-height: 28px;
   color: #04172A;
@@ -68,24 +68,24 @@
 /* END CIRCLE PROGRESS BARR */
 
 /* compaign secetion */
-.compaign{
+.investorcompaign{
   background-color: white;
   border-radius: 10px;
   padding: 25px;
   margin: 2rem auto;
 }
-.compaign-card__progress-info{
+.investorcompaign-card__progress-info{
   font-size: 12px;
   line-height: 16px;
   color: #000000;
 }
-.compaign__title{
+.investorcompaign__title{
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;
   color: #04172A;
 }
-.compaign__view-more{
+.investorcompaign__view-more{
   font-weight: 500;
   font-size: 18px;
   line-height: 23px;
@@ -94,32 +94,32 @@
 }
 
 /* Compaign CARD */
-.compaign-card{
+.investorcompaign-card{
   background: rgba(245, 246, 250, 0.5);
   border-radius: 10.9946px;
   padding: 17px 14px 14px 20px;
 }
-.compaign-card__name{
+.investorcompaign-card__name{
   font-weight: 500;
   font-size: 20px;
   line-height: 26px;
   color: #000000;
 }
-.compaign-card__job{
+.investorcompaign-card__job{
   font-size: 16px;
   line-height: 21px;
   color: #04172A;
 }
-.compaign-card__body-desc{
+.investorcompaign-card__body-desc{
   font-weight: normal;
   font-size: 15px;
   line-height: 20px;
   color: #000000;
 }
-.compaign-card__body-desc span{
+.investorcompaign-card__body-desc span{
   color: #28f328;
 }
-.compaign-card__btn{
+.investorcompaign-card__btn{
   height: 37px;
   background: #04172A;
   box-shadow: 0px 4px 4px rgba(4, 23, 42, 0.05);
@@ -134,26 +134,26 @@
 
 /* ****** */
 /* Table */
-.dashboard-table{
+.investordashboard-table{
   background-color: white;
   padding: 25px ;
   border-radius: 10px;
 
 }
-.thead{
+.investorthead{
   height: 69px;
   background: #FB3F5C;
   color: white;
   text-align: center;
  
 }
-thead th{
+.investorthead th{
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
 
 }
-.table__no-history-title{
+.investortable__no-history-title{
   font-weight: bold;
   font-size: 36px;
   line-height: 51px;
@@ -164,13 +164,13 @@ thead th{
 }
 
 /* Overview CARD */
-.overview__title{
+.investoroverview__title{
   font-weight: 500;
   font-size: 18px;
   line-height: 36px;
   color: #04172A;
 }
-.overview-card{
+.investoroverview-card{
   background-color:white ;
   height: 106px;
   background: #FFFFFF;
@@ -178,7 +178,7 @@ thead th{
 }   
 
 @media(max-width:650px){
-  .overview-card{
+  .investoroverview-card{
     background-color:white ;
     height: 106px;
     background: #FFFFFF;
@@ -188,25 +188,25 @@ thead th{
     
   }  
 }
-.overview-card__img{
+.investoroverview-card__img{
   background-color: pink;
   border-radius: 50%;
   width: 50px;
   height:50px;
 }
-.overview-card__img img{
+.investoroverview-card__img img{
   height: initial;
   width: initial;
   transform: translate(50%,50%);
 }
-.overview-card__title{
+.investoroverview-card__title{
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 26px;
   color: #04172A;
   }
-.overview-card__desc{
+.investoroverview-card__desc{
   font-style: normal;
   font-weight: 500;
   font-size: 12px;

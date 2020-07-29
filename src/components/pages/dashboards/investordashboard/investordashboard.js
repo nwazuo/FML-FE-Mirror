@@ -179,8 +179,8 @@ class InvestorsDashboard extends Component{
             <Navbar />
             <div className="investor-dashboard container-fluid mt-4">
         {/* ***Overview*** */}
-        <div className="container overview px-0">
-          <h3 className="title">
+        <div className="container investoroverview px-0">
+          <h3 className="investortitle">
             Welcome back,<span> {user.charAt(0).toUpperCase().concat(user.slice(1))}</span>
           </h3>
           <div
@@ -190,7 +190,7 @@ class InvestorsDashboard extends Component{
                  justify-content-between
                  align-items-center"
           >
-            <h4 className="my-0 mx-sm-0 mx-auto overview__title">
+            <h4 className="my-0 mx-sm-0 mx-auto investoroverview__title">
               ACCOUNT OVERVIEW
             </h4>
           </div>
@@ -201,109 +201,109 @@ class InvestorsDashboard extends Component{
                 {/* Overview cards */}
                 
                   <div className="col-sm-6 col-lg-4 mx-auto">
-                  <div className="my-2 overview-card d-flex align-items-center ">
-                      <div className='ml-3 mr-2 overview-card__img ' style={{
+                  <div className="my-2 investoroverview-card d-flex align-items-center ">
+                      <div className='ml-3 mr-2 investoroverview-card__img ' style={{
             background: ' rgba(153, 158, 163, 0.22)',
             boxShadow: '1px 2px 2px rgba(240, 235, 235, 0.2)',
         }}>
                           <img src={moneyGrowth} alt=''/>
           
                       </div>
-                      <div className='overview-card__info'>
-                          <h4 className='mb-2 overview-card__title'>#{investedAmount}</h4>
-                          <span className='overview-card__desc'>Invested Amount</span>
+                      <div className='investoroverview-card__info'>
+                          <h4 className='mb-2 investoroverview-card__title'>#{investedAmount}</h4>
+                          <span className='investoroverview-card__desc'>Invested Amount</span>
                       </div>    
                   </div>
                 </div>
 
                 <div className="col-sm-6 col-lg-4">
-                  <div className="my-2 overview-card d-flex align-items-center ">
-                      <div className='ml-3 mr-2 overview-card__img ' style={{
+                  <div className="my-2 investoroverview-card d-flex align-items-center ">
+                      <div className='ml-3 mr-2 investoroverview-card__img ' style={{
             background: ' rgba(255, 184, 0, 0.16)',
             boxShadow: '1px 2px 2px rgba(240, 235, 235, 0.2)',
         }}>
                           <img src={creditCard} alt=''/>
           
                       </div>
-                      <div className='overview-card__info'>
-                          <h4 className='mb-2 overview-card__title'>#{repaidAmount}</h4>
-                          <span className='overview-card__desc'>Repaid Amount</span>
+                      <div className='investoroverview-card__info'>
+                          <h4 className='mb-2 investoroverview-card__title'>#{repaidAmount}</h4>
+                          <span className='investoroverview-card__desc'>Repaid Amount</span>
                       </div>    
                   </div>
                 </div>
 
                 <div className="col-sm-6 col-lg-4">
-                  <div className="my-2 overview-card d-flex align-items-center ">
-                      <div className='ml-3 mr-2 overview-card__img ' style={{
+                  <div className="my-2 investoroverview-card d-flex align-items-center ">
+                      <div className='ml-3 mr-2 investoroverview-card__img ' style={{
             background: ' rgba(153, 158, 163, 0.22)',
             boxShadow: '1px 2px 2px rgba(240, 235, 235, 0.2)',
         }}>
                           <img src={bomb} alt=''/>
           
                       </div>
-                      <div className='overview-card__info'>
-                          <h4 className='mb-2 overview-card__title'>#{remainingAmount}</h4>
-                          <span className='overview-card__desc'>Remaining Amount</span>
+                      <div className='investoroverview-card__info'>
+                          <h4 className='mb-2 investoroverview-card__title'>#{remainingAmount}</h4>
+                          <span className='investoroverview-card__desc'>Remaining Amount</span>
                       </div>    
                   </div>
                 </div>
 
                 <div className="col-sm-6 col-lg-4">
-                  <div className="my-2 overview-card d-flex align-items-center ">
-                      <div className='ml-3 mr-2 overview-card__img ' style={{
+                  <div className="my-2 investoroverview-card d-flex align-items-center ">
+                      <div className='ml-3 mr-2 investoroverview-card__img ' style={{
             background: ' rgba(255, 184, 0, 0.16)',
             boxShadow: '1px 2px 2px rgba(240, 235, 235, 0.2)',
         }}>
                           <img src={volume} alt=''/>
           
                       </div>
-                      <div className='overview-card__info'>
-                          <h4 className='mb-2 overview-card__title'>#{averageInvestment}</h4>
-                          <span className='overview-card__desc'>Average Investment</span>
+                      <div className='investoroverview-card__info'>
+                          <h4 className='mb-2 investoroverview-card__title'>#{averageInvestment}</h4>
+                          <span className='investoroverview-card__desc'>Average Investment</span>
                       </div>    
                   </div>
                 </div>
 
                 <div className="col-sm-6 col-lg-4">
-                  <div className="my-2 overview-card d-flex align-items-center ">
-                      <div className='ml-3 mr-2 overview-card__img ' style={{
+                  <div className="my-2 investoroverview-card d-flex align-items-center ">
+                      <div className='ml-3 mr-2 investoroverview-card__img ' style={{
             background: '#F2EBFB',
             boxShadow: '1px 2px 2px rgba(240, 235, 235, 0.2)',
         }}>
                           <img src={saveMoney} alt=''/>
           
                       </div>
-                      <div className='overview-card__info'>
-                          <h4 className='mb-2 overview-card__title'>#{numOfInvestments}</h4>
-                          <span className='overview-card__desc'>Investments</span>
+                      <div className='investoroverview-card__info'>
+                          <h4 className='mb-2 investoroverview-card__title'>{averageInterest} %</h4>
+                          <span className='investoroverview-card__desc'>Average Interest</span>
                       </div>    
                   </div>
                 </div>
 
                 <div className="col-sm-6 col-lg-4">
-                  <div className="my-2 overview-card d-flex align-items-center ">
-                      <div className='ml-3 mr-2 overview-card__img ' style={{
+                  <div className="my-2 investoroverview-card d-flex align-items-center ">
+                      <div className='ml-3 mr-2 investoroverview-card__img ' style={{
             background: '#FEF3EF',
             boxShadow: '1px 2px 2px rgba(240, 235, 235, 0.2)',
         }}>
                           <img src={scale} alt=''/>
           
                       </div>
-                      <div className='overview-card__info'>
-                          <h4 className='mb-2 overview-card__title'>{averageInterest} %</h4>
-                          <span className='overview-card__desc'>Average Interest</span>
+                      <div className='investoroverview-card__info'>
+                          <h4 className='mb-2 investoroverview-card__title'>{numOfInvestments}</h4>
+                          <span className='investoroverview-card__desc'>Investments</span>
                       </div>    
                   </div>
                 </div>
                 
               </div>
             </div>
-            <div className="col-md-3 my-2 py-0 overview__progress
+            <div className="col-md-3 my-2 py-0 investoroverview__progress
                     d-flex
                     align-items-center
                     justify-content-between"
             >
-              <div className="overview__progress-bar m-auto">
+              <div className="investoroverview__progress-bar m-auto">
                 <svg
                   className=""
                   width="100%"
@@ -319,7 +319,7 @@ class InvestorsDashboard extends Component{
                     strokeDasharray="1.74 1.74"
                   />
                 </svg>
-                <div className="overview__progress-info d-flex flex-column align-items-center">
+                <div className="investoroverview__progress-info d-flex flex-column align-items-center">
                   <h5>0%</h5>
                   <span>REPAID</span>
                 </div>
@@ -328,12 +328,12 @@ class InvestorsDashboard extends Component{
           </div>
         </div>
         {/* ***Compaign*** */}
-        <div className="container compaign">
-          <div className="compaign__header d-flex justify-content-between">
-            <h4 className="compaign__title">
+        <div className="container investorcompaign">
+          <div className="investorcompaign__header d-flex justify-content-between">
+            <h4 className="investorcompaign__title">
               CAMPAIGNS AVAILABLE FOR INVESTING
             </h4>
-            <span className="compaign__view-more">View more +</span>
+            <span className="investorcompaign__view-more">View more +</span>
           </div>
 
           {/* Compaign cards */}
@@ -342,18 +342,18 @@ class InvestorsDashboard extends Component{
               <div className='col-xs-8 col-md-4 col-lg-3 my-2' key={data.id}>
               <div className="compaign-card">
                   {/* Card header */}
-                <div className='compaign-card__header d-flex'>
-                    <div className="compaign-card__img">
+                <div className='investorcompaign-card__header d-flex'>
+                    <div className="investorcompaign-card__img">
                         <img src={compaigncard} alt=''/>
                     </div>
-                    <div className=' ml-2 compaign-card__info'>
-                         <h5 className='compaign-card__name' title={data.name}>{data.name.length > 10 ? data.name.split(" ")[0] + "..." : data.name}</h5>
-                         <span className='compaign-card__job'>{data.occupation}</span>
+                    <div className=' ml-2 investorcompaign-card__info'>
+                         <h5 className='investorcompaign-card__name' title={data.name}>{data.name.length > 10 ? data.name.split(" ")[0] + "..." : data.name}</h5>
+                         <span className='investorcompaign-card__job'>{data.occupation}</span>
                     </div>
                 </div>
                   {/* Card Body   */}
-                <div className="compaign-card__body">
-                <p className='my-3 compaign-card__body-desc'>Loan Amount: <span>{data.loanAmount}</span></p>
+                <div className="investorcompaign-card__body">
+                <p className='my-3 investorcompaign-card__body-desc'>Loan Amount: <span>{data.loanAmount}</span></p>
                     <div className="progress" style={{height: '15px' }}>
                         <div className="progress-bar " 
                             role="progressbar" 
@@ -367,12 +367,12 @@ class InvestorsDashboard extends Component{
                         </div>
                     </div>    
                     <div className='d-flex justify-content-between mt-3 mb-2'>
-                        <span className='compaign-card__progress-info'>{data.amountFunded} Funded</span>
-                         <span className='compaign-card__progress-info'>{data.amountLeft} Left</span>
+                        <span className='investorcompaign-card__progress-info'>{data.amountFunded} Funded</span>
+                         <span className='investorcompaign-card__progress-info'>{data.amountLeft} Left</span>
     
                     </div>
                  </div>
-                <button className='compaign-card__btn'>View profile</button>             
+                <button className='investorcompaign-card__btn'>View profile</button>             
             </div>
            </div>
             ))}
@@ -381,13 +381,13 @@ class InvestorsDashboard extends Component{
         {/* ************** */}
 
         {/* ***Table*** */}
-        <div className="container dashboard-table pb-5">
-          <h4 className="compaign__title">Your Investments</h4>
+        <div className="container investordashboard-table pb-5">
+          <h4 className="investorcompaign__title">Your Investments</h4>
           <div className="overflow-auto">
             {table.length > 0 && isLoadingTable ? (
                <div>
                  <table className="table overflow-auto" style={{ borderRadius: '5px 5px 0px 0px'  }}>
-            <thead className="thead">
+            <thead className="investorthead">
               <tr>
               <td>LOAN</td>
               <td>AMOUNT</td>
@@ -417,7 +417,7 @@ class InvestorsDashboard extends Component{
             ) : (
               <div>
                 <table className="table overflow-auto" style={{ borderRadius: '5px 5px 0px 0px'  }}>
-            <thead className="thead">
+            <thead className="investorthead">
               <tr>
               <td>LOAN</td>
               <td>AMOUNT</td>
@@ -431,7 +431,7 @@ class InvestorsDashboard extends Component{
           </table>
           <div className="my-5 d-flex flex-column align-items-center">
             <img className="img-fluid" src={noHistory} alt="no data" />
-            <h3 className="mb-4 text-center table__no-history-title">
+            <h3 className="mb-4 text-center investortable__no-history-title">
               You Have No History Yet.
             </h3>
           </div>
