@@ -35,9 +35,10 @@ import {
 
 import {
   FundeeDashboard,
-  AdminDashboard,
+  AdminLAnding,
   DefaultDashboard,
   InvestorDashboard,
+  AdminLanding,
 } from './components/pages/dashboards';
 
 function App() {
@@ -144,7 +145,7 @@ function App() {
         <AdminRoute
           exact
           path={pageurl.ADMIN_DASHBOARD_PAGE_URL}
-          component={AdminDashboard}
+          component={AdminLanding}
         />
 
         <ProtectedRoute
