@@ -167,11 +167,11 @@ const Navbar = (props) => {
                 </li>
               )}
 
-              {window.location.pathname === '/' ? (
-                <li className=" ml-1 mr-1">
-                  <UserSearch />
-                </li>
-              ) : null}
+              {/* {window.location.pathname === "/" ? (
+                <UserSearch />
+               ) : null
+               
+              } */}
 
               {/* THe person working on Login component should set this on isLoggedIn */}
 

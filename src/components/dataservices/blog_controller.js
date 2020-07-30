@@ -18,7 +18,7 @@ function verifyUser(){if(token){return true;}return false}
 
 
 function createBlogPost(data,setStatus,setRequested,setLoading){
-    setLoading(true);
+    setLoading(true)
     Server.authBlogPost(`${createBlogPostEndPoint}`,data,token,headers)
     .then(response=>{response && setRequested(true); response && setLoading(false);setStatus(response.data.success);})
     .catch(error=>{error && setRequested(true); error && setLoading(false);});    
