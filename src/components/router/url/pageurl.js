@@ -24,6 +24,8 @@ const ADMIN_SETTINGS_PAGE_URL = '/admin-dashboard/settings';
 const BLOG_PAGE_URL = '/blog';
 const DEFAULT_DASHBOARD_PAGE_URL = '/default-dashboard';
 const PAYMENT_PAGE_URL = '/payment';
+const PAYMENT_OTP_PAGE_URL = '/payment-otp';
+const PAYMENT_SUCCESS_PAGE_URL = '/payment-success';
 const INVITE_RECOMMENDER_PAGE_URL = '/invite-recommender';
 const EMAIL_VERIFICATION_URL = '/email-confirmation-success';
 const EMAIL_CONFIRMATION_FAILURE_URL = '/email-confirmation-failure';
@@ -34,6 +36,8 @@ const EDIT_PROFILE = '/edit-profile';
 const RESET_PASSWORD_URL = '/reset-password';
 const FUND_A_CAMPAIGN = '/campaigns';
 const VERIFICATION_3 = '/verification3';
+const VERIFICATION_FORM_ONE = '/verification-form-one';
+
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -61,6 +65,8 @@ const pageurl = {
   BLOG_PAGE_URL,
   DEFAULT_DASHBOARD_PAGE_URL,
   PAYMENT_PAGE_URL,
+  PAYMENT_OTP_PAGE_URL,
+  PAYMENT_SUCCESS_PAGE_URL,
   INVITE_RECOMMENDER_PAGE_URL,
   EMAIL_VERIFICATION_URL,
   EMAIL_CONFIRMATION_FAILURE_URL,

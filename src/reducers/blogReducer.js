@@ -1,8 +1,14 @@
-import { CREATE_BLOG_POST,GET_ALL_BLOG_POST,GET_BLOG_POST,COMMENT_BLOG_POST } from './types';
+import { 
+    CREATE_BLOG_POST,
+    GET_ALL_BLOG_POST,
+    GET_BLOG_POST,
+    COMMENT_BLOG_POST,
+} from './types';
   
 const initialState = {
-    createPost:false,
-    data:{}
+    createPost:{},
+    data:{},
+    allblogPost:{}
 };
 
 export default function (state = initialState, action) {
@@ -10,14 +16,13 @@ export default function (state = initialState, action) {
         case CREATE_BLOG_POST:
             return {
                 ...state,
-                createPost:true,
-                data:action.payload
+                createPost:action.payload
             };
-        // case GET_ALL_BLOG_POST:
-        //     return {
-        //         ...state,
-        //         fundee: action.payload
-        // };
+        case GET_ALL_BLOG_POST:
+            return {
+                ...state,
+                allblogPost:action.payload
+        };
         // case GET_BLOG_POST:
         //     return {
         //         ...state,

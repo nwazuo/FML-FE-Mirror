@@ -11,11 +11,13 @@ import twitter from './twitterIcon.svg';
 import github from './github.svg';
 import fbIcon from './facebook-square-brands.svg';
 import { GoogleLogin } from 'react-google-login';
+import GitHubLogin from 'react-github-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import Button from '../../../utilities/Button/CustomizedButton';
 // Redux Stuff
 import { connect } from 'react-redux';
-import { loginUser, googleLogin } from '../../../../actions/userActions';
+import { loginUser, googleLogin, facebookLogin } from '../../../../actions/userActions';
 
 const initialState = {
   email: '',
@@ -32,21 +34,35 @@ function reducer(state, { field, value }) {
 }
 const Login = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  useEffect(() => {
+    document.querySelector('.githubBtn').type = 'button';
+  }, []);
   useEffect(() => {
     if (props.ui.errors) {
-      dispatch({ field: 'errors', value: props.ui.errors });
+      dispatch({
+        field: 'errors',
+        value: props.ui.errors,
+      });
     }
     if (props.ui.loading !== state.loading) {
-      dispatch({ field: 'loading', value: props.ui.loading });
+      dispatch({
+        field: 'loading',
+        value: props.ui.loading,
+      });
     }
     if (props.ui.message) {
-      dispatch({ field: 'message', value: props.ui.message });
+      dispatch({
+        field: 'message',
+        value: props.ui.message,
+      });
     }
   }, [props.ui.errors, props.ui.loading, state.loading, props.ui.message]);
 
   const onChange = (event) => {
-    dispatch({ field: event.target.name, value: event.target.value });
+    dispatch({
+      field: event.target.name,
+      value: event.target.value,
+    });
   };
   const { email, password, errors, loading, message } = state;
 
@@ -95,6 +111,19 @@ const Login = (props) => {
     sendGoogleToken(response.tokenId);
   };
 
+  // GitHub Auth
+  const onGitHubLoginSuccess = (response) => console.log(response);
+  const onGitHubLoginFailure = (response) => console.log(response);
+  const githubClick = () => console.log('hi');
+  //Facebook auth
+  const sendFacebookToken = (data) => {
+    props.facebookLogin(data, props.history);
+  }
+  
+  const responseFacebook = (response) => {
+    sendFacebookToken(response);
+  }
+
   return (
     <ScrollIntoView>
       <Navbar />
@@ -127,7 +156,9 @@ const Login = (props) => {
             align-items-center"
                   onClick={renderProps.onClick}
                   disabled={renderProps.disabled}
-                  style={{ boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)' }}
+                  style={{
+                    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)',
+                  }}
                 >
                   <img className="pr-3" src={googleImg} alt="" />
                   Login with Google
@@ -146,7 +177,13 @@ const Login = (props) => {
               <img className="" src={twitter} alt="twitter" />
               Login with Twitter
             </Link> */}
-            <Link
+            <FacebookLogin 
+              appId="620560692194763"
+              onFailure={responseFacebook}
+              callback={responseFacebook}
+              render={renderProps => (
+                <Link
+                onClick={renderProps.onClick}
               className="text-center mt-3 py-3  
             btnGoogle d-flex justify-content-center 
             align-items-center"
@@ -158,18 +195,26 @@ const Login = (props) => {
               <img className="" src={fbIcon} alt="facebook" />
               Login with Facebook
             </Link>
-            {/* <Link
-              className="text-center mt-3 py-3  
-            btnGoogle d-flex justify-content-center 
+              )} />
+            <GitHubLogin
+              clientId="0d28ce3bf3e5f81a1b54"
+              onClick={(e) => e.preventDefault()}
+              onSuccess={onGitHubLoginSuccess}
+              onFailure={onGitHubLoginFailure}
+              cookiePolicy={'single_host_origin'}
+              className="githubBtn text-center mt-3 py-3 githubLogin btnGoogle d-flex justify-content-center 
             align-items-center"
-              style={{
-                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)',
-                color: '#24292e',
-              }}
-            >
-              <img className="" src={github} alt="github" />
-              Login with GitHub
-            </Link> */}
+              buttonText={
+                <span
+                  style={{
+                    color: '#24292e',
+                  }}
+                >
+                  <img className="" src={github} alt="github" />
+                  Login with GitHub
+                </span>
+              }
+            />
           </div>
 
           <div className="my-4 text-center or d-flex align-items-center or-box">
@@ -266,6 +311,7 @@ const mapStateToProps = (state) => ({
 const mapActionsToProps = {
   loginUser,
   googleLogin,
+  facebookLogin
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(withRouter(Login));

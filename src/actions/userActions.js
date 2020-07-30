@@ -48,6 +48,26 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
     });
 };
 
+export const facebookLogin = ({accessToken, userID}, history) => (dispatch) => {
+  dispatch({ type: CLEAR_ERRORS });
+  dispatch({ type: LOADING_UI });
+  axios
+    .post(`${baseURL}/api/auth/facebookAuth`, {userID: userID, accessToken: accessToken})
+    .then((res) => {
+      console.log('facebook data:', res.data);
+      const { token } = res.data.data;
+      setAuthorizationHeader(token);
+      dispatch(getLoginUserData(history));
+    })
+    .catch((err) => {
+      dispatch({type: LOADED_UI});
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data.message
+      })
+    })
+}
+
 // export const githubLogin = (history) => (dispatch) => {
 //   dispatch({ type: CLEAR_ERRORS });
 //   dispatch({ type: LOADING_UI });
@@ -82,6 +102,7 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
 
 export const logoutUser = (history) => (dispatch) => {
   localStorage.removeItem('FMLToken');
+  localStorage.removeItem('FMLT');
   delete axios.defaults.headers.common['Authorization'];
   dispatch({ type: SET_UNAUTHENTICATED });
   history.push(pageurl.LOGIN_PAGE_URL);

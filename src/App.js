@@ -20,6 +20,8 @@ import {
   Page404,
   ComingSoon,
   Payment,
+  PaymentOtp,
+  PaymentSuccess,
   Campaign,
   Blog,
   InviteRecommender,
@@ -36,10 +38,13 @@ import {
 
 import {
   FundeeDashboard,
-  AdminDashboard,
+  AdminLanding,
+  AddFaq,
+  AdminCampaign,
   DefaultDashboard,
   InvestorDashboard,
 } from './components/pages/dashboards';
+import VerificationOne from './components/pages/mainpages/verification/VerificationOne';
 
 function App() {
   return (
@@ -58,6 +63,10 @@ function App() {
 
         <Route exact path={pageurl.PAYMENT_PAGE_URL} component={Payment} />
 
+        <Route exact path={pageurl.PAYMENT_OTP_PAGE_URL} component={PaymentOtp} />
+
+        <Route exact path={pageurl.PAYMENT_SUCCESS_PAGE_URL} component={PaymentSuccess} />
+
         <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
         <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
@@ -72,6 +81,11 @@ function App() {
           exact
           path={pageurl.SINGLE_POST_URL + `/:userid`}
           component={SinglePost}
+        />
+        <Route
+          exact
+          path={pageurl.VERIFICATION_FORM_ONE}
+          component={VerificationOne}
         />
 
         <Route
@@ -151,7 +165,19 @@ function App() {
         <AdminRoute
           exact
           path={pageurl.ADMIN_DASHBOARD_PAGE_URL}
-          component={AdminDashboard}
+          component={AdminLanding}
+        />
+
+        <AdminRoute
+          exact
+          path={pageurl.ADMIN_FAQ_PAGE_URL}
+          component={AddFaq}
+        />
+
+        <AdminRoute
+          exact
+          path={pageurl.ADMIN_CAMPAIGN_PAGE_URL}
+          component={AdminCampaign}
         />
 
         <ProtectedRoute

@@ -180,7 +180,8 @@ class InvestorsDashboard extends Component{
             <div className="investor-dashboard container-fluid mt-4">
         {/* ***Overview*** */}
         <div className="container investoroverview px-0">
-          <h3 className="investortitle">
+
+          <h3 className="investortitle pt-3">
             Welcome back,<span> {user.charAt(0).toUpperCase().concat(user.slice(1))}</span>
           </h3>
           <div
@@ -402,11 +403,12 @@ class InvestorsDashboard extends Component{
           <tbody className="investortbody">
               {table.map((row, idx) => (
                <tr key={idx}>
-                  <td>{idx}</td>
-                  <td>{row.amount}</td>
+
+                  <td>{row.id}</td>
+                  <td className="lightgreen">{row.amount}</td>
                   <td>{row.interestRate}</td>
                   <td>{row.term ? row.term : " "}</td>
-                  <td>{row.totalReturns}</td>
+                  <td className="lightgreen">{row.totalReturns}</td>
                   <td> <span><b className="investorday"></b></span> {row.paymentDue}</td>
                   <td >{row.status}</td>
                 </tr>
