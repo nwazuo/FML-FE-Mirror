@@ -18,9 +18,9 @@ const[showAgreeTC,setShowAgreeTC] = React.useState(false);
 const[agreeTC,setAgreeTC] = React.useState(false);
 function handleForm(e){setInputDetails({...inputDetails,[e.target.name]:e.target.value});}
 function handleSubmit(e){e.preventDefault();
-    if(BlogController.verifyUser()){
-        if(BlogController.validate(inputDetails,setInputError)){setIsLoading(true);props.createBlogPost(inputDetails)}setIsLogged(true);
-    }else{setIsLogged(false);}
+if(BlogController.verifyUser()){
+    if(BlogController.validate(inputDetails,setInputError)){setIsLoading(true);props.createBlogPost(inputDetails)}setIsLogged(true);
+}else{setIsLogged(false);}
 }
 function handleUpload(e){try{const image = e.target.files[0];setInputDetails({...inputDetails,'article_img_src':`${image}`});}catch(error){console.log(error.message);}}    
 let status = props.status && props.status.success;

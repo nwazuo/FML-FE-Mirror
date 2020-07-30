@@ -1,5 +1,5 @@
 import { loginUser, recommendUser, logoutUser } from './userActions';
-import { fetchFaqs, fetchSearchFaqs, addFaqs } from './dataActions';
+import { fetchFaqs, fetchSearchFaqs, addFaqs, makePayment, makePaymentOtp  } from './dataActions';
 import { fetchFundeeDashboard } from './fundeeAction';
 import {createBlogPost,getAllBlogPost} from './blogActions'
 
@@ -10,6 +10,8 @@ export {
   recommendUser,
   addFaqs,
   logoutUser,
+  makePayment,
+  makePaymentOtp,
   fetchFundeeDashboard,
   createBlogPost,
   getAllBlogPost
