@@ -1,16 +1,16 @@
 import React from 'react';
 import pageurl from '../../../router/url/pageurl'
-import {withRouter,Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {Navbar,Footer} from '../../navigation'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import blog from './blog.module.css'
 import {BlogController} from '../../../dataservices' 
 import {Button,Status} from '../../../utilities'
 import TermsAndCondition from './termsandcondition'
-
+import { connect } from 'react-redux';
+import {createBlogPost} from '../../../../actions'
 const CreateBlogPost = ({...props}) => {
 const[isLogged,setIsLogged]=React.useState(true);
-const[isStatus,setIsStatus]=React.useState(false);const[isRequested,setIsRequested]=React.useState(false);
 const[isLoading,setIsLoading]=React.useState(false);
 const[inputDetails,setInputDetails] = React.useState({article_title:"",article_description:"",article_post:"",article_img_src:"",article_img_alt:"blog_post"});
 const[inputError,setInputError] = React.useState({});
@@ -19,19 +19,13 @@ const[agreeTC,setAgreeTC] = React.useState(false);
 function handleForm(e){setInputDetails({...inputDetails,[e.target.name]:e.target.value});}
 function handleSubmit(e){e.preventDefault();
     if(BlogController.verifyUser()){
-        if(BlogController.validate(inputDetails,setInputError)){
-            BlogController.createBlogPost(inputDetails,setIsStatus,setIsRequested,setIsLoading,setInputError,inputError);
-        }
-        setIsLogged(true);
-    }else{
-        setIsLogged(false);
-    }
-    
+        if(BlogController.validate(inputDetails,setInputError)){setIsLoading(true);props.createBlogPost(inputDetails)}setIsLogged(true);
+    }else{setIsLogged(false);}
 }
 function handleUpload(e){try{const image = e.target.files[0];setInputDetails({...inputDetails,'article_img_src':`${image}`});}catch(error){console.log(error.message);}}    
-
+let status = props.status && props.status.success;
 return(<ScrollIntoView><Navbar/>
-    {isRequested && <Status buttonTxt="Back To Blog" buttonUrl={pageurl.BLOG_PAGE_URL} closeStatus={()=>{setIsRequested(false);setIsLoading(false);isStatus && window.open(pageurl.CREATE_NEW_POST_URL,'_self')}} status_message={isStatus ? "Post Submitted Successfully" : "Post Not Submitted"} />}
+    {status && <Status buttonTxt="Back To Blog" buttonUrl={pageurl.BLOG_PAGE_URL} closeStatus={()=>{setIsLoading(false);status && window.open(pageurl.CREATE_NEW_POST_URL,'_self')}} status_message={status ? "Post Submitted Successfully" : "Post Not Submitted"} />}
     {!isLogged && <Status buttonTxt="Go To Login Page" buttonUrl={pageurl.LOGIN_PAGE_URL} closeStatus={()=>{setIsLogged(true);setIsLoading(false);}} status_message={"Login To Continue"} />}
     <div className={blog.create_blog_post_qobi}>
         {showAgreeTC&&<TermsAndCondition agree_btn={()=>{setShowAgreeTC(!showAgreeTC);setAgreeTC(true)}} cancel_btn={()=>{setShowAgreeTC(!showAgreeTC);setAgreeTC(false)}}/>}
@@ -60,5 +54,6 @@ return(<ScrollIntoView><Navbar/>
         </div> 
     </div>
     <Footer/></ScrollIntoView>)}
-    
-export default withRouter(CreateBlogPost);
+const mapStateToProps = (state) => {return{status : state.blog.createPost}}
+const mapDispatchToProps = () => {return{createBlogPost}}
+export default connect(mapStateToProps,mapDispatchToProps())(CreateBlogPost);
