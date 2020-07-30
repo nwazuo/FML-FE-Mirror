@@ -34,6 +34,7 @@ svg #bar {
     stroke-width: 1rem;
     transition: stroke-dashoffset 1.5s ;
     stroke-linecap: round;
+    transform: translateY(100%) rotate(-90deg)
     
 }
 .overview__progress{
