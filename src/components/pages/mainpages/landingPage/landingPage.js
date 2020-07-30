@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./landingPage.css";
-import about from "./img/about.png";
 import { Tween, Timeline } from "react-gsap";
 import { Navbar, Footer } from "../../navigation/navigation";
 import ScrollIntoView from "../../../router/scrollintoview/ScrollIntoView";
@@ -11,14 +10,11 @@ import axios from "axios";
 
 const LandingPage = () => {
   // GSAP consatants
-  const FadeInUp = ({ children }) => (
-    <Tween from={{ y: 20, opacity: 0 }}>{children}</Tween>
-  );
   const FadeInLeft = ({ children }) => (
     <Tween from={{ x: -40, opacity: 0 }}>{children}</Tween>
   );
 
-  // Subscribe form constants
+  // Subscribe-form constants
   const [email, setEmail] = useState("");
   const [valid, setValid] = useState();
   const [success, setSuccess] = useState();
@@ -30,14 +26,8 @@ const LandingPage = () => {
   };
 
   const clearAlert = () => {
-    setTimeout(() => {
-      setSuccess();
-      setStatusText();
-      setEmail("");
-      setValid();
-      setIsValid(true);
-    }, 5000);
-  };
+    setTimeout(() => {setSuccess(); setStatusText(); setEmail(""); setValid(); setIsValid(true); }, 5000); };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
@@ -59,12 +49,6 @@ const LandingPage = () => {
         setSuccess(false);
         setStatusText(err.response.data.message);
       });
-  };
-
-  // Campign Form - Hero Section
-  const SubmitCampaign = (e) => {
-    e.preventDefault();
-    window.location.href = "/campaign";
   };
 
   return (
@@ -95,11 +79,8 @@ const LandingPage = () => {
             </div>
           </div>
         </Timeline>
-
         <main>
-
           <Trending />
-
           <section className="container-fluid bg-white about-us-section my-5">
             <div className="container">
               <FadeInLeft>
@@ -116,11 +97,7 @@ const LandingPage = () => {
                   </div>
                 </FadeInLeft>
                 <div
-                  className="col-lg-6 pr-4 pl-lg-5
-                d-flex flex-column
-                justify-content-center
-                "
-                >
+                  className="col-lg-6 pr-4 pl-lg-5 d-flex flex-column justify-content-center">
                   <h3 className=" mb-4 mt-4 mt-md-0 mb-md-5  about-us-title">
                     We are here because of you
                   </h3>
@@ -134,50 +111,31 @@ const LandingPage = () => {
               </div>
             </div>
           </section>
-
           <Campaign />
-
           <Testimonial />
         </main>
-
         <div className="spacer py-md-5" />
         <Timeline>
           <div className=" container-fluid mx-0 news-letter row">
             <div className="col-md-11 news-letter-text ml-md-5  my-auto my-lg-5 px-0">
-              <Tween from={{ opacity: 0, y: 30 }} delay={1} duration={1.5}>
-                <FadeInUp>
                   <h2 className="text-center text-md-left">
                     Subscribe to our Newsletter
                   </h2>
-                </FadeInUp>
-              </Tween>
-              <Tween from={{ opacity: 0, y: 30 }} delay={1} duration={1.5}>
-                <FadeInLeft>
                   <p className="mx-auto mx-md-0">
                     Stay in touch with our regular updates and tech news alert,
                     we only send newsletter weekly and we promise not to spam
                   </p>
-                </FadeInLeft>
-              </Tween>
             </div>
             <div className="col-md-8 news-letter-form ml-md-5">
               <p
-                className={
-                  success === false
-                    ? "alert-danger"
-                    : "" || success === true
-                    ? "alert-success"
-                    : ""
-                }
+                className={success === false ? "alert-danger" : "" || success === true ? "alert-success" : ""}
                 id="sub-alert"
-                style={{ textAlign: "center", padding: "10px" }}
-              >
+                style={{ textAlign: "center", padding: "10px" }}>
                 {statusText}
               </p>
               <p
                 className={isValid === false ? "alert-danger" : ""}
-                style={{ textAlign: "center", padding: "10px" }}
-              >
+                style={{ textAlign: "center", padding: "10px" }}>
                 {valid}
               </p>
               <form onSubmit={handleSubmit}>
