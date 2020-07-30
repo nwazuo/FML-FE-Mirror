@@ -245,8 +245,8 @@
    }
 
    .investortablepadding{
-    padding-left:2%;
-    padding-right:2%; 
+    padding-left:0%;
+    padding-right:0%; 
     margin-top:0px;  
 }
 .investortext--secondary {
@@ -255,7 +255,7 @@
 
 .investoruser {
     margin-top: 50px;
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
   .investoruser__intro,
@@ -591,7 +591,6 @@
         display:block;
     }
 
-
     #investorright-button{
         margin-right:-30px;
     }
@@ -604,7 +603,7 @@
     }
 
     .investoraccount__block {
-      margin-left:0%;
+      margin-left:2%;
       width: 100%;
     }
 
@@ -612,6 +611,9 @@
       width: 100%;
       padding: 20px;
       
+    }
+    .investedAmount{
+      font-size:20px !important;
     }
 
     .investoraccount__progress {

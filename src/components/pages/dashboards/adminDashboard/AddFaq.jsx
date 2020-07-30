@@ -71,7 +71,7 @@ class AddFaq extends Component {
                                         ></textarea>
                                     </div>
                                     <div className="form-group">
-                                        <button type="submit" className="btn btn-success py-3 px-5 font-weight-bold ml-4 ml-md-0 ml-lg-3">Submit</button>
+                                        <button type="submit" className="btn btn-success py-2 px-5 font-weight-bold ml-4 ml-md-0 ml-lg-3">Create</button>
                                     </div>
                                 </form>
                             </div>

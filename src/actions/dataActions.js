@@ -53,6 +53,7 @@ export function fetchSearchFaqs (query) {
 }
 
 export function addFaqs (data) {
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
     return dispatch => {
         axios
             .post(`${baseURL}/api/faqs/create`, data)
@@ -65,14 +66,16 @@ export function addFaqs (data) {
 }
 
 export function deleteFaqs (data) {
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
     return dispatch => {
         console.log(data)
-        //axios
-        //    .delete(`${baseURL}/api/faqs/create`, data)
-        //    .then(res => dispatch({
-        //        type: ADD_FAQS,
-        //        payload: res.statusText
-        //    }))
-        //    .catch(err => console.error(err))
+        axios
+            .delete(`${baseURL}/api/faqs/delete/${data}`, data)
+            .then(res => dispatch({
+                type: ADD_FAQS,
+                payload: res.statusText
+            }))
+            .catch(err => console.error(err))
+        //window.location.reload()
     }
 }

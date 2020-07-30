@@ -20,7 +20,8 @@ import EmailVerification from './EmailConfirmation/EmailVerification/EmailVerifi
 import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailure/EmailConfirmationFailure';
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 import CreateBlogPost from './blog/create_blog_post';
-import ResetPassword from './reset/ResetPassword'
+import ResetPassword from './reset/ResetPassword';
+import FundCampaign from './fund-a-campaign/FundCampaign'
 
 
 export {
@@ -46,5 +47,6 @@ export {
   EmailVerification,
   EmailConfirmationFailure,
   CreateBlogPost,
-  ResetPassword
+  ResetPassword,
+  FundCampaign
 };

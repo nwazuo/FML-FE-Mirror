@@ -30,7 +30,8 @@ const EMAIL_CONFIRMATION_FAILURE_URL = '/email-confirmation-failure';
 const EMAIL_CONFIRMATION_URL = '/email-confirmation';
 const SINGLE_POST_URL = '/blog/post';
 const CREATE_NEW_POST_URL = '/create-new-post';
-const RESET_PASSWORD_URL = '/reset-password'
+const RESET_PASSWORD_URL = '/reset-password';
+const FUND_A_CAMPAIGN = '/fund-a-campaign'
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -64,7 +65,8 @@ const pageurl = {
   EMAIL_CONFIRMATION_URL,
   SINGLE_POST_URL,
   CREATE_NEW_POST_URL,
-  RESET_PASSWORD_URL
+  RESET_PASSWORD_URL,
+  FUND_A_CAMPAIGN
 };
 
 export default pageurl;
