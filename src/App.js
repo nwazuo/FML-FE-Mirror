@@ -33,6 +33,7 @@ import {
   EditProfile,
   ResetPassword,
   FundCampaign,
+  Verification3,
 } from './components/pages/mainpages';
 
 import {
@@ -130,6 +131,12 @@ function App() {
         />
 
         <Route exact path={pageurl.FUND_A_CAMPAIGN} component={FundCampaign} />
+
+        <Route
+          exact
+          path={pageurl.VERIFICATION_3}
+          component={Verification3}
+        />
 
         <ProtectedRoute
           exact
