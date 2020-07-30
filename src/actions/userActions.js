@@ -48,37 +48,37 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
     });
 };
 
-export const githubLogin = (history) => (dispatch) => {
-  dispatch({ type: CLEAR_ERRORS });
-  dispatch({ type: LOADING_UI });
-  fetch('https://api.fundmylaptop.com/api/auth/github', {
-    method: 'GET',
-    // credentials: 'include',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Credentials': true,
-    },
-  })
-    .then((response) => {
-      console.log(response);
-      if (response.status === 200) return response.json();
-      throw new Error('failed to authenticate user');
-    })
-    .then((responseJson) => {
-      this.setState({
-        authenticated: true,
-        user: responseJson.user,
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-      this.setState({
-        authenticated: false,
-        error: 'Failed to authenticate user',
-      });
-    });
-};
+// export const githubLogin = (history) => (dispatch) => {
+//   dispatch({ type: CLEAR_ERRORS });
+//   dispatch({ type: LOADING_UI });
+//   fetch('https://api.fundmylaptop.com/api/auth/github', {
+//     method: 'GET',
+//     // credentials: 'include',
+//     headers: {
+//       Accept: 'application/json',
+//       'Content-Type': 'application/json',
+//       'Access-Control-Allow-Credentials': true,
+//     },
+//   })
+//     .then((response) => {
+//       console.log(response);
+//       if (response.status === 200) return response.json();
+//       throw new Error('failed to authenticate user');
+//     })
+//     .then((responseJson) => {
+//       this.setState({
+//         authenticated: true,
+//         user: responseJson.user,
+//       });
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       this.setState({
+//         authenticated: false,
+//         error: 'Failed to authenticate user',
+//       });
+//     });
+// };
 
 export const logoutUser = (history) => (dispatch) => {
   localStorage.removeItem('FMLToken');
