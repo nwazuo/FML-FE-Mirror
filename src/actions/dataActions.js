@@ -74,13 +74,13 @@ export function makePayment (data) {
     return dispatch => {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
         const campaign_id = "5f215eddea498b24f06767e1"
-        //window.location.href = "/payment-otp"
         axios
             .post(`https://api.fundmylaptop.com/api/payment/pay/${campaign_id}`, data)
             .then(res => dispatch({
                 type: MAKE_PAYMENT,
                 payload: res.data.data
             }))
+            .then(() => window.location.href = "/payment-otp")
             .catch(err => console.error(err))
     }
 }
@@ -88,13 +88,14 @@ export function makePayment (data) {
 export function makePaymentOtp (data) {
     return dispatch => {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
-        window.location.href = "/payment-success"
+        const campaign_id = "5f215eddea498b24f06767e1"
         axios
-            .post(`https://api.fundmylaptop.com/api/payment/validate`, data)
+            .post(`https://api.fundmylaptop.com/api/payment/validate/${campaign_id}`, data)
             .then(res => dispatch({
                 type: MAKE_PAYMENT_OTP,
                 payload: res.data.data
             }))
+            .then(() => window.location.href = "/payment-success")
             .catch(err => console.error(err))
     }
 }

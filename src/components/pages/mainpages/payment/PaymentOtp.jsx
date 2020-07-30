@@ -25,8 +25,8 @@ class PaymentOtp extends React.Component {
     onHandleSubmit(e) {
         const { otp } = this.state
         const data = {
+            flw_ref: this.props.payment.flw_ref,
             otp,
-            fundee: this.props.user.credentials.data.email
         }
         this.props.makePaymentOtp(data)
         this.setState({ otp: "" })
@@ -50,7 +50,7 @@ class PaymentOtp extends React.Component {
                                     id="otp"
                                     value={otp}
                                     onChange={this.onHandleChange}
-                                    placeholder="--    --    --    --    --    --" 
+                                    placeholder="--    --    --    --    --" 
                                     required
                                 />
                             </div>
@@ -70,8 +70,7 @@ class PaymentOtp extends React.Component {
 
 const mapStateToProps = (state) => ({
     user: state.user,
-    pay_info: state.data.payment
-
+    payment: state.data.payment,
 });
   
 const mapDispatchToProps = dispatch => {
