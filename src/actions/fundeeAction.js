@@ -26,7 +26,7 @@ export function  fetchFundeeDashboard  () {
 export const fetchFundeeCampaigns = async () =>{
 	try{
 		   return await axios.get(`${baseURL}/api/campaigns/listRequests`, {
-        headers:{ Authorization:  localStorage.getItem('FMLToken')}
+        headers:{ Authorization: localStorage.getItem('FMLToken')}
 		   });
 	   } catch (err){
 		   throw err;
@@ -37,7 +37,7 @@ export const fetchFundeeCampaigns = async () =>{
 export const fetchFundeeInvestments = async () =>{
 	try{
 		   return await axios.get(`${baseURL}/api/campaigns/listCampaigns`, {
-        headers:{ Authorization:  localStorage.getItem('FMLToken')}
+        headers:{ Authorization: localStorage.getItem('FMLToken')}
 		   })
 	   } catch (err){
 		   throw err;

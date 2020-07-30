@@ -61,11 +61,11 @@ const UserProfile = (props) => {
   
     useEffect(() => {
       fetchFundeeCampaigns().then (res=>{
-        // console.log(res.data.data)
+        console.log(res.data.data)
         setCampaigns(res.data.data)
       })
       fetchFundeeInvestments().then (res=>{
-        // console.log(res.data.data)
+        console.log(res.data.data)
         setInvestments(res.data.data)
       })
     }, [])
@@ -174,6 +174,104 @@ const UserProfile = (props) => {
               <div className="col-md-3 col-6 px-2 mb-md-0 mb-3">
                 <ProfileStat statsTitle="Total Outstanding" statsValue="None" />
               </div>
+            </div>
+          </div>
+          
+          <div className={styles.Recommendations}>
+            <div
+              className={[
+                'd-flex',
+                'align-items-center',
+                'justify-content-between',
+                styles.RecommendHeader,
+              ].join(' ')}
+            >
+              <h2 className="font-weight-bold pl-5">Fundee Campaigns</h2>
+              <Link className={styles.RecommendLink} to="#">
+                See All
+                <svg
+                  width=".7em"
+                  height=".7em"
+                  viewBox="0 0 16 16"
+                  className="bi bi-chevron-right ml-1 mb-1"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    strokeWidth="10"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                  ></path>
+                </svg>
+              </Link>
+            </div>
+            <div className="row">
+            {campaigns && campaigns.map(campaign => {
+                  return (
+                        <div  className="col-md-4 col-sm-12 px-2 mb-3">
+                          <ul className="list-unstyled ml-5 ">
+                            <li key={campaign._id}>
+                              <FundeeCampaign
+                                title= {campaign.title}
+                                description={campaign.description}
+                                amount={campaign.amount}
+                                location={campaign.location}
+                                currency={campaign.currency}
+                                fundeePic= {campaign.photoURL}/>
+                            </li>
+                          </ul>
+                      </div>
+                  )
+                })}
+            </div>
+          </div>
+
+          <div className={styles.Recommendations}>
+            <div
+              className={[
+                'd-flex',
+                'align-items-center',
+                'justify-content-between',
+                styles.RecommendHeader,
+              ].join(' ')}
+            >
+              <h2 className="font-weight-bold pl-5">Fundee Campaigns</h2>
+              <Link className={styles.RecommendLink} to="#">
+                See All
+                <svg
+                  width=".7em"
+                  height=".7em"
+                  viewBox="0 0 16 16"
+                  className="bi bi-chevron-right ml-1 mb-1"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    strokeWidth="10"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                  ></path>
+                </svg>
+              </Link>
+            </div>
+            <div className="row">
+            {investments && investments.map(investment => {
+                  return (
+                        <div  className="col-md-4 col-sm-12 px-2 mb-3">
+                          <ul className="list-unstyled ml-5 ">
+                            <li key={investment.campaign._id}>
+                              <FundeeCampaign
+                                title= {investment.campaign.title}
+                                description={investment.campaign.description}
+                                amount={investment.campaign.amount}
+                                location={investment.campaign.location}
+                                currency={investment.campaign.currency}
+                                fundeePic= {investment.campaign.photoURL}/>
+                            </li>
+                          </ul>
+                      </div>
+                  )
+                })}
             </div>
           </div>
 
