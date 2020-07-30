@@ -125,14 +125,16 @@ const LoanRequest = (props) => {
                 <p style={{color: "white"}}> File size: not more than 5MB</p>
               </div>
 
-              {/* <div className="d-flex upload-add">
-                <div className="d-flex align-items-center justify-content-center">
+              <div className="d-flex upload-add" style={{paddingBottom: "20px"}}>
+                <div className="d-flex align-items-center justify-content-center" style={{color: "white" , borderColor: "white"}}>
                   <img src={PlusIcon} alt="" />
                 </div>
-                <div className="d-flex align-items-center justify-content-center">
+                <div className="d-flex align-items-center justify-content-center" style={{color: "white" , borderColor: "white"}}>
                   <img src={PlusIcon} alt="" />
                 </div>
-              </div> */}
+                
+              </div>
+              <p style={{color: "white"}}>Click the plus icon to upload Photos</p>
           </div>
 
             <div className="motivational-wrapper" style={{color: "white"}}>
@@ -196,7 +198,7 @@ const LoanRequest = (props) => {
                 <label>Amount </label>
                 <input
                   type="number"
-                  placeholder="Enter up to 200,000"
+                  placeholder="Max 200,000"
                   name="amount"
                   id="amount"
                   onChange={onChange}
@@ -220,7 +222,7 @@ const LoanRequest = (props) => {
                 <label>Loan Description</label>
                 <input
                   type="text"
-                  placeholder="Description of loan asked for"
+                  placeholder="Description"
                   name="description"
                   id="description"
                   onChange={onChange}
