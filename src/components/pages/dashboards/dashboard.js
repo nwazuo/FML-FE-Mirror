@@ -6,7 +6,6 @@ import AdminFunding from './adminDashboard/AdminFunding';
 import AdminPayment from './adminDashboard/AdminPayment';
 import AdminSettings from './adminDashboard/AdminSettings';
 import InvestorDashboard from './investordashboard/investordashboard';
-import AdminDashboard from './adminDashboard/adminDashboard';
 import DefaultDashboard from './defaultDashboard/defaultDashboard';
 
 export {
@@ -17,7 +16,6 @@ export {
   AdminLanding,
   AdminCampaign,
   AdminFunding,
-  AdminDashboard,
   AdminPayment,
   AdminSettings,
 };
