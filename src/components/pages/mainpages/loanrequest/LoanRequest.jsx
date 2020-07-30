@@ -316,7 +316,7 @@ const LoanRequest = (props) => {
               ></span>
             )}
             {loading && <span>Loading</span>}
-            {!loading && <span>Submit Loan Request</span>}
+            {!loading && <span>Create Loan Request</span>}
           </button>
         </form>
       </div>
