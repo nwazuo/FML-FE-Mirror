@@ -137,9 +137,9 @@ section {
     background-color: #ffffff;
     padding: 30px;
 
-    img {
-      margin-bottom: 30px;
-    }
+    // img {
+    //   margin-bottom: 30px;
+    // }
 
     p {
       font-size: 1.5rem;
@@ -168,8 +168,18 @@ section {
       margin-top: 34px;
       padding-bottom: 126px;
 
+      .top-content{
+        background-color: #fb3f5c;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        margin-bottom: 40px;
+
+      }
+
       .upload-wrapper {
-        margin-bottom: 46px;
+        // margin-bottom: 46px;
 
         .upload {
           @include border;
@@ -213,7 +223,7 @@ section {
 
       // Motivational Styles
       .motivational-wrapper {
-        @include border-bottom(48px);
+        // @include border-bottom(48px);
 
         h5 {
           @include h5;
@@ -237,6 +247,13 @@ section {
         padding-top: 16px;
         @include border-bottom(48px);
 
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+          width: 40%;
+          background-color: #ffffff;
+        }
+
         h5 {
           @include h5;
         }
@@ -257,7 +274,16 @@ section {
       // Payback Styles
       .payback-wrapper {
         padding-top: 16px;
-        @include border-bottom(64px);
+        @include border-bottom(14px);
+       
+
+        .loan-form{
+          .card2{
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+              transition: 0.3s;
+            background-color: #ffffff;
+          }
+        }
 
         h5 {
           @include h5;
@@ -276,27 +302,44 @@ section {
         }
       }
 
-      // Invite Wrapper Styles
-      .invite-wrapper {
-        padding-top: 16px;
-
-        h5 {
-          @include h5;
-        }
-
-        label {
-          @include label;
-        }
-
-        input {
-          @include input;
-        }
+      // socoal media Styles
+      .social-head{
+        text-align: center;
+        padding: 20px;
       }
+
+      .card3{
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+        background-color: #ffffff;
+      }
+      // .invite-wrapper {
+      //   padding-top: 16px;
+
+      //   h5 {
+      //     @include h5;
+      //   }
+
+      //   label {
+      //     @include label;
+      //   }
+
+      //   input {
+      //     @include input;
+      //   }
+      // }
 
       button {
         @include button(277px, 20px);
-        margin-top: 76px;
+        margin-top: 70px;
+        
       }
+    }
+  }
+
+  @include minWidth(375px) {
+    .card3{
+      padding: 10px;
     }
   }
 

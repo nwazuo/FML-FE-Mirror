@@ -106,10 +106,8 @@ const LoanRequest = (props) => {
           <span>Dashboard &gt; </span>
           <span className="create"> Create Loan Request</span>
         </div>
-
-        <form id="loanRequest" onSubmit={onSubmit} method="POST">
-          
-          <div className="top-content" style={{color: "white"}}>
+        <form id="loanRequest" onSubmit={onSubmit} method="POST"> 
+          <div className="top-content card" style={{color: "white"}}>
             <div className="upload-wrapper" style={{color: "white" }}>
               <div className="d-flex flex-column align-items-center upload" style={{color: "white" , borderColor: "white"}}>
                 <h4 style={{color: "white"}}>Upload your video </h4>
@@ -124,7 +122,7 @@ const LoanRequest = (props) => {
                   value={photoUrl}
                 />
                 <p style={{color: "white"}}>File type: Jpg, Png</p>
-                <p style={{color: "white"}}> File size: not more than 2MB</p>
+                <p style={{color: "white"}}> File size: not more than 5MB</p>
               </div>
 
               {/* <div className="d-flex upload-add">
@@ -150,7 +148,7 @@ const LoanRequest = (props) => {
             </div>
           </div>
        
-          <div className="payback-wrapper card loan-form">
+          <div className="payback-wrapper card3 loan-form">
             {/* <h5>Payback plan</h5> */}
             <div className="container ">
               <div className="column">
@@ -158,7 +156,7 @@ const LoanRequest = (props) => {
               <div className="col-6">
               <h5>Payback plan</h5>
                 <label>Repayment Period</label>
-                <input
+                <input style={{backgroundColor: "white"}}
                   type="date"
                   placeholder="Date"
                   name="repaymentPeriod"
@@ -234,11 +232,11 @@ const LoanRequest = (props) => {
             </div>
           </div>
           <div className="social-head" >
-          <h4>Social Media</h4>
+          <h2>Social Media</h2>
           </div>
 
-          <div className="payback-wrapper ">
-            <div className="container social-form card ">
+          <div className="payback-wrapper  card3 ">
+            <div className="container social-form ">
             <div className="column">
               <div className="row">
               <div className="col-6">
@@ -316,7 +314,7 @@ const LoanRequest = (props) => {
               ></span>
             )}
             {loading && <span>Loading</span>}
-            {!loading && <span>Submit Request</span>}
+            {!loading && <span>Submit Loan Request</span>}
           </button>
         </form>
       </div>
