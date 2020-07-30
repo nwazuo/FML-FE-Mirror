@@ -123,6 +123,12 @@ function App() {
 
 				<ProtectedRoute
 					exact
+					path={pageurl.CAMPAIGN_PAGE_URL + '/:campaignID'}
+					component={Campaign}
+				/>
+
+				<ProtectedRoute
+					exact
 					path={pageurl.LOAN_REQUEST_PAGE_URL}
 					component={LoanRequest}
 				/>
@@ -137,12 +143,6 @@ function App() {
 					exact
 					path={pageurl.FUNDEE_DASHBOARD_PAGE_URL}
 					component={FundeeDashboard}
-				/>
-
-				<ProtectedRoute
-					exact
-					path={pageurl.COMPAIGN_PAGE_URL}
-					component={Campaign}
 				/>
 
 				<ProtectedRoute

@@ -14,7 +14,7 @@ const PAGE_404 = '/404';
 const COMING_SOON_URL = '/coming-soon';
 const INVESTOR_DASHBOARD = '/investordashboard';
 const FUNDEE_DASHBOARD_PAGE_URL = '/fundee-dashboard';
-const COMPAIGN_PAGE_URL = '/campaign';
+const CAMPAIGN_PAGE_URL = '/campaign';
 const ADMIN_DASHBOARD_PAGE_URL = '/admin-dashboard';
 const ADMIN_FAQ_PAGE_URL = '/admin-dashboard/add-faq';
 const ADMIN_CAMPAIGN_PAGE_URL = '/admin-dashboard/campaign';
@@ -48,7 +48,7 @@ const pageurl = {
 	COMING_SOON_URL,
 	INVESTOR_DASHBOARD,
 	FUNDEE_DASHBOARD_PAGE_URL,
-	COMPAIGN_PAGE_URL,
+	CAMPAIGN_PAGE_URL,
 	ADMIN_DASHBOARD_PAGE_URL,
 	ADMIN_FAQ_PAGE_URL,
 	ADMIN_CAMPAIGN_PAGE_URL,
