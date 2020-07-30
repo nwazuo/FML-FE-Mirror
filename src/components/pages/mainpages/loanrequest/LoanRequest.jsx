@@ -81,7 +81,7 @@ const LoanRequest = (props) => {
   }
 
   return (
-    <section>
+    <section className="loan-request"> 
       <Navbar />
       {/* <DashboardNavbar /> */}
       {/* if ( props.data.createdRequest ) {
