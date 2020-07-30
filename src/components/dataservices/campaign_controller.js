@@ -97,7 +97,13 @@ const Campaign = () => {
       title: 'Laptop Repair',
       level: '25%'
 		},
-	];
+  ];
+  
+  const showDetails = () => {
+    window.location.href = '/campaigns'
+    // const trendDetails = document.querySelector('.trend-details');
+    // trendDetails.style.display = "block"
+}
 
   return campaign ? (
     <section className="compaign-section">
@@ -106,7 +112,7 @@ const Campaign = () => {
           <div className="row d-flex justify-content-between">
             <Tween from={{ opacity: 0, y: 30 }} delay={1} duration={1.5}>
               <h3 className="col-7">Featured Campaigns </h3>
-              <a href="#4"><span className="mt-1 btn-view-all ">View All+</span></a>
+              <span className="mt-1 btn-view-all " onClick={showDetails}>View All+</span>
             </Tween>
           </div>
         </Timeline>
@@ -153,7 +159,7 @@ const Campaign = () => {
                   {/* card footer */}
 
                   <div className="card-footer d-flex align-center justify-content-between p-0">
-                    <a href className="m-auto ">
+                    <a href className="m-auto " onClick={showDetails}>
                       {' '}
                       View details <img src={arrow} alt="a4" />{' '}
                     </a>
