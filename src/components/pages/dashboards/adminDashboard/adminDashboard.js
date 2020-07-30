@@ -138,7 +138,6 @@ class AdminDashboard extends Component {
                     </div>
                   </div>
                 </nav>
-
                 {/** Dashboard Routing */}
                 {this.props.children}
               </main>
