@@ -84,7 +84,7 @@ class AddFaq extends Component {
                             <h4 className="text-center mb-3">FAQ Delete</h4>
                             <table className="table">
                                 <tbody>
-                                    {faqs.length === 0 ? (
+                                    {!faqs || faqs.length === 0 ? (
                                         <h6 className="text-center alert alert-danger">No FAQ created yet</h6>
                                         ) : (
                                             faqs.map((data, idx) => (
