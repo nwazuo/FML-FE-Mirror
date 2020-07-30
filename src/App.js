@@ -82,12 +82,7 @@ function App() {
           path={pageurl.SINGLE_POST_URL + `/:userid`}
           component={SinglePost}
         />
-        <Route
-          exact
-          path={pageurl.VERIFICATION_FORM_ONE}
-          component={VerificationOne}
-        />
-
+        
         <Route
           exact
           path={pageurl.CREATE_NEW_POST_URL}
@@ -161,6 +156,12 @@ function App() {
           path={pageurl.COMPAIGN_PAGE_URL}
           component={Campaign}
         />
+        
+        {/* <Route
+          exact
+          path={pageurl.VERIFICATION_FORM_ONE}
+          component={VerificationOne}
+        /> */}
 
         <AdminRoute
           exact
@@ -201,6 +202,7 @@ function App() {
         />
 
         <Route path="*" component={Page404} />
+        
       </Switch>
     </Router>
   );
