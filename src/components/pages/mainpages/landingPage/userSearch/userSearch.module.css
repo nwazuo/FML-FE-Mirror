@@ -40,7 +40,12 @@
 
 }
 
-.SearchForm:hover, .SearchForm:focus, .CloseIcon:hover, .CloseIcon:focus, .SearchIcon:hover, .SearchIcon:focus {
+.SearchForm:hover, 
+.SearchForm:focus, 
+.CloseIcon:hover, 
+.CloseIcon:focus, 
+.SearchIcon:hover, 
+.SearchIcon:focus {
   outline: none;
   box-shadow: none;
 }

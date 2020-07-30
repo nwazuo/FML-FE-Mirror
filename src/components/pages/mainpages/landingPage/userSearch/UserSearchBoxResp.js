@@ -1,14 +1,7 @@
 import React from 'react';
 import styles from './userSearchBoxResp.module.css';
-import { useSelector } from 'react-redux'
 
-const UserSearchBoxResponsive = ({userData}) => {
-  // const searched = useSelector(state => state.searchUser.searched)
-
-  // console.log('ss', searched)
-console.log('sss', userData)
-
-  return (
+const UserSearchBoxResponsive = ({userData, dd}) => (
     <div className={styles.UserSearchBoxResp}>
     {userData instanceof Array || userData !== null ? (
       <div className={`card ${styles.UserCardResp}`}>
@@ -19,8 +12,8 @@ console.log('sss', userData)
               class={`list-group-item ${styles.UserListItemResp}`}
             >
               <div className={`row py-4 ${styles.UserBoxResp}`}>
-                <div className='col-4'>
-                  <img src={photoURL} alt='avatar' className='rounded-circle img-fluid'/>
+                <div className='col-4 text-center'>
+                  <img src={photoURL} alt='avatar' className='rounded-circle img-fluid w-75'/>
                 </div>
                 <div className='col-8'>
                     <p className={styles.UserNameResp}>{`${firstName} ${lastName}`}</p>
@@ -41,12 +34,7 @@ console.log('sss', userData)
     ) : <div>
     {''}
     </div>}
- 
-    
 </div>
-
-
-    )
-}
+)
 
 export default UserSearchBoxResponsive;

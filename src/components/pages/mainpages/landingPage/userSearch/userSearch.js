@@ -1,27 +1,32 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './userSearch.module.css';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
 import UserSearchBox from './UserSearchBox'
 
 const UserSearch = () => {
   const [search, setSearch] = useState('')
   const [clear, setClear] = useState(false)
-  const dispatch = useDispatch();
   const [userData, setUserData] = useState(null);
-
 
   const onChange = (e) => {
     e.preventDefault()
     const value = e.target.value;
-    setSearch(value)
+   
+    if (value) {
+      setSearch(value)
     setClear(true)
+
+    } else {
+      setSearch('')
+      setUserData(null)
+    }
   };
 
   const onTextClear = () => {
     if (clear) {
       setSearch('')
       setClear(false)
+      setUserData(null)
     }
   }
 
@@ -36,9 +41,7 @@ const UserSearch = () => {
         })
         .then((response) => {
           const data = response.data.data;
-          console.log('dataaa', data)
           setUserData(data)
-
         })
         .catch((error) => {
           console.log('error ---->>>', error.message);
@@ -47,25 +50,23 @@ const UserSearch = () => {
   
       return () => clearTimeout(timer);
     }
-  }, [search, dispatch]);
+  }, [search]);
 
   return (
     <li className= {`${styles.UserSearch} nav-item`}>
     <form className="form-inline">
-    <div className= {`${styles.UserFormGroup} input-group`}>
-    <input 
-    type='text'
-    placeholder='Search'
-    id='searchUsers'
-    className= {styles.SearchForm}
-    value= {search}
-    onChange={onChange}
-  />
-    </div>
+      <div className= {`${styles.UserFormGroup} input-group`}>
+        <input 
+        type='text'
+        placeholder='Search'
+        id='searchUsers'
+        className= {styles.SearchForm}
+        value= {search}
+        onChange={onChange}
+        />
+      </div>
   </form>
  
-
-
   <button
   className={styles.SearchIcon}
   ><i className={`fa fa-search ${styles.schIc}`} aria-hidden="true"></i>

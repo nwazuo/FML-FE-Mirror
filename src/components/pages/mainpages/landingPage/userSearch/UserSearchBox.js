@@ -1,40 +1,7 @@
 import React from 'react';
 import styles from './userSearchBox.module.css';
-// import { useSelector } from 'react-redux'
 
-const UserSearchBox = ({userData}) => {
-  // const searched = useSelector(state => state.searchUser.searched)
-  console.log('sss', userData)
-
-// console.log('ss', searched)
-
-  // const searched = [
-  //   {
-  //     _id: 1,
-  //     photoURL: 'https://images.pexels.com/photos/3290236/pexels-photo-3290236.jpeg?cs=srgb&dl=woman-wearing-white-turtle-neck-shirt-3290236.jpg&fm=jpg',
-  //     firstName: 'Ally',
-  //     lastName: 'John'
-  //   },
-  //   {
-  //     _id: 2,
-  //     photoURL: 'https://images.pexels.com/photos/3290236/pexels-photo-3290236.jpeg?cs=srgb&dl=woman-wearing-white-turtle-neck-shirt-3290236.jpg&fm=jpg',
-  //     firstName: 'Ally',
-  //     lastName: 'John'
-  //   },
-  //   {
-  //     _id: 3,
-  //     photoURL: 'https://images.pexels.com/photos/3290236/pexels-photo-3290236.jpeg?cs=srgb&dl=woman-wearing-white-turtle-neck-shirt-3290236.jpg&fm=jpg',
-  //     firstName: 'Ally',
-  //     lastName: 'John'
-  //   },
-  //   {
-  //     _id: 4,
-  //     photoURL: 'https://images.pexels.com/photos/3290236/pexels-photo-3290236.jpeg?cs=srgb&dl=woman-wearing-white-turtle-neck-shirt-3290236.jpg&fm=jpg',
-  //     firstName: 'Ally',
-  //     lastName: 'John'
-  //   },
-  // ]
-  return (
+const UserSearchBox = ({ userData }) =>  (
     <div className={styles.UserSearchBox}>
     {userData instanceof Array ? (
       <div className={`card ${styles.UserCard}`}>
@@ -43,7 +10,7 @@ const UserSearchBox = ({userData}) => {
             <li 
               key={_id}
               class={`list-group-item ${styles.UserListItem}`}
-            >
+            > 
               <div className={`row py-4 ${styles.UserBox}`}>
                 <div className='col-4'>
                   <img src={photoURL} alt='' className='rounded-circle img-fluid'/>
@@ -65,13 +32,8 @@ const UserSearchBox = ({userData}) => {
         </ul>
       </div>
     ) : null}
- 
-    
 </div>
-
-
     )
-}
 
 export default UserSearchBox;
 

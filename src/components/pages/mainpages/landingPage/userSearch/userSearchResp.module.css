@@ -57,7 +57,7 @@ li {
 }
 
 @media (min-width: 992px) {
-  .UserSearchResp {
+  .UserSearchGenResp {
     display: none;
   }
 }
@@ -74,127 +74,7 @@ li {
 
 @media screen and (max-width: 450px) {
   .SearchIconResp {  
-    right: 83%;
-  }
-
-  .CloseIconResp {
-    right: 13%;
-  }
-}
-
-@media (min-width:575px) {
-  .SearchIconResp {  
     right: 87%;
-  }
-
-  .CloseIconResp {
-    right: 11%;
-  }
-}
-
-@media (min-width:576px) {
-  .SearchIconResp {  
-    right: 85%;
-  }
-
-  .CloseIconResp {
-    right: 13%;
-  }
-}
-
-@media (min-width:595px) {
-  .SearchIconResp {  
-    right: 83%;
-  }
-
-  .CloseIconResp {
-    right: 15%;
-  }
-}
-
-@media (min-width:625px) {
-  .SearchIconResp {  
-    right: 81%;
-  }
-
-  .CloseIconResp {
-    right: 17%;
-  }
-}
-
-@media (min-width:675px) {
-  .SearchIconResp {  
-    right: 79%;
-  }
-
-  .CloseIconResp {
-    right: 19%;
-  }
-}
-
-@media (min-width:715px) {
-  .SearchIconResp {  
-    right: 78%;
-  }
-
-  .CloseIconResp {
-    right: 20%;
-  }
-}
-
-@media (min-width:745px) {
-  .SearchIconResp {  
-    right: 76%;
-  }
-
-  .CloseIconResp {
-    right: 22%;
-  }
-}
-
-@media (min-width:767px) {
-  .SearchIconResp {  
-    right: 80%;
-  }
-
-  .CloseIconResp {
-    right: 18%;
-  }
-}
-
-@media (min-width:768px) {
-  .SearchIconResp {  
-    right: 92%;
-  }
-
-  .CloseIconResp {
-    right: 7%;
-  }
-}
-
-@media (min-width:785px) {
-  .SearchIconResp {  
-    right: 91%;
-  }
-
-  .CloseIconResp {
-    right: 7%;
-  }
-}
-
-@media (min-width:820px) {
-  .SearchIconResp {  
-    right: 89%;
-  }
-
-  .CloseIconResp {
-    right: 9%;
-  }
-}
-
-@media (min-width:840px) {
-  .SearchIconResp {  
-    right: 88%;
   }
 
   .CloseIconResp {
@@ -202,72 +82,43 @@ li {
   }
 }
 
+@media (min-width:575px) {
+  .SearchIconResp {  
+    right: 92%;
+  }
+
+  .CloseIconResp {
+    right: 5%;
+  }
+}
+
+@media (min-width:768px) {
+  .SearchIconResp {  
+    right: 94%;
+  }
+
+  .CloseIconResp {
+    right: 4%;
+  }
+}
+
+
+@media (min-width:820px) {
+  .SearchIconResp {  
+    right: 95%;
+  }
+
+  .CloseIconResp {
+    right: 4%;
+  }
+}
+
 @media (min-width:860px) {
   .SearchIconResp {  
-    right: 87%;
+    right: 94%;
   }
 
   .CloseIconResp {
-    right: 11%;
-  }
-}
-
-@media (min-width:885px) {
-  .SearchIconResp {  
-    right: 86%;
-  }
-
-  .CloseIconResp {
-    right: 12%;
-  }
-}
-
-@media (min-width:885px) {
-  .SearchIconResp {  
-    right: 86%;
-  }
-
-  .CloseIconResp {
-    right: 13%;
-  }
-}
-
-@media (min-width:901px) {
-  .SearchIconResp {  
-    right: 84%;
-  }
-
-  .CloseIconResp {
-    right: 15%;
-  }
-}
-
-@media (min-width:930px) {
-  .SearchIconResp {  
-    right: 83%;
-  }
-
-  .CloseIconResp {
-    right: 16%;
-  }
-}
-
-@media (min-width:960px) {
-  .SearchIconResp {  
-    right: 82%;
-  }
-
-  .CloseIconResp {
-    right: 17%;
-  }
-}
-
-@media (min-width:980px) {
-  .SearchIconResp {  
-    right: 81%;
-  }
-
-  .CloseIconResp {
-    right: 18%;
+    right: 4%;
   }
 }
