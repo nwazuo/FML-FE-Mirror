@@ -28,13 +28,13 @@ const EditProfile = (props) => {
     // role,
     // isActive
   } = credentials.data;
-  const [firstNameP, setFirstName] = useState(firstName ? firstName : '');
-  const [lastNameP, setLastName] = useState(lastName ? lastName : '');
-  const [phoneP, setPhone] = useState(phone ? phone : '');
-  const [emailP, setEmail] = useState(email ? email : '');
-  const [addressP, setAddress] = useState(address ? address : '');
-  const [genderP, setGender] = useState(gender ? gender : '');
-  const [occupationP, setOccupation] = useState(occupation ? occupation : '');
+  const [firstNameP, setFirstName] = useState(firstName ? firstName : 'nill');
+  const [lastNameP, setLastName] = useState(lastName ? lastName : 'nill');
+  const [phoneP, setPhone] = useState(phone ? phone : 'nill');
+  const [emailP, setEmail] = useState(email ? email : 'nill');
+  const [addressP, setAddress] = useState(address ? address : 'nill');
+  const [genderP, setGender] = useState(gender ? gender : 'nill');
+  const [occupationP, setOccupation] = useState(occupation ? occupation : 'nill');
   const [photoURLP, setPhotoURL] = useState(photoURL ? photoURL : '');
 
   const handleFirstName = (e) => {
@@ -72,7 +72,7 @@ const EditProfile = (props) => {
     <div className="editProfile">
       <ProfileNav />
 
-      <section className="editProfileLayer1 editProfileLayer-pb-4">
+      <section className="editProfileLayer1 editProfileLayer-pb-4 pt-5">
         <div className="container">
           {/* {Profile Picture row} */}
           <div className="row mt-5 mt-5 ">
@@ -244,7 +244,7 @@ const EditProfile = (props) => {
         </div>
       </section>
       {/* {Change Password section} */}
-      <section className="editProfileLayer1 editProfileLayer-pb-4">
+      <section className="editProfileLayer1 editProfileLayer-pb-4 pt-5">
         <div className="container">
           <div className="row mt-5 mb-5">
             <div className="col-md-4 ">
