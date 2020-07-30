@@ -66,7 +66,7 @@ const EditProfile = (props) => {
       occupation: occupationP,
       address: addressP,
     };
-    props.editUserProfile(props.history, _id);
+    props.editUserProfile(props.history, _id,formInput);
   };
   return (
     <div className="editProfile">
