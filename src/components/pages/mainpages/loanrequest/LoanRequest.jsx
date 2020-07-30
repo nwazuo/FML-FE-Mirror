@@ -198,7 +198,7 @@ const LoanRequest = (props) => {
                 <label>Amount </label>
                 <input
                   type="number"
-                  placeholder="Max 200,000"
+                  placeholder="Max 300,000"
                   name="amount"
                   id="amount"
                   onChange={onChange}
