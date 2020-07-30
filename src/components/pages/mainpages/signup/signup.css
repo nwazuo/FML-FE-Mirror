@@ -61,17 +61,25 @@ nav .login {
   background-color: #fa1a3c;
   border-color: #fa0d32;
 }
-.facbook-logo{
+.facbook-logo {
   font-size: 26px;
   padding-left: 1.5rem;
 }
-.login-btn-facebook{
+.login-btn-facebook {
   border: 1px solid #1c7ed6;
   color: #1c7ed6;
 }
-.login-btn-facebook:hover{
+.login-btn-facebook:hover {
   color: white;
   background-color: #1c7ed6;
+}
+.login-btn-github {
+  border: 1px solid #24292e;
+  color: #24292e;
+}
+.login-btn-github:hover {
+  color: #ffffff;
+  background-color: #24292e;
 }
 .btn-fml-secondary:focus,
 .btn-fml-secondary.focus {
@@ -96,13 +104,12 @@ nav .login {
   background-color: #fa0d32;
   border-color: #f5052a;
 }
-input::placeholder{
+input::placeholder {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
   color: rgba(0, 0, 0, 0.4);
-
 }
 .btn-fml-secondary:not(:disabled):not(.disabled):active:focus,
 .btn-fml-secondary:not(:disabled):not(.disabled).active:focus,
@@ -137,20 +144,20 @@ input::placeholder{
 .login-text {
   width: 90%;
 }
-.facbook-logo{
+.facbook-logo {
   font-size: 26px;
   padding-left: 1.5rem;
 }
-.login-btn-facebook{
+.login-btn-facebook {
   border: 1px solid #1c7ed6;
   color: #1c7ed6;
 }
-.login-btn-facebook:hover{
+.login-btn-facebook:hover {
   color: white;
   background-color: #1c7ed6;
 }
 @media only screen and (min-width: 1000px) {
-  .form-control,
+  .signup-form,
   .btn-google,
   .textWidth,
   .check-control .or-box {
@@ -169,7 +176,7 @@ input::placeholder{
     width: 87%;
     margin: auto;
   }
-  .form-control,
+  .signup-form,
   .check-control,
   .btn-google,
   .textWidth,

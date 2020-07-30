@@ -7,13 +7,16 @@ import loginBg from '../../../assets/images/login-bg.png';
 import pageurl from '../../../router/url/pageurl';
 import { Navbar, Footer } from '../../navigation/navigation';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
-import fcbIcon from './facebook-square-brands.svg';
+import twitter from './twitterIcon.svg';
+import github from './github.svg';
+import fbIcon from './facebook-square-brands.svg';
 import { GoogleLogin } from 'react-google-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import Button from '../../../utilities/Button/CustomizedButton';
 // Redux Stuff
 import { connect } from 'react-redux';
-import { loginUser, googleLogin } from '../../../../actions/userActions';
+import { loginUser, googleLogin, facebookLogin } from '../../../../actions/userActions';
 
 const initialState = {
   email: '',
@@ -93,6 +96,15 @@ const Login = (props) => {
     sendGoogleToken(response.tokenId);
   };
 
+  //Facebook auth
+  const sendFacebookToken = (data) => {
+    props.facebookLogin(data, props.history);
+  }
+  
+  const responseFacebook = (response) => {
+    sendFacebookToken(response);
+  }
+
   return (
     <ScrollIntoView>
       <Navbar />
@@ -132,7 +144,7 @@ const Login = (props) => {
                 </Link>
               )}
             ></GoogleLogin>{' '}
-            <Link
+            {/* <Link
               className="text-center mt-3 py-3  
             btnGoogle d-flex justify-content-center 
             align-items-center"
@@ -141,9 +153,40 @@ const Login = (props) => {
                 color: '#1c7ed6',
               }}
             >
-              <img className="" src={fcbIcon} alt="facebook" />
+              <img className="" src={twitter} alt="twitter" />
+              Login with Twitter
+            </Link> */}
+            <FacebookLogin 
+              appId="620560692194763"
+              onFailure={responseFacebook}
+              callback={responseFacebook}
+              render={renderProps => (
+                <Link
+                onClick={renderProps.onClick}
+              className="text-center mt-3 py-3  
+            btnGoogle d-flex justify-content-center 
+            align-items-center"
+              style={{
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)',
+                color: '#1c7ed6',
+              }}
+            >
+              <img className="" src={fbIcon} alt="facebook" />
               Login with Facebook
             </Link>
+              )} />
+            {/* <Link
+              className="text-center mt-3 py-3  
+            btnGoogle d-flex justify-content-center 
+            align-items-center"
+              style={{
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)',
+                color: '#24292e',
+              }}
+            >
+              <img className="" src={github} alt="github" />
+              Login with GitHub
+            </Link> */}
           </div>
 
           <div className="my-4 text-center or d-flex align-items-center or-box">
@@ -164,7 +207,7 @@ const Login = (props) => {
               type="email"
               placeholder="Email"
               name="email"
-              className="form-control"
+              className="login-form form-control"
               id="email"
               onChange={onChange}
               value={email}
@@ -179,7 +222,7 @@ const Login = (props) => {
               type="password"
               placeholder="Password"
               name="password"
-              className="form-control"
+              className="login-form form-control"
               id="password"
               onChange={onChange}
               value={password}
@@ -199,7 +242,7 @@ const Login = (props) => {
             <Button
               load={loading}
               propsTitle={'Log In'}
-              className="form-control login-btn btn-fml-secondary"
+              className="login-form form-control login-btn btn-fml-secondary"
               onClick={(e) => {
                 onSubmit(e);
               }}
@@ -240,6 +283,7 @@ const mapStateToProps = (state) => ({
 const mapActionsToProps = {
   loginUser,
   googleLogin,
+  facebookLogin
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(withRouter(Login));

@@ -14,7 +14,7 @@ const PAGE_404 = '/404';
 const COMING_SOON_URL = '/coming-soon';
 const INVESTOR_DASHBOARD = '/investordashboard';
 const FUNDEE_DASHBOARD_PAGE_URL = '/fundee-dashboard';
-const CAMPAIGN_PAGE_URL = '/campaign';
+const CAMPAIGN_PAGE_URL = '/campaigns/campaign';
 const ADMIN_DASHBOARD_PAGE_URL = '/admin-dashboard';
 const ADMIN_FAQ_PAGE_URL = '/admin-dashboard/add-faq';
 const ADMIN_CAMPAIGN_PAGE_URL = '/admin-dashboard/campaign';
@@ -30,7 +30,9 @@ const EMAIL_CONFIRMATION_FAILURE_URL = '/email-confirmation-failure';
 const EMAIL_CONFIRMATION_URL = '/email-confirmation';
 const SINGLE_POST_URL = '/blog/post';
 const CREATE_NEW_POST_URL = '/create-new-post';
+const EDIT_PROFILE = '/edit-profile';
 const RESET_PASSWORD_URL = '/reset-password';
+const FUND_A_CAMPAIGN = '/campaigns';
 
 const pageurl = {
 	LANDING_PAGE_URL,
@@ -64,7 +66,9 @@ const pageurl = {
 	EMAIL_CONFIRMATION_URL,
 	SINGLE_POST_URL,
 	CREATE_NEW_POST_URL,
+	EDIT_PROFILE,
 	RESET_PASSWORD_URL,
+	FUND_A_CAMPAIGN,
 };
 
 export default pageurl;

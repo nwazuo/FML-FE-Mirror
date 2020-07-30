@@ -65,9 +65,14 @@ const DefaultDashboard = (props) => {
                   <path
                     d="M99.9998 8.69548C111.99 8.69548 123.863 11.0571 134.94 15.6456C146.018 20.2341 156.083 26.9595 164.562 35.4379C173.04 43.9163 179.766 53.9816 184.354 65.0592C188.943 76.1367 191.304 88.0096 191.304 99.9998C191.304 111.99 188.943 123.863 184.354 134.941C179.766 146.018 173.04 156.083 164.562 164.562C156.083 173.04 146.018 179.766 134.94 184.354C123.863 188.943 111.99 191.304 99.9998 191.304C88.0095 191.304 76.1367 188.943 65.0591 184.354C53.9816 179.766 43.9163 173.04 35.4379 164.562C26.9595 156.083 20.2341 146.018 15.6456 134.94C11.0571 123.863 8.69548 111.99 8.69548 99.9998C8.69549 88.0095 11.0572 76.1367 15.6456 65.0591C20.2341 53.9816 26.9595 43.9163 35.4379 35.4379C43.9163 26.9595 53.9817 20.2341 65.0592 15.6456C76.1368 11.0571 88.0096 8.69547 99.9999 8.69548L99.9998 8.69548Z"
                     stroke="#E1E1E1"
-                    stroke-width="8.69565"
-                    stroke-dasharray="1.74 1.74"
+                    strokeWidth=".85rem"
+                    strokeDasharray="1.74 1.74"
                   />
+                  <circle 
+                  id="bar" r="90" cx="100" cy="100" fill="transparent" 
+                  strokeDasharray="565" strokeDashoffset="5"
+                  >
+                  </circle>
                 </svg>
                 <div className="overview__progress-info d-flex flex-column align-items-center">
                   <h5>0%</h5>
@@ -98,7 +103,7 @@ const DefaultDashboard = (props) => {
         {/* ***Table*** */}
         <Container className="dashboard-table mb-5 ">
           <h4 className="compaign__title">Loan History</h4>
-          <Table responsive style={{ borderRadius: '5px 5px 0px 0px ;' }}>
+          <Table responsive style={{ borderRadius: '5px 5px 0px 0px ' }}>
             <thead>
               <tr>
                 <th>ID</th>

@@ -21,6 +21,7 @@ let baseURL = 'https://api.fundmylaptop.com';
 const setAuthorizationHeader = (token) => {
   const FMLToken = `Bearer ${token}`;
   localStorage.setItem('FMLToken', FMLToken);
+  localStorage.setItem('FMLT', token);
   axios.defaults.headers.common['Authorization'] = FMLToken;
 };
 
@@ -46,12 +47,66 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
       });
     });
 };
+
+export const facebookLogin = ({accessToken, userID}, history) => (dispatch) => {
+  dispatch({ type: CLEAR_ERRORS });
+  dispatch({ type: LOADING_UI });
+  axios
+    .post(`${baseURL}/api/auth/facebookAuth`, {userID: userID, accessToken: accessToken})
+    .then((res) => {
+      console.log('facebook data:', res.data);
+      const { token } = res.data.data;
+      setAuthorizationHeader(token);
+      dispatch(getLoginUserData(history));
+    })
+    .catch((err) => {
+      dispatch({type: LOADED_UI});
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data.message
+      })
+    })
+}
+
+// export const githubLogin = (history) => (dispatch) => {
+//   dispatch({ type: CLEAR_ERRORS });
+//   dispatch({ type: LOADING_UI });
+//   fetch('https://api.fundmylaptop.com/api/auth/github', {
+//     method: 'GET',
+//     // credentials: 'include',
+//     headers: {
+//       Accept: 'application/json',
+//       'Content-Type': 'application/json',
+//       'Access-Control-Allow-Credentials': true,
+//     },
+//   })
+//     .then((response) => {
+//       console.log(response);
+//       if (response.status === 200) return response.json();
+//       throw new Error('failed to authenticate user');
+//     })
+//     .then((responseJson) => {
+//       this.setState({
+//         authenticated: true,
+//         user: responseJson.user,
+//       });
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       this.setState({
+//         authenticated: false,
+//         error: 'Failed to authenticate user',
+//       });
+//     });
+// };
+
 export const logoutUser = (history) => (dispatch) => {
   localStorage.removeItem('FMLToken');
   delete axios.defaults.headers.common['Authorization'];
   dispatch({ type: SET_UNAUTHENTICATED });
   history.push(pageurl.LOGIN_PAGE_URL);
 };
+
 export const loginUser = (formInput, history) => (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
   dispatch({ type: LOADING_UI });
@@ -135,9 +190,29 @@ export const getUserData = () => (dispatch) => {
         type: SET_USER,
         payload: res.data,
       });
+
       console.log(res.data);
     })
     .catch((err) => console.log(err));
+};
+
+export const editUserProfile = (history, _id, formData) => (dispatch) => {
+  dispatch({ type: CLEAR_ERRORS });
+  dispatch({ type: LOADING_UI });
+  setAuthorizationHeader(localStorage.getItem('FMLT'));
+  axios
+    .put(`${baseURL}/api/users/${_id}`, formData)
+    .then((res) => {
+      console.log(formData);
+      dispatch({
+        type: SET_USER,
+        payload: res.data,
+      });
+      dispatch({ type: LOADED_UI });
+
+      history.push(pageurl.USER_PROFILE_PAGE_URL);
+    })
+    .catch((err) => console.log(err.response));
 };
 
 export const getLoginUserData = (history) => (dispatch) => {
@@ -150,7 +225,7 @@ export const getLoginUserData = (history) => (dispatch) => {
         payload: res.data,
       });
 
-      history.push(pageurl.DEFAULT_DASHBOARD_PAGE_URL);
+      history.push(pageurl.LANDING_PAGE_URL);
       console.log(res.data);
       dispatch({ type: LOADED_UI });
     })
