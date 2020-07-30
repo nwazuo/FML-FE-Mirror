@@ -3,6 +3,7 @@
   margin: 0;
   margin-top: 0 !important;
   padding: 0;
+  padding-bottom: 35px !important;
   background: #E5E5E5;
 }
 
@@ -117,6 +118,10 @@
   color: #000000;
 }
 .investorcompaign-card__body-desc span{
+  color: #28f328;
+}
+
+.lightgreen{
   color: #28f328;
 }
 .investorcompaign-card__btn{
