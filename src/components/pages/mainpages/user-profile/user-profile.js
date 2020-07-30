@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../../assets/bootstrap.css';
 import { Link } from 'react-router-dom';
 import { Navbar, Footer } from '../../navigation/navigation';
@@ -11,6 +11,8 @@ import RecommendBox from './recommend-box/recommend-box';
 import trusteeImg from '../../../assets/images/image 8.png';
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView';
 import pageurl from '../../../router/url/pageurl';
+import {fetchFundeeCampaigns, fetchFundeeInvestments} from '../../../../actions/actions'
+import FundeeCampaign from './fundee-campaign/fundee-campaign';
 //Redux stuff
 import { connect } from 'react-redux';
 
@@ -53,6 +55,22 @@ const trustees = [
 ];
 
 const UserProfile = (props) => {
+
+    const [campaigns, setCampaigns] = useState()
+    const [investments, setInvestments] = useState()
+  
+    useEffect(() => {
+      fetchFundeeCampaigns().then (res=>{
+        // console.log(res.data.data)
+        setCampaigns(res.data.data)
+      })
+      fetchFundeeInvestments().then (res=>{
+        // console.log(res.data.data)
+        setInvestments(res.data.data)
+      })
+    }, [])
+    
+
   console.log(props.user.credentials);
 
   const credentials = props.user.credentials;
