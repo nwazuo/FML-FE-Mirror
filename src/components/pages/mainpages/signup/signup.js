@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import {
   registerUser,
   googleLogin,
-  githubLogin,
+  // githubLogin,
 } from '../../../../actions/userActions';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
@@ -209,7 +209,7 @@ class Signup extends Component {
                 type="text"
                 placeholder="First name"
                 name="firstName"
-                className="form-control"
+                className="form-control  signup-form"
                 id="firstName"
                 onChange={this.onChange}
                 value={firstName}
@@ -224,7 +224,7 @@ class Signup extends Component {
                 type="text"
                 placeholder="Last name"
                 name="lastName"
-                className="form-control"
+                className="form-control  signup-form"
                 id="lastName"
                 onChange={this.onChange}
                 value={lastName}
@@ -239,7 +239,7 @@ class Signup extends Component {
                 type="email"
                 placeholder="Email"
                 name="email"
-                className="form-control"
+                className="form-control  signup-form"
                 id="email"
                 onChange={this.onChange}
                 value={email}
@@ -254,7 +254,7 @@ class Signup extends Component {
                 type="password"
                 placeholder="Password"
                 name="password"
-                className="form-control"
+                className="form-control  signup-form"
                 id="password"
                 onChange={this.onChange}
                 value={password}
@@ -269,7 +269,7 @@ class Signup extends Component {
                 type="number"
                 placeholder="Phone"
                 name="phone"
-                className="form-control"
+                className="form-control  signup-form"
                 id="phone"
                 onChange={this.onChange}
                 value={phone}
@@ -284,7 +284,7 @@ class Signup extends Component {
                 type="text"
                 placeholder="Address"
                 name="address"
-                className="form-control"
+                className="form-control  signup-form"
                 id="address"
                 onChange={this.onChange}
                 value={address}
@@ -295,7 +295,7 @@ class Signup extends Component {
               ></p>
             </div>
             <div className="form-group">
-              <div className="form-check form-control check-area">
+              <div className="form-check form-control  signup-form check-area">
                 <input
                   className="form-check-input check"
                   type="checkbox"
@@ -328,7 +328,7 @@ class Signup extends Component {
               <Button
                 load={this.state.loading}
                 propsTitle={'Sign Up'}
-                className="form-control login-btn btn-fml-secondary"
+                className="form-control  signup-form login-btn btn-fml-secondary"
                 onClick={(e) => {
                   this.onSubmit(e);
                 }}
@@ -349,20 +349,20 @@ class Signup extends Component {
                   <Link
                     onClick={renderProps.onClick}
                     disabled={renderProps.disabled}
-                    className="form-control login-btn reg-btn btn-outline-fml-secondary"
+                    className="form-control  signup-form login-btn reg-btn btn-outline-fml-secondary"
                   >
                     <img className="pr-3" src={googleImg} alt="" />
                     Sign up with Google
                   </Link>
                 )}
               ></GoogleLogin>{' '}
-              <Link
+              {/* <Link
                 to=""
-                className="mt-2 form-control login-btn login-btn-facebook reg-btn "
+                className="mt-2 form-control  signup-form login-btn login-btn-facebook reg-btn "
               >
                 <i class="fab fa-twitter pr-3 facbook-logo"></i>
                 Sign up with Twitter
-              </Link>
+              </Link> */}
               <Link
                 to=""
                 className="mt-2 form-control login-btn login-btn-facebook reg-btn "
@@ -370,16 +370,16 @@ class Signup extends Component {
                 <i class="fab fa-facebook pr-3 facbook-logo"></i>
                 Sign up with Facebook
               </Link>
-              <Link
+              {/* <Link
                 to=""
                 className="mt-2 form-control login-btn login-btn-github reg-btn "
               >
                 <i class="fab fa-github pr-3 facbook-logo"></i>
                 Sign up with GitHub
-              </Link>
+              </Link> */}
               {/* <a
                 href="#"
-                className="form-control login-btn reg-btn btn-outline-fml-secondary atag"
+                className="form-control  signup-form login-btn reg-btn btn-outline-fml-secondary atag"
             >
                 <img className="pr-3" src={googleImg} alt="" />
                 Login with Google
@@ -418,5 +418,5 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   registerUser,
   googleLogin,
-  githubLogin,
+  // githubLogin,
 })(Signup);

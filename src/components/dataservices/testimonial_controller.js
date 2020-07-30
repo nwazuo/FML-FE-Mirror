@@ -67,7 +67,7 @@ const Testimonial = () => {
 								Testimonials</h3>
 							<div className="testimonials-text col-md-9 mb-4">
 								<p className=" text-white px-5">
-									“I needed a laptop computerto kickstart my freelance business. A
+									“I needed a laptop computer to kickstart my freelance business. A
 									friend referred my to Fund my Laptop and within an hour of
 									posting a campaign i got full funding for my laptop and my
 								account was immediately credited”</p>

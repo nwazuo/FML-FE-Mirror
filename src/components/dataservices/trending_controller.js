@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../pages/mainpages/landingPage/landingPage.css";
 import arrow from "../pages/mainpages/landingPage/img/arrow.png";
-import { Reveal, Tween, Timeline } from 'react-gsap';
+import { Reveal, Tween} from 'react-gsap';
 import axios from "axios";
 
 const Trending = () => {
@@ -28,7 +28,7 @@ const Trending = () => {
             _id: 2,
             testimonial: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit nisi eaque iste, rem odio obcaecati. Libero deserunt beatae voluptas perspiciatis mollitia officiis.',
             name: 'Scott Eyawo',
-            title: "Get anothr MacBook",
+            title: "Get another MacBook",
             description: "Bad screen, Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             photoUrl: 'https://placeimg.com/400/300/people',
             company: 'TalentPool',
@@ -58,9 +58,7 @@ const Trending = () => {
       );
 
     const showDetails = () => {
-        window.location.href = '/about'
-        // const trendDetails = document.querySelector('.trend-details');
-        // trendDetails.style.display = "block"
+        window.location.href = '/campaigns'
     }
 
     return data ? (
@@ -80,7 +78,6 @@ const Trending = () => {
                                         alt="Card1"
                                     />
                                     </FadeInUp>
-                                    {/* card body */}
                                     <FadeInUp>
                                     <div className="card-body">
                                         <h5 className="card-title mb-0">{i.name}</h5>
@@ -104,15 +101,11 @@ const Trending = () => {
                                         <span className="card-fonds">Raised of {i.price}</span>
                                     </div>
                                     </FadeInUp>
-                                    {/* card footer */}
                                     <FadeInUp>
                                     <div className="card-footer d-flex align-center justify-content-between p-0">
                                         <a href className="m-auto " onClick={showDetails}>
                                             {" "}view details <img src={arrow} alt="a1" />{" "}
                                         </a>
-                                    </div>
-                                    <div className="trend-details">
-                                        <p>{i.details}</p>
                                     </div>
                                     </FadeInUp>
                                 </div>

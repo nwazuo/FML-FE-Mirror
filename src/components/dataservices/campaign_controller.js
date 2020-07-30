@@ -5,7 +5,7 @@ import { Reveal, Tween, Timeline } from 'react-gsap';
 import axios from 'axios';
 
 const Campaign = () => {
-  // const [campaigns, setCampaign] = useState('');
+  // const [campaign, setCampaign] = useState('');
   // useEffect(() => {
   //   const apiUrl =
   //     'https://api.fundmylaptop.com/api/campaigns/fetchSixFeaturedCams';
@@ -18,7 +18,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'Scott Eyawo',
-			photoUrl: 'https://placeimg.com/100/100/people1',
+			photoUrl: 'https://placeimg.com/400/400/people1',
       occupation: 'Student',
       currency: 'N',
       amountAccumulated: '100,000',
@@ -32,7 +32,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'Ekene Adim',
-			photoUrl: 'https://placeimg.com/100/100/people2',
+			photoUrl: 'https://placeimg.com/400/400/people2',
       occupation: 'Engineer',
       currency: 'N',
       amountAccumulated: '160,000',
@@ -46,7 +46,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'Chizo Nwazuo',
-			photoUrl: 'https://placeimg.com/100/100/people3',
+			photoUrl: 'https://placeimg.com/400/400/people3',
       occupation: 'Entrepreneur',
       currency: 'N',
       amountAccumulated: '700,000',
@@ -60,7 +60,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'CodeLeaf Adio',
-			photoUrl: 'https://placeimg.com/100/100/people4',
+			photoUrl: 'https://placeimg.com/400/400/people4',
       occupation: 'Student',
       currency: 'N',
       amountAccumulated: '300,000',
@@ -74,7 +74,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'CodeLeaf Adio',
-			photoUrl: 'https://placeimg.com/100/100/people5',
+			photoUrl: 'https://placeimg.com/400/400/people5',
       occupation: 'Teacher',
       currency: 'N',
       amountAccumulated: '400,000',
@@ -88,7 +88,7 @@ const Campaign = () => {
 			description:
 				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, autem omnis quis hic quam culpa deleniti odit',
 			name: 'CodeLeaf Adio',
-			photoUrl: 'https://placeimg.com/100/100/people6',
+			photoUrl: 'https://placeimg.com/400/400/people6',
       occupation: 'FreeLancer',
       currency: 'N',
       amountAccumulated: '500,000',
@@ -97,7 +97,13 @@ const Campaign = () => {
       title: 'Laptop Repair',
       level: '25%'
 		},
-	];
+  ];
+  
+  const showDetails = () => {
+    window.location.href = '/campaigns'
+    // const trendDetails = document.querySelector('.trend-details');
+    // trendDetails.style.display = "block"
+}
 
   return campaign ? (
     <section className="compaign-section">
@@ -106,7 +112,7 @@ const Campaign = () => {
           <div className="row d-flex justify-content-between">
             <Tween from={{ opacity: 0, y: 30 }} delay={1} duration={1.5}>
               <h3 className="col-7">Featured Campaigns </h3>
-              <a href="#4"><span className="mt-1 btn-view-all ">View All+</span></a>
+              <span className="mt-1 btn-view-all " onClick={showDetails}>View All+</span>
             </Tween>
           </div>
         </Timeline>
@@ -153,7 +159,7 @@ const Campaign = () => {
                   {/* card footer */}
 
                   <div className="card-footer d-flex align-center justify-content-between p-0">
-                    <a href className="m-auto ">
+                    <a href className="m-auto " onClick={showDetails}>
                       {' '}
                       View details <img src={arrow} alt="a4" />{' '}
                     </a>
