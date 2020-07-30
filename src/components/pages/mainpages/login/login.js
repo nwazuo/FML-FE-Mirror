@@ -12,11 +12,12 @@ import github from './github.svg';
 import fbIcon from './facebook-square-brands.svg';
 import { GoogleLogin } from 'react-google-login';
 import GitHubLogin from 'react-github-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import Button from '../../../utilities/Button/CustomizedButton';
 // Redux Stuff
 import { connect } from 'react-redux';
-import { loginUser, googleLogin } from '../../../../actions/userActions';
+import { loginUser, googleLogin, facebookLogin } from '../../../../actions/userActions';
 
 const initialState = {
   email: '',
@@ -114,6 +115,14 @@ const Login = (props) => {
   const onGitHubLoginSuccess = (response) => console.log(response);
   const onGitHubLoginFailure = (response) => console.log(response);
   const githubClick = () => console.log('hi');
+  //Facebook auth
+  const sendFacebookToken = (data) => {
+    props.facebookLogin(data, props.history);
+  }
+  
+  const responseFacebook = (response) => {
+    sendFacebookToken(response);
+  }
 
   return (
     <ScrollIntoView>
@@ -168,6 +177,25 @@ const Login = (props) => {
               <img className="" src={twitter} alt="twitter" />
               Login with Twitter
             </Link> */}
+            <FacebookLogin 
+              appId="620560692194763"
+              onFailure={responseFacebook}
+              callback={responseFacebook}
+              render={renderProps => (
+                <Link
+                onClick={renderProps.onClick}
+              className="text-center mt-3 py-3  
+            btnGoogle d-flex justify-content-center 
+            align-items-center"
+              style={{
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)',
+                color: '#1c7ed6',
+              }}
+            >
+              <img className="" src={fbIcon} alt="facebook" />
+              Login with Facebook
+            </Link>
+              )} />
             <GitHubLogin
               clientId="0d28ce3bf3e5f81a1b54"
               onClick={(e) => e.preventDefault()}
@@ -187,18 +215,6 @@ const Login = (props) => {
                 </span>
               }
             />
-            <Link
-              className="text-center mt-3 py-3  
-            btnGoogle d-flex justify-content-center 
-            align-items-center"
-              style={{
-                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.07)',
-                color: '#1c7ed6',
-              }}
-            >
-              <img className="" src={fbIcon} alt="facebook" />
-              Login with Facebook
-            </Link>
           </div>
 
           <div className="my-4 text-center or d-flex align-items-center or-box">
@@ -295,6 +311,7 @@ const mapStateToProps = (state) => ({
 const mapActionsToProps = {
   loginUser,
   googleLogin,
+  facebookLogin
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(withRouter(Login));

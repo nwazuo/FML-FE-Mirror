@@ -11,7 +11,8 @@ import { connect } from 'react-redux';
 import {
   registerUser,
   googleLogin,
-  // githubLogin,
+  //githubLogin,
+  facebookLogin,
 } from '../../../../actions/userActions';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
@@ -19,6 +20,7 @@ import Button from '../../../utilities/Button/CustomizedButton';
 import { GoogleLogin } from 'react-google-login';
 import GitHubLogin from 'react-github-login';
 
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 class Signup extends Component {
   state = {
     email: '',
@@ -172,6 +174,21 @@ class Signup extends Component {
     // GitHub Auth
     const onGitHubLoginSuccess = (response) => console.log(response);
     const onGitHubLoginFailure = (response) => console.log(response);
+    //GitHub Auth
+    // const handleGithubAuth = () => {
+    //   console.log('you clicked');
+    //   this.props.githubLogin(this.props.history);
+    // };
+
+    
+    //Facebook auth
+  const sendFacebookToken = (data) => {
+    this.props.facebookLogin(data, this.props.history);
+  }
+  
+  const responseFacebook = (response) => {
+    sendFacebookToken(response);
+  }
 
     return (
       <ScrollIntoView>
@@ -361,14 +378,28 @@ class Signup extends Component {
               >
                 <i class="fab fa-twitter pr-3 facbook-logo"></i>
                 Sign up with Twitter
-              </Link>
-              <Link
-                to=""
-                className="mt-2 form-control signup-form login-btn login-btn-facebook reg-btn "
+              </Link> 
+              <FacebookLogin 
+              appId="620560692194763"
+              onFailure={responseFacebook}
+              callback={responseFacebook}
+              render={renderProps => (
+                <Link
+                onClick={renderProps.onClick}
+                className="mt-2 form-control login-btn login-btn-facebook reg-btn "
               >
                 <i class="fab fa-facebook pr-3 facbook-logo"></i>
                 Sign up with Facebook
               </Link>
+              )} />
+              
+              {/* <Link
+                to=""
+                className="mt-2 form-control login-btn login-btn-github reg-btn "
+              >
+                <i class="fab fa-github pr-3 facbook-logo"></i>
+                Sign up with GitHub
+              </Link> */}
               {/* <a
                 href="#"
                 className="form-control  signup-form login-btn reg-btn btn-outline-fml-secondary atag"
@@ -424,4 +455,5 @@ export default connect(mapStateToProps, {
   registerUser,
   googleLogin,
   // githubLogin,
+  facebookLogin
 })(Signup);
