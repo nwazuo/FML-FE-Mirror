@@ -61,6 +61,7 @@ export function addFaqs (data) {
                 type: ADD_FAQS,
                 payload: res.statusText
             }))
+            .then(() => window.location.reload())
             .catch(err => console.error(err))
     }
 }
@@ -68,14 +69,13 @@ export function addFaqs (data) {
 export function deleteFaqs (data) {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
     return dispatch => {
-        console.log(data)
         axios
-            .delete(`${baseURL}/api/faqs/delete/${data}`, data)
+            .delete(`${baseURL}/api/faqs/delete/${data._id}`, data)
             .then(res => dispatch({
-                type: ADD_FAQS,
+                type: DELETE_FAQS,
                 payload: res.statusText
             }))
+            .then(() => window.location.reload())
             .catch(err => console.error(err))
-        //window.location.reload()
     }
 }

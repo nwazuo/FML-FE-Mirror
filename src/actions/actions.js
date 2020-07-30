@@ -10,5 +10,5 @@ export {
   addFaqs,
   deleteFaqs,
   logoutUser,
-  fetchFundeeDashboard,
+  fetchFundeeDashboard
 };

@@ -17,6 +17,10 @@ class AddFaq extends Component {
         this.onHandleDelete = this.onHandleDelete.bind(this)
     }
 
+    componentDidMount () {
+        this.props.fetchFaqs()
+    }
+
     onHandleChange(e) {
         this.setState({[e.target.name]: e.target.value})
     }
@@ -42,11 +46,11 @@ class AddFaq extends Component {
         return (
             <AdminDashboard>
                 <div className="container-lg-fluid px-3 px-lg-4 px-xl-5">
-                    <div className="row my-4 justify-content-center px-4 px-lg-0">
+                    <div className="row my-4 justify-content-center px-4 px-lg-0 pr-lg-4">
                         <div className="col-md-11 col-lg-5 pl-lg-4">
-                            <div className="py-4 bg-white shadow-sm box-radius px-md-5 px-lg-0">
+                            <div className="py-4 bg-white shadow-sm box-radius px-md-5 px-lg-3">
                                 <h4 className="text-center">FAQ Creation</h4>
-                                <form className="mt-4 pl-lg-2 pl-xl-4" onSubmit={this.onHandleSubmit}>
+                                <form className="mt-4 px-5 px-md-2 px-xl-3" onSubmit={this.onHandleSubmit}>
                                     <div className="form-group">
                                         <label className="ml-4 ml-md-0 ml-lg-3 font-weight-bold" htmlFor="question">Question:</label>
                                         <input 
@@ -71,38 +75,43 @@ class AddFaq extends Component {
                                         ></textarea>
                                     </div>
                                     <div className="form-group">
-                                        <button type="submit" className="btn btn-success py-2 px-5 font-weight-bold ml-4 ml-md-0 ml-lg-3">Create</button>
+                                        <button type="submit" className="btn btn-success py-2 px-5 font-weight-bold">Create</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <div className="col-md-11 mt-4 mt-lg-0 col-lg-6 offset-lg-1 py-4 pl-lg-4 bg-white shadow-sm box-radius px-md-5 px-lg-4">
+                        <div className="col-11 mt-4 mt-lg-0 col-lg-6 offset-lg-1 py-4 bg-white shadow-sm box-radius">
                             <h4 className="text-center mb-3">FAQ Delete</h4>
                             <table className="table">
                                 <tbody>
-                                    {faqs.map((data, idx) => (
-                                        <tr key={idx}>
-                                            <td className="w-100 text-left"><h6 className="mb-0">{data.question}</h6></td>
-                                            <td>
-                                                <h6 className="mb-0">
-                                                    <i className="fas fa-trash text-danger pointer" data-toggle="modal" data-target={`#exampleModalCenter${idx}`}></i>
-                                                </h6>
-                                                <div className="modal fade" id={`exampleModalCenter${idx}`} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                    <div className="modal-dialog modal-dialog-centered" role="document">
-                                                        <div className="modal-content">
-                                                            <div className="modal-header d-flex justify-content-center">
-                                                                <h5 className="modal-title text-center" id="exampleModalCenterTitle">Are you sure to delete?</h5>
-                                                            </div>
-                                                            <div className="modal-footer d-flex justify-content-center">
-                                                                <button type="button" className="btn btn-danger px-5 py-2" data-dismiss="modal">No</button>
-                                                                <button type="button" className="btn btn-primary px-5 py-2" onClick={() => this.onHandleDelete(data._id)}>Yes</button>
+                                    {faqs.length === 0 ? (
+                                        <h6 className="text-center alert alert-danger">No FAQ created yet</h6>
+                                        ) : (
+                                            faqs.map((data, idx) => (
+                                                <tr key={idx}>
+                                                    <td className="w-100 text-left"><h6 className="mb-0">{data.question}</h6></td>
+                                                    <td>
+                                                        <h6 className="mb-0">
+                                                            <i className="fas fa-trash text-danger pointer" data-toggle="modal" data-target={`#exampleModalCenter${idx}`}></i>
+                                                        </h6>
+                                                        <div className="modal fade" id={`exampleModalCenter${idx}`} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                            <div className="modal-dialog modal-dialog-centered" role="document">
+                                                                <div className="modal-content">
+                                                                    <div className="modal-header d-flex justify-content-center">
+                                                                        <h5 className="modal-title text-center" id="exampleModalCenterTitle">Are you sure to delete?</h5>
+                                                                    </div>
+                                                                    <div className="modal-footer d-flex justify-content-center">
+                                                                        <button type="button" className="btn btn-danger px-5 py-2" data-dismiss="modal">No</button>
+                                                                        <button type="button" className="btn btn-primary px-5 py-2" onClick={() => this.onHandleDelete(data)}>Yes</button>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr> 
-                                    ))}  
+                                                    </td>
+                                                </tr> 
+                                            )
+                                        )
+                                    )}  
                                 </tbody>
                             </table>
                         </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ProtectedRoute from './components/router/protectedroute/ProtectedRoute';
+import AdminRoute from './components/router/protectedroute/AdminRoute';
 import pageurl from './components/router/url/pageurl';
 import Pace from './components/utilities/Pace/Pace';
 import {
@@ -27,13 +28,16 @@ import {
   EmailConfirmation,
   SinglePost,
   CreateBlogPost,
+  EditProfile,
   ResetPassword,
   FundCampaign,
 } from './components/pages/mainpages';
 
 import {
   FundeeDashboard,
-  AdminDashboard,
+  AdminLanding,
+  AddFaq,
+  AdminCampaign,
   DefaultDashboard,
   InvestorDashboard,
 } from './components/pages/dashboards';
@@ -62,6 +66,8 @@ function App() {
         <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
 
         <Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
+
+        <Route exact path={pageurl.EDIT_PROFILE} component={EditProfile} />
 
         <Route
           exact
@@ -110,6 +116,7 @@ function App() {
           path={pageurl.EMAIL_CONFIRMATION_URL}
           component={EmailConfirmation}
         />
+
         <Route exact path={pageurl.FUND_A_CAMPAIGN} component={FundCampaign} />
 
         <ProtectedRoute
@@ -136,10 +143,22 @@ function App() {
           component={Campaign}
         />
 
-        <ProtectedRoute
+        <AdminRoute
           exact
           path={pageurl.ADMIN_DASHBOARD_PAGE_URL}
-          component={AdminDashboard}
+          component={AdminLanding}
+        />
+
+        <AdminRoute
+          exact
+          path={pageurl.ADMIN_FAQ_PAGE_URL}
+          component={AddFaq}
+        />
+
+        <AdminRoute
+          exact
+          path={pageurl.ADMIN_CAMPAIGN_PAGE_URL}
+          component={AdminCampaign}
         />
 
         <ProtectedRoute
