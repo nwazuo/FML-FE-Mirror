@@ -5,6 +5,8 @@ import { Link, withRouter } from 'react-router-dom';
 import logo from '../../../assets/images/logo.svg';
 import placehoder from './image/placeholder.svg';
 import pageurl from '../../../router/url/pageurl';
+import UserSearch from '../../mainpages/landingPage/userSearch/userSearch';
+import UserSearchResponsive from '../../mainpages/landingPage/userSearch/userSearchResp';
 
 //Redux Stuff
 import { connect } from 'react-redux';
@@ -165,6 +167,13 @@ const Navbar = (props) => {
                 </li>
               )}
 
+
+              {window.location.pathname === "/" ? (
+                <UserSearch />
+               ) : null
+               
+              }
+
               {/* THe person working on Login component should set this on isLoggedIn */}
 
               {props.user.authenticated && (
@@ -180,6 +189,13 @@ const Navbar = (props) => {
             </ul>
           </div>
         </div>
+
+        {window.location.pathname === "/" ? (
+          <UserSearchResponsive />
+         ) : null
+         
+        }
+
       </nav>
     </>
   );
