@@ -113,7 +113,7 @@ const NoCampaign = () => {
 };
 
 // main page component
-export function CampaignDetail({ match, data, loading }) {
+export function CampaignDetail({ data, loading }) {
 	return (
 		<ScrollIntoView>
 			<Navbar />
@@ -122,7 +122,7 @@ export function CampaignDetail({ match, data, loading }) {
 			) : !loading && isEmpty(data) ? (
 				<NoCampaign />
 			) : (
-				<div className={`${Campaign.pageWrapper} container-fluid`}>
+				<div className={`${Campaign.pageWrapper} container-fluid px-0`}>
 					<CampaignDetails data={data} />
 
 					<div className={`${Campaign.recFundWrapper} container`}>

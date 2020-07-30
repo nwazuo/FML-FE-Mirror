@@ -9,7 +9,7 @@ const CampaignRecommendations = ({ data }) => {
 	return (
 		<>
 			<h3>Recommendations</h3>
-			<div className="container">
+			<div className="container px-0">
 				<div class={`${Campaign.recommends}`}>
 					{isEmpty(data.recommendations) ? (
 						<p className="text-center text-muted font-weight-bold">
@@ -19,17 +19,17 @@ const CampaignRecommendations = ({ data }) => {
 						data.recommendations.map((item) => (
 							<div className={`${Campaign.mediaBox}`}>
 								<div className={`${Campaign.media}`}>
-									<img src={item.photoURL} alt="profile" />
+									<img src={item.user.photoURL} alt="profile" />
 								</div>
 								<div className={`${Campaign.content}`}>
 									<p
 										className={`${Campaign.name}`}
-									>{`${item.firstName} ${item.lastName}`}</p>
+									>{`${item.user.firstName} ${item.user.lastName}`}</p>
 									<Link
-										to={`mailto:${item.email}`}
+										to={`mailto:${item.user.email}`}
 										className="d-block text-fml-secondary"
 									>
-										{item.email}
+										{item.user.email}
 									</Link>
 									<p className={`${Campaign.recommendText}`}>{item.text}</p>
 								</div>
