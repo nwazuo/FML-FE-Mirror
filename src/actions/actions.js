@@ -1,6 +1,7 @@
 import { loginUser, recommendUser, logoutUser } from './userActions';
-import { fetchFaqs, fetchSearchFaqs, addFaqs, deleteFaqs  } from './dataActions';
-import {fetchFundeeDashboard } from './fundeeAction'
+import { fetchFaqs, fetchSearchFaqs, addFaqs, deleteFaqs, makePayment, makePaymentOtp  } from './dataActions';
+import { fetchFundeeDashboard } from './fundeeAction';
+import {createBlogPost,getAllBlogPost} from './blogActions'
 
 export {
   loginUser,
@@ -10,5 +11,9 @@ export {
   addFaqs,
   deleteFaqs,
   logoutUser,
-  fetchFundeeDashboard
+  makePayment,
+  makePaymentOtp,
+  fetchFundeeDashboard,
+  createBlogPost,
+  getAllBlogPost
 };
