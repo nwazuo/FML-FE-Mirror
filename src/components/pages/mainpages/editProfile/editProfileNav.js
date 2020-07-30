@@ -6,9 +6,12 @@ import logo from '../../../assets/images/logo.svg';
 import pageurl from '../../../router/url/pageurl';
 
 
+ 
 const ProfileNav = () => {
+  
     return (
      <>
+  
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <div className="container">
           <Link className="navbar-brand" to={pageurl.LANDING_PAGE_URL}>
@@ -34,10 +37,10 @@ const ProfileNav = () => {
             id="exCollapsingNavbar"
           >
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item ">
+              <li className="nav-item">
                 <Link
-                  className="nav-link"
-                  to='/user-profile'>
+                  className="nav-link fml-secondary" 
+                  to={pageurl.USER_PROFILE_PAGE_URL}>
                   Profile<span className="sr-only">(current)</span>
                 </Link>
               </li>
