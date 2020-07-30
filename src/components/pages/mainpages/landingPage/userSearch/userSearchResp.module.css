@@ -10,9 +10,7 @@
   border: none;
   background-color: transparent;
 }
-li {
-  list-style: none;
-}
+
 .CloseIconResp {
   position: absolute;
   top: 43%;
