@@ -61,17 +61,20 @@ const Footer = () => {
                     RESOURCES
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link to=""> Why choose FundMyLaptop </Link>
                 </li>
                 <li className="nav-item">
                   <Link to=""> How P2P Lending works</Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <Link to={pageurl.ABOUT_US_PAGE_URL}>
                     {' '}
                     About FundMyLaptop{' '}
                   </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={pageurl.BLOG_PAGE_URL}> Blog </Link>
                 </li>
                 <li className="nav-item">
                   <Link to={pageurl.CONTACT_US_PAGE_URL}> Contact Us </Link>
