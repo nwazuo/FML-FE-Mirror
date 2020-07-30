@@ -33,6 +33,7 @@ const CREATE_NEW_POST_URL = '/create-new-post';
 const EDIT_PROFILE = '/edit-profile';
 const RESET_PASSWORD_URL = '/reset-password';
 const FUND_A_CAMPAIGN = '/campaigns';
+const VERIFICATION_FORM_ONE = '/verification-form-one';
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -68,7 +69,7 @@ const pageurl = {
   CREATE_NEW_POST_URL,
   EDIT_PROFILE,
   RESET_PASSWORD_URL,
-  FUND_A_CAMPAIGN
+  FUND_A_CAMPAIGN,
 };
 
 export default pageurl;

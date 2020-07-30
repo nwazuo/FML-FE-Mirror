@@ -17,6 +17,7 @@ import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
 import Button from '../../../utilities/Button/CustomizedButton';
 import { GoogleLogin } from 'react-google-login';
+import GitHubLogin from 'react-github-login';
 
 class Signup extends Component {
   state = {
@@ -168,11 +169,9 @@ class Signup extends Component {
       sendGoogleToken(response.tokenId);
     };
 
-    //GitHub Auth
-    // const handleGithubAuth = () => {
-    //   console.log('you clicked');
-    //   this.props.githubLogin(this.props.history);
-    // };
+    // GitHub Auth
+    const onGitHubLoginSuccess = (response) => console.log(response);
+    const onGitHubLoginFailure = (response) => console.log(response);
 
     return (
       <ScrollIntoView>
@@ -356,27 +355,20 @@ class Signup extends Component {
                   </Link>
                 )}
               ></GoogleLogin>{' '}
-              {/* <Link
+              <Link
                 to=""
                 className="mt-2 form-control  signup-form login-btn login-btn-facebook reg-btn "
               >
                 <i class="fab fa-twitter pr-3 facbook-logo"></i>
                 Sign up with Twitter
-              </Link> */}
+              </Link>
               <Link
                 to=""
-                className="mt-2 form-control login-btn login-btn-facebook reg-btn "
+                className="mt-2 form-control signup-form login-btn login-btn-facebook reg-btn "
               >
                 <i class="fab fa-facebook pr-3 facbook-logo"></i>
                 Sign up with Facebook
               </Link>
-              {/* <Link
-                to=""
-                className="mt-2 form-control login-btn login-btn-github reg-btn "
-              >
-                <i class="fab fa-github pr-3 facbook-logo"></i>
-                Sign up with GitHub
-              </Link> */}
               {/* <a
                 href="#"
                 className="form-control  signup-form login-btn reg-btn btn-outline-fml-secondary atag"
@@ -384,6 +376,19 @@ class Signup extends Component {
                 <img className="pr-3" src={googleImg} alt="" />
                 Login with Google
             </a> */}
+              <GitHubLogin
+                clientId="0d28ce3bf3e5f81a1b54"
+                onSuccess={onGitHubLoginSuccess}
+                onFailure={onGitHubLoginFailure}
+                cookiePolicy={'single_host_origin'}
+                className="mt-2 form-control login-btn signup-form login-btn-github reg-btn "
+                buttonText={
+                  <span>
+                    <i class="fab fa-github pr-3 facbook-logo"></i> Sign up with
+                    GitHub{' '}
+                  </span>
+                }
+              />
             </div>
             <p className="account-info-text text-center textWidth my-1">
               <Link to="/forgot-password">Forgot Password?</Link>

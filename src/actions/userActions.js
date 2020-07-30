@@ -82,6 +82,7 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
 
 export const logoutUser = (history) => (dispatch) => {
   localStorage.removeItem('FMLToken');
+  localStorage.removeItem('FMLT');
   delete axios.defaults.headers.common['Authorization'];
   dispatch({ type: SET_UNAUTHENTICATED });
   history.push(pageurl.LOGIN_PAGE_URL);

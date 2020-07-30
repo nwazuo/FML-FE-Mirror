@@ -39,6 +39,7 @@ import {
   DefaultDashboard,
   InvestorDashboard,
 } from './components/pages/dashboards';
+import VerificationOne from './components/pages/mainpages/verification/VerificationOne';
 
 function App() {
   return (
@@ -71,6 +72,11 @@ function App() {
           exact
           path={pageurl.SINGLE_POST_URL + `/:userid`}
           component={SinglePost}
+        />
+        <Route
+          exact
+          path={pageurl.VERIFICATION_FORM_ONE}
+          component={VerificationOne}
         />
 
         <Route
