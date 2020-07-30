@@ -50,7 +50,7 @@ class AddFaq extends Component {
                         <div className="col-md-11 col-lg-5 pl-lg-4">
                             <div className="py-4 bg-white shadow-sm box-radius px-md-5 px-lg-3">
                                 <h4 className="text-center">FAQ Creation</h4>
-                                <form className="mt-4 px-5 px-md-2 px-xl-3" onSubmit={this.onHandleSubmit}>
+                                <form className="mt-4 px-2 px-md-2 px-xl-3" onSubmit={this.onHandleSubmit}>
                                     <div className="form-group">
                                         <label className="ml-4 ml-md-0 ml-lg-3 font-weight-bold" htmlFor="question">Question:</label>
                                         <input 
