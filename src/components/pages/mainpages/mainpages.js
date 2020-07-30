@@ -25,6 +25,7 @@ import CreateBlogPost from './blog/create_blog_post';
 import EditProfile from './editProfile/editProfile';
 import ResetPassword from './reset/ResetPassword';
 import FundCampaign from './fund-a-campaign/FundCampaign';
+import Verification3 from './verification3/verification3';
 
 export {
   Login,
@@ -53,5 +54,6 @@ export {
   CreateBlogPost,
   EditProfile,
   ResetPassword,
-  FundCampaign
+  FundCampaign,
+  Verification3
 };

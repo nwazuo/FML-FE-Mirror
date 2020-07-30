@@ -11,7 +11,6 @@ import saveMoney  from  './images/save-money.svg'
 import scale  from  './images/scale.svg'
 import volume  from  './images/volume.svg'
 import compaigncard  from  './images/compaigncard.png'
-import { Col } from 'react-bootstrap'
 
 
 class InvestorsDashboard extends Component{
@@ -181,6 +180,7 @@ class InvestorsDashboard extends Component{
             <div className="investor-dashboard container-fluid mt-4">
         {/* ***Overview*** */}
         <div className="container investoroverview px-0">
+
           <h3 className="investortitle pt-3">
             Welcome back,<span> {user.charAt(0).toUpperCase().concat(user.slice(1))}</span>
           </h3>
@@ -403,6 +403,7 @@ class InvestorsDashboard extends Component{
           <tbody className="investortbody">
               {table.map((row, idx) => (
                <tr key={idx}>
+
                   <td>{row.id}</td>
                   <td className="lightgreen">{row.amount}</td>
                   <td>{row.interestRate}</td>
