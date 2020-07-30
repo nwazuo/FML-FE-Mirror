@@ -97,6 +97,14 @@ const Navbar = (props) => {
                       >
                         Investor Dashboard
                       </Link>
+                      {props.user.credentials.data.role === 'admin' && (
+                        <Link
+                          className="dropdown-item text-fml-primary"
+                          to={pageurl.ADMIN_DASHBOARD_PAGE_URL}
+                        >
+                          Admin Dashboard
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </li>

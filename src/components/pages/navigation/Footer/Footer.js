@@ -23,29 +23,29 @@ const Footer = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link to="">Address </Link>
+                  <Link to="#">Address </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="">Email Address</Link>
+                  <Link to="#">Email Address</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="">Phone </Link>
+                  <Link to="#">Phone </Link>
                 </li>
                 <ul className="row list-unstyled m-0 justify-content-center justify-content-md-start">
                   <li className="nav-item">
-                    <Link to="">
+                    <Link to="#">
                       {' '}
                       <img src={facebookIcon} alt="" />{' '}
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="">
+                    <Link to="#">
                       {' '}
                       <img src={instagramIcon} alt="" />{' '}
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link to="">
+                    <Link to="#">
                       {' '}
                       <img src={twitterIcon} alt="" />{' '}
                     </Link>
