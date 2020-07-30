@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import { CREATE_REQUEST, SET_ERRORS, LOADING_USER, CLEAR_ERRORS, FETCH_FAQS, FETCH_SEARCH_FAQS, ADD_FAQS, DELETE_FAQS, FETCH_FUNDEE_DASHBOARD_INFOS } from './types';
-=======
 import { 
     CREATE_REQUEST, 
     SET_ERRORS, 
@@ -9,10 +6,10 @@ import {
     FETCH_FAQS, 
     FETCH_SEARCH_FAQS, 
     ADD_FAQS, 
+    DELETE_FAQS,
     MAKE_PAYMENT, 
     MAKE_PAYMENT_OTP
 } from './types';
->>>>>>> c929518dba5be8c05bcf43dfc3537c59af994859
   
 const initialState = {
     createdRequest: false,

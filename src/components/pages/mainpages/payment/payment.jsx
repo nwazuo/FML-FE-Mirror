@@ -49,11 +49,11 @@ class Payment extends React.Component {
         const { amount, holder, number, date, cvv } = this.state
 
         return (
-            <div className="container-fluid py-0 bg-light">
+            <div className={["container-fluid py-0 bg-light py-4", PaymentCss.overflow].join(' ')}>
                 <div className="row vh-100 justify-content-center align-items-center px-4 px-md-0">
                     <div className={["col-md-8 col-lg-6 shadow-sm px-0 px-lg-0 px-xl-5 py-5 bg-white", PaymentCss.box_shadow, PaymentCss.payment_card].join(' ')}>
                         <h2 className="text-center">Fund this Campaign</h2>
-                        <form className="px-5 mt-4" onSubmit={this.onHandleSubmit}>
+                        <form className="px-3 px-md-5 mt-4" onSubmit={this.onHandleSubmit}>
                             <div className="form-group">
                                 <label htmlFor="amount">How much do you plan to donate to this campaign</label>
                                 <input 
@@ -66,7 +66,7 @@ class Payment extends React.Component {
                                 />
                             </div>
                             <div className="form-group row">
-                                <div className="col">
+                                <div className="col pr-0">
                                     <label htmlFor="holder">Card Holder Name</label>
                                     <input 
                                         type="text" 
@@ -90,7 +90,7 @@ class Payment extends React.Component {
                                 </div>
                             </div>
                             <div className="form-group row">
-                                <div className="col">
+                                <div className="col pr-0">
                                     <label htmlFor="date">Card Expiry date</label>
                                     <input 
                                         type="text" 
@@ -114,7 +114,7 @@ class Payment extends React.Component {
                                 </div>
                             </div>
                             <div className="form-group row justify-content-center mt-4">
-                                <div className="col-6 col-lg-5">
+                                <div className="col-md-12 col-lg-6">
                                     <button className="btn btn-danger btn-block py-3 font-weight-bold" type="submit">FUND NOW</button>
                                     <p className="small text-muted mt-2 text-center">An OTP will be sent to your mail</p>
                                 </div>

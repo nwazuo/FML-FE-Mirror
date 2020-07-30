@@ -36,12 +36,6 @@
   cursor: pointer;
 }
 
-.adminDashboard .active-link {
-  color: #06305b;
-  background-color: #fff;
-  border-radius: 12px;
-}
-
 .adminDashboard h5 {
   font-size: calc(13px + (24 - 13) * ((100vw - 320px) / (1600 - 320)));
   line-height: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320)));
@@ -117,6 +111,7 @@
 }
 
 .adminDashboard .nav-link {
+  color: #fff;
   border-radius: 12px;
   transition: all 1s;
   text-align: center;
@@ -130,6 +125,13 @@
   border-radius: 12px;
   text-align: center;
 }
+
+.adminDashboard .active-link {
+  color: #06305b;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
 
 /** Progress stylings */
 
@@ -186,7 +188,7 @@
     top: 0;
     left: 0;
     z-index: 1100;
-    margin-left: -50%;
+    margin-left: -59.777%;
   }
 
   .adminDashboard .sidebar_open {
@@ -199,7 +201,7 @@
   
   @keyframes sidebar-open {
     from {
-      margin-left: -50%;
+      margin-left: -59.777%;
     }
     to {
       margin-left: 0%;
@@ -211,7 +213,7 @@
       margin-left: 0;
     }
     to {
-      margin-left: -50%;
+      margin-left: -59.777%;
     }
   }
 }

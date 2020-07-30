@@ -47,7 +47,7 @@ class AdminDashboard extends Component {
             <div className="row">
               {/* Sidebar Section */}
               <aside
-                className="col-6 col-md-3 col-lg-2 custom__bg-dark vh-100 p-0 sidebar d-flex flex-column align-items-center"
+                className="col-7 col-md-3 col-lg-2 custom__bg-dark vh-100 p-0 sidebar d-flex flex-column align-items-center"
                 id="sidebar"
               >
                 <div className="logo-container py-1 position-relative">
