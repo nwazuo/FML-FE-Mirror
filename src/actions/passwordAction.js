@@ -4,7 +4,7 @@ import { RECOVER_PASSWORD,RESET_PASSWORD } from '../reducers/types';
 const resetPasswordAPI = process.env.REACT_APP_CREATE_RESET_PASSWORD_END_POINT;
 // const recoverpasswordAPI = process.env.REACT_APP_CREATE_RECOVER_PASSWORD_END_POINT
 const headers = {"Content-Type": "application/json","Access-Control-Allow-Origin": "*",};
-const recoverpasswordAPI = 'http://api.fundmylaptop.com/api/usere/forgot_password'
+const recoverpasswordAPI = '/users/forgot_password'
 
 export const recoverPassword = (formInput) => (dispatch) => {
     Server.post(`${recoverpasswordAPI}`,formInput,headers)

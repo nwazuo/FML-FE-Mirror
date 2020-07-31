@@ -45,6 +45,7 @@ import {
 	DefaultDashboard,
 	InvestorDashboard,
 } from './components/pages/dashboards';
+
 import VerificationOne from './components/pages/mainpages/verification/VerificationOne';
 
 function App() {
@@ -137,6 +138,10 @@ function App() {
 				<Route exact path={pageurl.FUND_A_CAMPAIGN} component={FundCampaign} />
 
 				<Route exact path={pageurl.VERIFICATION_3} component={Verification3} />
+
+				<Route exact path={pageurl.RECOVER_PASSWORD_URL} component={RecoverPassword} />
+
+				<Route exact path={pageurl.RESET_PASSWORD_URL} component={ResetPassword + `/:passwordtoken`} />
 
 				<ProtectedRoute
 					exact

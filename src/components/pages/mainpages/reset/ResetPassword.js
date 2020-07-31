@@ -6,6 +6,9 @@ import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import {ResetPasswordController} from '../../../dataservices'
 import {Button,Status} from '../../../utilities'
 import pageurl from '../../../router/url/pageurl'
+import {connect} from 'react-redux'
+import {resetPassword} from '../../../../actions'
+
 
 const ResetPassword = ({...props}) => {
     const[token,setToken] = React.useState({});
@@ -14,7 +17,8 @@ const ResetPassword = ({...props}) => {
     const[inputDetails,setInputDetails] = React.useState({password:"",confirmPassword:""});
     const[inputError,setInputError] = React.useState({password:(<p></p>),confirmPassord:(<p></p>)});
     React.useEffect(()=>{ const {match:{params}} = props; setToken(params.token);})
-    
+    const{match:{params}} = props;
+
     function handleForm(e){
         let stat = ResetPasswordController.validatePasswordInput(e.target.value);
         setInputDetails({...inputDetails,[e.target.name]:e.target.value});
@@ -28,7 +32,8 @@ const ResetPassword = ({...props}) => {
     function handleSubmit(e){
         e.preventDefault()
         if(ResetPasswordController.validatePassword(inputDetails,setInputError)){      
-            ResetPasswordController.resetPassword(token,inputDetails,setIsStatus,setIsRequested,setIsLoading);
+          isLoading(true);
+          props.resetPassword(inputDetails,params.passwordtoken)
         }        
     }
     
@@ -57,4 +62,16 @@ const ResetPassword = ({...props}) => {
         </ScrollIntoView>
     )
 }
-export default ResetPassword;
+const mapStateToProps = (state) => {
+  return{
+    state
+  }
+}
+
+const mapDispatchToProps = () => {
+  return{
+    resetPassword
+  }
+}
+
+export default connect (mapStateToProps,mapDispatchToProps())(ResetPassword);
