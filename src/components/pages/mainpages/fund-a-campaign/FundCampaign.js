@@ -5,6 +5,8 @@ import styles from './Fundcampaign.module.css';
 import head from './images/head.png';
 import tag from './images/tag.png';
 import fakedata from './fakedata.js';
+import {Link} from 'react-router-dom'
+import pageurl from '../../../router/url/pageurl'
 
 
 class EachCampaign extends Component {
@@ -41,16 +43,18 @@ class EachCampaign extends Component {
                                         <h3>Raised : NGN {this.props.camp.raised} of NGN {this.props.camp.total}</h3>
                                     </div>
                                     <div className="col-3">
-                                        <h3 className="float-right">{(this.props.camp.raised/this.props.camp.total) * 100}%</h3>
+                                        <h3 className="float-right">{Math.round((this.props.camp.raised/this.props.camp.total) * 100)}%</h3>
                                     </div>
                                 </div>
                             </div>
-                            <div className={[styles.progress, 'mb-4'].join(" ")}>
-                                <div className={styles.progress_bar}></div>
+                            <div className='mb-4'>
+                                <progress className={styles.progress_bar} value={Math.round((this.props.camp.raised/this.props.camp.total) * 100)} max="100"></progress>
                             </div>
                             <div className={['d-flex flex-wrap', styles.button_flex].join(" ")}>
                                 <button className={styles.btn1}>FUND THIS CAMPAIGN</button>
-                                <button className={styles.btn2}>VIEW THIS CAMPAIGN</button>
+                                <Link to={`${pageurl.COMPAIGN_PAGE_URL}/${this.props.camp.id}`}>
+                                    <button className={styles.btn2}>VIEW THIS CAMPAIGN</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -85,7 +89,7 @@ export default class FundCampaign extends Component {
                 <Navbar />
                     {/* Heading row */}
                     <div className={styles.heading_row}>
-                        <div className={['container d-flex justify-content-between align-items-center py-3 flex-xs-column', styles.heading_flex].join(" ")}>
+                        <div className={['container d-flex justify-content-between align-items-center py-3', styles.heading_flex].join(" ")}>
                             <div className={styles.header_left}>
                                 <h1>Available Campaigns</h1>
                             </div>
