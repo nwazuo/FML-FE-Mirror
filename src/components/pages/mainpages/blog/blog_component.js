@@ -20,7 +20,7 @@ const Blog_Component = ({...props}) =>{
                     <div className={blog.title_qobi}>
                         <Link to={pageurl.SINGLE_POST_URL+`/${data._id}`}><h3>{data.title ? data.title : `No Title`}</h3></Link>
                     </div>
-                    <div className={blog.description_qobi}><p>{data.post ? data.post : `No post`}</p></div>
+                    <div className={blog.description_qobi}><p>{data.description ? data.description : `No description`}</p></div>
                 </div>
             </div>
         )})

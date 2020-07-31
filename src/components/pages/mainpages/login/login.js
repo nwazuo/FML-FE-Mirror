@@ -282,7 +282,7 @@ const Login = (props) => {
             </p>
           )}
           <p className="account-info-text text-center textWidth my-2">
-            <Link to="/forgot-password" className="sign-up-link">
+            <Link to={pageurl.RECOVER_PASSWORD_URL} className="sign-up-link">
               Forgot Password?
             </Link>
           </p>
