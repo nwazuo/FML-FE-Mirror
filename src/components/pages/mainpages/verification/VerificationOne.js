@@ -34,78 +34,90 @@ const VerificationOne = (props) => {
               className={`${VerificationCss.verifyItem} ${VerificationCss.active_Ify}`}
             >
               <span
-                class={`${VerificationCss.verifyCircle} ${VerificationCss.active_Ify}`}
+                className={`${VerificationCss.verifyCircle} ${VerificationCss.active_Ify}`}
               >
-                <span class={`${VerificationCss.progressNumber}`}>1</span>
+                <span className={VerificationCss.progressNumber}>1</span>
               </span>
-              <span class={VerificationCss.text_Ify}>Residential Address</span>
+              <span className={VerificationCss.text_Ify}>
+                Residential Address
+              </span>
             </div>
-            <div class={VerificationCss.verifyItem}>
-              <span class={VerificationCss.verifyCircle}> </span>
+            <div className={VerificationCss.verifyItem}>
+              <span className={VerificationCss.verifyCircle}> </span>
             </div>
-            <div class={VerificationCss.verifyItem}>
-              <span class={VerificationCss.verifyCircle}></span>
+            <div className={VerificationCss.verifyItem}>
+              <span className={VerificationCss.verifyCircle}></span>
             </div>
-            <div class={VerificationCss.verifyItem}>
-              <span class={VerificationCss.verifyCircle}></span>
+            <div className={VerificationCss.verifyItem}>
+              <span className={VerificationCss.verifyCircle}></span>
             </div>
           </div>
         </div>
 
         <form
-          class={`${VerificationCss.needsValidation} ${VerificationCss.verifyFormAddress}`}
+          className={`${VerificationCss.needsValidation} ${VerificationCss.verifyFormAddress}`}
           novalidate
         >
           <div id="address-area">
-            <h3 class="mt-5">
+            <h3 className="mt-5">
               <i
-                class="fa fa-map-marker"
+                className="fa fa-map-marker"
                 style={{ fontSize: '90%' }}
                 aria-hidden="true"
               ></i>{' '}
               Address
             </h3>
-            <p class="verify-intro-text text-left mb-4 col-sm-10 px-0">
+            <p className="verify-intro-text text-left mb-4 col-sm-10 px-0">
               Don't worry your information is private and will not be shared
               with anyone except{' '}
-              <a class="text-fml-secondary" href="https://fundmylaptop.com/">
+              <a
+                className="text-fml-secondary"
+                href="https://fundmylaptop.com/"
+              >
                 FundMyLaptop
               </a>
             </p>
-            <div class="form-row">
-              <div class="col-md-6 mb-4 pr-md-3">
+            <div className="form-row">
+              <div className="col-md-6 mb-4 pr-md-3">
                 <label for="address">
-                  Address <span class={VerificationCss.required_Ify}>*</span>
+                  Address{' '}
+                  <span className={VerificationCss.required_Ify}>*</span>
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="address"
                   placeholder="Type your address"
                   required
                 />
-                <div class="invalid-feedback">Please provide your address</div>
+                <div className="invalid-feedback">
+                  Please provide your address
+                </div>
               </div>
-              <div class="col-md-6 mb-4 pl-md-3">
+              <div className="col-md-6 mb-4 pl-md-3">
                 <label for="city">
-                  City <span class={VerificationCss.required_Ify}>*</span>
+                  City <span className={VerificationCss.required_Ify}>*</span>
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="firstName"
                   placeholder="Your city"
                   required
                 />
-                <div class="invalid-feedback">Please provide your city</div>
+                <div className="invalid-feedback">Please provide your city</div>
               </div>
             </div>
-            <div class="form-row">
-              <div class="col-md-6 mb-4 pr-md-3">
+            <div className="form-row">
+              <div className="col-md-6 mb-4 pr-md-3">
                 <label for="state">
-                  State <span class={VerificationCss.required_Ify}>*</span>
+                  State <span className={VerificationCss.required_Ify}>*</span>
                 </label>
-                <select class="custom-select form-control" id="state" required>
+                <select
+                  className="custom-select form-control"
+                  id="state"
+                  required
+                >
                   <option selected disabled value="">
                     Select your state
                   </option>
@@ -131,12 +143,13 @@ const VerificationOne = (props) => {
                   <option value="katsina">Katsina</option>
                 </select>
               </div>
-              <div class="col-md-6 mb-4 pl-md-3">
+              <div className="col-md-6 mb-4 pl-md-3">
                 <label for="bank">
-                  Country <span class={VerificationCss.required_Ify}>*</span>
+                  Country{' '}
+                  <span className={VerificationCss.required_Ify}>*</span>
                 </label>
                 <select
-                  class="custom-select form-control"
+                  className="custom-select form-control"
                   id="country"
                   required
                 >
@@ -151,106 +164,122 @@ const VerificationOne = (props) => {
               </div>
             </div>
           </div>
-          <div class="apartment-section">
-            <h3 class="mt-5">
+          <div className="apartment-section">
+            <h3 className="mt-5">
               <i
-                class="fa fa-home"
+                className="fa fa-home"
                 style={{ fontSize: '90%' }}
                 aria-hidden="true"
               ></i>{' '}
               Apartment
             </h3>
-            <p class="verify-intro-text text-left mb-4 col-sm-10 px-0">
+            <p className="verify-intro-text text-left mb-4 col-sm-10 px-0">
               Tell us something more to easily identify your house. Click
               applicable box
             </p>
-            <div class="row">
-              <div class="col-12">
+            <div className="row">
+              <div className="col-12">
                 <button
                   type="button"
-                  class="btn btn-outline-fml-secondary mr-2 my-1"
+                  className="btn btn-outline-fml-secondary mr-2 my-1"
                 >
                   Duplex
                 </button>
                 <button
                   type="button"
-                  class="btn btn-outline-fml-secondary mr-2 my-1"
+                  className="btn btn-outline-fml-secondary mr-2 my-1"
                 >
                   Bungalow
                 </button>
               </div>
-              <div class="col-12">
+              <div className="col-12">
                 <button
                   type="button"
-                  class="btn btn-outline-fml-secondary mr-2 my-2"
+                  className="btn btn-outline-fml-secondary mr-2 my-2"
                 >
                   Single
                 </button>
                 <button
                   type="button"
-                  class="btn btn-outline-fml-secondary mr-2 my-2"
+                  className="btn btn-outline-fml-secondary mr-2 my-2"
                 >
                   2 bedrooms
                 </button>
                 <button
                   type="button"
-                  class="btn btn-outline-fml-secondary my-2"
+                  className="btn btn-outline-fml-secondary my-2"
                 >
                   3 bedrooms
                 </button>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-6 mb-4">
+            <div className="row">
+              <div className="col-md-6 mb-4">
                 <label for="apartment-number">
                   Apartment Number{' '}
-                  <span class={VerificationCss.required_Ify}>*</span>
+                  <span className={VerificationCss.required_Ify}>*</span>
                 </label>
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="apartment-number"
                   required
                 />
-                <div class="invalid-feedback">
+                <div className="invalid-feedback">
                   Please provide your apartment number
                 </div>
               </div>
             </div>
           </div>
-          <div class="image-upload-section">
-            <h3 class="mt-5">
+          <div className="image-upload-section">
+            <h3 className="mt-5">
               <i
-                class="fa fa-picture-o"
+                className="fa fa-picture-o"
                 style={{ fontSize: '90%' }}
                 aria-hidden="true"
               ></i>{' '}
               Upload Image
             </h3>
-            <p class="verify-intro-text text-left mb-4 col-sm-10 px-0">
+            <p className="verify-intro-text text-left mb-4 col-sm-10 px-0">
               Your are required to provide atleast three pictures of your house
             </p>
-            <div class="row">
-              <div class="col-6 col-sm-4 col-md-3 my-2">
+            <div className="row">
+              <div className="col-6 col-sm-4 col-md-3 my-2">
                 <Dropzone />
               </div>
-              <div class="col-6 col-sm-4 col-md-3 my-2">
+              <div className="col-6 col-sm-4 col-md-3 my-2">
                 <Dropzone />
               </div>
-              <div class="col-6 col-sm-4 col-md-3 my-2">
+              <div className="col-6 col-sm-4 col-md-3 my-2">
                 <Dropzone />
               </div>
-              <div class="col-6 col-sm-4 col-md-3 my-2">
+              <div className="col-6 col-sm-4 col-md-3 my-2">
                 <Dropzone />
               </div>
             </div>
 
-            <p class="px-0 py-2">Maximum of 4mb for each</p>
+            <p className="px-0 py-2">Maximum of 4mb for each</p>
           </div>
 
-          <div class="form-buttons d-flex flex-column flex-md-row justify-content-center justify-content-md-end">
+          {/* <div className="form-buttons d-flex flex-column flex-md-row justify-content-center justify-content-md-end">
             <button
-              class="submit btn btn-fml-secondary align-self-center ml-md-3 mb-3 mb-md-4"
+              className="submit btn btn-fml-secondary align-self-center ml-md-3 mb-3 mb-md-0"
+              type="submit"
+            >
+              Next{' '}
+            </button>
+                  </div> */}
+          {/* <div className="d-flex justify-content-end">
+            <button
+              className="submit btn btn-fml-secondary align-self-center ml-md-3 mb-3 mb-md-0"
+              type="submit"
+            >
+              Next{' '}
+            </button>
+          </div> */}
+          <div className="form-buttons d-flex flex-column flex-md-row justify-content-center justify-content-md-end">
+            <button
+              className="btn btn-fml-secondary align-self-center ml-md-3 mb-3 mb-md-5"
               type="submit"
             >
               Next{' '}

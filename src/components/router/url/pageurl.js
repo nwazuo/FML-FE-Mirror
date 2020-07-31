@@ -2,6 +2,7 @@
 const LANDING_PAGE_URL = '/';
 const LOGIN_PAGE_URL = '/login';
 const USER_PROFILE_PAGE_URL = '/user-profile';
+const OTHER_USERS_PROFILE = '/user';
 const USER_RECOMMENDATIONS = '/recommendations';
 const REGISTER_PAGE_URL = '/signup';
 const ABOUT_US_PAGE_URL = '/about';
@@ -14,7 +15,7 @@ const PAGE_404 = '/404';
 const COMING_SOON_URL = '/coming-soon';
 const INVESTOR_DASHBOARD = '/investordashboard';
 const FUNDEE_DASHBOARD_PAGE_URL = '/fundee-dashboard';
-const COMPAIGN_PAGE_URL = '/campaign';
+const CAMPAIGN_PAGE_URL = '/campaigns/campaign';
 const ADMIN_DASHBOARD_PAGE_URL = '/admin-dashboard';
 const ADMIN_FAQ_PAGE_URL = '/admin-dashboard/add-faq';
 const ADMIN_CAMPAIGN_PAGE_URL = '/admin-dashboard/campaign';
@@ -37,7 +38,7 @@ const RESET_PASSWORD_URL = '/reset-password';
 const FUND_A_CAMPAIGN = '/campaigns';
 const VERIFICATION_3 = '/verification3';
 const VERIFICATION_FORM_ONE = '/verification-form-one';
-
+const RECOVER_PASSWORD_URL = '/recover-password';
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -45,6 +46,7 @@ const pageurl = {
   USER_PROFILE_PAGE_URL,
   USER_RECOMMENDATIONS,
   REGISTER_PAGE_URL,
+  OTHER_USERS_PROFILE,
   ABOUT_US_PAGE_URL,
   CONTACT_US_PAGE_URL,
   PRIVACY_POLICY_PAGE_URL,
@@ -55,7 +57,6 @@ const pageurl = {
   COMING_SOON_URL,
   INVESTOR_DASHBOARD,
   FUNDEE_DASHBOARD_PAGE_URL,
-  COMPAIGN_PAGE_URL,
   ADMIN_DASHBOARD_PAGE_URL,
   ADMIN_FAQ_PAGE_URL,
   ADMIN_CAMPAIGN_PAGE_URL,
@@ -76,7 +77,9 @@ const pageurl = {
   EDIT_PROFILE,
   RESET_PASSWORD_URL,
   FUND_A_CAMPAIGN,
-  VERIFICATION_3
+  VERIFICATION_3,
+  RECOVER_PASSWORD_URL,
+  CAMPAIGN_PAGE_URL,
 };
 
 export default pageurl;

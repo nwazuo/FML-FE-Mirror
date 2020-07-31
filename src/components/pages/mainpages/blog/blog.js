@@ -7,12 +7,12 @@ import BlogComponent from './blog_component'
 import showmoreimg from './img/Vector 1.png'
 import pageurl from '../../../router/url/pageurl'
 import {Button} from '../../../utilities'
-import {BlogController} from '../../../dataservices' 
+// import {BlogController} from '../../../dataservices' 
 import feathersolid from './img/Group2.svg'
 
 const Blog = ({...props}) => {
-    const [blogStory,setBlogStory] = React.useState([]);
-    React.useEffect(()=>{function doIt(){!blogStory[0] && BlogController.getAllBlogPosts(setBlogStory);}doIt();})
+    // const [blogStory,setBlogStory] = React.useState([]);
+    // React.useEffect(()=>{function doIt(){!blogStory[0] && BlogController.getAllBlogPosts(setBlogStory);}doIt();})
     const[inputDetails,setInputDetails] = React.useState({});
     function handleInput(e){setInputDetails({...inputDetails,[e.target.name]:e.target.value});}
     function handleSubmit(e){e.preventDefault();}

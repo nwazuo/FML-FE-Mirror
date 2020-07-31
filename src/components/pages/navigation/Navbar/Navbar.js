@@ -167,7 +167,6 @@ const Navbar = (props) => {
                 </li>
               )}
 
-
               {/* {window.location.pathname === "/" ? (
                 <UserSearch />
                ) : null
@@ -179,7 +178,10 @@ const Navbar = (props) => {
               {props.user.authenticated && (
                 <li className="nav-item ">
                   <Link to={pageurl.COMPAIGN_PAGE_URL}>
-                    <button className="btn btn-fml-secondary" style={{width:"max-content"}}>
+                    <button
+                      className="btn btn-fml-secondary"
+                      style={{ width: 'max-content' }}
+                    >
                       Start a campaign{' '}
                       <span className="sr-only">(current)</span>
                     </button>
@@ -190,12 +192,7 @@ const Navbar = (props) => {
           </div>
         </div>
 
-        {window.location.pathname === "/" ? (
-          <UserSearchResponsive />
-         ) : null
-         
-        }
-
+        {window.location.pathname === '/' ? <UserSearchResponsive /> : null}
       </nav>
     </>
   );

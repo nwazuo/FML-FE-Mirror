@@ -34,6 +34,8 @@ import {
   ResetPassword,
   FundCampaign,
   Verification3,
+  RecoverPassword,
+  OtherUsers,
 } from './components/pages/mainpages';
 
 import {
@@ -44,6 +46,7 @@ import {
   DefaultDashboard,
   InvestorDashboard,
 } from './components/pages/dashboards';
+
 import VerificationOne from './components/pages/mainpages/verification/VerificationOne';
 
 function App() {
@@ -63,9 +66,17 @@ function App() {
 
         <Route exact path={pageurl.PAYMENT_PAGE_URL} component={Payment} />
 
-        <Route exact path={pageurl.PAYMENT_OTP_PAGE_URL} component={PaymentOtp} />
+        <Route
+          exact
+          path={pageurl.PAYMENT_OTP_PAGE_URL}
+          component={PaymentOtp}
+        />
 
-        <Route exact path={pageurl.PAYMENT_SUCCESS_PAGE_URL} component={PaymentSuccess} />
+        <Route
+          exact
+          path={pageurl.PAYMENT_SUCCESS_PAGE_URL}
+          component={PaymentSuccess}
+        />
 
         <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
@@ -82,7 +93,7 @@ function App() {
           path={pageurl.SINGLE_POST_URL + `/:userid`}
           component={SinglePost}
         />
-        
+
         <Route
           exact
           path={pageurl.CREATE_NEW_POST_URL}
@@ -127,11 +138,119 @@ function App() {
 
         <Route exact path={pageurl.FUND_A_CAMPAIGN} component={FundCampaign} />
 
+        <Route exact path={pageurl.VERIFICATION_3} component={Verification3} />
+
         <Route
           exact
-          path={pageurl.VERIFICATION_3}
-          component={Verification3}
+          path={pageurl.RECOVER_PASSWORD_URL}
+          component={RecoverPassword}
         />
+
+        <Route
+          exact
+          path={pageurl.RESET_PASSWORD_URL}
+          component={ResetPassword + `/:passwordtoken`}
+        />
+
+        <ProtectedRoute
+          exact
+          path={pageurl.LOAN_REQUEST_PAGE_URL}
+          component={LoanRequest}
+        />
+
+        <ProtectedRoute
+          exact
+          path={pageurl.INVESTOR_DASHBOARD}
+          component={InvestorDashboard}
+        />
+
+        <Route exact path={pageurl.COMING_SOON_URL} component={ComingSoon} />
+
+        <Route exact path={pageurl.LOGIN_PAGE_URL} component={Login} />
+
+        <Route exact path={pageurl.REGISTER_PAGE_URL} component={SignUp} />
+
+        <Route exact path={pageurl.TC_PAGE_URL} component={Terms} />
+
+        <Route exact path={pageurl.PAYMENT_PAGE_URL} component={Payment} />
+
+        <Route
+          exact
+          path={pageurl.PAYMENT_OTP_PAGE_URL}
+          component={PaymentOtp}
+        />
+
+        <Route
+          exact
+          path={pageurl.PAYMENT_SUCCESS_PAGE_URL}
+          component={PaymentSuccess}
+        />
+
+        <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
+
+        <Route exact path={pageurl.ABOUT_US_PAGE_URL} component={AboutUs} />
+
+        <Route exact path={pageurl.CONTACT_US_PAGE_URL} component={ContactUs} />
+
+        <Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
+
+        <Route exact path={pageurl.EDIT_PROFILE} component={EditProfile} />
+        <Route
+          exact
+          path={pageurl.OTHER_USERS_PROFILE + `/:userid`}
+          component={OtherUsers}
+        />
+        <Route
+          exact
+          path={pageurl.SINGLE_POST_URL + `/:userid`}
+          component={SinglePost}
+        />
+
+        <Route
+          exact
+          path={pageurl.CREATE_NEW_POST_URL}
+          component={CreateBlogPost}
+        />
+
+        <Route
+          exact
+          path={pageurl.PRIVACY_POLICY_PAGE_URL}
+          component={PrivacyPage}
+        />
+
+        <Route
+          exact
+          path={pageurl.USER_RECOMMENDATIONS}
+          component={Recommendations}
+        />
+
+        <Route
+          exact
+          path={pageurl.INVITE_RECOMMENDER_PAGE_URL}
+          component={InviteRecommender}
+        />
+
+        <Route
+          exact
+          path={pageurl.EMAIL_VERIFICATION_URL}
+          component={EmailVerification}
+        />
+
+        <Route
+          exact
+          path={pageurl.EMAIL_CONFIRMATION_FAILURE_URL}
+          component={EmailConfirmationFailure}
+        />
+
+        <Route
+          exact
+          path={pageurl.EMAIL_CONFIRMATION_URL}
+          component={EmailConfirmation}
+        />
+
+        <Route exact path={pageurl.FUND_A_CAMPAIGN} component={FundCampaign} />
+
+        <Route exact path={pageurl.VERIFICATION_3} component={Verification3} />
 
         <ProtectedRoute
           exact
@@ -153,10 +272,10 @@ function App() {
 
         <ProtectedRoute
           exact
-          path={pageurl.COMPAIGN_PAGE_URL}
+          path={pageurl.CAMPAIGN_PAGE_URL + '/:campaignID'}
           component={Campaign}
         />
-        
+
         {/* <Route
           exact
           path={pageurl.VERIFICATION_FORM_ONE}
@@ -202,7 +321,6 @@ function App() {
         />
 
         <Route path="*" component={Page404} />
-        
       </Switch>
     </Router>
   );
