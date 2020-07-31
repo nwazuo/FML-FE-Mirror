@@ -15,11 +15,8 @@ const get = (url, options = {}) => {
 	return axios.get(process.env.REACT_APP_BASE_URL + url, { headers: options });
 };
 
-const post = (url, data, options = {}) => {
-	if (options) {
-		options = { ...headers, ...options };
-	}
-	console.log(process.env.REACT_APP_BASE_URL + url);
+const post = (url, data, header = {}) => {
+	const options = { ...header};
 	return axios.post(process.env.REACT_APP_BASE_URL + url, data, {
 		headers: options,
 	});
@@ -44,14 +41,12 @@ const authBlogPost = (url, data, token, header = {}) => {
 const authGet = (url, token, extraHeaders = {}) => {
 	const authToken = { Authorization: 'Bearer ' + token, ...extraHeaders };
 	const options = { ...headers, ...authToken };
-	console.log(process.env.REACT_APP_BASE_URL + url);
 	return axios.get(process.env.REACT_APP_BASE_URL + url, { headers: options });
 };
 
 const authGetCampaign = (url, token, extraHeaders = {}) => {
 	const authToken = { Authorization: token, ...extraHeaders };
 	const options = { ...headers, ...authToken };
-	console.log(process.env.REACT_APP_BASE_URL + url);
 	return axios.get(process.env.REACT_APP_BASE_URL + url, { headers: options });
 };
 

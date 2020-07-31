@@ -7,9 +7,12 @@ const Status = ({closeStatus,status_message,buttonTxt,buttonUrl,showButton}) =>{
         <>
         {status_message &&
         <div className={blog.status_qobi}><div className={blog.main_container_qobi}>
-                <div className={blog.status_container_qobi}><h1>{status_message}</h1>
+                <div className={blog.status_container_qobi} style={{border:"1px solid black"}}>
+                    <div className={blog.indent_qobi}>
+                    <h1>{status_message}</h1>
                     {!showButton && <Link to={buttonUrl}><button>{buttonTxt}</button></Link>}
                     <Link onClick={closeStatus}><p>Close</p></Link>
+                    </div>
                 </div>
             </div>
         </div>
