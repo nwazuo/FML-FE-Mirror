@@ -11,7 +11,7 @@ import twitter from './twitterIcon.svg';
 import github from './github.svg';
 import fbIcon from './facebook-square-brands.svg';
 import { GoogleLogin } from 'react-google-login';
-import GitHubLogin from 'react-github-login';
+import GitHubLogin from 'react-github-login2';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import Button from '../../../utilities/Button/CustomizedButton';

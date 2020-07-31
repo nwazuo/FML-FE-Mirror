@@ -157,7 +157,7 @@ function App() {
 
         <ProtectedRoute
           exact
-          path={pageurl.COMPAIGN_PAGE_URL}
+          path={pageurl.CAMPAIGN_PAGE_URL + '/:campaignID'}
           component={Campaign}
         />
 

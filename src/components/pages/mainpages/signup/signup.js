@@ -18,7 +18,7 @@ import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
 import Button from '../../../utilities/Button/CustomizedButton';
 import { GoogleLogin } from 'react-google-login';
-import GitHubLogin from 'react-github-login';
+import GitHubLogin from 'react-github-login2';
 
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 class Signup extends Component {
