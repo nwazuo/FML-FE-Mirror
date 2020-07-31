@@ -1,10 +1,9 @@
 import Server from '../services/server/Server';
-import { RECOVER_PASSWORD,RESET_PASSWORD } from '../reducers/types';
+import { RECOVER_PASSWORD,RESET_PASSWORD,PASSWORD_RECOVERY_ERRORS } from '../reducers/types';
 
 const resetPasswordAPI = process.env.REACT_APP_CREATE_RESET_PASSWORD_END_POINT;
-// const recoverpasswordAPI = process.env.REACT_APP_CREATE_RECOVER_PASSWORD_END_POINT
+const recoverpasswordAPI = process.env.REACT_APP_CREATE_RECOVER_PASSWORD_END_POINT
 const headers = {"Content-Type": "application/json","Access-Control-Allow-Origin": "*",};
-const recoverpasswordAPI = '/users/forgot_password'
 
 export const recoverPassword = (formInput) => (dispatch) => {
     Server.post(`${recoverpasswordAPI}`,formInput,headers)
@@ -16,10 +15,10 @@ export const recoverPassword = (formInput) => (dispatch) => {
     })  
     .catch(err => {
         console.log(err)
-        // dispatch({
-        //     type: SET_ERRORS,
-        //     payload: err,
-        //   });
+        dispatch({
+            type: PASSWORD_RECOVERY_ERRORS,
+            payload: err,
+          });
     })      
 }
 

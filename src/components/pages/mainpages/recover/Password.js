@@ -31,8 +31,8 @@ const Password = ({...props}) => {
     
     return(
         <ScrollIntoView><Navbar/>
-        {isRequested && <Status buttonTxt={isStatus ? "SIGN IN" : "REQUEST PASSWORD RESET"} 
-                                buttonUrl={isStatus ? pageurl.LOGIN_PAGE_URL : pageurl.LOGIN_PAGE_URL} 
+        {(props.status ===true || isRequested) && <Status buttonTxt={props.status ? "" : "TRY AGAIN"} 
+                showButton={props.status} buttonUrl={isStatus ? "/" : pageurl.RECOVER_PASSWORD_URL} 
                                 closeStatus={()=>{setIsRequested(false);setIsLoading(false);isStatus && window.open(pageurl.LOGIN_PAGE_URL,'_self')}} status_message={isStatus ? "Password Reset Successful" : "Password Not Reset"} />}
         <div className={ResetPasswordCss.reset_password_anon}>
             <div className={ResetPasswordCss.main_container_anon}>
@@ -52,6 +52,11 @@ const Password = ({...props}) => {
         </ScrollIntoView>
     )
 }
-const mapStateToProps=(state)=>{return{state}}
+const mapStateToProps=(state)=>{
+  return{
+    status : state.password.recoverPassword,
+    // error : state.password.recoverPassword
+  }
+}
 const mapDispatchTpProps=()=>{return{recoverPassword}}
 export default connect(mapStateToProps,mapDispatchTpProps())(Password);
