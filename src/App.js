@@ -63,9 +63,17 @@ function App() {
 
         <Route exact path={pageurl.PAYMENT_PAGE_URL} component={Payment} />
 
-        <Route exact path={pageurl.PAYMENT_OTP_PAGE_URL} component={PaymentOtp} />
+        <Route
+          exact
+          path={pageurl.PAYMENT_OTP_PAGE_URL}
+          component={PaymentOtp}
+        />
 
-        <Route exact path={pageurl.PAYMENT_SUCCESS_PAGE_URL} component={PaymentSuccess} />
+        <Route
+          exact
+          path={pageurl.PAYMENT_SUCCESS_PAGE_URL}
+          component={PaymentSuccess}
+        />
 
         <Route exact path={pageurl.FAQ_PAGE_URL} component={FAQ} />
 
@@ -82,7 +90,7 @@ function App() {
           path={pageurl.SINGLE_POST_URL + `/:userid`}
           component={SinglePost}
         />
-        
+
         <Route
           exact
           path={pageurl.CREATE_NEW_POST_URL}
@@ -127,11 +135,7 @@ function App() {
 
         <Route exact path={pageurl.FUND_A_CAMPAIGN} component={FundCampaign} />
 
-        <Route
-          exact
-          path={pageurl.VERIFICATION_3}
-          component={Verification3}
-        />
+        <Route exact path={pageurl.VERIFICATION_3} component={Verification3} />
 
         <ProtectedRoute
           exact
@@ -156,7 +160,7 @@ function App() {
           path={pageurl.COMPAIGN_PAGE_URL}
           component={Campaign}
         />
-        
+
         {/* <Route
           exact
           path={pageurl.VERIFICATION_FORM_ONE}
@@ -202,7 +206,6 @@ function App() {
         />
 
         <Route path="*" component={Page404} />
-        
       </Switch>
     </Router>
   );
