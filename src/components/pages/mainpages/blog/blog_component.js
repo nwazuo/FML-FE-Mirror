@@ -6,11 +6,10 @@ import {Link} from 'react-router-dom'
 import {getAllBlogPost} from '../../../../actions'
 
 const Blog_Component = ({...props}) =>{
-    const [blogStory,setBlogStory] = React.useState([]);
-    React.useEffect(()=>{function doit(){!blogStory[0] && props.getAllBlogPost();!blogStory[0] && setBlogStory(props.post)}doit()})
+    React.useEffect(()=>{props.getAllBlogPost()},[])
     return(
         <>        
-        {blogStory[0] && blogStory.map((data,index)=>{return(
+        {props.blogStory[0] && props.blogStory.map((data,index)=>{return(
             <div className={blog.img_content_qobi} key={index}>
                 <Link to={pageurl.SINGLE_POST_URL+`/${data._id}`}>
                     <div className={blog.img_container_qobi} >
@@ -29,6 +28,8 @@ const Blog_Component = ({...props}) =>{
         </>
     )
 }
-const mapStateToProps = (state,ownState) => {const numberOfPost = ownState.posts ? state.blog.allblogPost.slice(0,ownState.posts) : state.blog.allblogPost; return { post : numberOfPost }}
+const mapStateToProps = (state,ownState) => {
+    const numberOfPost = ownState.posts ? state.blog.allblogPost.slice(0,ownState.posts) : state.blog.allblogPost; 
+    return { blogStory : numberOfPost }}
 const mapDispatchToProps = () => {return{getAllBlogPost}}
 export default connect (mapStateToProps,mapDispatchToProps())(Blog_Component);
