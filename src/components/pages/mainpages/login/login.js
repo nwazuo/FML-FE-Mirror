@@ -137,7 +137,7 @@ const Login = (props) => {
   return (
     <ScrollIntoView>
       <Navbar />
-      <div className="main-content d-sm-flex">
+      <div className="main-content d-sm-flex login_container">
         <form
           className="login-box p-md-5 p-2"
           onSubmit={onSubmit}

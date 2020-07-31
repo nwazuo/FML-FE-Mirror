@@ -6,6 +6,8 @@ import {
   LOADING_UI,
   LOADED_UI,
   CLEAR_ERRORS,
+  SET_OTHER_USER,
+  UNSET_OTHER_USER,
   VERIFY_EMAIL,
   // REGISTERED_USER,
 } from '../reducers/types';
@@ -193,6 +195,28 @@ export const getUserData = () => (dispatch) => {
     })
     .catch((err) => console.log(err));
 };
+
+// Implement 'View User Profile" of other users
+export const getOtherUserData = (id) => (dispatch) => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .get(`${baseURL}/api/users/${id}`, {
+      headers: { authorization: `token ${localStorage.FMLT}` },
+    })
+    .then((res) => {
+      dispatch({
+        type: SET_OTHER_USER,
+        payload: res.data.data,
+      });
+
+      console.log(res.data);
+    })
+    .catch((err) => console.log(err));
+};
+export const clearOtherUserData = () => (dispatch) => {
+  dispatch({ type: UNSET_OTHER_USER });
+};
+// *********************** */
 
 export const editUserProfile = (history, _id, formData) => (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });

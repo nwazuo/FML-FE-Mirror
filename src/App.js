@@ -32,6 +32,7 @@ import {
   CreateBlogPost,
   EditProfile,
   ResetPassword,
+  OtherUsers,
   FundCampaign,
   Verification3,
 } from './components/pages/mainpages';
@@ -84,7 +85,11 @@ function App() {
         <Route exact path={pageurl.BLOG_PAGE_URL} component={Blog} />
 
         <Route exact path={pageurl.EDIT_PROFILE} component={EditProfile} />
-
+        <Route
+          exact
+          path={pageurl.OTHER_USERS_PROFILE + `/:userid`}
+          component={OtherUsers}
+        />
         <Route
           exact
           path={pageurl.SINGLE_POST_URL + `/:userid`}
