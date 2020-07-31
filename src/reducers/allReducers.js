@@ -3,4 +3,5 @@ import dataReducer from './dataReducer';
 import uiReducer from './uiReducer';
 import fundeeReducer from './fundeeReducer'
 import blogReducer from './blogReducer'
-export { userReducer, dataReducer, uiReducer, fundeeReducer, blogReducer };
+import passwordReducer from './passwordReducer'
+export { userReducer, dataReducer, uiReducer, fundeeReducer, blogReducer, passwordReducer };

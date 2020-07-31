@@ -38,6 +38,7 @@ const RESET_PASSWORD_URL = '/reset-password';
 const FUND_A_CAMPAIGN = '/campaigns';
 const VERIFICATION_3 = '/verification3';
 const VERIFICATION_FORM_ONE = '/verification-form-one';
+const RECOVER_PASSWORD_URL = '/recover-password';
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -56,7 +57,6 @@ const pageurl = {
   COMING_SOON_URL,
   INVESTOR_DASHBOARD,
   FUNDEE_DASHBOARD_PAGE_URL,
-  CAMPAIGN_PAGE_URL,
   ADMIN_DASHBOARD_PAGE_URL,
   ADMIN_FAQ_PAGE_URL,
   ADMIN_CAMPAIGN_PAGE_URL,
@@ -78,6 +78,8 @@ const pageurl = {
   RESET_PASSWORD_URL,
   FUND_A_CAMPAIGN,
   VERIFICATION_3,
+  RECOVER_PASSWORD_URL,
+  CAMPAIGN_PAGE_URL,
 };
 
 export default pageurl;
