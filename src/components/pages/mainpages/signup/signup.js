@@ -11,14 +11,14 @@ import { connect } from 'react-redux';
 import {
   registerUser,
   googleLogin,
-  //githubLogin,
+  githubLogin,
   facebookLogin,
 } from '../../../../actions/userActions';
 import PinWheel from '../../../ui/loaders/pin-wheel';
 import PinWheelColor from '../../../ui/loaders/pin-wheel-color';
 import Button from '../../../utilities/Button/CustomizedButton';
 import { GoogleLogin } from 'react-google-login';
-import GitHubLogin from 'react-github-login';
+import GitHubLogin from 'react-github-login2';
 
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 class Signup extends Component {
@@ -32,6 +32,7 @@ class Signup extends Component {
     errors: null,
     message: null,
     loading: false,
+    checked: false,
   };
   blankstate = {
     email: '',
@@ -43,6 +44,7 @@ class Signup extends Component {
     errors: null,
     message: null,
     loading: false,
+    checked: false,
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -70,7 +72,9 @@ class Signup extends Component {
       [event.target.id]: event.target.value,
     });
   };
-
+  onChecked = (e) => {
+    this.setState({ checked: e.target.checked });
+  };
   onSubmit = (event) => {
     // eslint-disable-next-line
     let validMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -152,9 +156,9 @@ class Signup extends Component {
       password,
       address,
       phone,
+      checked,
       // message,
     } = this.state;
-
     //Google auth
     const sendGoogleToken = (tokenid) => {
       informRedux(tokenid);
@@ -171,24 +175,23 @@ class Signup extends Component {
       sendGoogleToken(response.tokenId);
     };
 
-    // GitHub Auth
-    const onGitHubLoginSuccess = (response) => console.log(response);
-    const onGitHubLoginFailure = (response) => console.log(response);
-    //GitHub Auth
-    // const handleGithubAuth = () => {
-    //   console.log('you clicked');
-    //   this.props.githubLogin(this.props.history);
-    // };
-
-    
     //Facebook auth
-  const sendFacebookToken = (data) => {
-    this.props.facebookLogin(data, this.props.history);
-  }
-  
-  const responseFacebook = (response) => {
-    sendFacebookToken(response);
-  }
+    const sendFacebookToken = (data) => {
+      this.props.facebookLogin(data, this.props.history);
+    };
+
+    const responseFacebook = (response) => {
+      sendFacebookToken(response);
+    };
+
+    // GitHub Auth
+    const onGitHubLoginSuccess = (response) => {
+      console.log(response.code);
+      this.props.githubLogin(response.code, this.props.history);
+    };
+    const onGitHubLoginFailure = (response) => {
+      console.log(response);
+    };
 
     return (
       <ScrollIntoView>
@@ -315,7 +318,8 @@ class Signup extends Component {
                 <input
                   className="form-check-input check"
                   type="checkbox"
-                  value=""
+                  onChange={this.onChecked}
+                  value={checked}
                   id="invalidCheck"
                   required
                 />
@@ -348,6 +352,7 @@ class Signup extends Component {
                 onClick={(e) => {
                   this.onSubmit(e);
                 }}
+                disabled={!checked}
               ></Button>
             </div>
             <div className="my-4 text-center or d-flex align-items-center or-box">
@@ -378,40 +383,27 @@ class Signup extends Component {
               >
                 <i class="fab fa-twitter pr-3 facbook-logo"></i>
                 Sign up with Twitter
-              </Link> 
-              <FacebookLogin 
-              appId="620560692194763"
-              onFailure={responseFacebook}
-              callback={responseFacebook}
-              render={renderProps => (
-                <Link
-                onClick={renderProps.onClick}
-                className="mt-2 form-control login-btn login-btn-facebook reg-btn "
-              >
-                <i class="fab fa-facebook pr-3 facbook-logo"></i>
-                Sign up with Facebook
               </Link>
-              )} />
-              
-              {/* <Link
-                to=""
-                className="mt-2 form-control login-btn login-btn-github reg-btn "
-              >
-                <i class="fab fa-github pr-3 facbook-logo"></i>
-                Sign up with GitHub
-              </Link> */}
-              {/* <a
-                href="#"
-                className="form-control  signup-form login-btn reg-btn btn-outline-fml-secondary atag"
-            >
-                <img className="pr-3" src={googleImg} alt="" />
-                Login with Google
-            </a> */}
+              <FacebookLogin
+                appId="620560692194763"
+                onFailure={responseFacebook}
+                callback={responseFacebook}
+                render={(renderProps) => (
+                  <Link
+                    onClick={renderProps.onClick}
+                    className="mt-2 form-control login-btn login-btn-facebook reg-btn "
+                  >
+                    <i class="fab fa-facebook pr-3 facbook-logo"></i>
+                    Sign up with Facebook
+                  </Link>
+                )}
+              />
               <GitHubLogin
                 clientId="0d28ce3bf3e5f81a1b54"
                 onSuccess={onGitHubLoginSuccess}
                 onFailure={onGitHubLoginFailure}
                 cookiePolicy={'single_host_origin'}
+                redirectUri="https://app.fundmylaptop.com/login"
                 className="mt-2 form-control login-btn signup-form login-btn-github reg-btn "
                 buttonText={
                   <span>
@@ -454,6 +446,6 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   registerUser,
   googleLogin,
-  // githubLogin,
-  facebookLogin
+  githubLogin,
+  facebookLogin,
 })(Signup);

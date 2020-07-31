@@ -6,6 +6,8 @@ import {
   LOADING_UI,
   LOADED_UI,
   CLEAR_ERRORS,
+  SET_OTHER_USER,
+  UNSET_OTHER_USER,
   VERIFY_EMAIL,
   // REGISTERED_USER,
 } from '../reducers/types';
@@ -48,11 +50,16 @@ export const googleLogin = (idtoken, history) => (dispatch) => {
     });
 };
 
-export const facebookLogin = ({accessToken, userID}, history) => (dispatch) => {
+export const facebookLogin = ({ accessToken, userID }, history) => (
+  dispatch
+) => {
   dispatch({ type: CLEAR_ERRORS });
   dispatch({ type: LOADING_UI });
   axios
-    .post(`${baseURL}/api/auth/facebookAuth`, {userID: userID, accessToken: accessToken})
+    .post(`${baseURL}/api/auth/facebookAuth`, {
+      userID: userID,
+      accessToken: accessToken,
+    })
     .then((res) => {
       console.log('facebook data:', res.data);
       const { token } = res.data.data;
@@ -60,45 +67,37 @@ export const facebookLogin = ({accessToken, userID}, history) => (dispatch) => {
       dispatch(getLoginUserData(history));
     })
     .catch((err) => {
-      dispatch({type: LOADED_UI});
+      dispatch({ type: LOADED_UI });
       dispatch({
         type: SET_ERRORS,
-        payload: err.response.data.message
-      })
+        payload: err.response.data.message,
+      });
+    });
+};
+export const githubLogin = (codetoken, history) => (dispatch) => {
+  dispatch({ type: CLEAR_ERRORS });
+  dispatch({ type: LOADING_UI });
+  console.log('redux received github token');
+  console.log(codetoken);
+  axios
+    .post(`${baseURL}/api/auth/githubAuth`, { codeToken: codetoken })
+    .then((res) => {
+      console.log(res.data);
+      const { token, ...userData } = res.data.data;
+      let userDetails = { ...userData };
+      console.log(userDetails);
+      setAuthorizationHeader(token);
+      dispatch(getLoginUserData(history));
     })
-}
-
-// export const githubLogin = (history) => (dispatch) => {
-//   dispatch({ type: CLEAR_ERRORS });
-//   dispatch({ type: LOADING_UI });
-//   fetch('https://api.fundmylaptop.com/api/auth/github', {
-//     method: 'GET',
-//     // credentials: 'include',
-//     headers: {
-//       Accept: 'application/json',
-//       'Content-Type': 'application/json',
-//       'Access-Control-Allow-Credentials': true,
-//     },
-//   })
-//     .then((response) => {
-//       console.log(response);
-//       if (response.status === 200) return response.json();
-//       throw new Error('failed to authenticate user');
-//     })
-//     .then((responseJson) => {
-//       this.setState({
-//         authenticated: true,
-//         user: responseJson.user,
-//       });
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//       this.setState({
-//         authenticated: false,
-//         error: 'Failed to authenticate user',
-//       });
-//     });
-// };
+    .catch((err) => {
+      // console.log(err.response.data);
+      dispatch({ type: LOADED_UI });
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data.message,
+      });
+    });
+};
 
 export const logoutUser = (history) => (dispatch) => {
   localStorage.removeItem('FMLToken');
@@ -196,6 +195,28 @@ export const getUserData = () => (dispatch) => {
     })
     .catch((err) => console.log(err));
 };
+
+// Implement 'View User Profile" of other users
+export const getOtherUserData = (id) => (dispatch) => {
+  dispatch({ type: LOADING_UI });
+  axios
+    .get(`${baseURL}/api/users/${id}`, {
+      headers: { authorization: `token ${localStorage.FMLT}` },
+    })
+    .then((res) => {
+      dispatch({
+        type: SET_OTHER_USER,
+        payload: res.data.data,
+      });
+
+      console.log(res.data);
+    })
+    .catch((err) => console.log(err));
+};
+export const clearOtherUserData = () => (dispatch) => {
+  dispatch({ type: UNSET_OTHER_USER });
+};
+// *********************** */
 
 export const editUserProfile = (history, _id, formData) => (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });

@@ -3,6 +3,8 @@ import {
   SET_AUTHENTICATED,
   SET_UNAUTHENTICATED,
   LOADING_USER,
+  SET_OTHER_USER,
+  UNSET_OTHER_USER,
   // SET_ERRORS,
   // CLEAR_ERRORS,
   REGISTERED_USER,
@@ -14,6 +16,7 @@ const initialState = {
   credentials: {},
   errors: null,
   message: null,
+  otherUser: {},
 };
 
 export default function (state = initialState, action) {
@@ -36,6 +39,16 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: false,
+      };
+    case SET_OTHER_USER:
+      return {
+        ...state,
+        otherUser: action.payload,
+      };
+    case UNSET_OTHER_USER:
+      return {
+        ...state,
+        otherUser: {},
       };
     case REGISTERED_USER:
       return {

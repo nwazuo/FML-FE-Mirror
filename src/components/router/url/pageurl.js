@@ -2,6 +2,7 @@
 const LANDING_PAGE_URL = '/';
 const LOGIN_PAGE_URL = '/login';
 const USER_PROFILE_PAGE_URL = '/user-profile';
+const OTHER_USERS_PROFILE = '/user';
 const USER_RECOMMENDATIONS = '/recommendations';
 const REGISTER_PAGE_URL = '/signup';
 const ABOUT_US_PAGE_URL = '/about';
@@ -37,7 +38,7 @@ const RESET_PASSWORD_URL = '/reset-password';
 const FUND_A_CAMPAIGN = '/campaigns';
 const VERIFICATION_3 = '/verification3';
 const VERIFICATION_FORM_ONE = '/verification-form-one';
-const RECOVER_PASSWORD_URL='/recover-password'
+const RECOVER_PASSWORD_URL = '/recover-password';
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -45,6 +46,7 @@ const pageurl = {
   USER_PROFILE_PAGE_URL,
   USER_RECOMMENDATIONS,
   REGISTER_PAGE_URL,
+  OTHER_USERS_PROFILE,
   ABOUT_US_PAGE_URL,
   CONTACT_US_PAGE_URL,
   PRIVACY_POLICY_PAGE_URL,
@@ -77,7 +79,7 @@ const pageurl = {
   FUND_A_CAMPAIGN,
   VERIFICATION_3,
   RECOVER_PASSWORD_URL,
-  CAMPAIGN_PAGE_URL
+  CAMPAIGN_PAGE_URL,
 };
 
 export default pageurl;

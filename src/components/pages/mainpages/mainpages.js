@@ -23,8 +23,9 @@ import EmailConfirmationFailure from './EmailConfirmation/EmailConfirmationFailu
 import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfirmation';
 import CreateBlogPost from './blog/create_blog_post';
 import EditProfile from './editProfile/editProfile';
+import OtherUsers from './user-profile/OtherUsers';
 import ResetPassword from './reset/ResetPassword';
-import RecoverPassword from './recover/Password'
+import RecoverPassword from './recover/Password';
 import FundCampaign from './fund-a-campaign/FundCampaign';
 import Verification3 from './verification3/verification3';
 
@@ -45,6 +46,7 @@ export {
   Campaign,
   Blog,
   SinglePost,
+  OtherUsers,
   Payment,
   PaymentOtp,
   PaymentSuccess,
@@ -57,5 +59,5 @@ export {
   ResetPassword,
   FundCampaign,
   Verification3,
-  RecoverPassword
+  RecoverPassword,
 };

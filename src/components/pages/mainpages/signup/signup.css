@@ -1,19 +1,17 @@
-* {
-  font-family: 'DM Sans', sans-serif;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+/* APPLY THIS GLOBALLY - ALL FORM CONTROLS AND INPUTS (FIGMA THEMING) */
+.form-control:focus {
+  color: #1c7ed6 important;
+  border-color: #1c7ed6 !important;
+  box-shadow: none !important;
 }
-nav {
-  font-family: 'Roboto', sans-serif;
+input::placeholder {
   font-style: normal;
-  font-weight: 500;
-  /* font-size: 18px; */
-}
-nav .login {
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.4);
 }
+/***/
 
 .atag {
   color: inherit;
@@ -22,12 +20,6 @@ nav .login {
 .atag:hover {
   text-decoration: none;
   color: #fb3f5c;
-}
-
-.form-control:focus {
-  color: #1c7ed6 important;
-  border-color: #1c7ed6 !important;
-  box-shadow: none !important;
 }
 
 .btn-google {
@@ -41,11 +33,7 @@ nav .login {
   border: 1px solid rgba(0, 0, 0, 0.03);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07);
 }
-.btn-fml-secondary {
-  color: #fff;
-  background-color: #fb3f5c;
-  border-color: #fb3f5c;
-}
+
 .login-btn.form-control {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -56,11 +44,7 @@ nav .login {
   justify-content: center;
   align-items: center;
 }
-.btn-fml-secondary:hover {
-  color: #fff;
-  background-color: #fa1a3c;
-  border-color: #fa0d32;
-}
+
 .facbook-logo {
   font-size: 26px;
   padding-left: 1.5rem;
@@ -81,42 +65,7 @@ nav .login {
   color: #ffffff;
   background-color: #24292e;
 }
-.btn-fml-secondary:focus,
-.btn-fml-secondary.focus {
-  color: #fff;
-  background-color: #fa1a3c;
-  border-color: #fa0d32;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(252, 92, 116, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(252, 92, 116, 0.5);
-}
 
-.btn-fml-secondary.disabled,
-.btn-fml-secondary:disabled {
-  color: #fff;
-  background-color: #fb3f5c;
-  border-color: #fb3f5c;
-}
-
-.btn-fml-secondary:not(:disabled):not(.disabled):active,
-.btn-fml-secondary:not(:disabled):not(.disabled).active,
-.show > .btn-fml-secondary.dropdown-toggle {
-  color: #fff;
-  background-color: #fa0d32;
-  border-color: #f5052a;
-}
-input::placeholder {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  color: rgba(0, 0, 0, 0.4);
-}
-.btn-fml-secondary:not(:disabled):not(.disabled):active:focus,
-.btn-fml-secondary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-fml-secondary.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(252, 92, 116, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(252, 92, 116, 0.5);
-}
 .or hr {
   width: 47%;
   border: 0.5px solid rgb(8, 68, 130, 0.1);
