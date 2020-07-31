@@ -35,7 +35,7 @@ const withData = (WrappedComponent, dummyData) => (props) => {
 	function handleError(error) {
 		console.log('Error came o', error);
 		if (error) {
-			if (error.response.status === 400) {
+			if (error.response && error.response.status === 400) {
 				setGetError('Campaign not found!');
 			}
 		}
