@@ -1,7 +1,7 @@
 import { loginUser, recommendUser, logoutUser } from './userActions';
 import { fetchFaqs, fetchSearchFaqs, addFaqs, makePayment, makePaymentOtp  } from './dataActions';
 import { fetchFundeeDashboard } from './fundeeAction';
-import {createBlogPost,getAllBlogPost} from './blogActions'
+import {createBlogPost,getAllBlogPost,getBlogPost,addcomment} from './blogActions'
 
 export {
   loginUser,
@@ -14,5 +14,7 @@ export {
   makePaymentOtp,
   fetchFundeeDashboard,
   createBlogPost,
-  getAllBlogPost
+  getAllBlogPost,
+  getBlogPost,
+  addcomment
 };

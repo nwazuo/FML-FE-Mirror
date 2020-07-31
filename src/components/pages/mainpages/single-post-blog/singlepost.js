@@ -7,39 +7,45 @@ import mailimg from './images/Group69.png'
 import twitt from './images/Vector(1).png'
 import fb from './images/Vector(2).png'
 import CommentComponent from './comment_component';
-import {Link,withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import pageurl from '../../../router/url/pageurl'
 import ScrollIntoView from '../../../router/scrollintoview/ScrollIntoView'
 import {Navbar,Footer} from '../../navigation'
 import {BlogController} from '../../../dataservices' 
 import {Button,Status} from '../../../utilities'
+import {connect} from 'react-redux'
+import {getBlogPost,addcomment} from '../../../../actions'
 
 const SinglePost = ({...props}) => {
     const[isLogged,setIsLogged]=React.useState(true);
     const [blogStory,setBlogStory] = React.useState([]);
     const[inputValues,setInputValues]=React.useState({});
-    const[isStatus,setIsStatus]=React.useState(false);
     const[isRequested,setIsRequested]=React.useState(false);
     const[isLoading,setIsLoading]=React.useState(false);
     const[inputError,setInputError] = React.useState({});
-
-    // React.useEffect(()=>{function doIt(){!blogStory[0] && dummydata.dummy(setBlogStory);!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
     const [story_id,setStoryId] = React.useState(null);
-    React.useEffect(()=>{const{match:{params}} = props; setStoryId(params.userid); function doIt(){!blogStory[0] && BlogController.getBlogPost(story_id,setBlogStory);}doIt();})
+    React.useEffect(()=>{
+        const{match:{params}} = props; 
+        setStoryId(params.userid); 
+        function doIt(){!blogStory[0] && props.getBlogPost(story_id); !blogStory[0] && setBlogStory([props.singlePost.data])}
+        doIt();}
+    )
     function handleComment(e){e.preventDefault();
         if(BlogController.verifyUser()){
-            BlogController.makeComment(story_id,inputValues,setIsStatus,setIsRequested,setIsLoading,setInputError);
-            setIsLogged(true);
+            if(BlogController.makeComment(inputValues,setIsLoading,setInputError)){
+                setIsLogged(true);
+                props.addcomment(story_id,inputValues);
+            }
         }else{
             setIsLogged(false);
         }
     }
-        
     function handleInput(e){setInputValues({...inputValues,[e.target.name]:e.target.value})}
+    let status = props.comment && props.comment.success;
     return(    
         <ScrollIntoView>
         <Navbar/>
-        {isRequested && <Status closeStatus={()=>{setIsRequested(false);setIsLoading(false);isStatus && window.open(pageurl.SINGLE_POST_URL+`/${story_id}`,'_self')}} status_message={isStatus ? "Comment Added Successfully" : "Comment Not Added"} />}
+        {isRequested && <Status closeStatus={()=>{setIsRequested(false);setIsLoading(false);status && window.open(pageurl.SINGLE_POST_URL+`/${story_id}`,'_self')}} status_message={status ? "Comment Added Successfully" : "Comment Not Added"} />}
         {!isLogged && <Status buttonTxt="Go To Login Page" buttonUrl={pageurl.LOGIN_PAGE_URL} closeStatus={()=>{setIsLogged(true);setIsLoading(false);}} status_message={"Login To Comment"} />}
         <div className={singlepost.singlepost}> 
             <section className={singlepost.bg_qobi}>
@@ -107,4 +113,16 @@ const SinglePost = ({...props}) => {
         </ScrollIntoView>
     )
 }
-export default withRouter(SinglePost);
+const mapStateToProps = (state) => {
+return{
+    singlePost : state.blog.single,
+    comment : state.blog.comment
+}}
+
+const dispatchStateToProps = () => {
+    return{
+        getBlogPost,
+        addcomment
+    }
+}
+export default connect(mapStateToProps,dispatchStateToProps())(SinglePost);

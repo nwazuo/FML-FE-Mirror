@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom'
 import {getAllBlogPost} from '../../../../actions'
 
-const Blog_Component = ({postlink,...props}) =>{
+const Blog_Component = ({...props}) =>{
     const [blogStory,setBlogStory] = React.useState([]);
     React.useEffect(()=>{function doit(){!blogStory[0] && props.getAllBlogPost();!blogStory[0] && setBlogStory(props.post)}doit()})
     return(
@@ -13,7 +13,7 @@ const Blog_Component = ({postlink,...props}) =>{
         {blogStory[0] && blogStory.map((data,index)=>{return(
             <div className={blog.img_content_qobi} key={index}>
                 <Link to={pageurl.SINGLE_POST_URL+`/${data._id}`}>
-                    <div className={blog.img_container_qobi} onClick={postlink}>
+                    <div className={blog.img_container_qobi} >
                         <img src={data.imgSrc} alt={data.imgAlt ? data.imgAlt : `No Image`} />
                     </div>
                 </Link>
