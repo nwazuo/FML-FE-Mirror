@@ -10,7 +10,7 @@ import UserProfile from './user-profile/user-profile';
 import Recommendations from './recommendations/recommendations';
 import Page404 from './page404/Page404';
 import ComingSoon from './comingSoon/comingSoon';
-import Campaign from './Campaign/Campaign';
+import Campaign from './campaign/campaign';
 import Blog from '../mainpages/blog/blog';
 import SinglePost from '../mainpages/single-post-blog/singlepost';
 import Payment from '../mainpages/payment/payment';
@@ -28,32 +28,32 @@ import FundCampaign from './fund-a-campaign/FundCampaign';
 import Verification3 from './verification3/verification3';
 
 export {
-  Login,
-  SignUp,
-  Terms,
-  PrivacyPage,
-  FAQ,
-  ContactUs,
-  LandingPage,
-  UserProfile,
-  Recommendations,
-  AboutUs,
-  LoanRequest,
-  Page404,
-  ComingSoon,
-  Campaign,
-  Blog,
-  SinglePost,
-  Payment,
-  PaymentOtp,
-  PaymentSuccess,
-  InviteRecommender,
-  EmailConfirmation,
-  EmailVerification,
-  EmailConfirmationFailure,
-  CreateBlogPost,
-  EditProfile,
-  ResetPassword,
-  FundCampaign,
-  Verification3
+	Login,
+	SignUp,
+	Terms,
+	PrivacyPage,
+	FAQ,
+	ContactUs,
+	LandingPage,
+	UserProfile,
+	Recommendations,
+	AboutUs,
+	LoanRequest,
+	Page404,
+	ComingSoon,
+	Campaign,
+	Blog,
+	SinglePost,
+	Payment,
+	PaymentOtp,
+	PaymentSuccess,
+	InviteRecommender,
+	EmailConfirmation,
+	EmailVerification,
+	EmailConfirmationFailure,
+	CreateBlogPost,
+	EditProfile,
+	ResetPassword,
+	FundCampaign,
+	Verification3,
 };
