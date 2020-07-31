@@ -18,7 +18,7 @@ export {
   createBlogPost,
   getAllBlogPost,
   fetchFundeeCampaigns,
-  fetchFundeeInvestments
+  fetchFundeeInvestments,
   getBlogPost,
   addcomment
 };
