@@ -24,6 +24,7 @@ import EmailConfirmation from './EmailConfirmation/EmailConfirmation/EmailConfir
 import CreateBlogPost from './blog/create_blog_post';
 import EditProfile from './editProfile/editProfile';
 import ResetPassword from './reset/ResetPassword';
+import RecoverPassword from './recover/Password'
 import FundCampaign from './fund-a-campaign/FundCampaign';
 import Verification3 from './verification3/verification3';
 
@@ -55,5 +56,6 @@ export {
   EditProfile,
   ResetPassword,
   FundCampaign,
-  Verification3
+  Verification3,
+  RecoverPassword
 };

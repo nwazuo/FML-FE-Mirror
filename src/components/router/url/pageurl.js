@@ -37,7 +37,7 @@ const RESET_PASSWORD_URL = '/reset-password';
 const FUND_A_CAMPAIGN = '/campaigns';
 const VERIFICATION_3 = '/verification3';
 const VERIFICATION_FORM_ONE = '/verification-form-one';
-
+const RECOVER_PASSWORD_URL='/recover-password'
 
 const pageurl = {
   LANDING_PAGE_URL,
@@ -76,7 +76,8 @@ const pageurl = {
   EDIT_PROFILE,
   RESET_PASSWORD_URL,
   FUND_A_CAMPAIGN,
-  VERIFICATION_3
+  VERIFICATION_3,
+  RECOVER_PASSWORD_URL
 };
 
 export default pageurl;

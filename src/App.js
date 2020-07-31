@@ -34,6 +34,7 @@ import {
   ResetPassword,
   FundCampaign,
   Verification3,
+  RecoverPassword
 } from './components/pages/mainpages';
 
 import {
@@ -87,6 +88,18 @@ function App() {
           exact
           path={pageurl.CREATE_NEW_POST_URL}
           component={CreateBlogPost}
+        />
+
+        <Route
+          exact
+          path={pageurl.RECOVER_PASSWORD_URL}
+          component={RecoverPassword}
+        />
+
+        <Route
+          exact
+          path={pageurl.RESET_PASSWORD_URL + `/:passwordtoken`}
+          component={ResetPassword}
         />
 
         <Route
