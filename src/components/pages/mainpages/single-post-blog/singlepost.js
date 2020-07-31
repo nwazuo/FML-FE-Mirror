@@ -18,18 +18,15 @@ import {getBlogPost,addcomment} from '../../../../actions'
 
 const SinglePost = ({...props}) => {
     const[isLogged,setIsLogged]=React.useState(true);
-    const [blogStory,setBlogStory] = React.useState([]);
     const[inputValues,setInputValues]=React.useState({});
     const[isRequested,setIsRequested]=React.useState(false);
     const[isLoading,setIsLoading]=React.useState(false);
     const[inputError,setInputError] = React.useState({});
     const [story_id,setStoryId] = React.useState(null);
-    React.useEffect(()=>{
-        const{match:{params}} = props; 
-        setStoryId(params.userid); 
-        function doIt(){!blogStory[0] && props.getBlogPost(story_id); !blogStory[0] && setBlogStory([props.singlePost.data])}
-        doIt();}
-    )
+    const{match:{params}} = props; 
+    
+    props.getBlogPost(params.userid);
+    let blogStory = props.singlePost && [props.singlePost.data]
     function handleComment(e){e.preventDefault();
         if(BlogController.verifyUser()){
             if(BlogController.makeComment(inputValues,setIsLoading,setInputError)){
