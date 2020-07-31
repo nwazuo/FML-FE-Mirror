@@ -9,6 +9,19 @@ var strongRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
 var mediumRegex = "^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})";
     if(data.match(strongRegex)) {return "green"; }else if(data.match(mediumRegex)) {return "orange";}else{return "red";}
 }
+
+function validateEmailInput(data){
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(data.match(mailformat)){return "green"; }else{return "red";}
+}
+
+function validateEmail(data,setInputError){
+    let email="";var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(data.email.length > 0){if(data.email.match(mailformat)){email=(<p></p>);setInputError({email})}
+    }else{email=(<p style={{color:"red",fontWeight:"bold"}}>Email Input Empty</p>);setInputError({email})}
+    if(Object.keys(email.props).length === 0){return true;}return false; 
+}
+
 function validatePassword(inputDetails,setInputError){
 let password = ""; let confirmPassword = "";
 if(inputDetails.password === inputDetails.confirmPassword){
@@ -25,11 +38,12 @@ if(inputDetails.password === inputDetails.confirmPassword){
 setInputError({password,confirmPassword})
 if(Object.keys(password.props).length === 0  && Object.keys(confirmPassword.props).length === 0){return true;}return false;
 }
+
 function resetPassword(passwordtoken,data,setStatus,setRequested,setLoading){
 setLoading(true);
 Server.post(`${resetPasswordEndPoint}/${passwordtoken}`,data,headers)
 .then(response=>{response && setRequested(true); response && setLoading(false);setStatus(response.data.success);})
 .catch(error=>{error && setRequested(true); error && setLoading(false);});
 }
-const ResetPasswordController={resetPassword,validatePasswordInput,validatePassword}
+const ResetPasswordController={resetPassword,validatePasswordInput,validatePassword,validateEmailInput,validateEmail}
 export default ResetPasswordController;

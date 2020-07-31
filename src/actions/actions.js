@@ -2,6 +2,7 @@ import { loginUser, recommendUser, logoutUser } from './userActions';
 import { fetchFaqs, fetchSearchFaqs, addFaqs, makePayment, makePaymentOtp  } from './dataActions';
 import { fetchFundeeDashboard } from './fundeeAction';
 import {createBlogPost,getAllBlogPost} from './blogActions'
+import {recoverPassword,resetPassword} from './passwordAction'
 
 export {
   loginUser,
@@ -14,5 +15,7 @@ export {
   makePaymentOtp,
   fetchFundeeDashboard,
   createBlogPost,
-  getAllBlogPost
+  getAllBlogPost,
+  recoverPassword,
+  resetPassword
 };
