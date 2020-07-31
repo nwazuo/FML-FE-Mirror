@@ -8,7 +8,9 @@ import {
 const initialState = {
     createPost:{},
     data:{},
-    allblogPost:{}
+    allblogPost:{},
+    single:[],
+    comment:{}
 };
 
 export default function (state = initialState, action) {
@@ -23,17 +25,16 @@ export default function (state = initialState, action) {
                 ...state,
                 allblogPost:action.payload
         };
-        // case GET_BLOG_POST:
-        //     return {
-        //         ...state,
-        //         fundee: action.payload
-        // };
-        // case COMMENT_BLOG_POST:
-        //     return {
-        //         ...state,
-        //         fundee: action.payload
-        // }
-
+        case GET_BLOG_POST:
+            return {
+                ...state,
+                single:action.payload
+        };
+        case COMMENT_BLOG_POST:
+            return {
+                ...state,
+                comment: action.payload
+        }
         default:
         return state;
     }
