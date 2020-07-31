@@ -47,7 +47,7 @@ class AdminDashboard extends Component {
             <div className="row">
               {/* Sidebar Section */}
               <aside
-                className="col-6 col-md-3 col-lg-2 custom__bg-dark vh-100 p-0 sidebar d-flex flex-column align-items-center"
+                className="col-7 col-md-3 col-lg-2 custom__bg-dark vh-100 p-0 sidebar d-flex flex-column align-items-center"
                 id="sidebar"
               >
                 <div className="logo-container py-1 position-relative">
@@ -60,36 +60,36 @@ class AdminDashboard extends Component {
                   <img src={left} alt="left" className="ml-2" />
                 </div>
                 <ul className="navbar-nav mt-2 mt-lg-4 anchor">
-                  <li className="nav-item my-2">
-                    <NavLink
-                      className="nav-link font-weight-bold px-5"
-                      to={pageurl.ADMIN_DASHBOARD_PAGE_URL}
-                      activeClassName="active-link"
-                      exact
-                    >
-                      DASHBOARD
-                    </NavLink>
-                  </li>
-                  <li className="nav-item my-2">
-                    <NavLink
-                      className="nav-link font-weight-bold px-5"
-                      to={pageurl.ADMIN_FAQ_PAGE_URL}
-                      activeClassName="active-link"
-                      exact
-                    >
-                      ADD FAQS
-                    </NavLink>
-                  </li>
-                  <li className="nav-item my-2">
-                    <NavLink
-                      className="nav-link font-weight-bold px-5"
-                      to={pageurl.ADMIN_CAMPAIGN_PAGE_URL}
-                      activeClassName="active-link"
-                      exact
-                    >
-                      CAMPAIGN
-                    </NavLink>
-                  </li>
+                    <li className="nav-item my-2">
+                      <NavLink 
+                        className="nav-link font-weight-bold px-5" 
+                        to={pageurl.ADMIN_DASHBOARD_PAGE_URL} 
+                        activeClassName="active-link"
+                        exact
+                      >
+                        DASHBOARD
+                      </NavLink>
+                    </li>
+                    <li className="nav-item my-2">
+                      <NavLink 
+                        className="nav-link font-weight-bold px-5" 
+                        to={pageurl.ADMIN_FAQ_PAGE_URL} 
+                        activeClassName="active-link"
+                        exact
+                      >
+                        FAQS
+                      </NavLink>
+                    </li>
+                    <li className="nav-item my-2">
+                      <NavLink 
+                        className="nav-link font-weight-bold px-5" 
+                        to={pageurl.ADMIN_CAMPAIGN_PAGE_URL}
+                        activeClassName="active-link"
+                        exact
+                      >
+                        CAMPAIGN
+                      </NavLink>
+                    </li>
                 </ul>
               </aside>
               {/* Main Section  */}

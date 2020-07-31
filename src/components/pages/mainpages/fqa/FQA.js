@@ -87,7 +87,7 @@ class FQA extends React.Component {
                                 <div className="col-12 col-md-9">
                                     <h2 className={["mb-4 mt-4 mt-lg-3", FQACss.h2].join(' ')}>Getting Started</h2>
                                     <div id="accordion">
-                                        {!faqs ? (
+                                        {!faqs || faqs.length === 0 ? (
                                             <BeatLoader css={override} size={40} color={"#04172A"} />
                                             ) : (
                                             faqs.map((data, idx) => (

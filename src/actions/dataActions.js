@@ -1,10 +1,12 @@
 import axios from 'axios';
+// let baseURL = process.env.REACT_APP_BASE_URL;
 import {
     CREATE_REQUEST, 
     SET_ERRORS, 
     FETCH_FAQS, 
     FETCH_SEARCH_FAQS, 
     ADD_FAQS, 
+    DELETE_FAQS,
     MAKE_PAYMENT,
     MAKE_PAYMENT_OTP
 } from '../reducers/types';
@@ -59,6 +61,7 @@ export function fetchSearchFaqs (query) {
 }
 
 export function addFaqs (data) {
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
     return dispatch => {
         axios
             .post(`${baseURL}/api/faqs/create`, data)
@@ -66,6 +69,21 @@ export function addFaqs (data) {
                 type: ADD_FAQS,
                 payload: res.statusText
             }))
+            .then(() => window.location.reload())
+            .catch(err => console.error(err))
+    }
+}
+
+export function deleteFaqs (data) {
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('FMLToken');
+    return dispatch => {
+        axios
+            .delete(`${baseURL}/api/faqs/delete/${data._id}`, data)
+            .then(res => dispatch({
+                type: DELETE_FAQS,
+                payload: res.statusText
+            }))
+            .then(() => window.location.reload())
             .catch(err => console.error(err))
     }
 }

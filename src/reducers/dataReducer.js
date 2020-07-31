@@ -6,6 +6,7 @@ import {
     FETCH_FAQS, 
     FETCH_SEARCH_FAQS, 
     ADD_FAQS, 
+    DELETE_FAQS,
     MAKE_PAYMENT, 
     MAKE_PAYMENT_OTP
 } from './types';
@@ -53,6 +54,8 @@ export default function (state = initialState, action) {
                 faqs: action.payload
             }
         case ADD_FAQS:
+            return {...state}
+        case DELETE_FAQS:
             return {...state}
         case MAKE_PAYMENT:
             return {

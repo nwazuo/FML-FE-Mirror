@@ -6,6 +6,10 @@
     animation: payment-card 1s;
 }
 
+.overflow {
+    overflow-y: scroll;
+}
+
 @keyframes payment-card {
     from {
         opacity: 0;
